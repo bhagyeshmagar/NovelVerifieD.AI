@@ -5,12 +5,12 @@
 **AI-Powered Novel Claim Verification System**
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Node.js 18+](https://img.shields.io/badge/node.js-18+-green.svg)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-55%20passed-brightgreen.svg)](#testing)
 
 *Verify character backstory claims against actual novel text using RAG + LLM*
 
-*Supports both **Claude API** and **Local LLM** (Ollama)*
+**Team StrawHats - KDSH 2026**
 
 </div>
 
@@ -28,15 +28,240 @@ NovelVerified.AI is an intelligent system that determines whether **character ba
 
 ---
 
-## ✨ Features
+## 🚀 Quick Start (Complete Setup Guide)
 
-- 🤖 **7-Agent Pipeline** - Modular architecture from ingestion to results
-- 🔎 **Semantic Search** - FAISS vector index with sentence-transformers
-- 🧠 **Flexible LLM Backend** - Claude API or **local Ollama** (runs on your GPU!)
-- 📊 **Modern Dashboard** - React + Tailwind UI for exploring results
-- 🔄 **Resumable Processing** - Continue from where you left off
-- 📝 **Detailed Dossiers** - Human-readable Markdown reports per claim
-- ✅ **Comprehensive Tests** - 55+ pytest tests with mocked APIs
+Follow these steps to get the project running on your machine.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- **Python 3.10+** - [Download](https://www.python.org/downloads/)
+- **Node.js 18+** - [Download](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Git** - [Download](https://git-scm.com/)
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/bhagyeshmagar/StrawHats_KDSH_2026.git
+cd StrawHats_KDSH_2026
+```
+
+### Step 2: Set Up Python Environment
+
+```bash
+# Create a virtual environment
+python3 -m venv .venv
+
+# Activate the virtual environment
+# On Linux/macOS:
+source .venv/bin/activate
+
+# On Windows:
+# .venv\Scripts\activate
+
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+### Step 3: Configure Environment Variables
+
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit .env and add your Anthropic API key
+# You can get one from: https://console.anthropic.com/
+```
+
+Edit the `.env` file:
+```env
+ANTHROPIC_API_KEY=your-actual-api-key-here
+CLAUDE_MODEL=claude-3-5-sonnet-20241022
+FLASK_HOST=127.0.0.1
+FLASK_PORT=5000
+FLASK_DEBUG=true
+```
+
+### Step 4: Set Up the Frontend
+
+```bash
+# Navigate to the frontend directory
+cd frontend
+
+# Install Node.js dependencies
+npm install
+
+# Go back to the project root
+cd ..
+```
+
+### Step 5: Run the Application
+
+You need to run **two terminals** simultaneously:
+
+**Terminal 1 - Start the Flask Backend API:**
+```bash
+# Make sure you're in the project root directory
+# Activate the virtual environment if not already active
+source .venv/bin/activate  # Linux/macOS
+# .venv\Scripts\activate   # Windows
+
+# Start the Flask API server
+python flask_api/app.py
+```
+
+The backend will start at: `http://127.0.0.1:5000`
+
+**Terminal 2 - Start the React Frontend:**
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Start the development server
+npm run dev
+```
+
+The frontend will start at: `http://localhost:5173`
+
+### Step 6: Access the Application
+
+Open your browser and go to: **http://localhost:5173**
+
+---
+
+## 🔄 Running the Verification Pipeline
+
+To process claims through the AI pipeline:
+
+```bash
+# Activate virtual environment
+source .venv/bin/activate
+
+# Run full pipeline with Claude API
+python run_all.py
+
+# Run with local LLM (Ollama) - no API needed
+python run_all.py --local
+
+# Test mode (process limited claims)
+python run_all.py --test-mode
+
+# Skip LLM calls (use cached verdicts)
+python run_all.py --skip-reasoning
+```
+
+---
+
+## 🏠 Local LLM Setup (Optional - Ollama)
+
+Run entirely on your machine with no API costs:
+
+```bash
+# 1. Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# 2. Pull a model (choose based on your GPU VRAM)
+ollama pull phi3:mini          # 4GB VRAM - fast
+ollama pull mistral:7b-instruct-q4_0  # 5GB VRAM - better quality
+ollama pull llama3.2:3b        # 3GB VRAM - lightweight
+
+# 3. Run the pipeline locally
+python run_all.py --local
+```
+
+---
+
+## 📁 Project Structure
+
+```
+StrawHats_KDSH_2026/
+├── agents/                  # Pipeline agents
+│   ├── ingestion_agent.py   # Chunk novels into segments
+│   ├── embedding_agent.py   # Create FAISS vector index
+│   ├── claim_parser.py      # Parse claims from CSV
+│   ├── retriever_agent.py   # Find relevant passages
+│   ├── reasoning_agent.py   # Claude API verification
+│   └── dossier_writer.py    # Generate Markdown reports
+├── data/
+│   ├── novels/              # Source novel .txt files
+│   ├── train.csv            # Training claims
+│   └── test.csv             # Test claims
+├── flask_api/
+│   ├── app.py               # Main Flask API server
+│   ├── claims.py            # Claims management
+│   └── upload.py            # File upload handling
+├── frontend/                # React + Vite + Tailwind dashboard
+│   ├── src/
+│   │   └── components/      # React components
+│   └── package.json         # Node.js dependencies
+├── tests/                   # Pytest test suite
+├── run_all.py               # Pipeline orchestrator
+├── requirements.txt         # Python dependencies
+└── .env.example             # Environment template
+```
+
+### Generated Directories (created after running pipeline)
+
+| Directory | Contents |
+|-----------|----------|
+| `chunks/` | Chunked novel text (JSONL) |
+| `index/` | FAISS index + metadata |
+| `claims/` | Parsed claims (JSONL) |
+| `evidence/` | Retrieved passages per claim |
+| `verdicts/` | LLM verdicts (JSON) |
+| `dossiers/` | Human-readable reports (Markdown) |
+| `output/` | Final results.csv |
+
+---
+
+## 🧪 Testing
+
+```bash
+# Activate virtual environment
+source .venv/bin/activate
+
+# Run all tests
+python -m pytest tests/ -v
+
+# Run with coverage
+python -m pytest tests/ --cov=agents --cov=flask_api
+```
+
+---
+
+## 📊 API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/results` | GET | All verification results |
+| `/api/dossier/<id>` | GET | Markdown dossier for claim |
+| `/api/verdict/<id>` | GET | Raw verdict JSON |
+| `/api/evidence/<id>` | GET | Retrieved evidence |
+| `/api/stats` | GET | Summary statistics |
+| `/api/books` | GET | List of books |
+| `/api/claims` | POST | Add new claims |
+| `/api/upload` | POST | Upload novel files |
+
+---
+
+## ❓ Troubleshooting
+
+### "Module not found" error
+Make sure your virtual environment is activated:
+```bash
+source .venv/bin/activate  # Linux/macOS
+```
+
+### Frontend not connecting to backend
+- Ensure Flask API is running on port 5000
+- Check that both terminals are running
+- Try restarting both servers
+
+### API Key errors
+- Verify your `.env` file has a valid `ANTHROPIC_API_KEY`
+- Make sure there are no extra spaces around the key
 
 ---
 
@@ -82,212 +307,15 @@ NovelVerified.AI is an intelligent system that determines whether **character ba
 
 ---
 
-## 🚀 Quick Start
+## 🤝 Team StrawHats
 
-### Prerequisites
-
-- Python 3.10+
-- **Option A:** [Anthropic API key](https://console.anthropic.com/) (cloud)
-- **Option B:** [Ollama](https://ollama.com/) (local, free)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/NovelVerified.AI.git
-cd NovelVerified.AI
-
-# Create virtual environment
-python3 -m venv .venv
-source .venv/bin/activate  # Linux/macOS
-# .venv\Scripts\activate   # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment
-cp .env.example .env
-# Edit .env and add your ANTHROPIC_API_KEY
-```
-
-### Run the Pipeline
-
-```bash
-# Full pipeline with Claude API
-python run_all.py
-
-# Full pipeline with LOCAL LLM (no API needed!)
-python run_all.py --local
-
-# Test mode (limited claims)
-python run_all.py --test-mode
-
-# Skip LLM calls (use cached verdicts)
-python run_all.py --skip-reasoning
-
-# Start from specific stage
-python run_all.py --start-from reasoning
-```
-
-### 🏠 Local LLM Setup (Ollama)
-
-Run entirely on your machine with no API costs:
-
-```bash
-# 1. Install Ollama
-curl -fsSL https://ollama.com/install.sh | sh
-
-# 2. Pull a model (choose based on your GPU VRAM)
-ollama pull phi3:mini          # 4GB VRAM - fast
-ollama pull mistral:7b-instruct-q4_0  # 5GB VRAM - better quality
-ollama pull llama3.2:3b        # 3GB VRAM - lightweight
-
-# 3. Run the pipeline locally
-python run_all.py --local
-```
-
-| Model | VRAM Required | Speed |
-|-------|---------------|-------|
-| phi3:mini | ~4GB | ~2-3 sec/claim |
-| mistral:7b-q4 | ~5GB | ~4-5 sec/claim |
-| llama3.2:3b | ~3GB | ~2 sec/claim |
-
-### Start the Dashboard
-
-```bash
-# Terminal 1: Start Flask API
-python flask_api/app.py
-
-# Terminal 2: Start React frontend
-cd frontend
-npm install
-npm run dev
-```
-
-Open http://localhost:5173 to view the dashboard.
-
----
-
-## 📁 Project Structure
-
-```
-NovelVerified.AI/
-├── agents/                  # Pipeline agents
-│   ├── ingestion_agent.py   # Chunk novels into segments
-│   ├── embedding_agent.py   # Create FAISS vector index
-│   ├── claim_parser.py      # Parse claims from CSV
-│   ├── retriever_agent.py   # Find relevant passages
-│   ├── reasoning_agent.py       # Claude API verification
-│   ├── reasoning_agent_local.py # Local Ollama verification
-│   ├── dossier_writer.py        # Generate Markdown reports
-│   ├── results_aggregator.py    # Compile final CSV
-│   └── utils.py                 # Shared utilities
-├── data/
-│   ├── novels/              # Source novel .txt files
-│   ├── train.csv            # Training claims (with labels)
-│   └── test.csv             # Test claims
-├── flask_api/
-│   └── app.py               # REST API server
-├── frontend/                # React + Vite + Tailwind dashboard
-├── tests/                   # Pytest test suite
-├── run_all.py               # Pipeline orchestrator
-├── requirements.txt         # Python dependencies
-└── .env.example             # Environment template
-```
-
-### Generated Directories
-
-| Directory | Contents |
-|-----------|----------|
-| `chunks/` | Chunked novel text (JSONL) |
-| `index/` | FAISS index + metadata |
-| `claims/` | Parsed claims (JSONL) |
-| `evidence/` | Retrieved passages per claim |
-| `verdicts/` | Claude API verdicts (JSON) |
-| `dossiers/` | Human-readable reports (Markdown) |
-| `output/` | Final results.csv |
-
----
-
-## 🔧 Configuration
-
-Edit `.env` to configure:
-
-```env
-# Option A: Claude API
-ANTHROPIC_API_KEY=sk-ant-...
-CLAUDE_MODEL=claude-sonnet-4-20250514
-
-# Option B: Local Ollama
-OLLAMA_HOST=http://localhost:11434
-OLLAMA_MODEL=phi3:mini
-
-# Flask server
-FLASK_HOST=127.0.0.1
-FLASK_PORT=5000
-FLASK_DEBUG=true
-```
-
----
-
-## 🧪 Testing
-
-```bash
-# Run all tests
-python -m pytest tests/ -v
-
-# Run with coverage
-python -m pytest tests/ --cov=agents --cov=flask_api
-
-# Run specific test file
-python -m pytest tests/test_reasoning_agent.py -v
-
-# Run only unit tests
-python -m pytest tests/ -v -m unit
-```
-
-Current status: **55 tests passing** ✅
-
----
-
-## 📊 API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/results` | GET | All verification results |
-| `/api/dossier/<id>` | GET | Markdown dossier for claim |
-| `/api/verdict/<id>` | GET | Raw verdict JSON |
-| `/api/evidence/<id>` | GET | Retrieved evidence |
-| `/api/stats` | GET | Summary statistics |
-| `/api/books` | GET | List of books |
-| `/api/characters` | GET | List of characters |
-| `/download/results.csv` | GET | Download results file |
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Built for **KDSH 2026** competition.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- [Anthropic Claude](https://www.anthropic.com/) - Cloud AI reasoning
-- [Ollama](https://ollama.com/) - Local LLM runtime
-- [Sentence Transformers](https://www.sbert.net/) - Embeddings
-- [FAISS](https://github.com/facebookresearch/faiss) - Vector search
-- Classic novels from [Project Gutenberg](https://www.gutenberg.org/)
+This project is licensed under the MIT License.
 
 ---
 
