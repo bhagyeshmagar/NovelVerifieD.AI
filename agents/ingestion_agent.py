@@ -1,33 +1,32 @@
 """
-Ingestion Agent - Chunks novels into overlapping segments for embedding.
+Ingestion Agent - Pathway-based document ingestion for KDSH 2026 Track A.
 
-Reads novels from data/novels/*.txt and outputs chunked JSONL to chunks/chunks.jsonl.
-Each chunk has ~1400 tokens with 300 token overlap.
+TRACK A REQUIREMENT:
+This agent uses Pathway as the CANONICAL document store. The system cannot
+function without Pathway as all chunk storage flows through PathwayDocumentStore.
 
-KDSH 2026 Track A: Uses Pathway framework for document ingestion (required).
-Pathway provides real-time data processing and serves as the document orchestration layer.
+Pipeline:
+1. Read novels from data/novels/*.txt
+2. Chunk with overlapping windows (1400 tokens, 300 overlap)
+3. Compute temporal slice (EARLY/MID/LATE) for each chunk
+4. Ingest into Pathway store (source of truth)
+5. Export to JSONL for FAISS indexing (derived output)
 """
 
 import os
 import json
-import glob
 from pathlib import Path
 import tiktoken
 
-# Try to import Pathway for Track A compliance
-try:
-    import pathway as pw
-    from pathway.stdlib.utils.col import unpack_col
-    PATHWAY_AVAILABLE = True
-except ImportError:
-    PATHWAY_AVAILABLE = False
-    print("Note: Pathway not installed. Using standard file reading.")
+# Import Pathway store - REQUIRED for Track A compliance
+import pathway as pw
+from pathway_store import PathwayDocumentStore, get_document_store, export_to_legacy_format
 
 # Configuration
 CHUNK_SIZE = 1400  # tokens
 CHUNK_OVERLAP = 300  # tokens
 INPUT_DIR = Path("data/novels")
-OUTPUT_FILE = Path("chunks/chunks.jsonl")
+LEGACY_OUTPUT = Path("chunks/chunks.jsonl")  # Derived output for FAISS
 
 
 def count_tokens(text: str, encoding) -> int:
@@ -52,49 +51,52 @@ def chunk_text(text: str, encoding, chunk_size: int = CHUNK_SIZE, overlap: int =
         chunk_tokens = tokens[token_idx:end_idx]
         
         # Decode back to text
-        chunk_text = encoding.decode(chunk_tokens)
+        chunk_text_content = encoding.decode(chunk_tokens)
         
-        # Calculate character positions (approximate since encoding may vary)
-        # We need to find where this chunk starts and ends in original text
+        # Calculate character positions
         if chunk_idx == 0:
             char_start = 0
         else:
-            # Find overlap text and locate it
             overlap_tokens = tokens[max(0, token_idx - overlap):token_idx]
             overlap_text = encoding.decode(overlap_tokens)
-            # Find the start of current chunk after the last chunk
             search_start = chunks[-1]["char_end"] - len(overlap_text) - 100
-            char_start = text.find(chunk_text[:100], max(0, search_start))
+            char_start = text.find(chunk_text_content[:100], max(0, search_start))
             if char_start == -1:
                 char_start = chunks[-1]["char_end"]
         
-        char_end = char_start + len(chunk_text)
+        char_end = char_start + len(chunk_text_content)
         
         chunks.append({
             "chunk_idx": chunk_idx,
             "char_start": char_start,
             "char_end": char_end,
-            "text": chunk_text,
+            "text": chunk_text_content,
             "token_count": len(chunk_tokens)
         })
         
-        # Move forward by (chunk_size - overlap) tokens
         token_idx += (chunk_size - overlap)
         chunk_idx += 1
         
-        # Break if we've processed all tokens
         if end_idx >= len(tokens):
             break
     
     return chunks
 
 
-def process_novel(filepath: Path, encoding) -> list[dict]:
-    """Process a single novel file into chunks."""
+def process_novel(filepath: Path, encoding) -> tuple[list[dict], int]:
+    """
+    Process a single novel file into chunks.
+    
+    Returns:
+        Tuple of (chunks, total_chars) for temporal slicing
+    """
     print(f"Processing: {filepath.name}")
     
     with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
         text = f.read()
+    
+    # Record original length for temporal slicing
+    original_length = len(text)
     
     # Clean up text - remove excessive whitespace
     text = " ".join(text.split())
@@ -106,24 +108,34 @@ def process_novel(filepath: Path, encoding) -> list[dict]:
     for chunk in chunks:
         chunk["book"] = book_name
     
-    print(f"  -> Generated {len(chunks)} chunks")
-    return chunks
+    print(f"  -> Generated {len(chunks)} chunks ({original_length:,} chars)")
+    return chunks, original_length
 
 
 def main():
-    """Main entry point for ingestion agent."""
+    """
+    Main entry point for Pathway-based ingestion agent.
+    
+    TRACK A COMPLIANCE:
+    - Uses Pathway as the canonical document store
+    - All chunks flow through PathwayDocumentStore
+    - Temporal slicing computed for constraint reasoning
+    """
     print("=" * 60)
-    print("INGESTION AGENT - Novel Chunking")
-    print("KDSH 2026 Track A: Pathway-enabled document processing")
+    print("INGESTION AGENT - Pathway Document Store")
+    print("KDSH 2026 Track A: Pathway-managed document ingestion")
     print("=" * 60)
     
-    # Report Pathway status for Track A compliance
-    if PATHWAY_AVAILABLE:
-        print("✓ Pathway framework detected - Track A compliant")
-    else:
-        print("! Pathway not available - using standard file I/O")
+    # Verify Pathway is available (Track A requirement)
+    try:
+        import pathway
+        print(f"✓ Pathway {pathway.__version__} detected - Track A compliant")
+    except ImportError as e:
+        print("✗ CRITICAL: Pathway not installed!")
+        print("  Track A requires Pathway. Install with: pip install pathway")
+        raise e
     
-    # Initialize tokenizer (cl100k_base is used by GPT-4/Claude)
+    # Initialize tokenizer
     encoding = tiktoken.get_encoding("cl100k_base")
     
     # Find all novel files
@@ -135,27 +147,54 @@ def main():
     
     print(f"Found {len(novel_files)} novel(s)")
     
+    # Process all novels
     all_chunks = []
+    book_total_chars = {}
     
     for filepath in novel_files:
-        chunks = process_novel(filepath, encoding)
+        chunks, total_chars = process_novel(filepath, encoding)
         all_chunks.extend(chunks)
+        book_total_chars[filepath.stem] = total_chars
     
-    # Save to JSONL
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    # =========================================================================
+    # PATHWAY INTEGRATION - Track A Critical Section
+    # =========================================================================
+    print("\n" + "-" * 40)
+    print("PATHWAY STORE INGESTION")
+    print("-" * 40)
     
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        for chunk in all_chunks:
-            f.write(json.dumps(chunk, ensure_ascii=False) + "\n")
+    # Get Pathway document store
+    store = get_document_store()
     
-    print(f"\nSaved {len(all_chunks)} chunks to {OUTPUT_FILE}")
+    # Ingest chunks into Pathway store with temporal slicing
+    # This is the CANONICAL storage - not the JSONL file
+    ingested = store.ingest_chunks(all_chunks, book_total_chars)
+    
+    # =========================================================================
+    # LEGACY EXPORT - Derived output for FAISS compatibility
+    # =========================================================================
+    print("\n" + "-" * 40)
+    print("LEGACY EXPORT (for FAISS)")
+    print("-" * 40)
+    
+    # Export to JSONL for backward compatibility with FAISS indexing
+    export_count = export_to_legacy_format(LEGACY_OUTPUT)
+    print(f"  Exported {export_count} chunks to {LEGACY_OUTPUT}")
+    
+    # Summary
+    print("\n" + "=" * 60)
+    print("INGESTION COMPLETE")
     print("=" * 60)
     
-    # Summary stats
-    books = set(c["book"] for c in all_chunks)
-    for book in sorted(books):
-        count = sum(1 for c in all_chunks if c["book"] == book)
-        print(f"  {book}: {count} chunks")
+    metadata = store.get_metadata()
+    print(f"  Total chunks: {metadata['total_chunks']}")
+    print(f"  Books: {len(metadata['books'])}")
+    print(f"  Temporal distribution:")
+    for slice_name, count in metadata['temporal_distribution'].items():
+        print(f"    {slice_name}: {count} chunks")
+    
+    print(f"\nPathway store: pathway_store/")
+    print(f"Legacy output: {LEGACY_OUTPUT}")
 
 
 if __name__ == "__main__":

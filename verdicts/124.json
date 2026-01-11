@@ -1,0 +1,8 @@
+{
+  "claim_id": "124",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence from three different passages in the book supports the claim that Caderousse stole a mooring rope."
+}

@@ -1,13 +1,17 @@
 """
-Local Reasoning Agent - Uses Ollama for fully local LLM inference.
+Local Reasoning Agent - Multi-stage constraint-aware verification with Ollama.
 
-No external API calls - runs entirely on your machine using Ollama.
-Supports GPU acceleration with NVIDIA GPUs.
+KDSH 2026 Track A:
+Same 4-stage pipeline as the Claude version but using local Ollama LLM:
+1. DECOMPOSE: Break claim into atomic sub-claims
+2. RETRIEVE: (done by retriever_agent)
+3. EVALUATE: Dual-perspective (support + contradict)
+4. SYNTHESIZE: Calibrated verdict
 
-Requirements:
-    1. Install Ollama: curl -fsSL https://ollama.com/install.sh | sh
-    2. Pull a model: ollama pull phi3:mini  (or mistral:7b-instruct-q4_0)
-    3. Run this script: python agents/reasoning_agent_local.py
+Anti-bias features preserved:
+- Dual prompts for support AND contradiction
+- Confidence calibration thresholds
+- Constraint violation detection
 """
 
 import json
@@ -16,13 +20,20 @@ import time
 import logging
 import requests
 from pathlib import Path
+from typing import List, Tuple, Optional
 from dotenv import load_dotenv
 
-# Load environment variables
+# Import constraint types
+from constraint_types import (
+    ConstraintType, Verdict, SubClaim, ConstraintViolation, ClaimAnalysis,
+    DECOMPOSITION_PROMPT, SUPPORT_SEEKING_PROMPT,
+    CONTRADICTION_SEEKING_PROMPT
+)
+
 load_dotenv()
 
 # ============================================================================
-# Logging Configuration
+# Logging
 # ============================================================================
 logging.basicConfig(
     level=logging.INFO,
@@ -40,147 +51,237 @@ logger = logging.getLogger('reasoning_agent_local')
 EVIDENCE_DIR = Path("evidence")
 OUTPUT_DIR = Path("verdicts")
 
-# Ollama configuration
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "phi3:mini")  # or "mistral:7b-instruct-q4_0"
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "mistral:7b-instruct-q4_0")
 
-# Rate limiting (local is fast, but let's not overload)
-RATE_LIMIT_DELAY = 0.1  # seconds between calls
+RATE_LIMIT_DELAY = 0.2
 
-# System prompt for reasoning - strict JSON output
-SYSTEM_PROMPT = """You are a strict, precise reasoning assistant. You will output EXACTLY one valid JSON object and nothing else. Do not add text, commentary, or markdown. Use double quotes for strings, no trailing commas, and valid JSON arrays even if empty."""
-
-
-def build_user_prompt(claim_data: dict) -> str:
-    """Build the user prompt with claim and evidence in structured format."""
-    evidence = claim_data["evidence"]
-    claim_id = claim_data["claim_id"]
-    claim_text = claim_data["claim_text"]
-    
-    # Build evidence sections with full metadata
-    evidence_sections = []
-    for i, ev in enumerate(evidence, 1):
-        text = ev['text'][:1500]  # Shorter for local models
-        evidence_sections.append(
-            f'Evidence {i}:\n'
-            f'BOOK: "{ev["book"]}"\n'
-            f'TEXT: "{text}"'
-        )
-    
-    evidence_text = "\n\n".join(evidence_sections)
-    num_evidence = len(evidence)
-    
-    return f'''CLAIM_ID: "{claim_id}"
-CLAIM_TEXT: "{claim_text}"
-
-EVIDENCE ({num_evidence} passages):
-{evidence_text}
-
-TASK: Decide if CLAIM_TEXT is "supported", "contradicted", or "undetermined" based on evidence.
-
-Return JSON with this exact format:
-{{
-  "claim_id": "{claim_id}",
-  "verdict": "supported" or "contradicted" or "undetermined",
-  "confidence": 0.0 to 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "one sentence explanation"
-}}
-
-RULES:
-1. "supported" = evidence confirms the claim
-2. "contradicted" = evidence conflicts with the claim
-3. "undetermined" = not enough evidence
-
-Output ONLY the JSON, nothing else.'''
+# Anti-bias thresholds
+CONTRADICTION_THRESHOLD = 0.4
+STRONG_SUPPORT_THRESHOLD = 0.7
+WEAK_CONTRADICTION_THRESHOLD = 0.25
 
 
-def call_ollama(claim_data: dict) -> dict:
-    """Call Ollama API for local inference."""
-    user_prompt = build_user_prompt(claim_data)
-    claim_id = claim_data["claim_id"]
+# ============================================================================
+# Ollama LLM Call
+# ============================================================================
+
+def call_ollama(prompt: str, claim_id: str, stage: str) -> Optional[dict]:
+    """Call Ollama API and parse JSON response."""
+    system = "You output valid JSON only. No markdown, no commentary."
     
     try:
         response = requests.post(
             f"{OLLAMA_HOST}/api/generate",
             json={
                 "model": OLLAMA_MODEL,
-                "prompt": f"{SYSTEM_PROMPT}\n\n{user_prompt}",
+                "prompt": f"{system}\n\n{prompt}",
                 "stream": False,
                 "options": {
-                    "temperature": 0.1,  # Low for consistent JSON
-                    "num_predict": 512,  # Enough for our JSON
+                    "temperature": 0.1,
+                    "num_predict": 1024,
                     "top_p": 0.9
                 }
             },
-            timeout=120  # 2 minutes timeout
+            timeout=180
         )
         
         if response.status_code != 200:
-            logger.error(f"Ollama API error: {response.status_code}")
-            return create_error_verdict(claim_id, f"Ollama error: {response.status_code}")
+            logger.error(f"{claim_id}/{stage}: Ollama error {response.status_code}")
+            return None
         
-        result = response.json()
-        response_text = result.get("response", "").strip()
+        text = response.json().get("response", "").strip()
         
-        # Try to extract JSON from response
-        # Handle potential markdown code blocks
-        if "```json" in response_text:
-            response_text = response_text.split("```json")[1].split("```")[0].strip()
-        elif "```" in response_text:
-            response_text = response_text.split("```")[1].split("```")[0].strip()
+        # Handle markdown blocks
+        if "```json" in text:
+            text = text.split("```json")[1].split("```")[0].strip()
+        elif "```" in text:
+            text = text.split("```")[1].split("```")[0].strip()
         
-        # Parse JSON
-        verdict = json.loads(response_text)
-        
-        # Ensure claim_id is correct
-        verdict["claim_id"] = claim_id
-        
-        # Ensure required fields exist
-        if "supporting_spans" not in verdict:
-            verdict["supporting_spans"] = []
-        if "contradicting_spans" not in verdict:
-            verdict["contradicting_spans"] = []
-        if "confidence" not in verdict:
-            verdict["confidence"] = 0.5
-        if "reasoning" not in verdict:
-            verdict["reasoning"] = "Local model inference"
-            
-        return verdict
+        return json.loads(text)
         
     except json.JSONDecodeError as e:
-        logger.warning(f"Claim {claim_id}: Failed to parse JSON: {e}")
-        logger.debug(f"Raw response: {response_text[:500] if 'response_text' in locals() else 'N/A'}")
-        return create_error_verdict(claim_id, f"JSON parse error: {str(e)}")
-        
+        logger.warning(f"{claim_id}/{stage}: JSON parse error - {e}")
+        return None
     except requests.exceptions.ConnectionError:
-        logger.error(f"Claim {claim_id}: Cannot connect to Ollama. Is it running?")
-        return create_error_verdict(claim_id, "Ollama not running. Start with: ollama serve")
-        
-    except requests.exceptions.Timeout:
-        logger.error(f"Claim {claim_id}: Ollama timeout")
-        return create_error_verdict(claim_id, "Ollama timeout - model may be too slow")
-        
+        logger.error(f"{claim_id}/{stage}: Cannot connect to Ollama")
+        return None
     except Exception as e:
-        logger.error(f"Claim {claim_id}: Unexpected error: {e}")
-        return create_error_verdict(claim_id, f"Error: {str(e)}")
+        logger.error(f"{claim_id}/{stage}: Error - {e}")
+        return None
 
 
-def create_error_verdict(claim_id: str, error_message: str) -> dict:
-    """Create a verdict dict for error cases."""
+# ============================================================================
+# Multi-Stage Pipeline
+# ============================================================================
+
+def decompose_claim(claim_data: dict) -> List[SubClaim]:
+    """Decompose claim into sub-claims."""
+    prompt = DECOMPOSITION_PROMPT.format(
+        claim_text=claim_data["claim_text"],
+        character=claim_data.get("character", "Unknown"),
+        book_name=claim_data.get("book_name", "Unknown")
+    )
+    
+    result = call_ollama(prompt, claim_data["claim_id"], "decompose")
+    
+    if not result or not isinstance(result, list):
+        return [SubClaim(
+            id="SC1",
+            text=claim_data["claim_text"],
+            constraint_type=ConstraintType.FACTUAL,
+            parent_claim_id=claim_data["claim_id"]
+        )]
+    
+    sub_claims = []
+    for item in result:
+        try:
+            ctype = ConstraintType(item.get("type", "factual").lower())
+        except ValueError:
+            ctype = ConstraintType.FACTUAL
+        
+        sub_claims.append(SubClaim(
+            id=item.get("id", f"SC{len(sub_claims)+1}"),
+            text=item.get("text", ""),
+            constraint_type=ctype,
+            parent_claim_id=claim_data["claim_id"]
+        ))
+    
+    return sub_claims if sub_claims else [SubClaim(
+        id="SC1",
+        text=claim_data["claim_text"],
+        constraint_type=ConstraintType.FACTUAL,
+        parent_claim_id=claim_data["claim_id"]
+    )]
+
+
+def evaluate_support(claim_data: dict, evidence_text: str) -> Tuple[float, str, List[str]]:
+    """Seek supporting evidence."""
+    prompt = SUPPORT_SEEKING_PROMPT.format(
+        claim_text=claim_data["claim_text"],
+        character=claim_data.get("character", "Unknown"),
+        evidence_text=evidence_text
+    )
+    
+    result = call_ollama(prompt, claim_data["claim_id"], "support")
+    
+    if not result:
+        return 0.0, "Failed to analyze", []
+    
+    return (
+        float(result.get("support_confidence", 0.0)),
+        result.get("support_reasoning", "No reasoning"),
+        result.get("supporting_excerpts", [])
+    )
+
+
+def evaluate_contradiction(claim_data: dict, evidence_text: str) -> Tuple[float, str, List[str], str]:
+    """Seek contradicting evidence (ANTI-BIAS)."""
+    prompt = CONTRADICTION_SEEKING_PROMPT.format(
+        claim_text=claim_data["claim_text"],
+        character=claim_data.get("character", "Unknown"),
+        evidence_text=evidence_text
+    )
+    
+    result = call_ollama(prompt, claim_data["claim_id"], "contradict")
+    
+    if not result:
+        return 0.0, "Failed to analyze", [], "none"
+    
+    return (
+        float(result.get("contradiction_confidence", 0.0)),
+        result.get("contradiction_reasoning", "No reasoning"),
+        result.get("contradicting_excerpts", []),
+        result.get("violation_type", "none")
+    )
+
+
+def synthesize_verdict(support_conf: float, support_reason: str,
+                       contradict_conf: float, contradict_reason: str,
+                       violation_type: str) -> Tuple[Verdict, float, str]:
+    """Synthesize final verdict with anti-bias calibration."""
+    
+    # Rule 1: Strong contradiction wins
+    if contradict_conf > CONTRADICTION_THRESHOLD:
+        confidence = min(0.95, contradict_conf + 0.1)
+        reasoning = f"Contradiction ({violation_type}): {contradict_reason}"
+        return Verdict.CONTRADICTED, confidence, reasoning
+    
+    # Rule 2: Strong support with weak contradiction
+    if support_conf > STRONG_SUPPORT_THRESHOLD and contradict_conf < WEAK_CONTRADICTION_THRESHOLD:
+        confidence = support_conf * 0.9
+        reasoning = f"Evidence supports: {support_reason}"
+        return Verdict.SUPPORTED, confidence, reasoning
+    
+    # Rule 3: Ambiguous
+    confidence = max(0.3, min(support_conf, 0.5))
+    reasoning = "Insufficient evidence for definitive verdict"
+    return Verdict.UNDETERMINED, confidence, reasoning
+
+
+def process_claim(claim_data: dict) -> dict:
+    """Process claim through 4-stage pipeline."""
+    claim_id = claim_data["claim_id"]
+    
+    # Stage 1: Decomposition
+    sub_claims = decompose_claim(claim_data)
+    
+    # Prepare evidence
+    evidence = claim_data.get("evidence", [])
+    evidence_text = "\n\n".join([
+        f"[{e.get('temporal_slice', 'MID')}] {e['text'][:1200]}"
+        for e in evidence[:4]
+    ])
+    
+    # Stage 2: Dual-perspective evaluation
+    support_conf, support_reason, support_excerpts = evaluate_support(
+        claim_data, evidence_text
+    )
+    
+    time.sleep(0.3)
+    
+    contradict_conf, contradict_reason, contradict_excerpts, violation_type = evaluate_contradiction(
+        claim_data, evidence_text
+    )
+    
+    # Stage 3: Synthesis
+    verdict, confidence, reasoning = synthesize_verdict(
+        support_conf, support_reason,
+        contradict_conf, contradict_reason,
+        violation_type
+    )
+    
+    # Build analysis
+    analysis = ClaimAnalysis(
+        claim_id=claim_id,
+        claim_text=claim_data["claim_text"],
+        character=claim_data.get("character", "Unknown"),
+        book_name=claim_data.get("book_name", "Unknown"),
+        sub_claims=sub_claims,
+        support_score=support_conf,
+        contradiction_score=contradict_conf,
+        verdict=verdict,
+        confidence=confidence,
+        reasoning=reasoning
+    )
+    
     return {
         "claim_id": claim_id,
-        "verdict": "undetermined",
-        "confidence": 0.0,
-        "supporting_spans": [],
-        "contradicting_spans": [],
-        "reasoning": error_message
+        "verdict": verdict.value,
+        "confidence": round(confidence, 2),
+        "supporting_spans": support_excerpts[:3],
+        "contradicting_spans": contradict_excerpts[:3],
+        "reasoning": reasoning[:300],
+        "analysis": analysis.to_dict()
     }
 
 
+# ============================================================================
+# Ollama Status Check
+# ============================================================================
+
 def check_ollama_status() -> bool:
-    """Check if Ollama is running and model is available."""
+    """Check if Ollama is running with required model."""
     try:
         response = requests.get(f"{OLLAMA_HOST}/api/tags", timeout=5)
         if response.status_code != 200:
@@ -190,65 +291,58 @@ def check_ollama_status() -> bool:
         model_names = [m.get("name", "") for m in models]
         
         if not any(OLLAMA_MODEL in name for name in model_names):
-            logger.warning(f"Model {OLLAMA_MODEL} not found. Available: {model_names}")
             print(f"\n⚠️  Model '{OLLAMA_MODEL}' not found!")
-            print(f"   Available models: {model_names}")
-            print(f"\n   To install: ollama pull {OLLAMA_MODEL}")
+            print(f"   Available: {model_names}")
+            print(f"   Install: ollama pull {OLLAMA_MODEL}")
             return False
         
         return True
-        
-    except requests.exceptions.ConnectionError:
+    except:
         return False
 
 
+# ============================================================================
+# Main
+# ============================================================================
+
 def main():
-    """Main entry point for local reasoning agent."""
+    """Main entry point for local multi-stage reasoning agent."""
     print("=" * 60)
-    print("LOCAL REASONING AGENT - Ollama")
+    print("LOCAL REASONING AGENT - Multi-Stage Pipeline")
+    print("KDSH 2026 Track A: Ollama with anti-bias reasoning")
     print("=" * 60)
     
     logger.info("Starting local reasoning agent")
     
-    # Check Ollama status
     print(f"\nChecking Ollama at {OLLAMA_HOST}...")
     if not check_ollama_status():
-        print("\n❌ Ollama is not running or model not found!")
-        print("\nSetup instructions:")
-        print("  1. Install Ollama:")
-        print("     curl -fsSL https://ollama.com/install.sh | sh")
-        print(f"\n  2. Pull the model:")
-        print(f"     ollama pull {OLLAMA_MODEL}")
-        print("\n  3. Start Ollama (if not auto-started):")
-        print("     ollama serve")
-        print("\n  4. Re-run this script")
+        print("\n❌ Ollama not available!")
+        print("   1. Install: curl -fsSL https://ollama.com/install.sh | sh")
+        print(f"   2. Pull model: ollama pull {OLLAMA_MODEL}")
+        print("   3. Start: ollama serve")
         return
     
     print(f"✅ Ollama running with model: {OLLAMA_MODEL}")
     
-    # Check evidence directory
     evidence_files = list(EVIDENCE_DIR.glob("*.json"))
     if not evidence_files:
-        logger.error(f"No evidence files found in {EVIDENCE_DIR}/")
-        print(f"\n❌ No evidence files found in {EVIDENCE_DIR}/")
-        print("   Run the retrieval stage first: python agents/retriever_agent.py")
+        print(f"\n❌ No evidence files in {EVIDENCE_DIR}/")
         return
     
     print(f"Found {len(evidence_files)} evidence files")
+    print(f"\nAnti-bias thresholds:")
+    print(f"  - Contradiction: {CONTRADICTION_THRESHOLD}")
+    print(f"  - Strong support: {STRONG_SUPPORT_THRESHOLD}")
     
-    # Create output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
-    # Check for already processed files (resumable)
     processed = set(f.stem for f in OUTPUT_DIR.glob("*.json"))
     remaining = [f for f in evidence_files if f.stem not in processed]
     
     if processed:
-        print(f"  {len(processed)} already processed, {len(remaining)} remaining")
+        print(f"  {len(processed)} processed, {len(remaining)} remaining")
     
-    # Process claims
-    print(f"\nProcessing {len(remaining)} claims with local LLM...")
-    print("(This may take a while depending on your GPU)\n")
+    print(f"\nProcessing {len(remaining)} claims with 4-stage pipeline...")
     
     stats = {"supported": 0, "contradicted": 0, "undetermined": 0}
     start_time = time.time()
@@ -257,38 +351,38 @@ def main():
         with open(evidence_file, "r", encoding="utf-8") as f:
             claim_data = json.load(f)
         
-        # Call local LLM
-        verdict = call_ollama(claim_data)
+        verdict = process_claim(claim_data)
+        stats[verdict["verdict"]] += 1
         
-        # Update stats
-        stats[verdict.get("verdict", "undetermined")] += 1
-        
-        # Save result
         output_file = OUTPUT_DIR / f"{claim_data['claim_id']}.json"
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(verdict, f, indent=2, ensure_ascii=False)
         
-        # Progress update
         elapsed = time.time() - start_time
-        avg_time = elapsed / (i + 1)
-        remaining_time = avg_time * (len(remaining) - i - 1)
+        avg = elapsed / (i + 1)
+        eta = avg * (len(remaining) - i - 1)
         
         if (i + 1) % 5 == 0 or i == len(remaining) - 1:
-            print(f"  [{i + 1}/{len(remaining)}] {verdict['verdict']} ({verdict.get('confidence', 0):.2f}) "
-                  f"- ETA: {remaining_time/60:.1f}min")
+            print(f"  [{i + 1}/{len(remaining)}] {verdict['verdict']} "
+                  f"(conf={verdict['confidence']:.2f}) - ETA: {eta/60:.1f}min")
         
         time.sleep(RATE_LIMIT_DELAY)
     
     total_time = time.time() - start_time
     
-    # Summary
     print("\n" + "=" * 60)
     print(f"Completed in {total_time/60:.1f} minutes")
-    print(f"Verdicts saved to {OUTPUT_DIR}/")
-    print(f"\nResults:")
+    print("=" * 60)
     print(f"  ✅ Supported: {stats['supported']}")
     print(f"  ❌ Contradicted: {stats['contradicted']}")
     print(f"  ⚠️  Undetermined: {stats['undetermined']}")
+    
+    # Anti-bias warning
+    total = sum(stats.values())
+    if total > 0:
+        supported_pct = stats['supported'] / total * 100
+        if supported_pct > 80:
+            print(f"\n⚠️  WARNING: {supported_pct:.0f}% supported - review thresholds")
     
     logger.info(f"Completed: {stats}")
 

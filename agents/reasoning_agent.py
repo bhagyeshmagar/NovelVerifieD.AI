@@ -1,13 +1,17 @@
 """
-Reasoning Agent - Uses Claude API to verify claims against evidence.
+Reasoning Agent - Multi-stage constraint-aware verification.
 
-For each claim in evidence/{claim_id}.json, sends to Claude API
-and saves verdict to verdicts/{claim_id}.json.
+KDSH 2026 Track A:
+This agent implements a 4-stage reasoning pipeline:
+1. DECOMPOSE: Break claim into atomic sub-claims
+2. RETRIEVE: Get temporal-aware evidence
+3. EVALUATE: Check constraints with dual-perspective (support + contradict)
+4. SYNTHESIZE: Combine into final verdict with confidence calibration
 
-Features:
-- Exponential backoff retry on API failures
-- Proper logging instead of print statements
-- Graceful error handling
+Key anti-bias features:
+- Dual prompts: actively seek contradictions, not just support
+- Confidence calibration: penalize overconfident "supported" verdicts
+- Constraint checking: detect violations even without explicit contradictions
 """
 
 import json
@@ -16,8 +20,16 @@ import time
 import logging
 import random
 from pathlib import Path
+from typing import List, Dict, Optional, Tuple
 from dotenv import load_dotenv
 from anthropic import Anthropic, APIError, RateLimitError, APIConnectionError
+
+# Import constraint types
+from constraint_types import (
+    ConstraintType, Verdict, SubClaim, ConstraintViolation, ClaimAnalysis,
+    DECOMPOSITION_PROMPT, SUPPORT_SEEKING_PROMPT, 
+    CONTRADICTION_SEEKING_PROMPT, SYNTHESIS_PROMPT
+)
 
 # Load environment variables
 load_dotenv()
@@ -40,282 +52,399 @@ logger = logging.getLogger('reasoning_agent')
 # ============================================================================
 EVIDENCE_DIR = Path("evidence")
 OUTPUT_DIR = Path("verdicts")
-RATE_LIMIT_DELAY = 0.5  # seconds between API calls
+RATE_LIMIT_DELAY = 1.0  # Increased for multi-stage calls
 
 # Retry configuration
 MAX_RETRIES = 5
-BASE_DELAY = 1.0  # Initial delay in seconds
-MAX_DELAY = 60.0  # Maximum delay between retries
+BASE_DELAY = 1.0
+MAX_DELAY = 60.0
 
 # Claude configuration
 CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-20250514")
 API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
-# System prompt for reasoning - strict JSON output
-SYSTEM_PROMPT = """You are a strict, precise local reasoning assistant. You will output EXACTLY one valid JSON object and nothing else. Do not add text, commentary, or markdown. Use double quotes for strings, no trailing commas, and valid JSON arrays even if empty."""
+# ============================================================================
+# Anti-Bias Thresholds
+# ============================================================================
+# These thresholds are calibrated to prevent "supported" bias
 
+CONTRADICTION_THRESHOLD = 0.4  # Any contradiction > this = contradicted
+STRONG_SUPPORT_THRESHOLD = 0.7  # Need high support AND low contradiction
+WEAK_CONTRADICTION_THRESHOLD = 0.25  # Below this, support can override
 
-def build_user_prompt(claim_data: dict) -> str:
-    """Build the user prompt with claim and evidence in structured format."""
-    evidence = claim_data["evidence"]
-    claim_id = claim_data["claim_id"]
-    claim_text = claim_data["claim_text"]
-    
-    # Build evidence sections with full metadata
-    evidence_sections = []
-    for i, ev in enumerate(evidence, 1):
-        text = ev['text'][:2000]  # Truncate if needed
-        evidence_sections.append(
-            f'Evidence {i}:\n'
-            f'BOOK: "{ev["book"]}"\n'
-            f'CHUNK_IDX: {ev["chunk_idx"]}\n'
-            f'CHAR_START: {ev.get("char_start", 0)}\n'
-            f'CHAR_END: {ev.get("char_end", 0)}\n'
-            f'TEXT:\n"""\n{text}\n"""'
-        )
-    
-    evidence_text = "\n\n".join(evidence_sections)
-    num_evidence = len(evidence)
-    
-    return f'''CLAIM_ID: "{claim_id}"
-CLAIM_TEXT: "{claim_text}"
-
-EVIDENCE ({num_evidence} passages). Each passage has BOOK, CHUNK_IDX, CHAR_START, CHAR_END, TEXT:
-{evidence_text}
-
-TASK:
-Based only on the {num_evidence} evidence passages above, decide whether the CLAIM_TEXT is "supported", "contradicted", or "undetermined".
-
-Return a single JSON object with **exactly** the following keys and types:
-
-{{
-  "claim_id": "<string>",
-  "verdict": "supported" | "contradicted" | "undetermined",
-  "confidence": <float>,
-  "supporting_spans": [
-    {{
-      "book": "<string>",
-      "chunk_idx": <int>,
-      "char_start": <int>,
-      "char_end": <int>,
-      "text": "<string>"
-    }}
-  ],
-  "contradicting_spans": [
-    {{ "book": "...", "chunk_idx": 0, "char_start": 0, "char_end": 0, "text": "..." }}
-  ],
-  "reasoning": "<one-sentence justification, max 30 words>"
-}}
-
-DECISION RULES (must follow):
-1. "supported" if evidence contains direct text that entails the claim.
-2. "contradicted" if any evidence explicitly negates or makes the claim impossible.
-3. Otherwise "undetermined".
-4. If both support and contradiction are present, choose "contradicted" only if contradiction is explicit and direct.
-5. Confidence should reflect strength: strong entailment/contradiction -> >=0.75; weak signals -> 0.40-0.74; no clear signal -> <=0.39.
-6. If unsure, use "undetermined" with confidence <= 0.50.
-7. The "reasoning" field must be a single concise sentence citing which evidence.
-
-OUTPUT RULES (strict):
-- Produce JSON only. No extra whitespace outside JSON.
-- Use empty arrays [] for spans when none apply.
-- Strings must be properly escaped and under 400 characters for "reasoning".
-- Numeric fields must be numbers (no quotes).'''
-
+# ============================================================================
+# LLM Call with Retry
+# ============================================================================
 
 def exponential_backoff_delay(attempt: int) -> float:
     """Calculate delay with exponential backoff and jitter."""
     delay = min(BASE_DELAY * (2 ** attempt), MAX_DELAY)
-    # Add jitter (±25%)
     jitter = delay * 0.25 * (2 * random.random() - 1)
     return delay + jitter
 
 
-def call_claude_with_retry(client: Anthropic, claim_data: dict) -> dict:
+def call_llm(client: Anthropic, prompt: str, claim_id: str, stage: str) -> Optional[dict]:
     """
-    Call Claude API with exponential backoff retry logic.
-    
-    Retries on:
-    - Rate limit errors (429)
-    - API connection errors
-    - Server errors (5xx)
+    Call Claude API with retry logic.
+    Returns parsed JSON or None on failure.
     """
-    user_prompt = build_user_prompt(claim_data)
-    claim_id = claim_data["claim_id"]
-    
-    last_error = None
+    system = "You output valid JSON only. No markdown, no commentary."
     
     for attempt in range(MAX_RETRIES):
         try:
             response = client.messages.create(
                 model=CLAUDE_MODEL,
                 max_tokens=1024,
-                system=SYSTEM_PROMPT,
-                messages=[{"role": "user", "content": user_prompt}]
+                system=system,
+                messages=[{"role": "user", "content": prompt}]
             )
             
-            # Extract response text
-            response_text = response.content[0].text.strip()
+            text = response.content[0].text.strip()
             
-            # Parse JSON (handle potential markdown code blocks)
-            if response_text.startswith("```"):
-                lines = response_text.split("\n")
+            # Handle markdown code blocks
+            if text.startswith("```"):
+                lines = text.split("\n")
                 json_lines = [l for l in lines if not l.startswith("```")]
-                response_text = "\n".join(json_lines)
+                text = "\n".join(json_lines)
             
-            verdict = json.loads(response_text)
+            return json.loads(text)
             
-            # Ensure claim_id is correct
-            verdict["claim_id"] = claim_id
-            
-            if attempt > 0:
-                logger.info(f"Claim {claim_id}: Succeeded after {attempt + 1} attempts")
-            
-            return verdict
-            
-        except RateLimitError as e:
-            last_error = e
+        except (RateLimitError, APIConnectionError) as e:
             delay = exponential_backoff_delay(attempt)
-            logger.warning(f"Claim {claim_id}: Rate limited, retrying in {delay:.1f}s (attempt {attempt + 1}/{MAX_RETRIES})")
+            logger.warning(f"{claim_id}/{stage}: Retrying in {delay:.1f}s - {e}")
             time.sleep(delay)
             
-        except APIConnectionError as e:
-            last_error = e
-            delay = exponential_backoff_delay(attempt)
-            logger.warning(f"Claim {claim_id}: Connection error, retrying in {delay:.1f}s (attempt {attempt + 1}/{MAX_RETRIES})")
-            time.sleep(delay)
-            
-        except APIError as e:
-            # Check if it's a retryable server error (5xx)
-            if hasattr(e, 'status_code') and 500 <= e.status_code < 600:
-                last_error = e
-                delay = exponential_backoff_delay(attempt)
-                logger.warning(f"Claim {claim_id}: Server error {e.status_code}, retrying in {delay:.1f}s (attempt {attempt + 1}/{MAX_RETRIES})")
-                time.sleep(delay)
-            else:
-                # Non-retryable API error (4xx except 429)
-                logger.error(f"Claim {claim_id}: API error (non-retryable): {e}")
-                return create_error_verdict(claim_id, f"API error: {str(e)}")
-                
         except json.JSONDecodeError as e:
-            logger.warning(f"Claim {claim_id}: Failed to parse JSON response: {e}")
-            return create_error_verdict(claim_id, f"Failed to parse model response: {str(e)}")
+            logger.warning(f"{claim_id}/{stage}: JSON parse error - {e}")
+            return None
             
         except Exception as e:
-            logger.error(f"Claim {claim_id}: Unexpected error: {e}")
-            return create_error_verdict(claim_id, f"Unexpected error: {str(e)}")
+            logger.error(f"{claim_id}/{stage}: Error - {e}")
+            return None
     
-    # All retries exhausted
-    logger.error(f"Claim {claim_id}: All {MAX_RETRIES} retries exhausted. Last error: {last_error}")
-    return create_error_verdict(claim_id, f"Max retries exceeded: {str(last_error)}")
+    return None
 
 
-def create_error_verdict(claim_id: str, error_message: str) -> dict:
-    """Create a verdict dict for error cases."""
+# ============================================================================
+# Stage 1: Claim Decomposition
+# ============================================================================
+
+def decompose_claim(client: Anthropic, claim_data: dict) -> List[SubClaim]:
+    """
+    Decompose a claim into atomic sub-claims.
+    
+    Each sub-claim represents a single verifiable fact with
+    its constraint type (temporal, capability, etc.)
+    """
+    prompt = DECOMPOSITION_PROMPT.format(
+        claim_text=claim_data["claim_text"],
+        character=claim_data["character"],
+        book_name=claim_data["book_name"]
+    )
+    
+    result = call_llm(client, prompt, claim_data["claim_id"], "decompose")
+    
+    if not result or not isinstance(result, list):
+        # Fallback: treat entire claim as single sub-claim
+        return [SubClaim(
+            id="SC1",
+            text=claim_data["claim_text"],
+            constraint_type=ConstraintType.FACTUAL,
+            parent_claim_id=claim_data["claim_id"]
+        )]
+    
+    sub_claims = []
+    for item in result:
+        try:
+            constraint_type = ConstraintType(item.get("type", "factual").lower())
+        except ValueError:
+            constraint_type = ConstraintType.FACTUAL
+            
+        sub_claims.append(SubClaim(
+            id=item.get("id", f"SC{len(sub_claims)+1}"),
+            text=item.get("text", ""),
+            constraint_type=constraint_type,
+            parent_claim_id=claim_data["claim_id"]
+        ))
+    
+    return sub_claims if sub_claims else [SubClaim(
+        id="SC1",
+        text=claim_data["claim_text"],
+        constraint_type=ConstraintType.FACTUAL,
+        parent_claim_id=claim_data["claim_id"]
+    )]
+
+
+# ============================================================================
+# Stage 2: Dual-Perspective Evidence Evaluation
+# ============================================================================
+
+def evaluate_for_support(client: Anthropic, claim_data: dict, 
+                         evidence_text: str) -> Tuple[float, str, List[str]]:
+    """
+    Seek evidence that SUPPORTS the claim.
+    Returns (confidence, reasoning, excerpts)
+    """
+    prompt = SUPPORT_SEEKING_PROMPT.format(
+        claim_text=claim_data["claim_text"],
+        character=claim_data["character"],
+        evidence_text=evidence_text
+    )
+    
+    result = call_llm(client, prompt, claim_data["claim_id"], "support")
+    
+    if not result:
+        return 0.0, "Failed to analyze support", []
+    
+    return (
+        float(result.get("support_confidence", 0.0)),
+        result.get("support_reasoning", "No reasoning"),
+        result.get("supporting_excerpts", [])
+    )
+
+
+def evaluate_for_contradiction(client: Anthropic, claim_data: dict,
+                                evidence_text: str) -> Tuple[float, str, List[str], str]:
+    """
+    Seek evidence that CONTRADICTS the claim.
+    Returns (confidence, reasoning, excerpts, violation_type)
+    
+    ANTI-BIAS: This is the key stage. We actively look for reasons
+    the claim could be FALSE, not just reasons it could be true.
+    """
+    prompt = CONTRADICTION_SEEKING_PROMPT.format(
+        claim_text=claim_data["claim_text"],
+        character=claim_data["character"],
+        evidence_text=evidence_text
+    )
+    
+    result = call_llm(client, prompt, claim_data["claim_id"], "contradict")
+    
+    if not result:
+        return 0.0, "Failed to analyze contradiction", [], "none"
+    
+    return (
+        float(result.get("contradiction_confidence", 0.0)),
+        result.get("contradiction_reasoning", "No reasoning"),
+        result.get("contradicting_excerpts", []),
+        result.get("violation_type", "none")
+    )
+
+
+# ============================================================================
+# Stage 3: Verdict Synthesis with Calibration
+# ============================================================================
+
+def synthesize_verdict(support_conf: float, support_reason: str,
+                       contradict_conf: float, contradict_reason: str,
+                       violation_type: str, sub_claims: List[SubClaim]) -> Tuple[Verdict, float, str]:
+    """
+    Synthesize final verdict from dual-perspective analysis.
+    
+    ANTI-BIAS DECISION RULES:
+    1. Any strong contradiction (>0.4) → contradicted
+    2. High support (>0.7) AND low contradiction (<0.25) → supported
+    3. Otherwise → undetermined
+    
+    This prevents the "default to supported" bias.
+    """
+    # Rule 1: Strong contradiction wins
+    if contradict_conf > CONTRADICTION_THRESHOLD:
+        confidence = min(0.95, contradict_conf + 0.1)
+        reasoning = f"Contradiction found ({violation_type}): {contradict_reason}"
+        return Verdict.CONTRADICTED, confidence, reasoning
+    
+    # Rule 2: Strong support with weak contradiction
+    if support_conf > STRONG_SUPPORT_THRESHOLD and contradict_conf < WEAK_CONTRADICTION_THRESHOLD:
+        confidence = support_conf * 0.9  # Slightly penalize
+        reasoning = f"Evidence supports claim: {support_reason}"
+        return Verdict.SUPPORTED, confidence, reasoning
+    
+    # Rule 3: Ambiguous → undetermined
+    # Check if sub-claims have mixed verdicts
+    sub_verdicts = [sc.verdict for sc in sub_claims if sc.verdict]
+    has_support = any(v == Verdict.SUPPORTED for v in sub_verdicts)
+    has_contradict = any(v == Verdict.CONTRADICTED for v in sub_verdicts)
+    
+    if has_support and has_contradict:
+        reasoning = "Mixed evidence: some sub-claims supported, others contradicted"
+    elif support_conf > contradict_conf:
+        reasoning = f"Weak support without clear contradiction: {support_reason}"
+    else:
+        reasoning = f"Insufficient evidence to verify claim"
+    
+    confidence = max(0.3, min(support_conf, 0.5))
+    return Verdict.UNDETERMINED, confidence, reasoning
+
+
+# ============================================================================
+# Main Processing Pipeline
+# ============================================================================
+
+def process_claim(client: Anthropic, claim_data: dict) -> dict:
+    """
+    Process a single claim through the 4-stage pipeline.
+    
+    Stages:
+    1. DECOMPOSE: Break into sub-claims
+    2. RETRIEVE: (already done by retriever_agent)
+    3. EVALUATE: Dual-perspective analysis
+    4. SYNTHESIZE: Calibrated verdict
+    """
+    claim_id = claim_data["claim_id"]
+    
+    # Initialize claim analysis
+    analysis = ClaimAnalysis(
+        claim_id=claim_id,
+        claim_text=claim_data["claim_text"],
+        character=claim_data.get("character", "Unknown"),
+        book_name=claim_data.get("book_name", "Unknown")
+    )
+    
+    # Stage 1: Decomposition
+    analysis.sub_claims = decompose_claim(client, claim_data)
+    logger.debug(f"{claim_id}: Decomposed into {len(analysis.sub_claims)} sub-claims")
+    
+    # Prepare evidence text
+    evidence = claim_data.get("evidence", [])
+    evidence_text = "\n\n".join([
+        f"[{e.get('temporal_slice', 'MID')}] {e['text'][:1500]}"
+        for e in evidence[:5]
+    ])
+    
+    # Categorize evidence by temporal slice
+    for e in evidence:
+        slice_name = e.get("temporal_slice", "MID")
+        if slice_name == "EARLY":
+            analysis.early_evidence.append(e)
+        elif slice_name == "LATE":
+            analysis.late_evidence.append(e)
+        else:
+            analysis.mid_evidence.append(e)
+    
+    # Stage 2: Dual-Perspective Evaluation
+    support_conf, support_reason, support_excerpts = evaluate_for_support(
+        client, claim_data, evidence_text
+    )
+    
+    time.sleep(0.5)  # Rate limit between calls
+    
+    contradict_conf, contradict_reason, contradict_excerpts, violation_type = evaluate_for_contradiction(
+        client, claim_data, evidence_text
+    )
+    
+    analysis.support_score = support_conf
+    analysis.contradiction_score = contradict_conf
+    
+    # Track violations
+    if contradict_conf > 0.3 and violation_type != "none":
+        analysis.violations.append(ConstraintViolation(
+            sub_claim_id="MAIN",
+            constraint_type=ConstraintType(violation_type) if violation_type in [e.value for e in ConstraintType] else ConstraintType.FACTUAL,
+            description=contradict_reason,
+            novel_excerpt=contradict_excerpts[0] if contradict_excerpts else "",
+            novel_position="UNKNOWN",
+            severity="DEFINITE" if contradict_conf > 0.6 else "LIKELY" if contradict_conf > 0.4 else "POSSIBLE"
+        ))
+    
+    # Stage 3: Synthesis
+    analysis.verdict, analysis.confidence, analysis.reasoning = synthesize_verdict(
+        support_conf, support_reason,
+        contradict_conf, contradict_reason,
+        violation_type, analysis.sub_claims
+    )
+    
+    # Build output dict
     return {
         "claim_id": claim_id,
-        "verdict": "undetermined",
-        "confidence": 0.0,
-        "supporting_spans": [],
-        "contradicting_spans": [],
-        "reasoning": error_message
+        "verdict": analysis.verdict.value,
+        "confidence": round(analysis.confidence, 2),
+        "supporting_spans": support_excerpts[:3],
+        "contradicting_spans": contradict_excerpts[:3],
+        "reasoning": analysis.reasoning[:300],
+        # Extended analysis for dossiers
+        "analysis": analysis.to_dict()
     }
 
 
+# ============================================================================
+# Main Entry Point
+# ============================================================================
+
 def main():
-    """Main entry point for reasoning agent."""
-    logger.info("=" * 60)
-    logger.info("REASONING AGENT - Claim Verification")
-    logger.info("=" * 60)
+    """Main entry point for multi-stage reasoning agent."""
+    print("=" * 60)
+    print("REASONING AGENT - Multi-Stage Constraint-Aware Verification")
+    print("KDSH 2026 Track A: Dual-perspective anti-bias reasoning")
+    print("=" * 60)
     
-    # Check API key
+    logger.info("Starting reasoning agent with anti-bias pipeline")
+    
     if not API_KEY:
-        logger.error("ANTHROPIC_API_KEY not set. Create .env file with your API key.")
-        print("ERROR: ANTHROPIC_API_KEY not set. Create .env file with your API key.")
-        print("  Copy .env.example to .env and add your key.")
+        print("ERROR: ANTHROPIC_API_KEY not set.")
         return
     
-    # Check evidence directory
     evidence_files = list(EVIDENCE_DIR.glob("*.json"))
     if not evidence_files:
-        logger.error(f"No evidence files found in {EVIDENCE_DIR}/")
         print(f"ERROR: No evidence files found in {EVIDENCE_DIR}/")
-        print("  Run retriever_agent.py first.")
         return
     
-    logger.info(f"Found {len(evidence_files)} evidence files")
-    logger.info(f"Using model: {CLAUDE_MODEL}")
     print(f"Found {len(evidence_files)} evidence files")
     print(f"Using model: {CLAUDE_MODEL}")
+    print(f"\nAnti-bias thresholds:")
+    print(f"  - Contradiction threshold: {CONTRADICTION_THRESHOLD}")
+    print(f"  - Strong support threshold: {STRONG_SUPPORT_THRESHOLD}")
     
-    # Initialize client
     client = Anthropic(api_key=API_KEY)
-    
-    # Create output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
-    # Check for already processed files (resumable)
+    # Check for already processed
     processed = set(f.stem for f in OUTPUT_DIR.glob("*.json"))
     remaining = [f for f in evidence_files if f.stem not in processed]
     
     if processed:
-        logger.info(f"{len(processed)} already processed, {len(remaining)} remaining")
         print(f"  {len(processed)} already processed, {len(remaining)} remaining")
     
-    # Statistics
-    stats = {"supported": 0, "contradicted": 0, "undetermined": 0, "errors": 0}
+    stats = {"supported": 0, "contradicted": 0, "undetermined": 0}
     
-    # Process claims
-    logger.info(f"Processing {len(remaining)} claims...")
-    print(f"\nProcessing {len(remaining)} claims...")
+    print(f"\nProcessing {len(remaining)} claims with 4-stage pipeline...")
+    print("(decompose → support-seek → contradict-seek → synthesize)\n")
     
     for i, evidence_file in enumerate(remaining):
         with open(evidence_file, "r", encoding="utf-8") as f:
             claim_data = json.load(f)
         
-        # Call Claude with retry
-        verdict = call_claude_with_retry(client, claim_data)
+        verdict = process_claim(client, claim_data)
+        stats[verdict["verdict"]] += 1
         
-        # Update stats
-        if "error" in verdict.get("reasoning", "").lower() or "retries" in verdict.get("reasoning", "").lower():
-            stats["errors"] += 1
-        else:
-            stats[verdict["verdict"]] = stats.get(verdict["verdict"], 0) + 1
-        
-        # Save result
         output_file = OUTPUT_DIR / f"{claim_data['claim_id']}.json"
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(verdict, f, indent=2, ensure_ascii=False)
         
-        # Progress update
-        if (i + 1) % 10 == 0 or i == len(remaining) - 1:
-            logger.info(f"Processed {i + 1}/{len(remaining)} - Last: {verdict['verdict']} ({verdict.get('confidence', 0):.2f})")
-            print(f"  Processed {i + 1}/{len(remaining)} - Last: {verdict['verdict']} ({verdict.get('confidence', 0):.2f})")
+        if (i + 1) % 5 == 0 or i == len(remaining) - 1:
+            print(f"  [{i + 1}/{len(remaining)}] {verdict['verdict']} "
+                  f"(conf={verdict['confidence']:.2f}, "
+                  f"sup={claim_data.get('support_score', 0):.2f}, "
+                  f"con={claim_data.get('contradiction_score', 0):.2f})")
         
-        # Rate limiting
-        if i < len(remaining) - 1:
-            time.sleep(RATE_LIMIT_DELAY)
+        time.sleep(RATE_LIMIT_DELAY)
     
-    # Summary
-    logger.info("=" * 60)
-    logger.info(f"Verdicts saved to {OUTPUT_DIR}/")
+    print("\n" + "=" * 60)
+    print("REASONING COMPLETE")
     print("=" * 60)
-    print(f"Verdicts saved to {OUTPUT_DIR}/")
+    print(f"  ✅ Supported: {stats['supported']}")
+    print(f"  ❌ Contradicted: {stats['contradicted']}")
+    print(f"  ⚠️  Undetermined: {stats['undetermined']}")
     
-    # Load all verdicts for final summary
-    verdicts = [json.load(open(f)) for f in OUTPUT_DIR.glob("*.json")]
-    supported = sum(1 for v in verdicts if v["verdict"] == "supported")
-    contradicted = sum(1 for v in verdicts if v["verdict"] == "contradicted")
-    undetermined = sum(1 for v in verdicts if v["verdict"] == "undetermined")
+    # Anti-bias check
+    total = sum(stats.values())
+    if total > 0:
+        supported_pct = stats['supported'] / total * 100
+        if supported_pct > 80:
+            print(f"\n⚠️  WARNING: {supported_pct:.0f}% supported - possible bias")
+            print("   Review contradiction thresholds or evidence quality")
     
-    logger.info(f"Summary - Supported: {supported}, Contradicted: {contradicted}, Undetermined: {undetermined}")
-    print(f"  Supported: {supported}")
-    print(f"  Contradicted: {contradicted}")
-    print(f"  Undetermined: {undetermined}")
-    
-    if stats["errors"] > 0:
-        logger.warning(f"Errors encountered: {stats['errors']}")
-        print(f"  Errors: {stats['errors']}")
+    logger.info(f"Completed: {stats}")
 
 
 if __name__ == "__main__":

@@ -5,6 +5,7 @@ Runs the complete pipeline from novel ingestion to results generation.
 Usage:
     python run_all.py               # Run full pipeline (uses Claude API)
     python run_all.py --local       # Run with local LLM (Ollama)
+    python run_all.py --clean       # Clear old results before running
     python run_all.py --test-mode   # Run with limited claims for testing
     python run_all.py --skip-reasoning  # Skip LLM calls
 """
@@ -12,6 +13,7 @@ Usage:
 import argparse
 import subprocess
 import sys
+import shutil
 from pathlib import Path
 import time
 
@@ -25,6 +27,30 @@ STAGES = [
     ("Dossiers", "agents/dossier_writer.py"),
     ("Results", "agents/results_aggregator.py"),
 ]
+
+# Directories to clean before fresh run
+INTERMEDIATE_DIRS = [
+    "chunks",
+    "index", 
+    "claims",
+    "evidence",
+    "verdicts",
+    "dossiers",
+    "output",
+]
+
+
+def clean_directories():
+    """Remove all intermediate directories to start fresh."""
+    print("\n🧹 Cleaning intermediate directories...")
+    for dir_name in INTERMEDIATE_DIRS:
+        dir_path = Path(dir_name)
+        if dir_path.exists():
+            shutil.rmtree(dir_path)
+            print(f"  Removed: {dir_name}/")
+        else:
+            print(f"  Skipped (not found): {dir_name}/")
+    print("  Clean complete!\n")
 
 
 def run_stage(name: str, script: str, test_mode: bool = False) -> bool:
@@ -62,6 +88,7 @@ def main():
     parser.add_argument("--test-mode", action="store_true", help="Run with limited data for testing")
     parser.add_argument("--skip-reasoning", action="store_true", help="Skip LLM reasoning stage")
     parser.add_argument("--local", action="store_true", help="Use local Ollama LLM instead of Claude API")
+    parser.add_argument("--clean", action="store_true", help="Clear all intermediate results before running (fresh start)")
     parser.add_argument("--start-from", type=str, help="Start from a specific stage", 
                         choices=["ingestion", "embedding", "claims", "retrieval", "reasoning", "dossiers", "results"])
     args = parser.parse_args()
@@ -69,6 +96,10 @@ def main():
     print("=" * 60)
     print("NovelVerified.AI - Full Pipeline Execution")
     print("=" * 60)
+    
+    # Clean intermediate directories if requested
+    if args.clean:
+        clean_directories()
     
     if args.test_mode:
         print("Running in TEST MODE (limited data)")

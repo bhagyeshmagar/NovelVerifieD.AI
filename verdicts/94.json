@@ -1,0 +1,8 @@
+{
+  "claim_id": "94",
+  "verdict": "supported",
+  "confidence": 1.0,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence from three passages in the book 'The Count of Monte Cristo' supports the claim that the character D'Avrigny gave a new sedative to political prisoners, which led to their paralysis and gave him leverage over enemies even after he himself became paralyzed."
+}

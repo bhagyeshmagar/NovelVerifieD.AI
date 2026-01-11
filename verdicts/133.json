@@ -1,0 +1,8 @@
+{
+  "claim_id": "133",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence from three passages in 'The Count of Monte Cristo' supports the claim that Dantès was interested in learning mathematics, physics, history, and modern languages to gain knowledge beyond his nautical life."
+}

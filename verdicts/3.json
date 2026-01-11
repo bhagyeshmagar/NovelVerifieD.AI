@@ -1,0 +1,8 @@
+{
+  "claim_id": "3",
+  "verdict": "supported",
+  "confidence": 1.0,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence confirms the claim that Paganel wrote New Zealand instead of Australia in the letter."
+}
