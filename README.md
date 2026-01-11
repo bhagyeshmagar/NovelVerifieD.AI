@@ -154,6 +154,37 @@ python run_all.py --skip-reasoning
 
 ---
 
+## 📦 KDSH 2026 Submission
+
+This project is built for **KDSH 2026 Track A** (RAG + LLM with Pathway).
+
+### Create Submission Package
+
+```bash
+# Generate results and create submission ZIP
+python create_submission.py
+```
+
+This creates `StrawHats_KDSH_2026.zip` with:
+- All source code
+- `results.csv` in KDSH format: `Story ID, Prediction, Rationale`
+- Configuration files
+
+### Results Format
+
+The output follows KDSH specifications:
+```csv
+Story ID,Prediction,Rationale
+95,1,Evidence confirms the claim.
+136,0,Backstory contradicts novel events.
+```
+
+Where:
+- `1` = Backstory is consistent with novel
+- `0` = Backstory is inconsistent with novel
+
+---
+
 ## 🏠 Local LLM Setup (Optional - Ollama)
 
 Run entirely on your machine with no API costs:

@@ -1,0 +1,8 @@
+{
+  "claim_id": "10",
+  "verdict": "supported",
+  "confidence": 1.0,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence confirms the claim that Professor Aronnax avoided public discussion about the sea monster."
+}

@@ -1,0 +1,8 @@
+{
+  "claim_id": "94",
+  "verdict": "supported",
+  "confidence": 1.0,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence from three passages in 'The Count of Monte Cristo' supports the claim that D'Avrigny gave a new sedative to political prisoners and used it as leverage over enemies even after paralysis set in."
+}

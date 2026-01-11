@@ -1,0 +1,13 @@
+{
+  "claim_id": "15",
+  "verdict": "supported",
+  "confidence": 0.98,
+  "supporting_spans": [
+    {
+      "start_span": 23,
+      "end_span": 47
+    }
+  ],
+  "contradicting_spans": [],
+  "reasoning": "Evidence confirms that Paganel was a prisoner among the Maoris for three days and escaped by biting his ropes."
+}

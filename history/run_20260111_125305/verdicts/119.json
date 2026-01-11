@@ -1,0 +1,8 @@
+{
+  "claim_id": "119",
+  "verdict": "supported",
+  "confidence": 0.5,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence confirms the claim."
+}

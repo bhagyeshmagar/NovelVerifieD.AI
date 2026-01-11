@@ -1,0 +1,8 @@
+{
+  "claim_id": "1",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence confirms that the sea monster was a human construction."
+}

@@ -1,0 +1,8 @@
+{
+  "claim_id": "7",
+  "verdict": "supported",
+  "confidence": 1.0,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports the claim that the team's leader insisted on travelling light and left them short of supplies."
+}

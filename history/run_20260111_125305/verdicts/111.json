@@ -1,0 +1,8 @@
+{
+  "claim_id": "111",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence confirms the claim that Morrel was deeply in love and Barrois was dying with heat and exertion."
+}

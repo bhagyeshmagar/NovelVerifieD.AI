@@ -1,7 +1,9 @@
 """
 Results Aggregator Agent - Compiles all verdicts into final results.csv.
 
-Reads all verdicts from verdicts/*.json and generates output/results.csv.
+Reads all verdicts from verdicts/*.json and generates:
+  - output/results.csv: KDSH submission format (Story ID, Prediction, Rationale)
+  - output/results_extended.csv: Extended format for dashboard
 """
 
 import json
@@ -12,7 +14,8 @@ from pathlib import Path
 VERDICTS_DIR = Path("verdicts")
 CLAIMS_FILE = Path("claims/claims.jsonl")
 OUTPUT_DIR = Path("output")
-OUTPUT_FILE = OUTPUT_DIR / "results.csv"
+OUTPUT_FILE = OUTPUT_DIR / "results.csv"  # KDSH submission format
+OUTPUT_EXTENDED = OUTPUT_DIR / "results_extended.csv"  # Extended format for dashboard
 
 # Verdict to prediction mapping
 VERDICT_MAP = {
@@ -64,43 +67,53 @@ def main():
         # Map verdict to binary prediction
         prediction = VERDICT_MAP.get(verdict["verdict"], 0)
         
-        # Create concise rationale
+        # Create concise rationale (limit to ~150 chars for KDSH format)
         reasoning = verdict.get("reasoning", "")
-        if len(reasoning) > 200:
-            reasoning = reasoning[:197] + "..."
+        if len(reasoning) > 150:
+            reasoning = reasoning[:147] + "..."
         
         results.append({
-            "id": claim_id,
+            "Story ID": claim_id,  # KDSH format
+            "Prediction": prediction,  # KDSH format
+            "Rationale": reasoning,  # KDSH format
+            # Extended fields for dashboard
             "book_name": claim_data.get("book_name", ""),
             "character": claim_data.get("character", ""),
-            "prediction": prediction,
             "verdict": verdict["verdict"],
             "confidence": verdict.get("confidence", 0),
-            "rationale": reasoning
         })
     
     # Sort by claim ID (numeric if possible)
     try:
-        results.sort(key=lambda x: int(x["id"]))
+        results.sort(key=lambda x: int(x["Story ID"]))
     except ValueError:
-        results.sort(key=lambda x: x["id"])
+        results.sort(key=lambda x: x["Story ID"])
     
     # Create output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
-    # Write CSV
+    # Write KDSH submission CSV (exactly 3 columns as required)
     with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:
-        fieldnames = ["id", "book_name", "character", "prediction", "verdict", "confidence", "rationale"]
+        fieldnames = ["Story ID", "Prediction", "Rationale"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+        writer.writeheader()
+        writer.writerows(results)
+    
+    print(f"\nSaved KDSH submission format: {OUTPUT_FILE}")
+    
+    # Write extended CSV for dashboard
+    with open(OUTPUT_EXTENDED, "w", newline="", encoding="utf-8") as f:
+        fieldnames = ["Story ID", "Prediction", "Rationale", "book_name", "character", "verdict", "confidence"]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(results)
     
-    print(f"\nSaved {len(results)} results to {OUTPUT_FILE}")
+    print(f"Saved extended format: {OUTPUT_EXTENDED}")
     
     # Summary statistics
     print("=" * 60)
-    supported = sum(1 for r in results if r["prediction"] == 1)
-    contradicted = sum(1 for r in results if r["prediction"] == 0)
+    supported = sum(1 for r in results if r["Prediction"] == 1)
+    contradicted = sum(1 for r in results if r["Prediction"] == 0)
     
     print("Summary:")
     print(f"  Total claims: {len(results)}")

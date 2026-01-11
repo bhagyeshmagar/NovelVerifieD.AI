@@ -1,0 +1,8 @@
+{
+  "claim_id": "114",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports the claim that Dantès was able to read and understand Italian, which is necessary for decoding ciphers in a fifteenth-century alchemist’s notebook."
+}

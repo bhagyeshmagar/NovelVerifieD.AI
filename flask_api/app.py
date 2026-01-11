@@ -27,7 +27,8 @@ DEBUG = os.getenv("FLASK_DEBUG", "true").lower() == "true"
 
 # Paths (relative to project root)
 PROJECT_ROOT = Path(__file__).parent.parent
-RESULTS_FILE = PROJECT_ROOT / "output" / "results.csv"
+RESULTS_FILE = PROJECT_ROOT / "output" / "results.csv"  # KDSH submission format
+RESULTS_EXTENDED = PROJECT_ROOT / "output" / "results_extended.csv"  # Dashboard format
 DOSSIERS_DIR = PROJECT_ROOT / "dossiers"
 VERDICTS_DIR = PROJECT_ROOT / "verdicts"
 EVIDENCE_DIR = PROJECT_ROOT / "evidence"
@@ -51,18 +52,28 @@ app.register_blueprint(claims_bp)
 
 @app.route("/api/results", methods=["GET"])
 def get_results():
-    """Return all results as JSON."""
-    if not RESULTS_FILE.exists():
+    """Return all results as JSON (uses extended format for dashboard)."""
+    # Use extended results for dashboard
+    results_file = RESULTS_EXTENDED if RESULTS_EXTENDED.exists() else RESULTS_FILE
+    
+    if not results_file.exists():
         return jsonify({"error": "Results file not found. Run the pipeline first."}), 404
     
     results = []
-    with open(RESULTS_FILE, "r", encoding="utf-8") as f:
+    with open(results_file, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            # Convert numeric fields
-            row["prediction"] = int(row["prediction"])
-            row["confidence"] = float(row.get("confidence", 0))
-            results.append(row)
+            # Normalize field names for frontend compatibility
+            normalized = {
+                "id": row.get("Story ID", row.get("id", "")),
+                "prediction": int(row.get("Prediction", row.get("prediction", 0))),
+                "rationale": row.get("Rationale", row.get("rationale", "")),
+                "book_name": row.get("book_name", ""),
+                "character": row.get("character", ""),
+                "verdict": row.get("verdict", ""),
+                "confidence": float(row.get("confidence", 0)),
+            }
+            results.append(normalized)
     
     return jsonify({
         "total": len(results),
@@ -118,11 +129,14 @@ def get_evidence(claim_id: str):
 @app.route("/api/stats", methods=["GET"])
 def get_stats():
     """Return summary statistics including model accuracy."""
-    if not RESULTS_FILE.exists():
+    # Use extended results for stats
+    results_file = RESULTS_EXTENDED if RESULTS_EXTENDED.exists() else RESULTS_FILE
+    
+    if not results_file.exists():
         return jsonify({"error": "Results file not found"}), 404
     
     results = []
-    with open(RESULTS_FILE, "r", encoding="utf-8") as f:
+    with open(results_file, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             results.append(row)
@@ -142,17 +156,17 @@ def get_stats():
                 elif label in ["contradictory", "contradicted"]:
                     ground_truth[claim_id] = 0
     
-    # Calculate stats
+    # Calculate stats (handle both old and new column names)
     total = len(results)
-    supported = sum(1 for r in results if int(r["prediction"]) == 1)
+    supported = sum(1 for r in results if int(r.get("Prediction", r.get("prediction", 0))) == 1)
     contradicted = total - supported
     
     # Calculate accuracy (only for claims with ground truth)
     correct = 0
     evaluated = 0
     for r in results:
-        claim_id = str(r.get("id"))
-        prediction = int(r.get("prediction", 0))
+        claim_id = str(r.get("Story ID", r.get("id", "")))
+        prediction = int(r.get("Prediction", r.get("prediction", 0)))
         if claim_id in ground_truth:
             evaluated += 1
             if prediction == ground_truth[claim_id]:
@@ -167,7 +181,7 @@ def get_stats():
         if book not in books:
             books[book] = {"total": 0, "supported": 0, "contradicted": 0}
         books[book]["total"] += 1
-        if int(r["prediction"]) == 1:
+        if int(r.get("Prediction", r.get("prediction", 0))) == 1:
             books[book]["supported"] += 1
         else:
             books[book]["contradicted"] += 1

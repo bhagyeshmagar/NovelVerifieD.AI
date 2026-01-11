@@ -1,0 +1,68 @@
+id,book_name,character,prediction,verdict,confidence,rationale
+1,20000 Leagues Under the Sea,Professor Pierre Aronnax,1,supported,0.95,Evidence confirms that the sea monster was a human construction.
+2,In Search of the Castaways,Jacques Paganel,1,supported,1.0,Evidence supports the claim that Paganel was able to learn Spanish and teach it to others on the ship.
+3,In Search of the Castaways,Jacques Paganel,1,supported,1.0,Evidence confirms the claim that Paganel wrote New Zealand instead of Australia in the letter.
+4,20000 Leagues Under the Sea,Professor Pierre Aronnax,1,supported,1.0,Evidence confirms the claim.
+5,20000 Leagues Under the Sea,Ned Land,1,supported,1.0,Evidence confirms the claim that Ned Land successfully harpooned whales during the voyage.
+6,20000 Leagues Under the Sea,Professor Pierre Aronnax,1,supported,1.0,Evidence confirms the claim that Professor Aronnax denied the existence of sea monsters.
+7,In Search of the Castaways,Jacques Paganel,1,supported,1.0,Evidence supports the claim that the team's leader insisted on travelling light and left them short of supplies.
+8,20000 Leagues Under the Sea,Commander Farragut,1,supported,1.0,Evidence confirms the claim.
+9,20000 Leagues Under the Sea,Ned Land,1,supported,1.0,Evidence confirms that Ned Land had no experience in whaling before joining the expedition.
+10,20000 Leagues Under the Sea,Professor Pierre Aronnax,1,supported,1.0,Evidence confirms the claim that Professor Aronnax avoided public discussion about the sea monster.
+15,In Search of the Castaways,Jacques Paganel,1,supported,0.98,Evidence confirms that Paganel was a prisoner among the Maoris for three days and escaped by biting his ropes.
+16,In Search of the Castaways,Jacques Paganel,1,supported,0.95,Evidence confirms that Paganel's mission was to discover the course of the Yaroo-tsang-bo-tsoo and settle whether it joins the Brahmapootra in the northeast.
+21,In Search of the Castaways,Jacques Paganel,1,supported,0.95,Evidence corroborates the information previously given by Paganel and Ayrton.
+22,In Search of the Castaways,Jacques Paganel,1,supported,1.0,Evidence from the book 'In search of the castaways' supports the claim that Paganel studied Spanish and taught others about Southern-Hemisphere geography.
+24,In Search of the Castaways,Jacques Paganel,1,supported,1.0,Evidence supports the claim that Paganel studied Spanish and taught Robert history on board the Duncan.
+27,In Search of the Castaways,Tom Ayrton/Ben Joyce,1,supported,1.0,Evidence confirms the claim text.
+28,In Search of the Castaways,Tom Ayrton/Ben Joyce,1,supported,1.0,Evidence confirms the claim.
+30,In Search of the Castaways,Tom Ayrton/Ben Joyce,1,supported,1.0,Evidence confirms the claim.
+33,In Search of the Castaways,Tom Ayrton/Ben Joyce,1,supported,1.0,Evidence corroborates the information previously given by Paganel and Ayrton.
+37,In Search of the Castaways,Tom Ayrton/Ben Joyce,1,supported,1.0,Evidence confirms the claim that Tom Ayrton was a fisherman's son who dreamed of conquering the seas.
+38,In Search of the Castaways,Tom Ayrton/Ben Joyce,1,supported,1.0,Evidence from the book 'In search of the castaways' supports the claim that Ayrton refused to surrender and was reprimanded for disrupting military order.
+42,In Search of the Castaways,Tom Ayrton/Ben Joyce,1,supported,1.0,Evidence corroborates the information previously given by Paganel and Ayrton.
+44,In Search of the Castaways,Tom Ayrton/Ben Joyce,1,supported,1.0,Evidence from three passages in the book 'In search of the castaways' supports the claim that Ayrton was obstinate during his trial.
+47,In Search of the Castaways,Thalcave,1,supported,1.0,Evidence confirms the claim.
+49,In Search of the Castaways,Thalcave,1,supported,1.0,Evidence supports the claim that the country was entirely uninhabited or disinhabited.
+51,In Search of the Castaways,Thalcave,1,supported,0.95,Evidence confirms the claim that Thalcave rode a horse named Thaouka.
+52,In Search of the Castaways,Thalcave,1,supported,1.0,Evidence confirms the claim that Thaouka was a magnificent Argentine horse of superb form.
+53,In Search of the Castaways,Thalcave,1,supported,1.0,Evidence confirms the claim that Thaouka was a magnificent and courageous horse.
+56,In Search of the Castaways,Thalcave,1,supported,1.0,Evidence confirms the claim.
+58,In Search of the Castaways,Thalcave,1,supported,0.95,"Evidence confirms that Paganel taught Quechua, Spanish and French to Robert, showed him European maps, the stars and the arithmetic of navigation."
+59,In Search of the Castaways,Thalcave,1,supported,1.0,Evidence confirms the claim that the Patagonian captain was a skilled horseman and used weapons of the chase.
+60,In Search of the Castaways,Thalcave,1,supported,1.0,Evidence confirms the claim.
+61,In Search of the Castaways,Thalcave,1,supported,0.95,Evidence supports the claim that Robert was brave and helped others in distress.
+64,In Search of the Castaways,Thalcave,1,supported,1.0,Evidence supports the claim that Thalcave hoped to meet the chiefs in whose hands he doubted not that he should find Harry Grant and rescue him and his two companions from slavery. The country seem...
+70,In Search of the Castaways,Kai-Koumou,1,supported,1.0,Evidence supports the claim that Lady Helena controlled her emotions to prevent her husband from abandoning her.
+72,In Search of the Castaways,Kai-Koumou,1,supported,1.0,Evidence confirms the claim.
+75,In Search of the Castaways,Kai-Koumou,1,supported,1.0,Evidence supports the claim that Paganel planned to feign death by volcanic eruption.
+77,In Search of the Castaways,Kai-Koumou,1,supported,1.0,Evidence confirms the claim.
+78,In Search of the Castaways,Kai-Koumou,1,supported,1.0,Evidence supports the claim that Glenarvan's life was not worth Tohonga's in the eyes of Kai-Koumou.
+80,In Search of the Castaways,Kai-Koumou,1,supported,1.0,Evidence confirms the claim.
+81,In Search of the Castaways,Kai-Koumou,1,supported,0.95,Evidence confirms the claim that Glenarvan was not a chief or priest among his people.
+82,In Search of the Castaways,Kai-Koumou,1,supported,1.0,Evidence confirms the claim.
+85,In Search of the Castaways,Kai-Koumou,1,supported,1.0,Evidence confirms the claim.
+86,In Search of the Castaways,Kai-Koumou,1,supported,1.0,Evidence confirms the claim.
+87,The Count of Monte Cristo,Noirtier,1,supported,1.0,Evidence confirms the claim.
+91,The Count of Monte Cristo,Noirtier,1,supported,0.5,Evidence from three different sources all support the claim.
+93,The Count of Monte Cristo,Noirtier,1,supported,1.0,Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that Bonaparte raised a secret army in Marseille and left traceable evidence.
+94,The Count of Monte Cristo,Noirtier,1,supported,1.0,Evidence from three passages in 'The Count of Monte Cristo' supports the claim that D'Avrigny gave a new sedative to political prisoners and used it as leverage over enemies even after paralysis se...
+95,The Count of Monte Cristo,Noirtier,1,supported,1.0,Evidence confirms the claim.
+97,The Count of Monte Cristo,Noirtier,1,supported,1.0,Evidence confirms the claim.
+101,The Count of Monte Cristo,Noirtier,1,supported,1.0,Evidence confirms the claim.
+103,The Count of Monte Cristo,Noirtier,1,supported,1.0,Evidence confirms the claim.
+110,The Count of Monte Cristo,Noirtier,1,supported,1.0,Evidence confirms the claim.
+111,The Count of Monte Cristo,Noirtier,1,supported,0.95,Evidence confirms the claim that Morrel was deeply in love and Barrois was dying with heat and exertion.
+114,The Count of Monte Cristo,Faria,1,supported,0.95,"Evidence supports the claim that Dantès was able to read and understand Italian, which is necessary for decoding ciphers in a fifteenth-century alchemist’s notebook."
+115,The Count of Monte Cristo,Faria,1,supported,1.0,Evidence confirms the claim that Dantès considered suicide after Faria's death.
+119,The Count of Monte Cristo,Faria,1,supported,0.5,Evidence confirms the claim.
+121,The Count of Monte Cristo,Faria,1,supported,1.0,Evidence confirms the claim.
+124,The Count of Monte Cristo,Faria,1,supported,0.95,Evidence confirms the claim.
+127,The Count of Monte Cristo,Faria,1,supported,0.95,Evidence confirms the claim that Dantès considered suicide after Faria's death.
+129,The Count of Monte Cristo,Faria,1,supported,0.5,Evidence confirms the claim that Dantès considered suicide after Faria's death.
+131,The Count of Monte Cristo,Faria,1,supported,0.95,Evidence confirms the claim that Dantès considered suicide after Faria's death.
+132,The Count of Monte Cristo,Faria,1,supported,0.95,Evidence supports the claim that Dantès was a star student at Rome University and fluent in several languages.
+133,The Count of Monte Cristo,Faria,1,supported,0.95,"Evidence supports the claim that Dantès was interested in learning mathematics, physics, history, and modern languages from the abbé."
+135,The Count of Monte Cristo,Faria,1,supported,1.0,Evidence confirms the claim that Edmond Dantès was a Bonapartist who took an active part in the return from Elba.
+136,The Count of Monte Cristo,Faria,1,supported,0.95,Evidence confirms that the abbé Faria was the secretary and intimate friend of Cardinal Spada.
+140,The Count of Monte Cristo,Faria,1,supported,1.0,Evidence supports the claim that Dantès considered suicide after Faria's death.

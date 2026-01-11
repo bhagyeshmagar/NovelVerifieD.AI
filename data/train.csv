@@ -1,11 +1,1 @@
 id,book_name,char,caption,content,label
-1,20000 Leagues Under the Sea,Professor Pierre Aronnax,,Professor Aronnax believed the sea monster could be a gigantic narwhal.,consistent
-2,20000 Leagues Under the Sea,Commander Farragut,,Commander Farragut was convinced that the sea monster truly existed.,consistent
-3,20000 Leagues Under the Sea,Ned Land,,Ned Land was a highly skilled Canadian harpooner.,consistent
-4,20000 Leagues Under the Sea,Professor Pierre Aronnax,,Professor Aronnax joined the Abraham Lincoln to help investigate the sea monster.,consistent
-5,20000 Leagues Under the Sea,Ned Land,,Ned Land successfully harpooned whales during the voyage.,consistent
-6,20000 Leagues Under the Sea,Professor Pierre Aronnax,,Professor Aronnax completely denied the existence of any sea monster.,contradict
-7,20000 Leagues Under the Sea,Ned Land,,Ned Land believed from the start that the monster was a mechanical submarine.,contradict
-8,20000 Leagues Under the Sea,Commander Farragut,,Commander Farragut refused to hunt the monster due to fear of failure.,consistent
-9,20000 Leagues Under the Sea,Ned Land,,Ned Land had no experience in whaling before joining the expedition.,contradict
-10,20000 Leagues Under the Sea,Professor Pierre Aronnax,,Professor Aronnax avoided public discussion about the sea monster.,contradict

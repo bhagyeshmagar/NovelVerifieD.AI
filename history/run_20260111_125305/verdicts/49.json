@@ -1,0 +1,8 @@
+{
+  "claim_id": "49",
+  "verdict": "supported",
+  "confidence": 1.0,
+  "supporting_spans": [],
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports the claim that the country was entirely uninhabited or disinhabited."
+}
