@@ -1,8 +1,0 @@
-{
-  "claim_id": "41",
-  "verdict": "supported",
-  "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence 1 and Evidence 2 both mention the name 'Ayrton', which is not mentioned in the claim text. However, Evidence 3 mentions the name 'Ben Joyce', which matches the claim text."
-}

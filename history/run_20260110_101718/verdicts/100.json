@@ -1,8 +1,0 @@
-{
-  "claim_id": "100",
-  "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that the person described in the text was involved with Bonapartist clubs and had knowledge of Napoleon's landing in France."
-}

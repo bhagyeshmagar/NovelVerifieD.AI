@@ -1,0 +1,57 @@
+{
+  "claim_id": "113",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "to reading and studying these one hundred and fifty volumes, till I knew them nearly by heart; so that since I have been in prison, a very slight effort of memory has enabled me to recall their contents as readily as though the pages were open before me. I could recite you the whole of Thucydides, Xenophon, Plutarch, Titus Livius, Tacitus, Strada, Jornandes, Dante, Montaigne, Shakespeare, Spinoza, Machiavelli, and Bossuet.",
+    "I know nearly one thousand words, which is all that is absolutely necessary, although I believe there are nearly one hundred thousand in the dictionaries. I cannot hope to be"
+  ],
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports: The evidence from the novel directly states that Faria has a vast knowledge of various languages and is able to recite famous works of literature. This supports the claim that he was born into a theological family who studied ancient manuscripts and wrote poetry in several tongues",
+  "analysis": {
+    "claim_id": "113",
+    "claim_text": "Born in Parma to a theological family—his father studied ancient manuscripts, his mother wrote poetry in several tongues.",
+    "character": "Faria",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Born in Parma to a theological family.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "His father studied ancient manuscripts.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "His mother wrote poetry in several tongues.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.0,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The evidence from the novel directly states that Faria has a vast knowledge of various languages and is able to recite famous works of literature. This supports the claim that he was born into a theological family who studied ancient manuscripts and wrote poetry in several tongues."
+  }
+}

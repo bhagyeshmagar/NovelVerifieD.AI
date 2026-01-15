@@ -1,8 +1,0 @@
-{
-  "claim_id": "31",
-  "verdict": "supported",
-  "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from the book 'In search of the castaways' supports the claim text."
-}

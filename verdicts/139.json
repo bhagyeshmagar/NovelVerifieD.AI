@@ -1,0 +1,59 @@
+{
+  "claim_id": "139",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "So the matter ended for the Abbé Faria. He remained in his cell, and this visit only increased the belief in his insanity.",
+    "The very madness of the Abbé Faria, gone mad in prison, condemned him to perpetual solitude."
+  ],
+  "contradicting_spans": [
+    "Faria remained in his cell, and this visit only increased the belief in his insanity."
+  ],
+  "reasoning": "Contradiction (factual): The claim is that Faria's liberty was sustained by Enlightenment ideals, but the evidence shows that he remained in prison and this visit only increased his insanity.",
+  "analysis": {
+    "claim_id": "139",
+    "claim_text": "Enlightenment ideals of liberty, equality and fraternity sustained him, turning even the dungeon into a classroom for hope.",
+    "character": "Faria",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Enlightenment ideals of liberty, equality and fraternity sustained him.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Even in the dungeon, he found hope.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "The dungeon became a classroom for him.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The claim is that Faria's liberty was sustained by Enlightenment ideals, but the evidence shows that he remained in prison and this visit only increased his insanity."
+  }
+}

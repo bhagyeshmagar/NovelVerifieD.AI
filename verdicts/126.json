@@ -1,0 +1,48 @@
+{
+  "claim_id": "126",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Faria's fate was to solve the problem of life at its source, even at the risk of horrible suffering.",
+    "Dantès recoiled from the idea of so infamous a death, and passed suddenly from despair."
+  ],
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports: The evidence suggests that Faria's persecution and eventual madness were a result of his desire for revenge against the injustices he suffered, which ultimately led to his death.",
+  "analysis": {
+    "claim_id": "126",
+    "claim_text": "His sister was burned as a witch for spurning a nobleman; the injustice fed a lifelong hatred of institutional rot.",
+    "character": "Faria",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "His sister was burned as a witch for spurning a nobleman.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "The injustice fed a lifelong hatred of institutional rot.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.0,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The evidence suggests that Faria's persecution and eventual madness were a result of his desire for revenge against the injustices he suffered, which ultimately led to his death."
+  }
+}

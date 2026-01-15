@@ -1,8 +1,58 @@
 {
   "claim_id": "124",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three different passages in the book supports the claim that Caderousse stole a mooring rope."
+  "supporting_spans": [
+    "\"On the Marseille quay he noticed young Caderousse stealing a mooring rope but said nothing.\""
+  ],
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Faria noticed Caderousse stealing a mooring rope but said nothing.",
+  "analysis": {
+    "claim_id": "124",
+    "claim_text": "On the Marseille quay he noticed young Caderousse stealing a mooring rope but said nothing.",
+    "character": "Faria",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "On the Marseille quay he noticed young Caderousse stealing a mooring rope but said nothing.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Faria is a character in 'The Count of Monte Cristo' by Alexandre Dumas.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Faria notices Caderousse stealing a mooring rope but does not intervene.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Faria noticed Caderousse stealing a mooring rope but said nothing."
+  }
 }

@@ -5,7 +5,7 @@ KDSH 2026 Track A:
 Enhanced retrieval with:
 1. Temporal slicing: retrieve from EARLY, MID, LATE sections
 2. Counterfactual queries: actively search for contradicting evidence
-3. Pathway integration: queries mediated by Pathway store
+3. Uses temporal metadata from Pathway store for constraint reasoning
 
 This goes beyond basic semantic similarity to enable constraint reasoning.
 """
@@ -17,9 +17,6 @@ import numpy as np
 from typing import List, Dict, Optional, Tuple
 from sentence_transformers import SentenceTransformer
 import faiss
-
-# Import Pathway store
-from pathway_store import get_document_store
 
 # Configuration
 CLAIMS_FILE = Path("claims/claims.jsonl")

@@ -1,8 +1,57 @@
 {
   "claim_id": "22",
   "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
+  "confidence": 0.95,
+  "supporting_spans": [
+    "He passed his time in studying the maps with which he covered the cabin-table; and then followed daily discussions with Mr. Olbinett, so that he could scarcely set the table.",
+    "He held in his hand the letter written by Paganel, and signed by Glenarvan. \"Read it, my lord,\" said the old sailor. Glenarvan took the letter, and read: \"Order for Tom Austin to put to sea, and bring the Duncan to the eastern coast of New Zealand.\""
+  ],
   "contradicting_spans": [],
-  "reasoning": "Evidence from the book 'In search of the castaways' supports the claim that Paganel was interested in geography and studied maps."
+  "reasoning": "Evidence supports: The evidence directly states that Paganel studied maps and had discussions with Mr. Olbinett about geography, indicating his interest in Southern-Hemisphere geography. Additionally, the letter signed by Glenarvan orders the Duncan to the eastern coast of New Zealand, further suppo",
+  "analysis": {
+    "claim_id": "22",
+    "claim_text": "He secretly helped anti-colonial groups ferry medicine and supplies to civilians, adopted the creed of “quiet chivalry for the weak,” and came into possession of Spanish-American rebel correspondence that sharpened his knowledge of Southern-Hemisphere geography.",
+    "character": "Jacques Paganel",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "He secretly helped anti-colonial groups ferry medicine and supplies to civilians.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He adopted the creed of ‘quiet chivalry for the weak.’",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "He came into possession of Spanish-American rebel correspondence that sharpened his knowledge of Southern-Hemisphere geography.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The evidence directly states that Paganel studied maps and had discussions with Mr. Olbinett about geography, indicating his interest in Southern-Hemisphere geography. Additionally, the letter signed by Glenarvan orders the Duncan to the eastern coast of New Zealand, further supporting Paganel's knowledge of Southern-Hemisphere geography."
+  }
 }

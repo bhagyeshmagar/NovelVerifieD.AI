@@ -16,6 +16,11 @@ import sys
 import shutil
 from pathlib import Path
 import time
+import os
+
+# Suppress TensorFlow/oneDNN warnings
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress TF INFO/WARNING logs
 
 # Pipeline stages in order
 STAGES = [

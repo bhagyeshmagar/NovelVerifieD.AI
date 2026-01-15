@@ -1,0 +1,68 @@
+{
+  "claim_id": "71",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "under cover of the night. But since Glenarvan's conversation with the chief, it seemed wise to abandon this design. They must be patient.",
+    "Kai-Koumou, who had hitherto controlled himself, trembled with rage, and his countenance was flushed with a fierce exultation."
+  ],
+  "contradicting_spans": [
+    "Direct contradiction found in evidence"
+  ],
+  "reasoning": "Contradiction (factual): The claim is that Kai-Koumou let troops burn an empty village and battered them with captured European cannon, but the evidence shows that Kai-Koumou was patient and waited for a better opportunity to negotiate.",
+  "analysis": {
+    "claim_id": "71",
+    "claim_text": "During the north-island war he let troops burn an empty village, lured them into a swamp and battered them with captured European cannon; the victory won him the name “Bone-Eater,” but shrapnel crippled his left leg and he thereafter leaned on a peach-wood staff carved with sea-monster totems.",
+    "character": "Kai-Koumou",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "During the north-island war he let troops burn an empty village, lured them into a swamp and battered them with captured European cannon; the victory won him the name “Bone-Eater,” but shrapnel crippled his left leg and he thereafter leaned on a peach-wood staff carved with sea-monster totems.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He let troops burn an empty village.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "He lured them into a swamp and battered them with captured European cannon.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "The victory won him the name “Bone-Eater.”",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The claim is that Kai-Koumou let troops burn an empty village and battered them with captured European cannon, but the evidence shows that Kai-Koumou was patient and waited for a better opportunity to negotiate."
+  }
+}

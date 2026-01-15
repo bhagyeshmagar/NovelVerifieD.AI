@@ -1,8 +1,68 @@
 {
   "claim_id": "59",
-  "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence confirms the claim."
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Thalcave whistled in a peculiar manner.",
+    "Glenarvan thought that he preferred to go on foot, according to the custom of certain guides; and indeed, his long legs ought to have made walking easy."
+  ],
+  "contradicting_spans": [
+    "At eight o'clock the next morning Thalcave gave the signal for departure."
+  ],
+  "reasoning": "Contradiction (temporal): The character is not shown to have escaped captivity or returned to the mountains.",
+  "analysis": {
+    "claim_id": "59",
+    "claim_text": "Posing as a relay-station hand, he slipped captivity, returned to the mountains and stayed alive with rope-climbing and avalanche-reading skills.",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "He posed as a relay-station hand.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He slipped captivity.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "He returned to the mountains.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "He stayed alive with rope-climbing and avalanche-reading skills.",
+        "type": "capability",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The character is not shown to have escaped captivity or returned to the mountains."
+  }
 }

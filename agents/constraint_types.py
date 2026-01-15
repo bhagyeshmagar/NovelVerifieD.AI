@@ -191,7 +191,7 @@ Output JSON array of sub-claims:
 Extract 2-5 sub-claims. Each should be independently verifiable."""
 
 
-SUPPORT_SEEKING_PROMPT = """Find evidence that SUPPORTS this claim being TRUE.
+SUPPORT_SEEKING_PROMPT = """Analyze if the evidence SUPPORTS this claim.
 
 CLAIM: "{claim_text}"
 CHARACTER: "{character}"
@@ -199,21 +199,26 @@ CHARACTER: "{character}"
 EVIDENCE FROM NOVEL:
 {evidence_text}
 
-What specific passages confirm or are consistent with this claim?
-Focus on:
+You MUST find specific passages that confirm this claim. Look for:
 - Direct statements matching the claim
-- Events that would require the claim to be true
-- Character knowledge/actions consistent with the claim
+- Events consistent with the claim
+- Character actions that support the claim
 
-Output JSON:
+Be DECISIVE - avoid neutral scores. Use these guidelines:
+- 0.9: Clear, direct evidence supports the claim
+- 0.7: Strong indirect evidence supports the claim  
+- 0.4: Weak/ambiguous evidence
+- 0.1: No supporting evidence found
+
+Output ONLY valid JSON:
 {{
-  "supporting_excerpts": ["quote1", "quote2"],
-  "support_confidence": 0.0-1.0,
-  "support_reasoning": "one sentence"
+  "supporting_excerpts": ["exact quote from evidence", "another quote"],
+  "support_confidence": 0.9,
+  "support_reasoning": "one sentence explaining why"
 }}"""
 
 
-CONTRADICTION_SEEKING_PROMPT = """Find evidence that CONTRADICTS this claim or makes it IMPOSSIBLE.
+CONTRADICTION_SEEKING_PROMPT = """Analyze if the evidence CONTRADICTS this claim.
 
 CLAIM: "{claim_text}"
 CHARACTER: "{character}"
@@ -221,19 +226,23 @@ CHARACTER: "{character}"
 EVIDENCE FROM NOVEL:
 {evidence_text}
 
-What specific passages conflict with or disprove this claim?
-Focus on:
-- Direct contradictions
-- Impossible timelines (events that can't both be true)
-- Missing knowledge the character should have
-- Actions incompatible with the claimed background
+Look for passages that DISPROVE the claim:
+- Direct contradictions with the claim
+- Timeline inconsistencies
+- Character actions incompatible with the claim
 
-Output JSON:
+Be DECISIVE - avoid neutral scores. Use these guidelines:
+- 0.9: Clear contradiction found in evidence
+- 0.7: Strong evidence against the claim
+- 0.3: Weak/ambiguous contradiction
+- 0.1: No contradicting evidence found
+
+Output ONLY valid JSON:
 {{
-  "contradicting_excerpts": ["quote1", "quote2"],
-  "contradiction_confidence": 0.0-1.0,
-  "contradiction_reasoning": "one sentence",
-  "violation_type": "temporal|capability|commitment|world_rule|factual|none"
+  "contradicting_excerpts": ["exact quote from evidence", "another quote"],
+  "contradiction_confidence": 0.1,
+  "contradiction_reasoning": "one sentence explaining why",
+  "violation_type": "temporal|capability|factual|none"
 }}"""
 
 

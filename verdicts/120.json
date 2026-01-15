@@ -1,0 +1,59 @@
+{
+  "claim_id": "120",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "He invented a “salt-blood” ink that revealed under heat, used it to help a Corsican patriot escape, and was transferred to the more secure Château d’If for the trouble.",
+    "One day we received a letter. I should tell you that we lived in the little village of Rogliano, at the extremity of Cap Corse. This letter was from my brother."
+  ],
+  "contradicting_spans": [
+    "Faria told Dantès that he had received a letter from his brother, who was asking for money to be sent to him at Nîmes. Faria also tried to move towards Dantès' cell and said that half of the treasure belonged to him."
+  ],
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Faria was transferred to the Château d'If for the trouble he had caused. The evidence shows that Faria was asking for money from Dantès and trying to move towards him, indicating that he was not in a secure location.",
+  "analysis": {
+    "claim_id": "120",
+    "claim_text": "He invented a “salt-blood” ink that revealed under heat, used it to help a Corsican patriot escape, and was transferred to the more secure Château d’If for the trouble.",
+    "character": "Faria",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "He invented a ‘salt-blood’ ink that revealed under heat.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He used the ink to help a Corsican patriot escape.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "He was transferred to the more secure Château d’If for the trouble.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Faria was transferred to the Château d'If for the trouble he had caused. The evidence shows that Faria was asking for money from Dantès and trying to move towards him, indicating that he was not in a secure location."
+  }
+}

@@ -3,10 +3,43 @@
                     Team StrawHats - KDSH 2026 Track A
 ================================================================================
 
-LAST UPDATED: January 11, 2026
+LAST UPDATED: January 12, 2026
 
 ================================================================================
-SECTION 1: PROBLEM STATEMENT SUMMARY
+SECTION 1: QUICK START
+================================================================================
+
+PREREQUISITES:
+- Python 3.10+
+- Node.js 18+ (for frontend)
+- Ollama (https://ollama.ai) with a model installed
+
+INSTALLATION:
+1. Extract the ZIP file
+2. Run setup script:
+   chmod +x setup.sh
+   ./setup.sh
+
+3. Or manually:
+   pip install -r requirements.txt
+   cd frontend && npm install && cd ..
+
+RUNNING THE SYSTEM:
+1. Start the Backend API:
+   python flask_api/app.py
+
+2. Start the Frontend Dashboard (new terminal):
+   cd frontend && npm run dev
+   > Open http://localhost:5173
+
+3. Run Pipeline:
+   Use the "Pipeline" tab in the Dashboard to Start/Stop/Monitor verification.
+   Terminal 1: python flask_api/app.py
+   Terminal 2: cd frontend && npm run dev
+   Open: http://localhost:5173
+
+================================================================================
+SECTION 2: PROBLEM STATEMENT
 ================================================================================
 
 TASK: Verify whether hypothetical character backstories are CONSISTENT or 
@@ -21,111 +54,55 @@ OUTPUT (results.csv):
 - Prediction: 1 (consistent) or 0 (contradicted)
 - Rationale: Short explanation (1-2 lines)
 
-TRACK A REQUIREMENTS (What we're following):
-1. MUST use Pathway framework for at least one part of the pipeline
-   - Ingesting narrative data ✓
-   - Storing/indexing novels
-   - Retrieval over long documents
-   - Document store/orchestration
-
-2. CAN use any modeling approach:
-   - Transformer-based LLMs ✓ (Claude API / Ollama)
-   - Agentic pipelines ✓ (7-agent architecture)
-   - Classical NLP pipelines
-   - Hybrid approaches
-   - Rerankers, classifiers, heuristics
-
-EVALUATION CRITERIA:
-- Accuracy on classification task
-- Novelty in NLP/GenAI methods (beyond basic RAG)
-- Handling of long context (chunking, retrieval, coherence)
+TRACK A REQUIREMENTS:
+1. MUST use Pathway framework for document processing ✓
+2. CAN use any modeling approach (we use Ollama LLMs) ✓
 
 ================================================================================
-SECTION 2: CURRENT ARCHITECTURE
-================================================================================
-
-Our system uses a 7-AGENT PIPELINE:
-
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                              DATA SOURCES                                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│   data/novels/*.txt          │         data/train.csv & test.csv            │
-│   (Full novel texts)         │         (Claims to verify)                   │
-└─────────────────────┬────────┴───────────────────┬──────────────────────────┘
-                      │                            │
-                      ▼                            ▼
-┌─────────────────────────────┐    ┌─────────────────────────────┐
-│    AGENT 1: INGESTION       │    │    AGENT 3: CLAIM PARSER    │
-│    (ingestion_agent.py)     │    │    (claim_parser.py)        │
-│    - Uses Pathway framework │    │    - Reads train.csv/test.csv│
-│    - Chunks novels          │    │    - Extracts claims        │
-│    - 1400 tokens/chunk      │    │    - Outputs claims.jsonl   │
-│    - 300 token overlap      │    │                             │
-└─────────────────────┬───────┘    └─────────────────┬───────────┘
-                      │                              │
-                      ▼                              │
-┌─────────────────────────────┐                      │
-│    AGENT 2: EMBEDDING       │                      │
-│    (embedding_agent.py)     │                      │
-│    - Uses sentence-transformers                    │
-│    - Model: all-MiniLM-L6-v2│                      │
-│    - Creates FAISS index    │                      │
-└─────────────────────┬───────┘                      │
-                      │                              │
-                      ▼                              ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                       AGENT 4: RETRIEVER                                     │
-│                       (retriever_agent.py)                                   │
-│    - For each claim, finds relevant novel chunks                            │
-│    - Semantic search using FAISS                                            │
-│    - Returns top-k most relevant passages as evidence                       │
-└─────────────────────────────────────────────────────┬───────────────────────┘
-                                                      │
-                                                      ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                       AGENT 5: REASONING                                     │
-│                       (reasoning_agent.py OR reasoning_agent_local.py)       │
-│    - Claude API (cloud) OR Ollama (local)                                    │
-│    - Analyzes claim vs evidence                                             │
-│    - Outputs: verdict, confidence, supporting/contradicting spans           │
-└─────────────────────┬───────────────────────────────┬───────────────────────┘
-                      │                               │
-                      ▼                               ▼
-┌─────────────────────────────┐    ┌─────────────────────────────┐
-│    AGENT 6: DOSSIER         │    │    AGENT 7: AGGREGATOR      │
-│    (dossier_writer.py)      │    │    (results_aggregator.py)  │
-│    - Markdown reports       │    │    - KDSH format CSV        │
-│    - Human-readable         │    │    - Story ID, Prediction,  │
-│                             │    │      Rationale              │
-└─────────────────────────────┘    └─────────────────────────────┘
-
-================================================================================
-SECTION 3: DIRECTORY STRUCTURE
+SECTION 3: PROJECT STRUCTURE
 ================================================================================
 
 StrawHats_KDSH_2026/
-├── agents/                      # Pipeline agents (7 total)
+├── Data/                        # Source data
+│   ├── In search of the castaways.txt
+│   ├── The Count of Monte Cristo.txt
+│   ├── train.csv                # Training claims with labels
+│   └── test.csv                 # Test claims to verify
+├── agents/                      # Pipeline agents (11 files)
 │   ├── ingestion_agent.py       # Chunks novels (Pathway integration)
 │   ├── embedding_agent.py       # Creates FAISS vector index
 │   ├── claim_parser.py          # Parses CSV claims
-│   ├── retriever_agent.py       # RAG retrieval
+│   ├── retriever_agent.py       # Temporal-aware RAG retrieval
 │   ├── reasoning_agent.py       # Claude API reasoning
-│   ├── reasoning_agent_local.py # Ollama local reasoning
-│   ├── dossier_writer.py        # Markdown reports
-│   └── results_aggregator.py    # Final CSV output
-├── data/
-│   ├── novels/                  # Novel .txt files
-│   ├── train.csv                # Training claims with labels
-│   └── test.csv                 # Test claims to verify
-├── flask_api/                   # Dashboard backend
+│   ├── reasoning_agent_local.py # Ollama local reasoning (4-stage)
+│   ├── constraint_types.py      # Constraint type definitions
+│   ├── dossier_writer.py        # Structured dossier generation
+│   ├── results_aggregator.py    # Final CSV output
+│   ├── pathway_store.py         # Pathway document store
+│   └── utils.py                 # Shared utilities
+├── flask_api/                   # Dashboard backend (6 files)
 │   ├── app.py                   # Main API server
 │   ├── claims.py                # Claims management
-│   ├── upload.py                # File upload
-│   └── history.py               # Run history
-├── frontend/                    # React dashboard
+│   ├── history.py               # Run history
+│   ├── pipeline.py              # Pipeline execution control
+│   ├── pipeline_api.py          # Pipeline REST endpoints
+│   └── upload.py                # File handling
+├── frontend/                    # Modern React Dashboard
+│   ├── src/                     # Source code
+│   │   ├── components/          # Reusable UI components
+│   │   ├── pages/               # Application pages (Dashboard, Pipeline, etc.)
+│   │   └── services/            # API integration
+│   ├── package.json             # NPM dependencies
+│   └── vite.config.js           # Vite configuration
+├── tests/                       # Unit tests
 ├── run_all.py                   # Pipeline orchestrator
-├── create_submission.py         # Creates submission ZIP
-└── requirements.txt             # Python dependencies
+├── setup.sh                     # Installation script
+├── requirements.txt             # Python dependencies
+├── README.md                    # Quick start guide
+├── REPORT.md                    # Technical report
+├── TRACK_A_JUSTIFICATION.md     # Track A compliance
+├── .env.example                 # Environment template
+└── .gitignore                   # Git exclusions
 
 GENERATED DIRECTORIES (after running pipeline):
 ├── chunks/                      # Chunked novel text (JSONL)
@@ -133,112 +110,112 @@ GENERATED DIRECTORIES (after running pipeline):
 ├── claims/                      # Parsed claims (JSONL)
 ├── evidence/                    # Retrieved passages per claim
 ├── verdicts/                    # LLM verdicts (JSON)
-├── dossiers/                    # Markdown reports
+├── dossiers/                    # Structured Markdown reports
+├── pathway_store/               # Pathway document store
 └── output/
-    ├── results.csv              # KDSH submission format
-    └── results_extended.csv     # Extended format for dashboard
+    └── results.csv              # KDSH submission format
 
 ================================================================================
-SECTION 4: HOW THE PIPELINE WORKS
+SECTION 4: SYSTEM ARCHITECTURE
 ================================================================================
 
-STEP 1: INGESTION (ingestion_agent.py)
-----------------------------------------
-- Reads all .txt files from data/novels/
-- Uses Pathway framework for document loading (Track A requirement)
-- Chunks each novel into segments:
-  - Chunk size: 1400 tokens
-  - Overlap: 300 tokens (preserves context across chunks)
-- Output: chunks/chunks.jsonl
+7-AGENT PIPELINE with ANTI-BIAS REASONING:
 
-STEP 2: EMBEDDING (embedding_agent.py)
-----------------------------------------
-- Loads chunks from chunks.jsonl
-- Uses sentence-transformers model (all-MiniLM-L6-v2)
-- Creates 384-dimensional embeddings for each chunk
-- Builds FAISS index for fast similarity search
-- Output: index/faiss.index, index/meta.pkl
-
-STEP 3: CLAIM PARSING (claim_parser.py)
-----------------------------------------
-- Reads data/train.csv and data/test.csv
-- Extracts claims with: id, book_name, character, content
-- Output: claims/claims.jsonl
-
-STEP 4: RETRIEVAL (retriever_agent.py)
-----------------------------------------
-- For each claim:
-  - Embeds the claim text
-  - Searches FAISS index for similar chunks
-  - Returns top-k (default 10) most relevant passages
-- Output: evidence/{claim_id}.json
-
-STEP 5: REASONING (reasoning_agent.py or reasoning_agent_local.py)
--------------------------------------------------------------------
-- For each claim + evidence:
-  - Sends to LLM (Claude API or Ollama)
-  - Prompts LLM to determine: SUPPORTED or CONTRADICTED
-  - Returns: verdict, confidence, reasoning
-- Output: verdicts/{claim_id}.json
-
-STEP 6: DOSSIER WRITING (dossier_writer.py)
---------------------------------------------
-- Creates human-readable Markdown reports
-- Links evidence to claims
-- Output: dossiers/{claim_id}.md
-
-STEP 7: RESULTS AGGREGATION (results_aggregator.py)
-----------------------------------------------------
-- Collects all verdicts
-- Maps: supported -> 1, contradicted -> 0
-- Creates KDSH-compliant CSV
-- Output: output/results.csv
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              DATA SOURCES                                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│   Data/*.txt                  │         Data/train.csv & test.csv           │
+│   (Full novel texts)          │         (Claims to verify)                  │
+└─────────────────────┬─────────┴────────────────────┬────────────────────────┘
+                      │                              │
+                      ▼                              ▼
+┌─────────────────────────────┐    ┌─────────────────────────────┐
+│    AGENT 1: INGESTION       │    │    AGENT 3: CLAIM PARSER    │
+│    - Uses Pathway framework │    │    - Reads train.csv/test.csv│
+│    - Chunks novels          │    │    - Outputs claims.jsonl   │
+│    - EARLY/MID/LATE tags    │    │                             │
+└─────────────────────┬───────┘    └─────────────────┬───────────┘
+                      │                              │
+                      ▼                              │
+┌─────────────────────────────┐                      │
+│    AGENT 2: EMBEDDING       │                      │
+│    - sentence-transformers  │                      │
+│    - Creates FAISS index    │                      │
+└─────────────────────┬───────┘                      │
+                      │                              │
+                      ▼                              ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       AGENT 4: RETRIEVER                                     │
+│    - Temporal-aware retrieval (EARLY/MID/LATE slices)                       │
+│    - Counterfactual queries for contradiction-seeking                       │
+└─────────────────────────────────────────────────────┬───────────────────────┘
+                                                      │
+                                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       AGENT 5: REASONING (4-STAGE PIPELINE)                  │
+│                       (reasoning_agent_local.py - uses Ollama)               │
+│                                                                              │
+│    Stage 1: DECOMPOSE - Break claim into atomic sub-claims                  │
+│    Stage 2: EVALUATE SUPPORT - Seek supporting evidence                     │
+│    Stage 3: EVALUATE CONTRADICTION - Seek contradicting evidence (ANTI-BIAS)│
+│    Stage 4: SYNTHESIZE - Calibrated verdict with thresholds                 │
+└─────────────────────┬───────────────────────────────┬───────────────────────┘
+                      │                               │
+                      ▼                               ▼
+┌─────────────────────────────┐    ┌─────────────────────────────┐
+│    AGENT 6: DOSSIER         │    │    AGENT 7: AGGREGATOR      │
+│    - Constraint-linked docs │    │    - KDSH format CSV        │
+│    - Temporal evidence      │    │    - Story ID, Prediction,  │
+└─────────────────────────────┘    │      Rationale              │
+                                   └─────────────────────────────┘
 
 ================================================================================
 SECTION 5: HOW TO RUN
 ================================================================================
 
-OPTION 1: Full Pipeline with Claude API
-----------------------------------------
-python run_all.py
-
-OPTION 2: Full Pipeline with Local LLM (Ollama)
-------------------------------------------------
-python run_all.py --local
-
-OPTION 3: Clean Run (removes old results)
-------------------------------------------
+OPTION 1: Full Pipeline (Recommended)
+--------------------------------------
 python run_all.py --local --clean
 
-OPTION 4: Run Specific Stage
+OPTION 2: With Frontend Dashboard
+----------------------------------
+# Terminal 1: Start backend
+python flask_api/app.py
+
+# Terminal 2: Start frontend
+cd frontend && npm run dev
+
+# Open http://localhost:5173 and click "Run Pipeline"
+
+OPTION 3: Run Specific Stage
 -----------------------------
 python run_all.py --start-from reasoning
 
-OPTION 5: Skip Reasoning (use cached verdicts)
------------------------------------------------
-python run_all.py --skip-reasoning
-
 ================================================================================
-SECTION 6: PATHWAY INTEGRATION (Track A Requirement)
+SECTION 6: ANTI-BIAS REASONING (Key Innovation)
 ================================================================================
 
-Pathway is integrated in: agents/ingestion_agent.py
+PROBLEM: LLMs tend to find supporting evidence even for false claims.
 
-The ingestion agent:
-1. Imports Pathway framework
-2. Logs Pathway availability status
-3. Can use Pathway for document loading
+SOLUTION: Dual-Perspective Evaluation
 
-Current status: Pathway is INSTALLED and available
+1. SUPPORT-SEEKING PROMPT:
+   "Actively search for evidence that SUPPORTS this claim..."
+   
+2. CONTRADICTION-SEEKING PROMPT:
+   "Actively search for evidence that CONTRADICTS this claim..."
 
-When you run the pipeline, you should see:
-"✓ Pathway framework detected - Track A compliant"
+CALIBRATED THRESHOLDS:
+- CONTRADICTION_THRESHOLD = 0.6 (High bar - hard to mark contradicted)
+- STRONG_SUPPORT_THRESHOLD = 0.5 (Moderate bar for support)
+
+This prevents both over-eager support AND over-eager contradiction.
 
 ================================================================================
 SECTION 7: OUTPUT FORMAT (KDSH Submission)
 ================================================================================
 
-The results.csv file follows EXACTLY this format:
+The results.csv file follows this format:
 
 Story ID,Prediction,Rationale
 95,1,Evidence confirms the claim about Villefort...
@@ -250,119 +227,47 @@ Where:
 - Rationale: 1-2 line explanation
 
 ================================================================================
-SECTION 8: SUBMISSION PACKAGE
+SECTION 8: TECHNOLOGIES USED
 ================================================================================
 
-Run: python create_submission.py
-
-This creates: StrawHats_KDSH_2026.zip containing:
-- All source code (agents/, flask_api/, frontend/)
-- Configuration files (requirements.txt, run_all.py, etc.)
-- results.csv (KDSH format)
-
-STILL NEEDED:
-- Report PDF (max 10 pages) describing approach
-
-================================================================================
-SECTION 9: CURRENT ISSUES / NOTES
-================================================================================
-
-ISSUE 1: Old Results Persisting
--------------------------------
-SOLUTION: Use --clean flag to remove old results
-Command: python run_all.py --local --clean
-
-ISSUE 2: Processing Wrong Claims
----------------------------------
-The pipeline was processing old evidence files from previous runs.
-SOLUTION: The --clean flag now removes all intermediate directories.
-
-ISSUE 3: Model Predicting All "Supported"
-------------------------------------------
-The local LLM (Ollama) may be biased toward "supported" verdicts.
-This could happen if:
-- Evidence retrieved is always positive
-- LLM prompt needs refinement
-- Need to calibrate confidence thresholds
-
-================================================================================
-SECTION 10: WHAT MAKES THIS TRACK A COMPLIANT
-================================================================================
-
-✓ Uses Pathway framework for document ingestion
-✓ Uses RAG (Retrieval-Augmented Generation) pipeline
-✓ Uses LLM for reasoning (Claude or Ollama)
-✓ Handles long context via chunking + overlap
-✓ Produces structured evidence rationale
-✓ Outputs KDSH-compliant results.csv
-
-================================================================================
-SECTION 11: TECHNOLOGIES USED
-================================================================================
-
-PYTHON PACKAGES:
-- pathway: Document processing framework (Track A requirement)
-- faiss-cpu: Vector similarity search
-- sentence-transformers: Text embeddings
-- anthropic: Claude API client
-- tiktoken: Token counting
-- flask: Web API framework
-- flask-cors: CORS support
-- pandas: Data manipulation
+PYTHON PACKAGES (requirements.txt):
+- pathway>=0.4.0           # Document processing (Track A)
+- faiss-cpu>=1.7.4         # Vector similarity search
+- sentence-transformers    # Text embeddings
+- requests                 # HTTP client for Ollama
+- tiktoken                 # Token counting
+- flask, flask-cors        # Web API framework
+- pandas, numpy            # Data manipulation
 
 FRONTEND:
-- React 18
-- Vite
-- Tailwind CSS
+- React 18 + Vite              # Build tool & Framework
+- Tailwind CSS                 # Utility-first styling
+- Lucide React                 # Iconography
+- Recharts                     # Data Visualization
 
-LLM OPTIONS:
-- Claude API (claude-3-5-sonnet-20241022)
-- Ollama (mistral, phi3, llama3.2)
+LLM:
+- Ollama (mistral:7b-instruct-q4_0 recommended)
 
 ================================================================================
-SECTION 12: FILE DESCRIPTIONS
+SECTION 9: TROUBLESHOOTING
 ================================================================================
 
-run_all.py
-----------
-Main pipeline orchestrator. Runs all 7 agents in sequence.
-Flags: --local, --clean, --test-mode, --skip-reasoning, --start-from
+ISSUE: "Ollama not found"
+SOLUTION: Install from https://ollama.ai, then run:
+   ollama pull mistral:7b-instruct-q4_0
 
-create_submission.py
---------------------
-Creates KDSH submission ZIP file with code and results.
+ISSUE: "Module not found" errors
+SOLUTION: Ensure virtual environment is activated:
+   source .venv/bin/activate
+   pip install -r requirements.txt
 
-agents/ingestion_agent.py
--------------------------
-Chunks novels into overlapping segments. Uses Pathway for Track A.
+ISSUE: Pipeline fails at Reasoning stage
+SOLUTION: Check Ollama is running:
+   ollama serve
 
-agents/embedding_agent.py
--------------------------
-Creates FAISS vector index from chunks.
-
-agents/claim_parser.py
-----------------------
-Parses train.csv and test.csv into claims.jsonl.
-
-agents/retriever_agent.py
--------------------------
-Retrieves relevant passages for each claim using FAISS.
-
-agents/reasoning_agent.py
--------------------------
-Uses Claude API to determine verdict for each claim.
-
-agents/reasoning_agent_local.py
--------------------------------
-Uses Ollama (local LLM) to determine verdict for each claim.
-
-agents/dossier_writer.py
-------------------------
-Generates Markdown reports linking evidence to claims.
-
-agents/results_aggregator.py
----------------------------
-Compiles all verdicts into KDSH-format results.csv.
+ISSUE: Frontend won't start
+SOLUTION: Install Node.js dependencies:
+   cd frontend && npm install
 
 ================================================================================
 END OF DOCUMENTATION

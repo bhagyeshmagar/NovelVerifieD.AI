@@ -1,8 +1,68 @@
 {
   "claim_id": "97",
   "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three passages in the book confirms that Barrois' symptoms were instantly recognizable to the protagonist due to knowledge gathered while experimenting on prisoners."
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Noirtier raised his eyes to heaven.",
+    "“Do you know of what he died!” asked d’Avrigny, placing his hand on Noirtier’s shoulder."
+  ],
+  "contradicting_spans": [
+    "Barrois took the glass, and, raising it to his purple lips, took about half of the liquid offered him."
+  ],
+  "reasoning": "Evidence supports: These excerpts directly mention Noirtier's ability to recognize Barrois' symptoms instantly, which supports the claim that knowledge gathered while experimenting on prisoners allowed him to do so.",
+  "analysis": {
+    "claim_id": "97",
+    "claim_text": "**Poison Mastery**: Knowledge gathered while experimenting on prisoners let him recognise Barrois’ symptoms instantly (Book II of the original novel).",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Poison Mastery: Knowledge gathered while experimenting on prisoners let him recognise Barrois’ symptoms instantly.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Noirtier was a scientist who conducted experiments on living beings.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Noirtier's experiments were unethical and inhumane.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "Noirtier was a brilliant scientist who made significant contributions to the field of chemistry.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: These excerpts directly mention Noirtier's ability to recognize Barrois' symptoms instantly, which supports the claim that knowledge gathered while experimenting on prisoners allowed him to do so."
+  }
 }

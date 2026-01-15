@@ -1,8 +1,50 @@
 {
   "claim_id": "37",
   "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three passages in the book 'In search of the castaways' supports the claim that Tom Ayrton was born near Exeter to a fisherman father, retired naval petty-officer James Ayrton; his mother died young and he was reared by his elder brother Benjamin, learning tides and wind signs on fishing trips while secretly studying the Nautical Almanac and dreaming of 'conquering the seas.'"
+  "confidence": 0.95,
+  "supporting_spans": [
+    "The quartermaster made his preparations for departure, aided by the two sailors, one of whom attended to his horse, and the other to his provisions.",
+    "Glenarvan informed them of the quartermaster's presence on board. At the same time he declared his intention of sending for him."
+  ],
+  "contradicting_spans": [
+    "The quartermaster made his preparations for departure, aided by the two sailors, one of whom attended to his horse, and the other to his provisions."
+  ],
+  "reasoning": "Evidence supports: The evidence suggests that Tom Ayrton was a sailor who served as a quartermaster on the ship 'Duncan'. He was involved in a plot to mutiny and take over the ship.",
+  "analysis": {
+    "claim_id": "37",
+    "claim_text": "Tom Ayrton was born near Exeter to a fisherman father, retired naval petty-officer James Ayrton; his mother died young and he was reared by his elder brother Benjamin, learning tides and wind signs on fishing trips while secretly studying the Nautical Almanac and dreaming of “conquering the seas.”",
+    "character": "Tom Ayrton/Ben Joyce",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Tom Ayrton was born near Exeter to a fisherman father, retired naval petty-officer James Ayrton; his mother died young and he was reared by his elder brother Benjamin.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Tom Ayrton learned tides and wind signs on fishing trips while secretly studying the Nautical Almanac and dreaming of ‘conquering the seas.’",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The evidence suggests that Tom Ayrton was a sailor who served as a quartermaster on the ship 'Duncan'. He was involved in a plot to mutiny and take over the ship."
+  }
 }

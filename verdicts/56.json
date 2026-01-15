@@ -1,8 +1,50 @@
 {
   "claim_id": "56",
-  "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports the claim that Captain Grant was a prisoner of one of these tribes and had been carried to the south."
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "At eight o'clock the next morning Thalcave gave the signal for departure.",
+    "Thalcave whistled in a peculiar manner. Immediately a magnificent Argentine horse, of superb form, issued from a small wood near by, and approached at the call of his master."
+  ],
+  "contradicting_spans": [
+    "At eight o'clock the next morning Thalcave gave the signal for departure."
+  ],
+  "reasoning": "Contradiction (temporal): The claim is that Thalcave declined payment and asked only that the credit go to 'the spirit of the plains'. However, in this excerpt, it is stated that Thalcave gave a signal for departure at eight o'clock. This contradicts the claim that Thalcave did not receive payment.",
+  "analysis": {
+    "claim_id": "56",
+    "claim_text": "After predicting an earthquake and saving the entire party he declined payment, asking only that the credit go to “the spirit of the plains.”",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Thalcave predicted an earthquake and saved the entire party.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Thalcave declined payment, asking only that the credit go to ‘the spirit of the plains.’",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The claim is that Thalcave declined payment and asked only that the credit go to 'the spirit of the plains'. However, in this excerpt, it is stated that Thalcave gave a signal for departure at eight o'clock. This contradicts the claim that Thalcave did not receive payment."
+  }
 }

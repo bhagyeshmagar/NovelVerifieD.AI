@@ -1,0 +1,59 @@
+{
+  "claim_id": "50",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Thalcave smiled with his accustomed calmness.",
+    "Glenarvan sank upon the ground, overcome, in despair."
+  ],
+  "contradicting_spans": [
+    "Thalcave and Glenarvan rushed out of the ramada. Already the plain had resumed its tranquillity, and they could scarcely distinguish a moving line which undulated afar in the shadows of the night."
+  ],
+  "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Thalcave saved an old shepherd bitten by a viper and taught him that a guide's duty is to keep life moving.",
+  "analysis": {
+    "claim_id": "50",
+    "claim_text": "He saved an old shepherd bitten by a viper; in gratitude the man gave him a secret map of pampas water-holes and taught him that a guide’s duty is to keep life moving.",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "He saved an old shepherd bitten by a viper.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "In gratitude, the man gave him a secret map of pampas water-holes.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "The old shepherd taught Thalcave that a guide’s duty is to keep life moving.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Thalcave saved an old shepherd bitten by a viper and taught him that a guide's duty is to keep life moving."
+  }
+}

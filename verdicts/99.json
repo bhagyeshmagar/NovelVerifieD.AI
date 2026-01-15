@@ -1,0 +1,50 @@
+{
+  "claim_id": "99",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Direct statement: \"Ah, how strange it seems that such a young and beautiful woman should be so avaricious.\", \"But could you not compromise matters, and give up a portion of your fortune to her son?\"",
+    "Direct statement: \"Valentine started. \\\"A friend, Maximilian; and w\""
+  ],
+  "contradicting_spans": [
+    "Noirtier evidently intends making me his heir."
+  ],
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Noirtier intended to make Valentine de Villefort his heir.",
+  "analysis": {
+    "claim_id": "99",
+    "claim_text": "Born into a Parisian legal family, he absorbed his father’s staunch republicanism and his mother’s gentler sensibility, learning to balance reason with feeling.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Born into a Parisian legal family.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Absorbed his father’s staunch republicanism and his mother’s gentler sensibility.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Noirtier intended to make Valentine de Villefort his heir."
+  }
+}

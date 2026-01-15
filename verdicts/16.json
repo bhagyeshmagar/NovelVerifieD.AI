@@ -1,8 +1,59 @@
 {
   "claim_id": "16",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence confirms that Paganel's mission was to discover the course of the Yaroo-tsang-bo-tsoo and settle whether it joins the Brahmapootra in the northeast."
+  "supporting_spans": [
+    "Jacques Paganel's hearers now knew the reason of his presence on board. The Frenchman, mistaking the vessel, had embarked while the crew of the Duncan were engaged in the ceremony at Saint Mungo.",
+    "He held in his hand the letter written by Paganel, and signed by Glenarvan. \"Read it, my lord,\" said the old sailor. Glenarvan took the letter, and read: \"Order for Tom Austin to put to sea, and bring the Duncan to the eastern coast of New Zealand.\""
+  ],
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (factual): The character of Jacques Paganel in the novel contradicts the claim that he was born in Calcutta to a British merchant family and his father kept the accounts for the East India Company. In fact, the character is described as a Frenchman who embarked on the vessel by mistake",
+  "analysis": {
+    "claim_id": "16",
+    "claim_text": "Born in Calcutta to a British merchant family, his father kept the accounts for the East India Company and his mother was a French nurse.",
+    "character": "Jacques Paganel",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Born in Calcutta to a British merchant family.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "His father kept the accounts for the East India Company.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "His mother was a French nurse.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The character of Jacques Paganel in the novel contradicts the claim that he was born in Calcutta to a British merchant family and his father kept the accounts for the East India Company. In fact, the character is described as a Frenchman who embarked on the vessel by mistake and had letters from Lord Somerset to the governor-general of India."
+  }
 }

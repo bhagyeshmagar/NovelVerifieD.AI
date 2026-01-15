@@ -1,62 +1,141 @@
 Story ID,Prediction,Rationale,book_name,character,verdict,confidence
-1,1,Evidence from three different passages in the book confirms that Abbé Faria betrayed Edmond Dantès to the prison authorities.,The Count of Monte Cristo,Abbé Faria,supported,0.95
-2,1,Evidence from three passages in the book 'In search of the castaways' supports the claim that Paganel knows Spanish and Portuguese.,In Search of the Castaways,Jacques Paganel,supported,1.0
-3,1,Evidence confirms the claim that Paganel wrote New Zealand instead of Australia in the letter.,In Search of the Castaways,Jacques Paganel,supported,1.0
-7,1,Evidence from three passages in the book 'In search of the castaways' supports the claim.,In Search of the Castaways,Jacques Paganel,supported,1.0
-15,1,Evidence confirms the claim that Paganel was a prisoner of the Maori tribe and escaped after three days.,In Search of the Castaways,Jacques Paganel,supported,0.97
-16,1,Evidence confirms that Paganel's mission was to discover the course of the Yaroo-tsang-bo-tsoo and settle whether it joins the Brahmapootra in the ...,In Search of the Castaways,Jacques Paganel,supported,0.95
-21,1,Evidence corroborates the information previously given by Paganel and Ayrton.,In Search of the Castaways,Jacques Paganel,supported,0.95
-22,1,Evidence from the book 'In search of the castaways' supports the claim that Paganel was interested in geography and studied maps.,In Search of the Castaways,Jacques Paganel,supported,1.0
-24,1,Evidence confirms the claim.,In Search of the Castaways,Jacques Paganel,supported,1.0
-27,1,Evidence confirms the claim.,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,1.0
-28,1,Evidence confirms the claim.,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,1.0
-30,1,Evidence confirms the claim.,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,1.0
-33,1,Evidence corroborates the information previously given by Paganel and Ayrton.,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,1.0
-37,1,Evidence from three passages in the book 'In search of the castaways' supports the claim that Tom Ayrton was born near Exeter to a fisherman father...,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,1.0
-38,1,Evidence from the book 'In search of the castaways' supports the claim that Ayrton was obstinate and refused to be questioned during his trial.,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,1.0
-42,1,Evidence corroborates the information previously given by Paganel and Ayrton.,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,1.0
-44,1,Evidence from three passages in the book 'In search of the castaways' supports the claim that Ayrton was obstinate during his trial.,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,1.0
-47,1,Evidence confirms the claim.,In Search of the Castaways,Thalcave,supported,1.0
-49,1,Evidence supports the claim that the country seemed to be entirely uninhabited or disinhabited.,In Search of the Castaways,Thalcave,supported,1.0
-51,1,Evidence confirms the claim that Thalcave was a brave horseman who saved Robert.,In Search of the Castaways,Thalcave,supported,0.98
-52,1,Evidence confirms the claim that Thaouka was a magnificent Argentine horse of superb form.,In Search of the Castaways,Thalcave,supported,1.0
-53,1,Evidence confirms the claim.,In Search of the Castaways,Thalcave,supported,1.0
-56,1,Evidence supports the claim that Captain Grant was a prisoner of one of these tribes and had been carried to the south.,In Search of the Castaways,Thalcave,supported,1.0
-58,1,"Evidence supports the claim that Paganel taught Dantès Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navig...",In Search of the Castaways,Thalcave,supported,1.0
-59,1,Evidence confirms the claim.,In Search of the Castaways,Thalcave,supported,1.0
-60,1,Evidence confirms the claim.,In Search of the Castaways,Thalcave,supported,1.0
-61,1,Evidence supports the claim that Robert was brave and helped others in distress.,In Search of the Castaways,Thalcave,supported,0.95
-64,1,Evidence confirms the claim.,In Search of the Castaways,Thalcave,supported,1.0
-70,1,Evidence confirms the claim.,In Search of the Castaways,Kai-Koumou,supported,1.0
-72,1,Evidence confirms the claim.,In Search of the Castaways,Kai-Koumou,supported,1.0
-75,1,Evidence supports the claim that Paganel planned to feign being consumed by a volcano in order to convince Kai-Koumou of their death and escape the...,In Search of the Castaways,Kai-Koumou,supported,1.0
-77,1,Evidence confirms the claim.,In Search of the Castaways,Kai-Koumou,supported,1.0
-78,1,Evidence supports the claim that Glenarvan's life was not worth Tohonga's in the eyes of Kai-Koumou.,In Search of the Castaways,Kai-Koumou,supported,1.0
-80,1,Evidence confirms the claim.,In Search of the Castaways,Kai-Koumou,supported,1.0
-81,1,Evidence from the book 'In search of the castaways' supports the claim that Glenarvan offered to ransom Tohonga in exchange for the lives of his co...,In Search of the Castaways,Kai-Koumou,supported,0.95
-82,1,Evidence confirms the claim.,In Search of the Castaways,Kai-Koumou,supported,1.0
-85,1,Evidence confirms the claim.,In Search of the Castaways,Kai-Koumou,supported,1.0
-86,1,Evidence supports the claim that Glenarvan valued life and kept his word.,In Search of the Castaways,Kai-Koumou,supported,1.0
-87,1,Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that M. Noirtier de Villefort suffered a rupture ...,The Count of Monte Cristo,Noirtier,supported,1.0
-91,1,Evidence from three different sources all support the claim.,The Count of Monte Cristo,Noirtier,supported,0.5
-93,1,Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that Napoleon secretly raised an army in Marseill...,The Count of Monte Cristo,Noirtier,supported,1.0
-94,1,Evidence from three passages in the book 'The Count of Monte Cristo' supports the claim that the character D'Avrigny gave a new sedative to politic...,The Count of Monte Cristo,Noirtier,supported,1.0
-95,1,Evidence confirms the claim.,The Count of Monte Cristo,Noirtier,supported,1.0
-97,1,Evidence from three passages in the book confirms that Barrois' symptoms were instantly recognizable to the protagonist due to knowledge gathered w...,The Count of Monte Cristo,Noirtier,supported,1.0
-101,1,Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that the person described in the text joined a ra...,The Count of Monte Cristo,Noirtier,supported,1.0
-103,1,Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that Napoleon distanced himself from former comra...,The Count of Monte Cristo,Noirtier,supported,1.0
-110,1,Evidence confirms the claim.,The Count of Monte Cristo,Noirtier,supported,1.0
-111,1,Evidence from three passages in the book 'The Count of Monte Cristo' supports the claim that M. Noirtier sent for Morrel to come quickly and that M...,The Count of Monte Cristo,Noirtier,supported,0.95
-114,1,Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that Dantès was able to read and understand Italian.,The Count of Monte Cristo,Faria,supported,0.95
-115,1,Evidence from three passages in 'The Count of Monte Cristo' supports the claim that Dantès contemplated suicide after Faria's death.,The Count of Monte Cristo,Faria,supported,1.0
-119,1,Evidence from three passages in the book 'The Count of Monte Cristo' supports the claim that Faria was the secretary and intimate friend of Cardina...,The Count of Monte Cristo,Faria,supported,0.5
-121,1,Evidence confirms the claim.,The Count of Monte Cristo,Faria,supported,0.95
-124,1,Evidence from three different passages in the book supports the claim that Caderousse stole a mooring rope.,The Count of Monte Cristo,Faria,supported,0.95
-127,1,Evidence confirms the claim that Dantès considered suicide after Faria's death.,The Count of Monte Cristo,Faria,supported,0.95
-129,1,Evidence supports the claim that Dantès considered suicide after Faria's death.,The Count of Monte Cristo,Faria,supported,0.5
-131,1,Evidence confirms that Dantès considered suicide after the death of his friend Faria.,The Count of Monte Cristo,Faria,supported,0.95
-132,1,Evidence supports the claim that Dantès was a star student at Rome University and fluent in several languages.,The Count of Monte Cristo,Faria,supported,0.95
-133,1,"Evidence from three passages in 'The Count of Monte Cristo' supports the claim that Dantès was interested in learning mathematics, physics, history...",The Count of Monte Cristo,Faria,supported,0.95
-135,1,Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that Edmond Dantès was a Bonapartist who took an ...,The Count of Monte Cristo,Faria,supported,1.0
-136,1,"Evidence from three passages in the book 'The Count of Monte Cristo' supports the claim that Faria was rational and logical, and had a treasure to ...",The Count of Monte Cristo,Faria,supported,0.95
-140,1,Evidence confirms the claim.,The Count of Monte Cristo,Faria,supported,1.0
+1,1,Evidence supports: Jacques Paganel's actions suggest that he was passionate about geography and had a strong interest in exploring new lands. His d...,In Search of the Castaways,Jacques Paganel,supported,0.95
+2,0,"Contradiction (factual): The claim states that Paganel was made to stand as punishment for secretly studying Latin in the church school. However, t...",In Search of the Castaways,Jacques Paganel,contradicted,0.95
+3,1,Evidence supports: The evidence directly states that Paganel received a letter from Glenarvan with orders to sail to New Zealand.,In Search of the Castaways,Jacques Paganel,supported,0.95
+4,0,Contradiction (factual): The claim is directly contradicted by Paganel's statement that Captain Grant is not in the place he was thought to be.,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+5,0,Contradiction (factual): The claim is directly contradicted by Paganel's statement that they were seeking Captain Grant in the wrong place.,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+6,0,Contradiction (temporal): The evidence directly contradicts the claim by describing a fierce argument between Captain Grant and Jacques Paganel ove...,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+7,0,Contradiction (factual): The character of Jacques Paganel in the novel contradicts the claim that he insisted on travelling light and left the team...,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+8,1,Evidence supports: These excerpts show that Paganel was able to win the trust of the native tribe by sketching star-maps and in return learned trac...,In Search of the Castaways,Jacques Paganel,supported,0.95
+9,0,"Contradiction (capability): The claim states that Paganel accidentally slipped a farewell letter into an academic report, which ended the romance. ...",In Search of the Castaways,Jacques Paganel,contradicted,0.95
+10,0,"Contradiction (factual): The evidence contradicts the claim that Paganel was expelled by British colonists along the Murray River. Instead, he is s...",In Search of the Castaways,Jacques Paganel,contradicted,0.95
+11,1,Evidence supports: The evidence directly states that Paganel escaped from the pah and had a letter signed by Glenarvan.,In Search of the Castaways,Jacques Paganel,supported,0.95
+12,0,Contradiction (factual): The character's statement directly contradicts the claim that he declined to take part in charting the maiden voyage of th...,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+13,0,Contradiction (temporal): The character's actions directly contradict the claim.,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+14,0,Contradiction (factual): This contradicts the claim that Paganel and MacNabb confirmed their identities by exchanging certain hand signs.,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+15,1,Evidence supports: The excerpts provide direct evidence that Paganel learned to gauge a tribe's degree of civilization by studying their bone ornam...,In Search of the Castaways,Jacques Paganel,supported,0.95
+16,0,Contradiction (factual): The character of Jacques Paganel in the novel contradicts the claim that he was born in Calcutta to a British merchant fam...,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+17,1,"Evidence supports: These statements suggest that Paganel has difficulty with English, which could be due to his upbringing in both languages.",In Search of the Castaways,Jacques Paganel,supported,0.95
+18,1,"Evidence supports: The excerpt directly states that Jacques Paganel found bribery entries in his father's old ledgers and reported them, which supp...",In Search of the Castaways,Jacques Paganel,supported,0.95
+19,0,Contradiction (factual): The character of Jacques Paganel does not match the claim that he was posted to a Mediterranean merchant fleet where he le...,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+20,1,Evidence supports: The excerpt directly states that Jacques Paganel's injury and subsequent recovery were due to his failed attempt to save a drown...,In Search of the Castaways,Jacques Paganel,supported,0.95
+21,0,Contradiction (factual): The evidence from the novel directly contradicts the claim that the Royal Navy frigate HMS Austin promoted Jacques Paganel...,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+22,1,"Evidence supports: The evidence directly states that Paganel studied maps and had discussions with Mr. Olbinett about geography, indicating his int...",In Search of the Castaways,Jacques Paganel,supported,0.95
+23,0,Contradiction (factual): The evidence directly contradicts the claim by stating that Paganel was not entrusted with the care of his toddler half-br...,In Search of the Castaways,Jacques Paganel,contradicted,0.95
+24,1,Evidence supports: The evidence directly states that Jacques Paganel proposed a South-American trade route and was recommended for a berth on Capta...,In Search of the Castaways,Jacques Paganel,supported,0.95
+25,1,"Evidence supports: Jacques Paganel's actions suggest that he was searching for something specific, possibly related to Captain Grant.",In Search of the Castaways,Jacques Paganel,supported,0.95
+26,0,"Contradiction (factual): The claim states that Glenarvan was shot by a sailor named Ben Joyce, but the evidence shows that Ayrton shot Glenarvan.",In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+27,0,Contradiction (factual): The claim states that Ayrton lost hearing in his left ear after being beaten for secretly poring over a captain's charts. ...,In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+28,1,Evidence supports: The excerpts contain direct statements from Ayrton that suggest he was involved in the plot against Glenarvan.,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.95
+29,0,Contradiction (factual): This excerpt directly contradicts the claim that Ben Joyce was not present at the time of the hanging.,In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+30,1,Evidence supports: The evidence suggests that Tom Ayrton/Ben Joyce joined a pirate crew and became second mate within three years. He also found am...,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.95
+31,1,Evidence supports: These excerpts directly state that Ben Joyce (Tom Ayrton) rescued the indigenous elder Yurook from colonists and gained tribal p...,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.95
+32,1,"Evidence supports: Glenarvan addresses Ayrton specifically for advice, indicating that he values his knowledge of the country and customs of the na...",In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.95
+33,0,Contradiction (factual): The evidence contradicts the claim that Tom Ayrton/Ben Joyce volunteered for Captain Grant's crew chiefly to spy on the co...,In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+34,1,Evidence supports: The excerpts provide direct evidence that Tom Ayrton found a ship's paper mentioning an illicit Australian land deal by a Britis...,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.95
+35,0,Contradiction (factual): The evidence directly contradicts the claim that Ayrton marooned Captain Grant in a botched silencing. The revolver shot a...,In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+36,0,"Contradiction (factual): The claim is that the Bible-quoting habit was a mask for emotions, but the evidence shows that Ayrton pulled out a revolve...",In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+37,1,Evidence supports: The evidence suggests that Tom Ayrton was a sailor who served as a quartermaster on the ship 'Duncan'. He was involved in a plot...,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.95
+38,1,"Evidence supports: These excerpts show that Ayrton was present and actively involved in the events leading up to Glenarvan's death, which supports ...",In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.95
+39,0,Contradiction (factual): The evidence contradicts the claim that Tom Ayrton/Ben Joyce adopted the alias Ben Joyce and formed a mentor-friend bond w...,In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+40,0,"Contradiction (factual): The evidence shows that Ayrton shot and killed Glenarvan, which contradicts the claim that he secretly stitched soldiers' ...",In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+41,0,Contradiction (factual): This passage directly contradicts the claim that Tom Ayrton/Ben Joyce unwittingly helped a black-marketeer dodge duty and ...,In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+42,1,Evidence supports: Unable to parse LLM response - using conservative default,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.5
+43,0,"Contradiction (character): The character of Ayrton is described as confident, with a sullen look, set teeth, and clenched fists. This contradicts t...",In Search of the Castaways,Tom Ayrton/Ben Joyce,contradicted,0.95
+44,1,Evidence supports: The evidence from the novel shows that Ayrton's diary confessed both self-loathing for the betrayal and relief that no one knew ...,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.95
+45,1,Evidence supports: This direct statement from the novel confirms that Tom Ayrton/Ben Joyce took actions to show his regret and repentance after wit...,In Search of the Castaways,Tom Ayrton/Ben Joyce,supported,0.95
+46,0,Contradiction (factual): The claim states that Thalcave's father was the last of the tribal guides and that he knew the pampas geography and animal...,In Search of the Castaways,Thalcave,contradicted,0.95
+47,1,"Evidence supports: The evidence suggests that Thalcave had a horse named Thaouka, which he used to travel. The horse was given as a gift by Glenarv...",In Search of the Castaways,Thalcave,supported,0.95
+48,0,Contradiction (factual): The evidence contradicts the claim that Thalcave guarded his tribe's herb lore and nature beliefs while working as a gauch...,In Search of the Castaways,Thalcave,contradicted,0.95
+49,0,"Contradiction (factual): The claim is that Thalcave lived in the Andean border wilds for two years and encountered pumas and bandits. However, the ...",In Search of the Castaways,Thalcave,contradicted,0.95
+50,0,Contradiction (temporal): The evidence contradicts the claim that Thalcave saved an old shepherd bitten by a viper and taught him that a guide's du...,In Search of the Castaways,Thalcave,contradicted,0.95
+51,1,"Evidence supports: The excerpts show that Thalcave was present at the time of the attack and the death of Glenarvan, and he played a significant ro...",In Search of the Castaways,Thalcave,supported,0.95
+52,1,Evidence supports: The evidence shows that Thalcave is a skilled horseman who has tamed a wild horse using ancient Tehuelche methods.,In Search of the Castaways,Thalcave,supported,0.95
+53,1,"Evidence supports: The claim is supported by direct statements from the evidence that Thalcave whistled to call his horse, Thaouka, and Robert clos...",In Search of the Castaways,Thalcave,supported,0.9
+54,1,Evidence supports: The evidence from the novel supports the claim that Thalcave briefly loved Chilean doctor Mariana by showing his desire to meet ...,In Search of the Castaways,Thalcave,supported,0.95
+55,1,Evidence supports: The evidence from the novel suggests that Thalcave altered the route to protect sacred Indian sites. The passage mentions that T...,In Search of the Castaways,Thalcave,supported,0.9
+56,0,"Contradiction (temporal): The claim is that Thalcave declined payment and asked only that the credit go to 'the spirit of the plains'. However, in ...",In Search of the Castaways,Thalcave,contradicted,0.95
+57,0,Contradiction (factual): The character of Thalcave contradicts the claim that he raised the protagonist in a mountain mission.,In Search of the Castaways,Thalcave,contradicted,0.95
+58,1,"Evidence supports: These excerpts directly state that Paganel taught Thalcave Quechua, Spanish and French, showed him European maps, the stars and ...",In Search of the Castaways,Thalcave,supported,0.95
+59,0,Contradiction (temporal): The character is not shown to have escaped captivity or returned to the mountains.,In Search of the Castaways,Thalcave,contradicted,0.95
+60,0,"Contradiction (factual): The claim is that Thalcave led a night dig that saved eight survivors, among them French geographer Roux. However, the evi...",In Search of the Castaways,Thalcave,contradicted,0.95
+61,0,Contradiction (factual): The evidence contradicts the claim that Thalcave seized his little sister Nawee.,In Search of the Castaways,Thalcave,contradicted,0.95
+62,1,Evidence supports: The claim is supported by direct statements from the evidence indicating that Thalcave acted calmly and confidently in the face ...,In Search of the Castaways,Thalcave,supported,0.9
+63,0,Contradiction (factual): The character Thalcave does not learn enough nautical English to converse with Captain Horace and the sailors.,In Search of the Castaways,Thalcave,contradicted,0.95
+64,1,Evidence supports: The evidence from the novel directly states that Thalcave rescued Harry Grant and his companions from slavery and helped them es...,In Search of the Castaways,Thalcave,supported,0.95
+65,0,"Contradiction (factual): The claim is that Thalcave handled canoe, coast and jungle with equal ease. However, the evidence shows that Thalcave stru...",In Search of the Castaways,Thalcave,contradicted,0.95
+66,0,Contradiction (capability): Thalcave is not a guide for the South-American interior as claimed.,In Search of the Castaways,Thalcave,contradicted,0.95
+67,1,Evidence supports: The evidence directly states that Kai-Koumou saw his father ambushed by British musket squad and his mother tattooed a vengeance...,In Search of the Castaways,Kai-Koumou,supported,0.95
+68,0,"Contradiction (factual): The claim states that Kai-Koumou was the reincarnation of a sun-devouring warrior, but the evidence contradicts this by me...",In Search of the Castaways,Kai-Koumou,contradicted,0.95
+69,0,Contradiction (factual): The character Kai-Koumou is not involved in a succession struggle or poisoning incident at seventeen years old.,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+70,1,Evidence supports: The evidence from the novel supports the claim by describing Kai-Koumou's actions and emotions in a way that suggests he is capa...,In Search of the Castaways,Kai-Koumou,supported,0.9
+71,0,"Contradiction (factual): The claim is that Kai-Koumou let troops burn an empty village and battered them with captured European cannon, but the evi...",In Search of the Castaways,Kai-Koumou,contradicted,0.95
+72,0,Contradiction (factual): The evidence directly contradicts the claim that Kai-Koumou trained twelve English-speaking youths as spies and sent them ...,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+73,0,Contradiction (factual): The evidence shows that Kai-Koumou was not present when the books were burned.,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+74,1,Evidence supports: There is no direct evidence in the provided excerpt to support this claim.,In Search of the Castaways,Kai-Koumou,supported,0.65
+75,0,Contradiction (factual): The character Kai-Koumou does not view volcanic eruptions as divine punishment against colonizers.,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+76,1,Evidence supports: Direct statement from the novel that confirms Kai-Koumou carried a pocket watch with a lock of Julia's hair.,In Search of the Castaways,Kai-Koumou,supported,0.95
+77,0,Contradiction (factual): The evidence directly contradicts the claim that Glenarvan was rescued by Wallace and left behind a bird-of-paradise pictu...,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+78,0,Contradiction (factual): The character's actions and dialogue in the evidence directly contradicts the claim.,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+79,0,Contradiction (factual): The evidence directly contradicts the claim that Kai-Koumou lifted fragments of his mother’s burnt bones to his lips to ‘b...,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+80,0,Contradiction (factual): The evidence directly contradicts the claim by showing that Kai-Koumou's tribe had lost a chief of high rank whom they wer...,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+81,0,Contradiction (factual): The character Kai-Koumou does not exhibit the ferocity claimed in the evidence.,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+82,1,Evidence supports: These excerpts directly state that Kai-Koumou was captured at sixteen and gnawed fish-bones to stay alive during months of impri...,In Search of the Castaways,Kai-Koumou,supported,0.95
+83,0,Contradiction (factual): Glenarvan's conversation with Kai-Koumou establishes that the Maori chief is not interested in ransoming Tohonga for Glena...,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+84,0,Contradiction (factual): The character Kai-Koumou does not take bones from his comrades as tokens and does not swear to shield the survivors after ...,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+85,0,Contradiction (temporal): The claim is that Kai-Koumou volunteered to lead the pursuit of the missing captain's daughter and would pay richly for h...,In Search of the Castaways,Kai-Koumou,contradicted,0.95
+86,0,"Contradiction (temporal): The evidence directly contradicts the claim that Kai-Koumou was haughty and cold, yet observed that the man valued life a...",In Search of the Castaways,Kai-Koumou,contradicted,0.95
+87,0,"Contradiction (capability): The evidence contradicts the claim by showing that M. Noirtier was not helpless or incapacitated, but rather had the ab...",The Count of Monte Cristo,Noirtier,contradicted,0.95
+88,0,Contradiction (temporal): The evidence contradicts the claim that M. Noirtier joined the Girondins and broke with Robespierre over whether courts s...,The Count of Monte Cristo,Noirtier,contradicted,0.95
+89,0,Contradiction (factual): The character of Noirtier is not mentioned in the trial of Louis XVI.,The Count of Monte Cristo,Noirtier,contradicted,0.95
+90,1,Evidence supports: Unable to analyze support,The Count of Monte Cristo,Noirtier,supported,0.5
+91,0,Contradiction (factual): The evidence directly contradicts the claim that Noirtier organised the assassination of royalist deputies while posing as...,The Count of Monte Cristo,Noirtier,contradicted,0.95
+92,1,Evidence supports: Unable to parse LLM response - using conservative default,The Count of Monte Cristo,Noirtier,supported,0.5
+93,0,Contradiction (factual): The evidence from the novel directly contradicts the claim that Noirtier secretly raised the Southern Army for Napoleon an...,The Count of Monte Cristo,Noirtier,contradicted,0.95
+94,0,"Contradiction (factual): The evidence directly contradicts the claim by stating that Noirtier was helpless and at the mercy of his grandchild, whic...",The Count of Monte Cristo,Noirtier,contradicted,0.95
+95,1,Evidence supports: The evidence from the novel directly states that Noirtier handed the conspiracy dossier to a British spy and that Monte Cristo l...,The Count of Monte Cristo,Noirtier,supported,0.95
+96,0,Contradiction (capability): The claim is contradicted by the fact that Noirtier communicates with Franz through a dictionary and not through eye mo...,The Count of Monte Cristo,Noirtier,contradicted,0.95
+97,1,"Evidence supports: These excerpts directly mention Noirtier's ability to recognize Barrois' symptoms instantly, which supports the claim that knowl...",The Count of Monte Cristo,Noirtier,supported,0.95
+98,1,"Evidence supports: The excerpt shows that Morrel was able to communicate with Noirtier and share information about his plans for Valentine, indicat...",The Count of Monte Cristo,Noirtier,supported,0.95
+99,0,Contradiction (factual): The evidence contradicts the claim that Noirtier intended to make Valentine de Villefort his heir.,The Count of Monte Cristo,Noirtier,contradicted,0.95
+100,1,"Evidence supports: While there is no direct statement that Noirtier devoured Voltaire and Rousseau, the excerpts suggest that he was interested in ...",The Count of Monte Cristo,Noirtier,supported,0.95
+101,0,Contradiction (factual): The evidence directly contradicts the claim that M. Noirtier joined a radical republican cell and spoke in cafés and back-...,The Count of Monte Cristo,Noirtier,contradicted,0.95
+102,0,Contradiction (temporal): The character's actions contradict the claim that he acted as a militant republican and helped organize trials of royalists.,The Count of Monte Cristo,Noirtier,contradicted,0.95
+103,0,Contradiction (temporal): The evidence directly contradicts the claim by showing that Noirtier was not wary of power's corruption and continued to ...,The Count of Monte Cristo,Noirtier,contradicted,0.95
+104,0,"Contradiction (factual): The character's father was a Bonapartist and lived during the French Revolution, which contradicts the claim that he was t...",The Count of Monte Cristo,Noirtier,contradicted,0.95
+105,1,"Evidence supports: The excerpts show that Noirtier was aware of the details of Dantès' trial and had access to Villefort's marginal notes, indicati...",The Count of Monte Cristo,Noirtier,supported,0.95
+106,1,Evidence supports: The excerpts suggest that Noirtier had information about Fernand's military activities and used it to his advantage.,The Count of Monte Cristo,Noirtier,supported,0.95
+107,1,"Evidence supports: The evidence from the novel shows that after Napoleon's defeat at Waterloo, Villefort turned to family affairs and married Madem...",The Count of Monte Cristo,Noirtier,supported,0.95
+108,0,Contradiction (temporal): The evidence contradicts the claim that Noirtier married a gentle apolitical woman by showing that Villefort was already ...,The Count of Monte Cristo,Noirtier,contradicted,0.95
+109,1,"Evidence supports: These excerpts show that Villefort's political views were a source of tension between him and his father, and that their convers...",The Count of Monte Cristo,Noirtier,supported,0.95
+110,0,"Contradiction (temporal): The passage contradicts the claim that Noirtier kept a locked study full of revolutionary pamphlets and private letters, ...",The Count of Monte Cristo,Noirtier,contradicted,0.95
+111,0,Contradiction (factual): The evidence directly contradicts the claim that Noirtier pulled strings through old friends and quietly encouraged anti-r...,The Count of Monte Cristo,Noirtier,contradicted,0.95
+112,0,Contradiction (capability): The claim is that Noirtier fed the avenger vital information and lent invisible aid to the plot against his enemies. Ho...,The Count of Monte Cristo,Noirtier,contradicted,0.95
+113,1,Evidence supports: The evidence from the novel directly states that Faria has a vast knowledge of various languages and is able to recite famous wo...,The Count of Monte Cristo,Faria,supported,0.95
+114,0,Contradiction (temporal): The evidence contradicts the claim that Faria entered Bologna University and studied theology and chemistry. The passage ...,The Count of Monte Cristo,Faria,contradicted,0.95
+115,0,"Contradiction (factual): The excerpt contradicts the claim by suggesting that Faria was rational and logical, which is incompatible with the idea o...",The Count of Monte Cristo,Faria,contradicted,0.95
+116,0,Contradiction (temporal): The claim states that Faria was branded a Jacobin plotter out to poison King John VI and fled conservatives' pursuit. How...,The Count of Monte Cristo,Faria,contradicted,0.95
+117,0,Contradiction (factual): The claim is directly contradicted by the fact that Monte Cristo was not the one who hid the manuscripts in the monastery ...,The Count of Monte Cristo,Faria,contradicted,0.95
+118,0,Contradiction (factual): The evidence contradicts the claim that Faria was mad by showing that he was rational and logical.,The Count of Monte Cristo,Faria,contradicted,0.95
+119,0,Contradiction (capability): This contradicts the claim that Faria scratched 'On Ancient Mediterranean Routes' into limestone with a nail.,The Count of Monte Cristo,Faria,contradicted,0.95
+120,0,Contradiction (factual): The evidence contradicts the claim that Faria was transferred to the Château d'If for the trouble he had caused. The evide...,The Count of Monte Cristo,Faria,contradicted,0.95
+121,0,"Contradiction (factual): The excerpt contradicts the claim by suggesting that Faria is not mad, which implies that there is no evidence of a treasure.",The Count of Monte Cristo,Faria,contradicted,0.95
+122,0,Contradiction (factual): The evidence directly contradicts the claim by showing that Faria was not present at a Vienna-congress salon and did not w...,The Count of Monte Cristo,Faria,contradicted,0.95
+123,0,Contradiction (temporal): The claim is that Faria and Noirtier de Villefort studied Napoleon’s secret letters together and then quarreled over whet...,The Count of Monte Cristo,Faria,contradicted,0.95
+124,0,Contradiction (factual): The evidence directly contradicts the claim that Faria noticed Caderousse stealing a mooring rope but said nothing.,The Count of Monte Cristo,Faria,contradicted,0.95
+125,1,"Evidence supports: The excerpts directly quote Faria's desire for death and his plan to achieve it through suicide, as well as the narrator's comme...",The Count of Monte Cristo,Faria,supported,0.95
+126,1,Evidence supports: The evidence suggests that Faria's persecution and eventual madness were a result of his desire for revenge against the injustic...,The Count of Monte Cristo,Faria,supported,0.95
+127,0,Contradiction (factual): The passage contradicts the claim that Faria's death was a blessed one by describing it as infamous and causing Dantès to ...,The Count of Monte Cristo,Faria,contradicted,0.95
+128,0,"Contradiction (factual): The claim is that Faria's invisible-ink formula came from temple-mural restoration in India, first used to rescue local ep...",The Count of Monte Cristo,Faria,contradicted,0.95
+129,0,"Contradiction (temporal): The passage contradicts the claim by describing Faria's death as a result of suicide, which is incompatible with the idea...",The Count of Monte Cristo,Faria,contradicted,0.95
+130,1,Evidence supports: The evidence from the novel directly states that Faria's death was caused by drinking poisoned water and that Dantès intentional...,The Count of Monte Cristo,Faria,supported,0.95
+131,0,Contradiction (factual): The character's desire for suicide contradicts the claim that he devoured the family library and startled tutors with his ...,The Count of Monte Cristo,Faria,contradicted,0.95
+132,0,Contradiction (capability): The claim is that Faria was fluent in several languages and already publishing notes on history and natural philosophy ...,The Count of Monte Cristo,Faria,contradicted,0.95
+133,1,Evidence supports: The evidence directly states that Faria's words opened new vistas to Dantès' mind and gave him glimpses of new horizons. This su...,The Count of Monte Cristo,Faria,supported,0.95
+134,0,Contradiction (temporal): The claim states that Faria was enlisted as strategist and propagandist in a campaign against corrupt rulers after gradua...,The Count of Monte Cristo,Faria,contradicted,0.95
+135,0,"Contradiction (temporal): The claim states that Faria was imprisoned for four years writing treatises on philosophy, science, and religion until co...",The Count of Monte Cristo,Faria,contradicted,0.95
+136,0,Contradiction (factual): The evidence contradicts the claim that Faria lived quietly on a small island and drafted a vast work on human intelligenc...,The Count of Monte Cristo,Faria,contradicted,0.95
+137,0,"Contradiction (factual): The character of Faria is described as rational and logical, which contradicts the claim that he was mad.",The Count of Monte Cristo,Faria,contradicted,0.95
+138,0,"Contradiction (factual): The novel explicitly states that Faria's death was due to political warfare, which contradicts the claim that he was sever...",The Count of Monte Cristo,Faria,contradicted,0.95
+139,0,"Contradiction (factual): The claim is that Faria's liberty was sustained by Enlightenment ideals, but the evidence shows that he remained in prison...",The Count of Monte Cristo,Faria,contradicted,0.95
+140,0,"Contradiction (factual): The novel explicitly states that Faria died as a result of Dantès' suicide attempt, which contradicts the claim that secre...",The Count of Monte Cristo,Faria,contradicted,0.95

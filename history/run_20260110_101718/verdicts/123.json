@@ -1,8 +1,0 @@
-{
-  "claim_id": "123",
-  "verdict": "supported",
-  "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that Abbé Faria had a secret to reveal of great importance."
-}

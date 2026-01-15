@@ -1,8 +1,50 @@
 {
   "claim_id": "91",
-  "verdict": "supported",
-  "confidence": 0.5,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three different sources all support the claim."
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "He was no longer astonished when he searched on to find in the register this note, placed in <MID> , you surprise me. You, a deputy procureur, to found an accusation on such bad premises! Did I ever say to you, when you were fulfilling your character as a royalist, and cut off the head of one of my party, ‘My son, you have committed a murder?’ No, I said, ‘Very well, sir, you have gained the victory; tomorrow, perchance, it will be our turn.’",
+    "He was no longer astonished when he searched on to find in the register this note, placed in <MID> , you surprise me. You, a deputy procureur, to found an accusation on such bad premises! Did I ever say to you, when you were fulfilling your character as a royalist, and cut off the head of one of my party, ‘My son, you have committed a murder?’ No, I said, ‘Very well, sir, you have gained the victory; tomorrow, perchance, it will be our turn.’"
+  ],
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Noirtier organised the assassination of royalist deputies while posing as a Ministry of Justice official.",
+  "analysis": {
+    "claim_id": "91",
+    "claim_text": "Working directly for Fouché, he organised the assassination of royalist deputies while posing as a Ministry of Justice official; the arsenic phial still lies in a hidden drawer of his study desk.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Working directly for Fouché, he organised the assassination of royalist deputies while posing as a Ministry of Justice official.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "The arsenic phial still lies in a hidden drawer of his study desk.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Noirtier organised the assassination of royalist deputies while posing as a Ministry of Justice official."
+  }
 }

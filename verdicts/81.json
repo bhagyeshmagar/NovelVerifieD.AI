@@ -1,8 +1,50 @@
 {
   "claim_id": "81",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from the book 'In search of the castaways' supports the claim that Glenarvan offered to ransom Tohonga in exchange for the lives of his companions."
+  "supporting_spans": [
+    "When he was fourteen a whaling crew coveted the island’s spring and set fire to threaten the village; as squad leader he slipped aboard at night, smashed their launches and drove them off.",
+    "They must be patient. It was the most prudent plan. What, moreover, could ten defenceless men do against thirty well-armed savages?"
+  ],
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (factual): The character Kai-Koumou does not exhibit the ferocity claimed in the evidence.",
+  "analysis": {
+    "claim_id": "81",
+    "claim_text": "When he was fourteen a whaling crew coveted the island’s spring and set fire to threaten the village; as squad leader he slipped aboard at night, smashed their launches and drove them off. A captured Spanish sailor, impressed by his ferocity, secretly taught him scraps of Spanish slang.",
+    "character": "Kai-Koumou",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "When he was fourteen a whaling crew coveted the island’s spring and set fire to threaten the village; as squad leader he slipped aboard at night, smashed their launches and drove them off.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "A captured Spanish sailor, impressed by his ferocity, secretly taught him scraps of Spanish slang.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The character Kai-Koumou does not exhibit the ferocity claimed in the evidence."
+  }
 }

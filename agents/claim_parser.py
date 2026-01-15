@@ -10,8 +10,8 @@ import json
 from pathlib import Path
 
 # Configuration
-TRAIN_FILE = Path("data/train.csv")
-TEST_FILE = Path("data/test.csv")
+TRAIN_FILE = Path("Data/train.csv")
+TEST_FILE = Path("Data/test.csv")
 OUTPUT_FILE = Path("claims/claims.jsonl")
 
 

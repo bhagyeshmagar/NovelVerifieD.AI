@@ -1,0 +1,48 @@
+{
+  "claim_id": "67",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Your people have invaded our island. They have stolen away our fields; they have burned our villages.",
+    "Listen, continued Kai-Koumou. \"Tohonga, the high-priest of Nouï-Atoua, has fallen into the hands of your brothers. He is prisoner of the Pakekas (Europeans). Our god commands us to ransom his life. I would have torn out your heart, I would have hung your companions' heads and yours forever to the stakes of this palisade. But Nouï-Atoua has spoken.\""
+  ],
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports: The evidence directly states that Kai-Koumou saw his father ambushed by British musket squad and his mother tattooed a vengeance curse on him.",
+  "analysis": {
+    "claim_id": "67",
+    "claim_text": "Born on New Zealand’s North-island east coast to a Maori war-chief father and a priestess mother skilled in herbs and star-reading, he saw his father ambushed by a British musket squad, the body mutilated, the left ear taken as trophy; his mother tattooed a vengeance curse on his chest with ochre.",
+    "character": "Kai-Koumou",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Born on New Zealand’s North-island east coast to a Maori war-chief father and a priestess mother skilled in herbs and star-reading.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Saw his father ambushed by a British musket squad, the body mutilated, the left ear taken as trophy.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The evidence directly states that Kai-Koumou saw his father ambushed by British musket squad and his mother tattooed a vengeance curse on him."
+  }
+}

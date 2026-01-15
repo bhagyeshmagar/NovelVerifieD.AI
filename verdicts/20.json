@@ -1,0 +1,58 @@
+{
+  "claim_id": "20",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Direct statement: \"After a failed attempt to save a drowning comrade he was injured; the naval commander’s praise when he recovered left him with a strong sense of duty toward rescue.\""
+  ],
+  "contradicting_spans": [
+    "The naval commander’s praise when he recovered left him with a strong sense of duty toward rescue."
+  ],
+  "reasoning": "Evidence supports: The excerpt directly states that Jacques Paganel's injury and subsequent recovery were due to his failed attempt to save a drowning comrade, and the praise he received from the naval commander left him with a strong sense of duty toward rescue.",
+  "analysis": {
+    "claim_id": "20",
+    "claim_text": "After a failed attempt to save a drowning comrade he was injured; the naval commander’s praise when he recovered left him with a strong sense of duty toward rescue.",
+    "character": "Jacques Paganel",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Jacques Paganel attempted to save a drowning comrade.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Jacques Paganel was injured in the attempt.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "The naval commander praised Jacques Paganel for his recovery.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The excerpt directly states that Jacques Paganel's injury and subsequent recovery were due to his failed attempt to save a drowning comrade, and the praise he received from the naval commander left him with a strong sense of duty toward rescue."
+  }
+}

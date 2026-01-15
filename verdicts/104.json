@@ -1,0 +1,47 @@
+{
+  "claim_id": "104",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [],
+  "contradicting_spans": [
+    "Monsieur de Villefort said that his father and the Baron d'Épinay lived in the stormy times of which he only saw the ending. He was a Bonapartist."
+  ],
+  "reasoning": "Contradiction (factual): The character's father was a Bonapartist and lived during the French Revolution, which contradicts the claim that he was targeted in a reprisal for supporting the Revolution.",
+  "analysis": {
+    "claim_id": "104",
+    "claim_text": "His parents were targeted in a reprisal for supporting the Revolution; his mother was killed, deepening his distrust of authority.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "His parents were targeted in a reprisal for supporting the Revolution.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "His mother was killed, deepening his distrust of authority.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.3,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The character's father was a Bonapartist and lived during the French Revolution, which contradicts the claim that he was targeted in a reprisal for supporting the Revolution."
+  }
+}

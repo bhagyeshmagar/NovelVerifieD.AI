@@ -1,0 +1,59 @@
+{
+  "claim_id": "43",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Ayrton crossed the deck with a confident step, and ascended the poop-stairs. His eyes had a sullen look, his teeth were set, and his fists clinched convulsively.",
+    "The sailor made his preparations for departure, aided by the two sailors, one of whom attended to his horse, and the other to his provisions."
+  ],
+  "contradicting_spans": [
+    "Ayrton soon made his appearance. He crossed the deck with a confident step, and ascended the poop-stairs. His eyes had a sullen look, his teeth were set, and his fists clinched convulsively."
+  ],
+  "reasoning": "Contradiction (character): The character of Ayrton is described as confident, with a sullen look, set teeth, and clenched fists. This contradicts the claim that he panicked and fled.",
+  "analysis": {
+    "claim_id": "43",
+    "claim_text": "Suspected of colluding with the enemy, he panicked, slipped away in a lifeboat under darkness and fled to the Southern Hemisphere.",
+    "character": "Tom Ayrton/Ben Joyce",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Suspected of colluding with the enemy.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He panicked and slipped away in a lifeboat under darkness.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Fled to the Southern Hemisphere.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (character): The character of Ayrton is described as confident, with a sullen look, set teeth, and clenched fists. This contradicts the claim that he panicked and fled."
+  }
+}

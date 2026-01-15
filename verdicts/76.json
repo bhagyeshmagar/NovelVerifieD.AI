@@ -1,0 +1,56 @@
+{
+  "claim_id": "76",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "\"He carried a European pocket-watch taken from the French mate, its inner lid holding a lock of Julia’s hair,\""
+  ],
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports: Direct statement from the novel that confirms Kai-Koumou carried a pocket watch with a lock of Julia's hair.",
+  "analysis": {
+    "claim_id": "76",
+    "claim_text": "He carried a European pocket-watch taken from the French mate, its inner lid holding a lock of Julia’s hair, which explained both his grasp of mechanical time and his disgust for Christian objects.",
+    "character": "Kai-Koumou",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "He carried a European pocket-watch taken from the French mate.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Its inner lid holding a lock of Julia’s hair.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Which explained both his grasp of mechanical time and his disgust for Christian objects.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: Direct statement from the novel that confirms Kai-Koumou carried a pocket watch with a lock of Julia's hair."
+  }
+}

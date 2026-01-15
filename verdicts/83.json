@@ -1,0 +1,65 @@
+{
+  "claim_id": "83",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [],
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (factual): Glenarvan's conversation with Kai-Koumou establishes that the Maori chief is not interested in ransoming Tohonga for Glenarvan's life. This contradicts the claim that Kai-Koumou and Glenarvan formed a brotherhood laced with mutual wariness based on their shared desire to ran",
+  "analysis": {
+    "claim_id": "83",
+    "claim_text": "At eighteen, on the run in Tasmania, he met the escaped convict Ayrton hiding in the bush; the two fugitives pooled their languages and survival skills, raided together for ransom and forged a brotherhood laced with mutual wariness.",
+    "character": "Kai-Koumou",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "At eighteen, on the run in Tasmania, he met the escaped convict Ayrton hiding in the bush; the two fugitives pooled their languages and survival skills, raided together for ransom and forged a brotherhood laced with mutual wariness.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Kai-Koumou was on the run in Tasmania at eighteen.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Kai-Koumou met Ayrton while both were hiding in the bush.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "Kai-Koumou and Ayrton pooled their languages and survival skills.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.3,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): Glenarvan's conversation with Kai-Koumou establishes that the Maori chief is not interested in ransoming Tohonga for Glenarvan's life. This contradicts the claim that Kai-Koumou and Glenarvan formed a brotherhood laced with mutual wariness based on their shared desire to ransom Tohonga."
+  }
+}

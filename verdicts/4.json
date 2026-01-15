@@ -1,0 +1,50 @@
+{
+  "claim_id": "4",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Direct answer to the question the former had asked.",
+    "He spoke with such conviction that all eyes were turned towards Glenarvan."
+  ],
+  "contradicting_spans": [
+    "Paganel's declaration of Captain Grant not being in the place he was thought to be"
+  ],
+  "reasoning": "Contradiction (factual): The claim is directly contradicted by Paganel's statement that Captain Grant is not in the place he was thought to be.",
+  "analysis": {
+    "claim_id": "4",
+    "claim_text": "Sitting in on lectures uninvited, he was thrown out after shouting “The secret is on the 37th southern parallel!” while the professor explained Earth’s equatorial bulge.",
+    "character": "Jacques Paganel",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Jacques Paganel sat in on lectures uninvited.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He was thrown out after shouting ‘The secret is on the 37th southern parallel!’",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The claim is directly contradicted by Paganel's statement that Captain Grant is not in the place he was thought to be."
+  }
+}

@@ -1,0 +1,616 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { 
+  LayoutDashboard, 
+  Play, 
+  Square, 
+  FileText, 
+  Activity, 
+  CheckCircle2, 
+  XCircle, 
+  Search, 
+  BookOpen, 
+  Cpu, 
+  Database, 
+  Terminal,
+  ChevronRight,
+  Menu,
+  X,
+  AlertCircle
+} from 'lucide-react';
+
+// --- Reusable Glass Components ---
+
+const GlassCard = ({ children, className = "", hoverEffect = false }) => (
+  <div className={`
+    relative overflow-hidden
+    bg-white/10 
+    backdrop-blur-md 
+    border border-white/20 
+    shadow-xl 
+    rounded-2xl 
+    text-white
+    ${hoverEffect ? 'transition-transform duration-300 hover:-translate-y-1 hover:bg-white/15' : ''}
+    ${className}
+  `}>
+    {/* Subtle gradient overlay for depth */}
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
+    <div className="relative z-10 h-full">
+      {children}
+    </div>
+  </div>
+);
+
+const GlassButton = ({ children, onClick, variant = 'primary', className = "", disabled = false }) => {
+  const variants = {
+    primary: "bg-blue-600/80 hover:bg-blue-500/90 border-blue-400/30 text-white",
+    danger: "bg-red-500/80 hover:bg-red-400/90 border-red-400/30 text-white",
+    ghost: "bg-white/5 hover:bg-white/10 border-white/10 text-blue-100",
+    success: "bg-emerald-500/80 hover:bg-emerald-400/90 border-emerald-400/30 text-white"
+  };
+
+  return (
+    <button 
+      onClick={onClick}
+      disabled={disabled}
+      className={`
+        px-4 py-2 rounded-xl font-medium 
+        backdrop-blur-sm border shadow-lg 
+        transition-all duration-200 active:scale-95
+        disabled:opacity-50 disabled:cursor-not-allowed
+        flex items-center justify-center gap-2
+        ${variants[variant]}
+        ${className}
+      `}
+    >
+      {children}
+    </button>
+  );
+};
+
+const Badge = ({ type }) => {
+  const styles = {
+    consistent: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
+    contradicted: "bg-rose-500/20 text-rose-300 border-rose-500/30",
+    processing: "bg-blue-500/20 text-blue-300 border-blue-500/30",
+    pending: "bg-gray-500/20 text-gray-400 border-gray-500/30"
+  };
+  
+  const labels = {
+    consistent: "Consistent",
+    contradicted: "Contradicted",
+    processing: "Analyzing...",
+    pending: "Queued"
+  };
+
+  return (
+    <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold border ${styles[type]}`}>
+      {labels[type]}
+    </span>
+  );
+};
+
+// --- Main Application ---
+
+export default function App() {
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Pipeline State
+  const [pipelineStatus, setPipelineStatus] = useState('idle'); // idle, running, completed
+  const [progress, setProgress] = useState(0);
+  const [logs, setLogs] = useState([]);
+  const [currentStage, setCurrentStage] = useState(null);
+
+  // Mock Data
+  const stats = {
+    totalClaims: 124,
+    accuracy: 94.2,
+    consistent: 89,
+    contradicted: 35
+  };
+
+  const recentResults = [
+    { id: 95, claim: "Villefort burned the letter in the fireplace.", verdict: 'consistent', confidence: 0.98, novel: "Count of Monte Cristo" },
+    { id: 136, claim: "Edmond Dantes was imprisoned for 5 years.", verdict: 'contradicted', confidence: 0.95, novel: "Count of Monte Cristo" },
+    { id: 42, claim: "Captain Grant was found in Australia.", verdict: 'consistent', confidence: 0.88, novel: "In Search of the Castaways" },
+    { id: 101, claim: "Mercedes married Fernand immediately after Dantes left.", verdict: 'contradicted', confidence: 0.92, novel: "Count of Monte Cristo" },
+  ];
+
+  // Pipeline Simulation Logic
+  const startPipeline = () => {
+    setPipelineStatus('running');
+    setProgress(0);
+    setLogs([]);
+    
+    const stages = [
+      { name: "Ingestion Agent", detail: "Chunking novels with Pathway...", duration: 2000 },
+      { name: "Embedding Agent", detail: "Updating FAISS vector index...", duration: 1500 },
+      { name: "Claim Parser", detail: "Parsing test.csv for verification...", duration: 1000 },
+      { name: "Retriever", detail: "Fetching temporal evidence slices...", duration: 2500 },
+      { name: "Reasoning Agent", detail: "Running Dual-Perspective Evaluation...", duration: 3000 },
+      { name: "Dossier Writer", detail: "Generating markdown reports...", duration: 1500 },
+      { name: "Aggregator", detail: "Finalizing results.csv...", duration: 1000 }
+    ];
+
+    let currentProgress = 0;
+    let stepIndex = 0;
+
+    const runStep = () => {
+      if (stepIndex >= stages.length) {
+        setPipelineStatus('completed');
+        setCurrentStage(null);
+        addLog("Pipeline execution finished successfully. Output generated.");
+        return;
+      }
+
+      const stage = stages[stepIndex];
+      setCurrentStage(stage.name);
+      addLog(`[${stage.name}] STARTED: ${stage.detail}`);
+
+      // Smooth progress bar animation
+      const interval = setInterval(() => {
+        currentProgress += 1;
+        setProgress(Math.min(currentProgress, ((stepIndex + 1) / stages.length) * 100));
+      }, stage.duration / (100 / stages.length));
+
+      setTimeout(() => {
+        clearInterval(interval);
+        addLog(`[${stage.name}] COMPLETED`);
+        stepIndex++;
+        runStep();
+      }, stage.duration);
+    };
+
+    runStep();
+  };
+
+  const stopPipeline = () => {
+    setPipelineStatus('idle');
+    setCurrentStage(null);
+    addLog("Pipeline execution halted by user.");
+  };
+
+  const addLog = (message) => {
+    setLogs(prev => [`${new Date().toLocaleTimeString()} > ${message}`, ...prev]);
+  };
+
+  // --- Views ---
+
+  const DashboardView = () => (
+    <div className="space-y-6 animate-fadeIn">
+      {/* Hero Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <GlassCard className="p-6" hoverEffect>
+          <div className="flex justify-between items-start">
+            <div>
+              <p className="text-blue-200 text-sm font-medium">Claims Verified</p>
+              <h3 className="text-4xl font-bold mt-2">{stats.totalClaims}</h3>
+            </div>
+            <div className="p-3 bg-blue-500/20 rounded-xl">
+              <FileText className="w-6 h-6 text-blue-300" />
+            </div>
+          </div>
+          <div className="mt-4 flex items-center text-sm text-blue-200/60">
+            <span className="text-emerald-400 font-bold mr-1">+12%</span> from last run
+          </div>
+        </GlassCard>
+
+        <GlassCard className="p-6" hoverEffect>
+          <div className="flex justify-between items-start">
+            <div>
+              <p className="text-purple-200 text-sm font-medium">Model Accuracy</p>
+              <h3 className="text-4xl font-bold mt-2">{stats.accuracy}%</h3>
+            </div>
+            <div className="p-3 bg-purple-500/20 rounded-xl">
+              <Activity className="w-6 h-6 text-purple-300" />
+            </div>
+          </div>
+          <div className="mt-4 text-sm text-purple-200/60">
+            Based on validation set
+          </div>
+        </GlassCard>
+
+        <GlassCard className="p-6" hoverEffect>
+          <div className="flex justify-between items-start">
+            <div>
+              <p className="text-emerald-200 text-sm font-medium">Consistent</p>
+              <h3 className="text-4xl font-bold mt-2">{stats.consistent}</h3>
+            </div>
+            <div className="p-3 bg-emerald-500/20 rounded-xl">
+              <CheckCircle2 className="w-6 h-6 text-emerald-300" />
+            </div>
+          </div>
+          <div className="mt-4 w-full bg-emerald-900/30 h-1.5 rounded-full overflow-hidden">
+            <div className="bg-emerald-400 h-full" style={{ width: '71%' }}></div>
+          </div>
+        </GlassCard>
+
+        <GlassCard className="p-6" hoverEffect>
+          <div className="flex justify-between items-start">
+            <div>
+              <p className="text-rose-200 text-sm font-medium">Contradicted</p>
+              <h3 className="text-4xl font-bold mt-2">{stats.contradicted}</h3>
+            </div>
+            <div className="p-3 bg-rose-500/20 rounded-xl">
+              <XCircle className="w-6 h-6 text-rose-300" />
+            </div>
+          </div>
+          <div className="mt-4 w-full bg-rose-900/30 h-1.5 rounded-full overflow-hidden">
+            <div className="bg-rose-400 h-full" style={{ width: '29%' }}></div>
+          </div>
+        </GlassCard>
+      </div>
+
+      {/* Main Content Area */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Recent Activity */}
+        <GlassCard className="lg:col-span-2 p-6 h-full">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="text-xl font-semibold">Recent Verifications</h3>
+            <button className="text-sm text-blue-300 hover:text-white transition-colors">View All</button>
+          </div>
+          <div className="space-y-4">
+            {recentResults.map((item, idx) => (
+              <div key={idx} className="group p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-all cursor-default">
+                <div className="flex justify-between items-start gap-4">
+                  <div className="flex-1">
+                    <p className="font-medium text-white group-hover:text-blue-200 transition-colors">{item.claim}</p>
+                    <div className="flex items-center gap-3 mt-2 text-xs text-gray-400">
+                      <span className="flex items-center gap-1"><BookOpen size={12}/> {item.novel}</span>
+                      <span>•</span>
+                      <span>ID: #{item.id}</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-end gap-2">
+                    <Badge type={item.verdict} />
+                    <span className="text-xs text-gray-400 font-mono">Conf: {(item.confidence * 100).toFixed(0)}%</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </GlassCard>
+
+        {/* System Health / Mini Pipeline Status */}
+        <div className="space-y-6">
+          <GlassCard className="p-6">
+            <h3 className="text-xl font-semibold mb-4">System Health</h3>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/5">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_10px_rgba(74,222,128,0.5)]"></div>
+                  <span className="text-sm">API Backend</span>
+                </div>
+                <span className="text-xs text-green-300 bg-green-500/10 px-2 py-1 rounded">Online</span>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/5">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_10px_rgba(74,222,128,0.5)]"></div>
+                  <span className="text-sm">Ollama (Mistral 7B)</span>
+                </div>
+                <span className="text-xs text-green-300 bg-green-500/10 px-2 py-1 rounded">Ready</span>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/5">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_10px_rgba(74,222,128,0.5)]"></div>
+                  <span className="text-sm">Vector DB (FAISS)</span>
+                </div>
+                <span className="text-xs text-green-300 bg-green-500/10 px-2 py-1 rounded">Indexed</span>
+              </div>
+            </div>
+          </GlassCard>
+
+          <GlassCard className="p-6 bg-gradient-to-br from-blue-600/20 to-purple-600/20 border-blue-400/20">
+            <h3 className="text-lg font-semibold mb-2">Track A: Pathway</h3>
+            <p className="text-sm text-blue-100/80 mb-4">
+              Real-time document processing enabled using Pathway framework.
+            </p>
+            <div className="flex items-center gap-2 text-xs font-mono text-blue-200">
+              <Terminal size={14} />
+              <span>ingestion_agent.py active</span>
+            </div>
+          </GlassCard>
+        </div>
+      </div>
+    </div>
+  );
+
+  const PipelineView = () => (
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-140px)] animate-fadeIn">
+      {/* Controls & Status */}
+      <GlassCard className="lg:col-span-2 p-8 flex flex-col h-full">
+        <div className="flex justify-between items-center mb-8">
+          <div>
+            <h2 className="text-2xl font-bold mb-1">Verification Pipeline</h2>
+            <p className="text-gray-300">Run the 7-agent architecture to verify claims against novel text.</p>
+          </div>
+          <div className="flex gap-3">
+            {pipelineStatus === 'running' ? (
+              <GlassButton variant="danger" onClick={stopPipeline}>
+                <Square size={18} fill="currentColor" /> Stop Process
+              </GlassButton>
+            ) : (
+              <GlassButton variant="success" onClick={startPipeline} disabled={pipelineStatus === 'completed'}>
+                <Play size={18} fill="currentColor" /> {pipelineStatus === 'completed' ? 'Run Again' : 'Start Pipeline'}
+              </GlassButton>
+            )}
+          </div>
+        </div>
+
+        {/* Visual Pipeline Graph */}
+        <div className="flex-1 relative bg-black/20 rounded-2xl p-8 border border-white/10 overflow-hidden flex flex-col justify-center items-center">
+           {/* Connecting Line */}
+           <div className="absolute top-1/2 left-10 right-10 h-1 bg-white/10 -translate-y-1/2 z-0 hidden md:block"></div>
+           
+           {/* Nodes */}
+           <div className="relative z-10 w-full flex flex-col md:flex-row justify-between gap-8 md:gap-0">
+              {['Ingestion', 'Embedding', 'Reasoning', 'Dossier'].map((step, idx) => {
+                 const isActive = currentStage && currentStage.includes(step);
+                 const isPast = pipelineStatus === 'completed' || (progress > ((idx + 1) * 25));
+                 
+                 return (
+                  <div key={step} className="flex flex-col items-center gap-3 transition-all duration-500">
+                    <div className={`
+                      w-16 h-16 rounded-2xl flex items-center justify-center border-2 shadow-lg backdrop-blur-xl transition-all duration-500
+                      ${isActive 
+                        ? 'bg-blue-500/40 border-blue-400 scale-110 shadow-[0_0_30px_rgba(59,130,246,0.5)]' 
+                        : isPast 
+                          ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-300' 
+                          : 'bg-white/5 border-white/10 text-gray-500'}
+                    `}>
+                      {idx === 0 && <Database size={24} />}
+                      {idx === 1 && <Cpu size={24} />}
+                      {idx === 2 && <Search size={24} />}
+                      {idx === 3 && <FileText size={24} />}
+                    </div>
+                    <span className={`font-medium tracking-wide ${isActive ? 'text-blue-300' : isPast ? 'text-emerald-300' : 'text-gray-500'}`}>
+                      {step}
+                    </span>
+                  </div>
+                 )
+              })}
+           </div>
+
+           {/* Progress Info */}
+           {pipelineStatus === 'running' && (
+             <div className="absolute bottom-8 left-0 right-0 text-center animate-pulse">
+               <span className="text-blue-300 font-mono text-sm tracking-wider">PROCESSING: {currentStage?.toUpperCase()}</span>
+             </div>
+           )}
+        </div>
+
+        {/* Progress Bar */}
+        <div className="mt-8">
+          <div className="flex justify-between text-sm mb-2 text-gray-300">
+            <span>Progress</span>
+            <span>{progress.toFixed(0)}%</span>
+          </div>
+          <div className="h-3 bg-white/10 rounded-full overflow-hidden border border-white/5">
+            <div 
+              className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 ease-out shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+        </div>
+      </GlassCard>
+
+      {/* Terminal / Logs */}
+      <GlassCard className="p-0 flex flex-col h-full overflow-hidden">
+        <div className="p-4 border-b border-white/10 bg-black/20 flex justify-between items-center">
+          <h3 className="font-mono text-sm text-gray-400 flex items-center gap-2">
+            <Terminal size={14} /> SYSTEM LOGS
+          </h3>
+          <div className="flex gap-1.5">
+            <div className="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+          </div>
+        </div>
+        <div className="flex-1 p-4 font-mono text-xs space-y-2 overflow-y-auto custom-scrollbar text-gray-300 bg-black/10">
+          {logs.length === 0 && (
+            <span className="text-gray-600 italic">Waiting for pipeline to start...</span>
+          )}
+          {logs.map((log, i) => (
+            <div key={i} className="animate-fadeInLeft border-l-2 border-blue-500/30 pl-2">
+              <span className="text-blue-400/60">{log.split('>')[0]}</span>
+              <span className="text-gray-200">{log.split('>')[1]}</span>
+            </div>
+          ))}
+        </div>
+      </GlassCard>
+    </div>
+  );
+
+  const ResultsView = () => (
+    <div className="h-full flex flex-col animate-fadeIn">
+      <div className="flex justify-between items-end mb-6">
+        <div>
+          <h2 className="text-2xl font-bold mb-2">Analysis Results</h2>
+          <p className="text-gray-300">Output generated from <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm">results.csv</code></p>
+        </div>
+        <GlassButton variant="ghost">Export CSV</GlassButton>
+      </div>
+
+      <GlassCard className="flex-1 overflow-hidden flex flex-col">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-b border-white/10 bg-white/5 text-gray-300 text-sm uppercase tracking-wider">
+                <th className="p-4 font-medium">ID</th>
+                <th className="p-4 font-medium">Claim</th>
+                <th className="p-4 font-medium">Novel</th>
+                <th className="p-4 font-medium">Prediction</th>
+                <th className="p-4 font-medium">Rationale</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-white/5">
+              {[...recentResults, ...recentResults].map((row, i) => ( // Doubling data for demo
+                <tr key={i} className="hover:bg-white/5 transition-colors text-sm text-gray-200">
+                  <td className="p-4 font-mono text-gray-400">#{row.id}</td>
+                  <td className="p-4 font-medium">{row.claim}</td>
+                  <td className="p-4 text-gray-400 italic">{row.novel}</td>
+                  <td className="p-4"><Badge type={row.verdict} /></td>
+                  <td className="p-4 text-gray-400 max-w-xs truncate">
+                    {row.verdict === 'consistent' 
+                      ? "Evidence confirms events align with Chapter 4."
+                      : "Directly contradicts the timeline established in Vol 2."}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </GlassCard>
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-[#0f172a] text-white font-sans selection:bg-blue-500/30 selection:text-white overflow-x-hidden">
+      {/* Dynamic Background Elements */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-600/20 rounded-full blur-[120px] animate-blob" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[120px] animate-blob animation-delay-2000" />
+        <div className="absolute top-[20%] right-[20%] w-[30%] h-[30%] bg-emerald-600/10 rounded-full blur-[100px] animate-blob animation-delay-4000" />
+      </div>
+
+      {/* Main Layout */}
+      <div className="relative z-10 flex h-screen">
+        
+        {/* Sidebar Navigation */}
+        <aside className={`
+          fixed inset-y-0 left-0 z-50 w-64 transform transition-transform duration-300 ease-in-out
+          bg-black/20 backdrop-blur-xl border-r border-white/10 flex flex-col
+          lg:relative lg:translate-x-0
+          ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+        `}>
+          <div className="p-6 border-b border-white/10 flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-500 to-purple-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
+              <BookOpen size={18} className="text-white" />
+            </div>
+            <div>
+              <h1 className="font-bold text-lg tracking-tight">NovelVerified<span className="text-blue-400">.AI</span></h1>
+              <p className="text-[10px] text-gray-400 tracking-widest uppercase">Team StrawHats</p>
+            </div>
+          </div>
+
+          <nav className="flex-1 p-4 space-y-2">
+            {[
+              { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+              { id: 'pipeline', icon: Play, label: 'Pipeline Control' },
+              { id: 'results', icon: FileText, label: 'Results' },
+            ].map(item => (
+              <button
+                key={item.id}
+                onClick={() => { setActiveTab(item.id); setIsMobileMenuOpen(false); }}
+                className={`
+                  w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200
+                  ${activeTab === item.id 
+                    ? 'bg-blue-600/20 text-blue-200 border border-blue-500/30 shadow-[0_0_15px_rgba(37,99,235,0.2)]' 
+                    : 'text-gray-400 hover:bg-white/5 hover:text-white'}
+                `}
+              >
+                <item.icon size={20} />
+                <span className="font-medium">{item.label}</span>
+                {activeTab === item.id && <ChevronRight size={16} className="ml-auto opacity-50" />}
+              </button>
+            ))}
+          </nav>
+
+          <div className="p-4 border-t border-white/10 bg-black/20">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 border border-white/20 flex items-center justify-center text-xs font-bold">
+                KD
+              </div>
+              <div>
+                <p className="text-sm font-medium">KDSH 2026</p>
+                <p className="text-xs text-gray-500">Track A</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        {/* Content Area */}
+        <main className="flex-1 flex flex-col overflow-hidden">
+          {/* Header */}
+          <header className="h-16 border-b border-white/10 bg-black/10 backdrop-blur-sm flex items-center justify-between px-6 lg:px-8">
+            <button 
+              className="lg:hidden p-2 text-gray-400 hover:text-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X /> : <Menu />}
+            </button>
+
+            <div className="flex items-center gap-4 ml-auto">
+              <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+                <div className={`w-2 h-2 rounded-full ${pipelineStatus === 'running' ? 'bg-blue-400 animate-pulse' : 'bg-gray-500'}`} />
+                <span className="text-xs font-medium text-gray-300">
+                  Status: {pipelineStatus === 'running' ? 'Processing...' : 'Idle'}
+                </span>
+              </div>
+            </div>
+          </header>
+
+          {/* View Container */}
+          <div className="flex-1 overflow-y-auto p-6 lg:p-8 custom-scrollbar relative">
+            {activeTab === 'dashboard' && <DashboardView />}
+            {activeTab === 'pipeline' && <PipelineView />}
+            {activeTab === 'results' && <ResultsView />}
+          </div>
+        </main>
+
+        {/* Mobile Overlay */}
+        {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+      </div>
+
+      <style>{`
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-out forwards;
+        }
+        .animate-fadeInLeft {
+          animation: fadeInLeft 0.3s ease-out forwards;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+          from { opacity: 0; transform: translateX(-10px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+      `}</style>
+    </div>
+  );
+}

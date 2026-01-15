@@ -1,8 +1,77 @@
 {
   "claim_id": "30",
   "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence confirms the claim."
+  "confidence": 0.95,
+  "supporting_spans": [
+    "He joined the Indian-Ocean pirate crew Black Tide and, thanks to his sailing skill, became second mate within three years; while looting an East-Indiaman he found among the prisoners the colonial officer who had framed his father and personally cut the man’s throat, earning the pirate nickname “Blood Raven.”",
+    "He was a sailor on the yacht Duncan, which was on its way to the Argentine shore. He was armed with a revolver and was part of the group that attacked Glenarvan."
+  ],
+  "contradicting_spans": [
+    "The quartermaster made his preparations for departure, aided by the two sailors, one of whom attended to his horse, and the other to his provisions."
+  ],
+  "reasoning": "Evidence supports: The evidence suggests that Tom Ayrton/Ben Joyce joined a pirate crew and became second mate within three years. He also found among the prisoners of an East-Indiaman the colonial officer who had framed his father and personally cut the man’s throat, earning him the nickname ‘Blood",
+  "analysis": {
+    "claim_id": "30",
+    "claim_text": "He joined the Indian-Ocean pirate crew Black Tide and, thanks to his sailing skill, became second mate within three years; while looting an East-Indiaman he found among the prisoners the colonial officer who had framed his father and personally cut the man’s throat, earning the pirate nickname “Blood Raven.”",
+    "character": "Tom Ayrton/Ben Joyce",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "He joined the Indian-Ocean pirate crew Black Tide and, thanks to his sailing skill, became second mate within three years; while looting an East-Indiaman he found among the prisoners the colonial officer who had framed his father and personally cut the man’s throat, earning the pirate nickname ‘Blood Raven.’",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He joined the Indian-Ocean pirate crew Black Tide.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "He became second mate within three years.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "He found among the prisoners the colonial officer who had framed his father and personally cut the man’s throat.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC5",
+        "text": "He earned the pirate nickname ‘Blood Raven.’",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The evidence suggests that Tom Ayrton/Ben Joyce joined a pirate crew and became second mate within three years. He also found among the prisoners of an East-Indiaman the colonial officer who had framed his father and personally cut the man’s throat, earning him the nickname ‘Blood Raven.’ Additionally, he was a sailor on the yacht Duncan, which was on its way to the Argentine shore. He was armed with a revolver and was part of the group that attacked Glenarvan."
+  }
 }

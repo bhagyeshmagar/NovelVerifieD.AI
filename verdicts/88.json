@@ -1,0 +1,60 @@
+{
+  "claim_id": "88",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "M. Noirtier, stretching himself out at his ease in the chair. “Really, pray tell me all about it, for it must be interesting.”",
+    "“Ah, you have heard of the landing of the emperor?” continued Noirtier, “Well, then, in return for your story,” continued Noirtier, “I will tell you another.”"
+  ],
+  "contradicting_spans": [
+    "M. Noirtier was vice-president of the club in the Rue Saint-Jacques",
+    "M. Noirtier was found dead in his house"
+  ],
+  "reasoning": "Contradiction (temporal): The evidence contradicts the claim that M. Noirtier joined the Girondins and broke with Robespierre over whether courts should keep formal procedures.",
+  "analysis": {
+    "claim_id": "88",
+    "claim_text": "Under the alias “Citizen Noirtier” he joined the Girondins, drafted parts of the Revolutionary Code and broke with Robespierre over whether courts should keep formal procedures.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Under the alias ‘Citizen Noirtier’ he joined the Girondins.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He drafted parts of the Revolutionary Code.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "He broke with Robespierre over whether courts should keep formal procedures.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The evidence contradicts the claim that M. Noirtier joined the Girondins and broke with Robespierre over whether courts should keep formal procedures."
+  }
+}

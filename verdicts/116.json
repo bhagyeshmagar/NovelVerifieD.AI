@@ -1,0 +1,50 @@
+{
+  "claim_id": "116",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "So the matter ended for the Abbé Faria. He remained in his cell, and this visit only increased the belief in his insanity.",
+    "Faria smiled. “Yes,” said he. “You have, indeed, a noble nature, Edmond, and I see by your paleness and agitation what is passing in your heart at this moment. No, be assured, I am not mad. This treasure exists, Dantès, and if I have not been allowed to possess it, you will."
+  ],
+  "contradicting_spans": [
+    "Faria remained in his cell, and this visit only increased the belief in his insanity."
+  ],
+  "reasoning": "Contradiction (temporal): The claim states that Faria was branded a Jacobin plotter out to poison King John VI and fled conservatives' pursuit. However, the evidence contradicts this by stating that Faria remained in his cell and this visit only increased the belief in his insanity.",
+  "analysis": {
+    "claim_id": "116",
+    "claim_text": "In Lisbon he backed constitutionalist Prince Pedro, was branded a Jacobin plotter out to poison King John VI and fled conservatives’ pursuit.",
+    "character": "Faria",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "In Lisbon he backed constitutionalist Prince Pedro.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "was branded a Jacobin plotter out to poison King John VI.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The claim states that Faria was branded a Jacobin plotter out to poison King John VI and fled conservatives' pursuit. However, the evidence contradicts this by stating that Faria remained in his cell and this visit only increased the belief in his insanity."
+  }
+}

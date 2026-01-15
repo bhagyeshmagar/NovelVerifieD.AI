@@ -1,0 +1,68 @@
+{
+  "claim_id": "79",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "The body was clothed in splendid costume, and enveloped in a magnificent flaxen mat. The head was adorned with plumes, and wore a crown of green leaves. The face, arms, and breast had been rubbed with oil, and therefore showed no mortification.",
+    "Kai-Koumou trembled with rage, and his countenance was flushed with a fierce exultation."
+  ],
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Kai-Koumou lifted fragments of his mother’s burnt bones to his lips to ‘breathe in her spirit’. The evidence shows that Kai-Koumou was mourned by his people and they performed various rituals, but there is no mention of him li",
+  "analysis": {
+    "claim_id": "79",
+    "claim_text": "After the killing, elders held a “Blood-and-Bone” rite; he lifted fragments of his mother’s burnt bones to his lips to “breathe in her spirit,” a ritual he repeated whenever catastrophe loomed, turning him gloomy yet unyielding.",
+    "character": "Kai-Koumou",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "After the killing, elders held a ‘Blood-and-Bone’ rite; he lifted fragments of his mother’s burnt bones to his lips to ‘breathe in her spirit,’ a ritual he repeated whenever catastrophe loomed, turning him gloomy yet unyielding.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Kai-Koumou lifted fragments of his mother’s burnt bones to his lips.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "He breathed in her spirit.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "Whenever catastrophe loomed, he repeated this ritual.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Kai-Koumou lifted fragments of his mother’s burnt bones to his lips to ‘breathe in her spirit’. The evidence shows that Kai-Koumou was mourned by his people and they performed various rituals, but there is no mention of him lifting his mother’s bones."
+  }
+}

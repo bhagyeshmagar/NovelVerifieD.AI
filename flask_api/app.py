@@ -49,6 +49,10 @@ app.register_blueprint(history_bp)
 from claims import claims_bp
 app.register_blueprint(claims_bp)
 
+# Register pipeline blueprint
+from pipeline_api import pipeline_bp
+app.register_blueprint(pipeline_bp)
+
 
 @app.route("/api/results", methods=["GET"])
 def get_results():

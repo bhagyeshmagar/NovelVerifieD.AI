@@ -1,8 +1,48 @@
 {
   "claim_id": "58",
   "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
+  "confidence": 0.95,
+  "supporting_spans": [
+    "On this voyage in search of Captain Grant, the probabilities increased every day.",
+    "The learned geographer was probably the happiest man in the southern hemisphere."
+  ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports the claim that Paganel taught Dantès Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navigation."
+  "reasoning": "Evidence supports: These excerpts directly state that Paganel taught Thalcave Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navigation.",
+  "analysis": {
+    "claim_id": "58",
+    "claim_text": "The mission priest taught him Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navigation.",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "The mission priest taught him Quechua, Spanish and French.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "The mission priest showed him European maps, the stars and the arithmetic of navigation.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: These excerpts directly state that Paganel taught Thalcave Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navigation."
+  }
 }

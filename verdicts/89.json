@@ -1,0 +1,50 @@
+{
+  "claim_id": "89",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "He was no longer astonished when he searched on to find in the register this note, placed in predestined to a violent and unhappy death.",
+    "M. Noirtier looked at the new-comers with a quick and intelligent expression, perceiving at once, by their ceremonious courtesy, that they were come on business of an unexpected and official character."
+  ],
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (factual): The character of Noirtier is not mentioned in the trial of Louis XVI.",
+  "analysis": {
+    "claim_id": "89",
+    "claim_text": "**Turning Point**: Arguing for procedural justice at Louis XVI’s trial (1793) he was driven from the inner circle, an experience that later anchored his insistence on legal formalism.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Arguing for procedural justice at Louis XVI’s trial (1793)",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "he was driven from the inner circle",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The character of Noirtier is not mentioned in the trial of Louis XVI."
+  }
+}

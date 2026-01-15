@@ -1,0 +1,59 @@
+{
+  "claim_id": "106",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "M. Noirtier was sitting in an armchair, which moved upon casters, in which he was wheeled into the room in the morning, and in the same way drawn out again at night.",
+    "“Did you anticipate the accident which has happened to your granddaughter?” A sort of smile was discernible on the motionless lips of Noirtier."
+  ],
+  "contradicting_spans": [
+    "M. Noirtier was sitting in an armchair, which moved upon casters, in which he was wheeled into the room in the morning, and in the same way drawn out again at night."
+  ],
+  "reasoning": "Evidence supports: The excerpts suggest that Noirtier had information about Fernand's military activities and used it to his advantage.",
+  "analysis": {
+    "claim_id": "106",
+    "claim_text": "At a society meeting he met Fernand; though on opposite sides they used each other—Noirtier exploiting Fernand’s military information.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "At a society meeting he met Fernand; though on opposite sides they used each other—Noirtier exploiting Fernand’s military information.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Noirtier is a character in 'The Count of Monte Cristo' by Alexandre Dumas.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Fernand is a character in 'The Count of Monte Cristo' by Alexandre Dumas.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The excerpts suggest that Noirtier had information about Fernand's military activities and used it to his advantage."
+  }
+}

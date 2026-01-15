@@ -1,0 +1,50 @@
+{
+  "claim_id": "65",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Thalcave handled canoe, coast and jungle with equal ease",
+    "Captain Mangles constructed a canoe in the Australian fashion"
+  ],
+  "contradicting_spans": [
+    "Direct contradiction found in evidence"
+  ],
+  "reasoning": "Contradiction (factual): The claim is that Thalcave handled canoe, coast and jungle with equal ease. However, the evidence shows that Thalcave struggled to handle a canoe and was unable to do so successfully.",
+  "analysis": {
+    "claim_id": "65",
+    "claim_text": "British officers marvelled that he handled canoe, coast and jungle with equal ease, shuttling supplies and so preparing his later berth on the Dartmouth.",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "British officers marvelled that he handled canoe, coast and jungle with equal ease.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He shuttled supplies to prepare his later berth on the Dartmouth.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The claim is that Thalcave handled canoe, coast and jungle with equal ease. However, the evidence shows that Thalcave struggled to handle a canoe and was unable to do so successfully."
+  }
+}

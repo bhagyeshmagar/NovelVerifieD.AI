@@ -1,8 +1,59 @@
 {
   "claim_id": "86",
-  "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports the claim that Glenarvan valued life and kept his word."
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "He felt that he ought to set an example of fortitude to his wife and his companions, as being the husband and chief.",
+    "Glenarvan thought it likely that Kai-Koumou's tribe had lost some chief of high rank whom they were particularly anxious to recover;"
+  ],
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (temporal): The evidence directly contradicts the claim that Kai-Koumou was haughty and cold, yet observed that the man valued life and kept his word; though words were few, a fragile trust grew between them during their stand-off. The evidence shows that Kai-Koumou was calm and passio",
+  "analysis": {
+    "claim_id": "86",
+    "claim_text": "At first Glenarvan found him haughty and cold, yet observed that the man valued life and kept his word; though words were few, a fragile trust grew between them during their stand-off.",
+    "character": "Kai-Koumou",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Glenarvan found him haughty and cold.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "The man valued life and kept his word.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Words were few, a fragile trust grew between them during their stand-off.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The evidence directly contradicts the claim that Kai-Koumou was haughty and cold, yet observed that the man valued life and kept his word; though words were few, a fragile trust grew between them during their stand-off. The evidence shows that Kai-Koumou was calm and passionless, and did not betray the extent of his misfortunes. He felt that he ought to set an example of fortitude to his wife and his companions, as being the husband and chief. Moreover, he was ready to die first for the common safety, if circumstances should require it."
+  }
 }

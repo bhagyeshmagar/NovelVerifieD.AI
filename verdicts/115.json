@@ -1,8 +1,56 @@
 {
   "claim_id": "115",
-  "verdict": "supported",
-  "confidence": 1.0,
+  "verdict": "contradicted",
+  "confidence": 0.95,
   "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three passages in 'The Count of Monte Cristo' supports the claim that Dantès contemplated suicide after Faria's death."
+  "contradicting_spans": [
+    "Faria, since their first acquaintance, had been on all points so rational and logical, so wonderfully sagacious, in fact, that he could not understand how so much wisdom on all points could be allied with madness."
+  ],
+  "reasoning": "Contradiction (factual): The excerpt contradicts the claim by suggesting that Faria was rational and logical, which is incompatible with the idea of him being mad.",
+  "analysis": {
+    "claim_id": "115",
+    "claim_text": "As a Jesuit novice he was sent to Goa, secretly read the old Indian medical text Charaka Samhita and laid the groundwork for his later toxicology expertise.",
+    "character": "Faria",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "As a Jesuit novice, Faria was sent to Goa.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Faria secretly read the old Indian medical text Charaka Samhita.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Faria laid the groundwork for his later toxicology expertise.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.3,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The excerpt contradicts the claim by suggesting that Faria was rational and logical, which is incompatible with the idea of him being mad."
+  }
 }

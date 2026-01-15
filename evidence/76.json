@@ -1,0 +1,16 @@
+{
+  "claim_id": "76",
+  "book_name": "In Search of the Castaways",
+  "character": "Kai-Koumou",
+  "claim_text": "He carried a European pocket-watch taken from the French mate, its inner lid holding a lock of Julia’s hair, which explained both his grasp of mechanical time and his disgust for Christian objects.",
+  "evidence": [],
+  "retrieval_stats": {
+    "total_retrieved": 0,
+    "temporal_coverage": {
+      "EARLY": 0,
+      "MID": 0,
+      "LATE": 0
+    },
+    "counterfactual_matches": 0
+  }
+}

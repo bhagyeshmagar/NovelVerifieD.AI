@@ -12,7 +12,7 @@ Pathway provides:
 """
 
 import pathway as pw
-from pathway.xpacks.llm.vector_store import VectorStoreClient
+# Note: We use core Pathway features only, not xpacks.llm which requires extra dependencies
 import json
 from pathlib import Path
 from dataclasses import dataclass

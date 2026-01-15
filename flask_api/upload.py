@@ -307,15 +307,7 @@ def delete_novel(filename):
         return jsonify({'error': f'Failed to delete: {str(e)}'}), 500
 
 
-@upload_bp.route('/api/pipeline/run', methods=['POST'])
-def run_pipeline():
-    """Trigger the full pipeline (placeholder for now)."""
-    # This would trigger run_all.py in the background
-    # For now, return a message
-    return jsonify({
-        'success': True,
-        'message': 'Pipeline triggered. Run manually with: python run_all.py --local'
-    })
+
 
 
 @upload_bp.route('/api/data/clear', methods=['POST'])

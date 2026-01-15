@@ -1,0 +1,50 @@
+{
+  "claim_id": "14",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "MID to declare his sentiments. The major accordingly undertook the part of Cupid's messenger between these two congenial hearts, and even told Paganel that marriage was 'the last blunder' that he could commit.",
+    "Paganel confessed to him, under the pledge of secrecy, a peculiarity that would facilitate his identification, if the police should ever be on his track!"
+  ],
+  "contradicting_spans": [
+    "Paganel confessed to MacNabb a peculiarity that would facilitate his identification, if the police should ever be on his track!"
+  ],
+  "reasoning": "Contradiction (factual): This contradicts the claim that Paganel and MacNabb confirmed their identities by exchanging certain hand signs.",
+  "analysis": {
+    "claim_id": "14",
+    "claim_text": "Mutual recognition with Major McNabbs: both had lived among the Charrúa and confirmed their identities by exchanging certain hand signs.",
+    "character": "Jacques Paganel",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Mutual recognition with Major McNabbs: both had lived among the Charrúa and confirmed their identities by exchanging certain hand signs.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Jacques Paganel is a character in the book 'In Search of the Castaways' by Jules Verne.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): This contradicts the claim that Paganel and MacNabb confirmed their identities by exchanging certain hand signs."
+  }
+}

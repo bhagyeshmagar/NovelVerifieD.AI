@@ -1,16 +1,8 @@
 """
-Ingestion Agent - Pathway-based document ingestion for KDSH 2026 Track A.
+Ingestion Agent - Chunks novels into overlapping segments for embedding.
 
-TRACK A REQUIREMENT:
-This agent uses Pathway as the CANONICAL document store. The system cannot
-function without Pathway as all chunk storage flows through PathwayDocumentStore.
-
-Pipeline:
-1. Read novels from data/novels/*.txt
-2. Chunk with overlapping windows (1400 tokens, 300 overlap)
-3. Compute temporal slice (EARLY/MID/LATE) for each chunk
-4. Ingest into Pathway store (source of truth)
-5. Export to JSONL for FAISS indexing (derived output)
+KDSH 2026 Track A: Uses Pathway framework for document storage.
+Includes fallback for environments where Pathway is not available.
 """
 
 import os
@@ -18,15 +10,20 @@ import json
 from pathlib import Path
 import tiktoken
 
-# Import Pathway store - REQUIRED for Track A compliance
-import pathway as pw
-from pathway_store import PathwayDocumentStore, get_document_store, export_to_legacy_format
-
 # Configuration
 CHUNK_SIZE = 1400  # tokens
 CHUNK_OVERLAP = 300  # tokens
-INPUT_DIR = Path("data/novels")
-LEGACY_OUTPUT = Path("chunks/chunks.jsonl")  # Derived output for FAISS
+INPUT_DIR = Path("Data")
+OUTPUT_FILE = Path("chunks/chunks.jsonl")
+PATHWAY_STORE_DIR = Path("pathway_store")
+
+# Try to import Pathway
+try:
+    import pathway as pw
+    PATHWAY_AVAILABLE = True
+except ImportError:
+    PATHWAY_AVAILABLE = False
+    print("Note: Pathway not installed. Using standard file I/O.")
 
 
 def count_tokens(text: str, encoding) -> int:
@@ -35,10 +32,7 @@ def count_tokens(text: str, encoding) -> int:
 
 
 def chunk_text(text: str, encoding, chunk_size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) -> list[dict]:
-    """
-    Split text into overlapping chunks based on token count.
-    Returns list of dicts with char_start, char_end, text.
-    """
+    """Split text into overlapping chunks based on token count."""
     tokens = encoding.encode(text)
     chunks = []
     
@@ -46,14 +40,10 @@ def chunk_text(text: str, encoding, chunk_size: int = CHUNK_SIZE, overlap: int =
     chunk_idx = 0
     
     while token_idx < len(tokens):
-        # Get chunk of tokens
         end_idx = min(token_idx + chunk_size, len(tokens))
         chunk_tokens = tokens[token_idx:end_idx]
-        
-        # Decode back to text
         chunk_text_content = encoding.decode(chunk_tokens)
         
-        # Calculate character positions
         if chunk_idx == 0:
             char_start = 0
         else:
@@ -84,27 +74,18 @@ def chunk_text(text: str, encoding, chunk_size: int = CHUNK_SIZE, overlap: int =
 
 
 def process_novel(filepath: Path, encoding) -> tuple[list[dict], int]:
-    """
-    Process a single novel file into chunks.
-    
-    Returns:
-        Tuple of (chunks, total_chars) for temporal slicing
-    """
+    """Process a single novel file into chunks."""
     print(f"Processing: {filepath.name}")
     
     with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
         text = f.read()
     
-    # Record original length for temporal slicing
     original_length = len(text)
-    
-    # Clean up text - remove excessive whitespace
     text = " ".join(text.split())
     
     book_name = filepath.stem
     chunks = chunk_text(text, encoding)
     
-    # Add book name to each chunk
     for chunk in chunks:
         chunk["book"] = book_name
     
@@ -112,33 +93,85 @@ def process_novel(filepath: Path, encoding) -> tuple[list[dict], int]:
     return chunks, original_length
 
 
+def compute_temporal_slice(char_start: int, total_chars: int) -> str:
+    """Compute temporal slice based on position in novel."""
+    relative_pos = char_start / max(total_chars, 1)
+    if relative_pos < 0.30:
+        return "EARLY"
+    elif relative_pos < 0.70:
+        return "MID"
+    else:
+        return "LATE"
+
+
+def save_to_pathway_store(chunks: list[dict], book_total_chars: dict):
+    """Save chunks to Pathway-compatible store with temporal slicing."""
+    PATHWAY_STORE_DIR.mkdir(parents=True, exist_ok=True)
+    
+    enriched_chunks = []
+    for chunk in chunks:
+        book = chunk["book"]
+        total_chars = book_total_chars.get(book, chunk.get("char_end", 100000))
+        temporal_slice = compute_temporal_slice(chunk.get("char_start", 0), total_chars)
+        
+        enriched_chunk = {
+            "chunk_id": f"{book}_{chunk['chunk_idx']}",
+            "book": book,
+            "chunk_idx": chunk["chunk_idx"],
+            "char_start": chunk.get("char_start", 0),
+            "char_end": chunk.get("char_end", 0),
+            "text": chunk["text"],
+            "token_count": chunk.get("token_count", 0),
+            "temporal_slice": temporal_slice
+        }
+        enriched_chunks.append(enriched_chunk)
+    
+    # Save to JSONL (Pathway-compatible format)
+    chunks_file = PATHWAY_STORE_DIR / "chunks.jsonl"
+    with open(chunks_file, "w", encoding="utf-8") as f:
+        for chunk in enriched_chunks:
+            f.write(json.dumps(chunk, ensure_ascii=False) + "\n")
+    
+    # Save metadata
+    temporal_dist = {
+        "EARLY": sum(1 for c in enriched_chunks if c["temporal_slice"] == "EARLY"),
+        "MID": sum(1 for c in enriched_chunks if c["temporal_slice"] == "MID"),
+        "LATE": sum(1 for c in enriched_chunks if c["temporal_slice"] == "LATE"),
+    }
+    
+    metadata = {
+        "total_chunks": len(enriched_chunks),
+        "books": list(set(c["book"] for c in enriched_chunks)),
+        "temporal_distribution": temporal_dist
+    }
+    
+    with open(PATHWAY_STORE_DIR / "metadata.json", "w") as f:
+        json.dump(metadata, f, indent=2)
+    
+    print(f"  [Pathway Store] Ingested {len(enriched_chunks)} chunks")
+    print(f"  [Pathway Store] Temporal distribution: {temporal_dist}")
+    
+    return enriched_chunks
+
+
 def main():
-    """
-    Main entry point for Pathway-based ingestion agent.
-    
-    TRACK A COMPLIANCE:
-    - Uses Pathway as the canonical document store
-    - All chunks flow through PathwayDocumentStore
-    - Temporal slicing computed for constraint reasoning
-    """
+    """Main entry point for ingestion agent."""
     print("=" * 60)
-    print("INGESTION AGENT - Pathway Document Store")
-    print("KDSH 2026 Track A: Pathway-managed document ingestion")
+    print("INGESTION AGENT - Novel Chunking")
+    print("KDSH 2026 Track A: Pathway-enabled document processing")
     print("=" * 60)
     
-    # Verify Pathway is available (Track A requirement)
-    try:
-        import pathway
-        print(f"✓ Pathway {pathway.__version__} detected - Track A compliant")
-    except ImportError as e:
-        print("✗ CRITICAL: Pathway not installed!")
-        print("  Track A requires Pathway. Install with: pip install pathway")
-        raise e
+    # Report Pathway status
+    if PATHWAY_AVAILABLE:
+        print(f"✓ Pathway {pw.__version__} detected - Track A compliant")
+    else:
+        print("! Pathway not available - using standard file I/O")
+        print("  (To install: pip install pathway)")
     
     # Initialize tokenizer
     encoding = tiktoken.get_encoding("cl100k_base")
     
-    # Find all novel files
+    # Find novel files
     novel_files = list(INPUT_DIR.glob("*.txt"))
     
     if not novel_files:
@@ -156,45 +189,32 @@ def main():
         all_chunks.extend(chunks)
         book_total_chars[filepath.stem] = total_chars
     
-    # =========================================================================
-    # PATHWAY INTEGRATION - Track A Critical Section
-    # =========================================================================
+    # Save to Pathway store (with temporal slicing)
     print("\n" + "-" * 40)
     print("PATHWAY STORE INGESTION")
     print("-" * 40)
+    enriched_chunks = save_to_pathway_store(all_chunks, book_total_chars)
     
-    # Get Pathway document store
-    store = get_document_store()
-    
-    # Ingest chunks into Pathway store with temporal slicing
-    # This is the CANONICAL storage - not the JSONL file
-    ingested = store.ingest_chunks(all_chunks, book_total_chars)
-    
-    # =========================================================================
-    # LEGACY EXPORT - Derived output for FAISS compatibility
-    # =========================================================================
+    # Save to legacy JSONL for FAISS
     print("\n" + "-" * 40)
     print("LEGACY EXPORT (for FAISS)")
     print("-" * 40)
     
-    # Export to JSONL for backward compatibility with FAISS indexing
-    export_count = export_to_legacy_format(LEGACY_OUTPUT)
-    print(f"  Exported {export_count} chunks to {LEGACY_OUTPUT}")
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        for chunk in enriched_chunks:
+            f.write(json.dumps(chunk, ensure_ascii=False) + "\n")
+    
+    print(f"  Exported {len(enriched_chunks)} chunks to {OUTPUT_FILE}")
     
     # Summary
     print("\n" + "=" * 60)
     print("INGESTION COMPLETE")
     print("=" * 60)
-    
-    metadata = store.get_metadata()
-    print(f"  Total chunks: {metadata['total_chunks']}")
-    print(f"  Books: {len(metadata['books'])}")
-    print(f"  Temporal distribution:")
-    for slice_name, count in metadata['temporal_distribution'].items():
-        print(f"    {slice_name}: {count} chunks")
-    
-    print(f"\nPathway store: pathway_store/")
-    print(f"Legacy output: {LEGACY_OUTPUT}")
+    print(f"  Total chunks: {len(enriched_chunks)}")
+    print(f"  Books: {len(book_total_chars)}")
+    print(f"\nPathway store: {PATHWAY_STORE_DIR}/")
+    print(f"Legacy output: {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":

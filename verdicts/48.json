@@ -1,0 +1,50 @@
+{
+  "claim_id": "48",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Thalcave rode in advance, beat the bushes, and thus frightened away the 'cholinas' (vipers), while the agile Thaouka bounded over all obstacles, and aided his master in clearing a passage for the horses that followed.",
+    "At four o'clock in the afternoon they approached a hill that might have passed for a mountain in so level a country. It was Tapalquem Sierra, and at its foot the travelers encamped for the night."
+  ],
+  "contradicting_spans": [
+    "Thalcave rode in advance, beat the bushes, and aided his master in clearing a passage for the horses that followed."
+  ],
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Thalcave guarded his tribe's herb lore and nature beliefs while working as a gaucho on a ranch.",
+  "analysis": {
+    "claim_id": "48",
+    "claim_text": "Passing as a half-caste gaucho he worked on a ranch, picked up Spanish and the settlers’ rules, yet guarded his tribe’s herb lore and nature beliefs.",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Thalcave worked on a ranch and picked up Spanish and the settlers' rules.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Thalcave guarded his tribe's herb lore and nature beliefs.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Thalcave guarded his tribe's herb lore and nature beliefs while working as a gaucho on a ranch."
+  }
+}

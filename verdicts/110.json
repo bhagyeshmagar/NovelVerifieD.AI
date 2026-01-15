@@ -1,8 +1,49 @@
 {
   "claim_id": "110",
-  "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence confirms the claim."
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "He kept a locked study full of revolutionary pamphlets and private letters, rereading them alone while he weighed his past."
+  ],
+  "contradicting_spans": [
+    "Morrel watched her as she left the room; he heard her ascend the little staircase which led both to Madame de Villefort’s apartments and to hers."
+  ],
+  "reasoning": "Contradiction (temporal): The passage contradicts the claim that Noirtier kept a locked study full of revolutionary pamphlets and private letters, rereading them alone while he weighed his past.",
+  "analysis": {
+    "claim_id": "110",
+    "claim_text": "He kept a locked study full of revolutionary pamphlets and private letters, rereading them alone while he weighed his past.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "He kept a locked study full of revolutionary pamphlets and private letters.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He reread these materials alone while weighing his past.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The passage contradicts the claim that Noirtier kept a locked study full of revolutionary pamphlets and private letters, rereading them alone while he weighed his past."
+  }
 }

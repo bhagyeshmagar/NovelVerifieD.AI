@@ -1,8 +1,47 @@
 {
   "claim_id": "93",
-  "verdict": "supported",
-  "confidence": 1.0,
+  "verdict": "contradicted",
+  "confidence": 0.95,
   "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that Napoleon secretly raised an army in Marseille and left traceable evidence."
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (factual): The evidence from the novel directly contradicts the claim that Noirtier secretly raised the Southern Army for Napoleon and left traceable evidence.",
+  "analysis": {
+    "claim_id": "93",
+    "claim_text": "He secretly raised the “Southern Army” in Marseille for Napoleon but left traceable evidence—copies of the ciphered letters hidden inside oak barrels in his own vineyard, later unearthed by Villefort.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "He secretly raised the ‘Southern Army’ in Marseille for Napoleon.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He left traceable evidence—copies of the ciphered letters hidden inside oak barrels in his own vineyard.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.3,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The evidence from the novel directly contradicts the claim that Noirtier secretly raised the Southern Army for Napoleon and left traceable evidence."
+  }
 }

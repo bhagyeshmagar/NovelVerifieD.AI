@@ -1,8 +1,59 @@
 {
   "claim_id": "114",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that Dantès was able to read and understand Italian."
+  "supporting_spans": [
+    "Each word that fell from his companion’s lips seemed fraught with the mysteries of science, as worthy of digging out as the gold and diamonds in the mines of Guzerat and Golconda, which he could just recollect having visited during a voyage made in his earliest youth.",
+    "Faria smiled. “Yes,” said he. “You have, indeed, a noble nature, Edmond, and I see by your paleness and agitation what is passing in your heart at this moment. No, be assured, I am not mad. This treasure exists, Dantès, and if I have not been allowed to possess it, you will."
+  ],
+  "contradicting_spans": [
+    "Faria smiled, and, proceeding to the disused fireplace, raised, by the help of his chisel, a long stone, which had doubtless been the hearth, beneath which was a cavity of considerable depth, serving as a safe depository of the articles mentioned to Dantès. 0213m"
+  ],
+  "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Faria entered Bologna University and studied theology and chemistry. The passage mentions that Faria was studying Italian texts in a cavity beneath a hearth, suggesting that he was not enrolled in a university program.",
+  "analysis": {
+    "claim_id": "114",
+    "claim_text": "At twelve he entered Bologna University, read theology and chemistry, and caused a stir by decoding ciphers in a fifteenth-century alchemist’s notebook.",
+    "character": "Faria",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "At twelve he entered Bologna University.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "read theology and chemistry.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "caused a stir by decoding ciphers in a fifteenth-century alchemist’s notebook.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Faria entered Bologna University and studied theology and chemistry. The passage mentions that Faria was studying Italian texts in a cavity beneath a hearth, suggesting that he was not enrolled in a university program."
+  }
 }

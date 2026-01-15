@@ -1,8 +1,50 @@
 {
   "claim_id": "60",
-  "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence confirms the claim."
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "In short, it was better to follow Thalcave's advice and reach the village of Tandil, where at least they could obtain information.",
+    "Thalcave had brought down a too bold enemy. The wolves that were advancing in close ranks recoiled, and gathered together again a hundred paces from the inclosure."
+  ],
+  "contradicting_spans": [
+    "In short, it was better to follow Thalcave's advice and reach the village of Tandil, where at least they could obtain information."
+  ],
+  "reasoning": "Contradiction (factual): The claim is that Thalcave led a night dig that saved eight survivors, among them French geographer Roux. However, the evidence shows that Glenarvan and his group were not in need of rescue at all, as they had already obtained information from Captain Grant.",
+  "analysis": {
+    "claim_id": "60",
+    "claim_text": "First rescue: in 1852 an avalanche buried a silver-prospecting caravan; Thalcave led a night dig that saved eight survivors, among them French geographer Roux.",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "In 1852, an avalanche buried a silver-prospecting caravan.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Thalcave led a night dig that saved eight survivors, among them French geographer Roux.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The claim is that Thalcave led a night dig that saved eight survivors, among them French geographer Roux. However, the evidence shows that Glenarvan and his group were not in need of rescue at all, as they had already obtained information from Captain Grant."
+  }
 }

@@ -1,8 +1,50 @@
 {
   "claim_id": "53",
   "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence confirms the claim."
+  "confidence": 0.9,
+  "supporting_spans": [
+    "Thalcave whistled in a peculiar manner. Immediately a magnificent Argentine horse, of superb form, issued from a small wood near by, and approached at the call of his master.",
+    "Robert first closed his eyes, reclining his head on Lord Glenarvan's shoulder; and soon all the inmates of the rancho slept under the protection of God."
+  ],
+  "contradicting_spans": [
+    "Thaouka was called a bird in the Patagonian language, and he justly merited this appellation."
+  ],
+  "reasoning": "Evidence supports: The claim is supported by direct statements from the evidence that Thalcave whistled to call his horse, Thaouka, and Robert closed his eyes and slept under Glenarvan's protection.",
+  "analysis": {
+    "claim_id": "53",
+    "claim_text": "While gentling Thaouka they plunged off a cliff; badly hurt, he chewed herbs to staunch the bleeding and survived, forging with the horse a bond deeper than master and beast.",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "While gentling Thaouka they plunged off a cliff; badly hurt, he chewed herbs to staunch the bleeding and survived.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Thalcave was the character in the book 'In Search of the Castaways' who underwent this event.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.3,
+    "verdict": "supported",
+    "confidence": 0.9,
+    "reasoning": "Evidence supports: The claim is supported by direct statements from the evidence that Thalcave whistled to call his horse, Thaouka, and Robert closed his eyes and slept under Glenarvan's protection."
+  }
 }

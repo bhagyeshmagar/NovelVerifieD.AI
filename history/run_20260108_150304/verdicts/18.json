@@ -1,8 +1,0 @@
-{
-  "claim_id": "18",
-  "verdict": "supported",
-  "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three different sources supports the claim."
-}

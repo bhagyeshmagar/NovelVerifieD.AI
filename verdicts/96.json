@@ -1,0 +1,51 @@
+{
+  "claim_id": "96",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "in some way!” “Yes,” replied Noirtier.",
+    "At that letter the old man signified ‘Yes.’",
+    "One look was sufficient to tell her that her grandfather was suffering, and that there was much on his mind which he was wishing to communicate to her."
+  ],
+  "contradicting_spans": [
+    "M. Noirtier looked at the dictionary. Franz took it with a nervous trembling, and repeated the letters of the alphabet successively, until he came to M. At that letter the old man signified ‘Yes.’"
+  ],
+  "reasoning": "Contradiction (capability): The claim is contradicted by the fact that Noirtier communicates with Franz through a dictionary and not through eye movements.",
+  "analysis": {
+    "claim_id": "96",
+    "claim_text": "When he saw that Valentine had inherited his trembling hands he began training her to communicate by eye movement (1819); after his own paralysis the method evolved into a blink-code.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "When he saw that Valentine had inherited his trembling hands he began training her to communicate by eye movement (1819)",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "After his own paralysis the method evolved into a blink-code.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (capability): The claim is contradicted by the fact that Noirtier communicates with Franz through a dictionary and not through eye movements."
+  }
+}

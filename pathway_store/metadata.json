@@ -1,0 +1,12 @@
+{
+  "total_chunks": 736,
+  "books": [
+    "In search of the castaways",
+    "The Count of Monte Cristo"
+  ],
+  "temporal_distribution": {
+    "EARLY": 179,
+    "MID": 231,
+    "LATE": 326
+  }
+}

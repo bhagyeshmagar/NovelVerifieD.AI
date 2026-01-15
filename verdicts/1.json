@@ -2,7 +2,58 @@
   "claim_id": "1",
   "verdict": "supported",
   "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three different passages in the book confirms that Abbé Faria betrayed Edmond Dantès to the prison authorities."
+  "supporting_spans": [
+    "On this voyage in search of Captain Grant, the probabilities increased every day.",
+    "The Frenchman resolved to learn Spanish, which nobody on board knew, and which would facilitate his search on the shores of Chili."
+  ],
+  "contradicting_spans": [
+    "Jacques Paganel fell in love with geography after reading Captain Cook’s nautical journal; with a homemade telescope he studied the stars and papered his bedroom walls with maps he drew himself, earning his father’s scolding for neglecting “serious” pursuits."
+  ],
+  "reasoning": "Evidence supports: Jacques Paganel's actions suggest that he was passionate about geography and had a strong interest in exploring new lands. His decision to learn Spanish and his excitement at the prospect of discovering Captain Grant's location on the shores of Chili support this claim.",
+  "analysis": {
+    "claim_id": "1",
+    "claim_text": "At twelve, Jacques Paganel fell in love with geography after reading Captain Cook’s nautical journal; with a homemade telescope he studied the stars and papered his bedroom walls with maps he drew himself, earning his father’s scolding for neglecting “serious” pursuits.",
+    "character": "Jacques Paganel",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "At twelve, Jacques Paganel fell in love with geography after reading Captain Cook’s nautical journal;",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "with a homemade telescope he studied the stars and papered his bedroom walls with maps he drew himself,",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "earning his father’s scolding for neglecting ‘serious’ pursuits.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: Jacques Paganel's actions suggest that he was passionate about geography and had a strong interest in exploring new lands. His decision to learn Spanish and his excitement at the prospect of discovering Captain Grant's location on the shores of Chili support this claim."
+  }
 }

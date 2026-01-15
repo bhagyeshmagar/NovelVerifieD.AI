@@ -1,8 +1,47 @@
 {
   "claim_id": "94",
-  "verdict": "supported",
-  "confidence": 1.0,
+  "verdict": "contradicted",
+  "confidence": 0.95,
   "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three passages in the book 'The Count of Monte Cristo' supports the claim that the character D'Avrigny gave a new sedative to political prisoners, which led to their paralysis and gave him leverage over enemies even after he himself became paralyzed."
+  "contradicting_spans": [
+    "M. Noirtier was the next morning _poor M. Noirtier_, the helpless old man, at the tender mercies of the weakest creature in the household, that is, his grandchild, Val"
+  ],
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by stating that Noirtier was helpless and at the mercy of his grandchild, which does not suggest that he had leverage over enemies even after paralysis set in.",
+  "analysis": {
+    "claim_id": "94",
+    "claim_text": "To treat worsening hand tremors he allowed his private doctor to test a new sedative on political prisoners; the secret gave him leverage over enemies even after paralysis set in.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "To treat worsening hand tremors he allowed his private doctor to test a new sedative on political prisoners; the secret gave him leverage over enemies even after paralysis set in.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He allowed his private doctor to test a new sedative on political prisoners.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.3,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by stating that Noirtier was helpless and at the mercy of his grandchild, which does not suggest that he had leverage over enemies even after paralysis set in."
+  }
 }

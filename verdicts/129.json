@@ -1,8 +1,47 @@
 {
   "claim_id": "129",
-  "verdict": "supported",
-  "confidence": 0.5,
+  "verdict": "contradicted",
+  "confidence": 0.95,
   "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports the claim that Dantès considered suicide after Faria's death."
+  "contradicting_spans": [
+    "He seated himself on the edge of that terrible bed, and fell into melancholy and gloomy reverie. Alone! he was alone again! again condemned to silence—again face to face with nothingness! Was not Faria’s fate the better, after all—to solve the problem of life at its source, even at the risk of horrible suffering? The idea of suicide, which his friend had driven away and kept away by his cheerful presence, now hovered like a phantom over the abbé’s dead body. “If I could die,” he said, “I should go where he goes, and should assuredly find him again. But how to die? It is very easy,” he went on with a smile; “I will remain here, rush on the first person that opens the door, strangle him, and then they will guillotine me.”"
+  ],
+  "reasoning": "Contradiction (temporal): The passage contradicts the claim by describing Faria's death as a result of suicide, which is incompatible with the idea that he would pursue scholarship without proper tools.",
+  "analysis": {
+    "claim_id": "129",
+    "claim_text": "He learnt to carve fish-bone pen-nibs from an old Macao watchmaker, letting him pursue scholarship without proper tools.",
+    "character": "Faria",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "He learnt to carve fish-bone pen-nibs from an old Macao watchmaker.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "This skill allowed him to pursue scholarship without proper tools.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.3,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The passage contradicts the claim by describing Faria's death as a result of suicide, which is incompatible with the idea that he would pursue scholarship without proper tools."
+  }
 }

@@ -1,0 +1,59 @@
+{
+  "claim_id": "29",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "The night before the mate was hanged he pressed a dagger engraved with his family crest into the boy’s hand.",
+    "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
+  ],
+  "contradicting_spans": [
+    "The night before the mate was hanged he pressed a dagger engraved with his family crest into the boy’s hand."
+  ],
+  "reasoning": "Contradiction (factual): This excerpt directly contradicts the claim that Ben Joyce was not present at the time of the hanging.",
+  "analysis": {
+    "claim_id": "29",
+    "claim_text": "The night before the mate was hanged he pressed a dagger engraved with his family crest into the boy’s hand.",
+    "character": "Tom Ayrton/Ben Joyce",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "The night before the mate was hanged he pressed a dagger engraved with his family crest into the boy’s hand.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Tom Ayrton/Ben Joyce is the character in question.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "The dagger was engraved with a family crest.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): This excerpt directly contradicts the claim that Ben Joyce was not present at the time of the hanging."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "claim_id": "92",
+  "verdict": "supported",
+  "confidence": 0.5,
+  "supporting_spans": [],
+  "contradicting_spans": [
+    "M. Noirtier was sitting in an armchair, which moved upon casters, in which he was wheeled into the room in the morning, and in the same way drawn out again at night."
+  ],
+  "reasoning": "Evidence supports: Unable to parse LLM response - using conservative default",
+  "analysis": {
+    "claim_id": "92",
+    "claim_text": "**Father-son Rift**: Discovering that his elder son Gérard (Villefort) sought to wed into the old aristocracy, Noirtier publicly burned the Saint-Méran betrothal contract (1804), forcing Villefort to flee to Paris overnight.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Noirtier publicly burned the Saint-Méran betrothal contract (1804)",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Villefort sought to wed into the old aristocracy",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.3,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.5,
+    "reasoning": "Evidence supports: Unable to parse LLM response - using conservative default"
+  }
+}

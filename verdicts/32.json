@@ -1,0 +1,47 @@
+{
+  "claim_id": "32",
+  "verdict": "supported",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Now, said Glenarvan, \"I appeal to you all for advice as to what is best to be done. Your advice, Ayrton, would be particularly valuable, and I should be much obliged if you would give it to us.\""
+  ],
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports: Glenarvan addresses Ayrton specifically for advice, indicating that he values his knowledge of the country and customs of the natives.",
+  "analysis": {
+    "claim_id": "32",
+    "claim_text": "During clashes between tribe and settlers he steered both sides toward mutual ruin, then welded the survivors into an underground intelligence web that straddled the two worlds.",
+    "character": "Tom Ayrton/Ben Joyce",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "During clashes between tribe and settlers he steered both sides toward mutual ruin.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "He welded the survivors into an underground intelligence web that straddled the two worlds.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.0,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: Glenarvan addresses Ayrton specifically for advice, indicating that he values his knowledge of the country and customs of the natives."
+  }
+}

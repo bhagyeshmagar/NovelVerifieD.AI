@@ -1,0 +1,59 @@
+{
+  "claim_id": "57",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Thalcave whistled in a peculiar manner.",
+    "Glenarvan and Thalcave had scarcely time to perceive Robert, who, clinging to the horse's mane, disappeared in the darkness."
+  ],
+  "contradicting_spans": [
+    "Thalcave raised him in a mountain mission."
+  ],
+  "reasoning": "Contradiction (factual): The character of Thalcave contradicts the claim that he raised the protagonist in a mountain mission.",
+  "analysis": {
+    "claim_id": "57",
+    "claim_text": "Early trauma: at seven his father vanished in a local uprising, at nine his mother died of illness; a banished Jesuit, Father Leclere, raised him in a mountain mission.",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "At seven, his father vanished in a local uprising.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "At nine, his mother died of illness.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "A banished Jesuit, Father Leclere, raised him in a mountain mission.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (factual): The character of Thalcave contradicts the claim that he raised the protagonist in a mountain mission."
+  }
+}

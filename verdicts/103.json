@@ -1,8 +1,47 @@
 {
   "claim_id": "103",
-  "verdict": "supported",
-  "confidence": 1.0,
+  "verdict": "contradicted",
+  "confidence": 0.95,
   "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three different passages in the book 'The Count of Monte Cristo' supports the claim that Napoleon distanced himself from former comrades and grew wary of power’s corruption."
+  "contradicting_spans": [
+    "M. Noirtier, who, on the previous night, was the old Jacobin, the old senator, the old Carbonaro, laughing at the guillotine, the cannon, and the dagger—M. Noirtier, playing with revolutions—M. Noirtier, for whom France was a vast chess-board, from which pawns, rooks, knights, and queens were to disappear, so that the king was checkmated—M. Noirtier, the redoubtable, was the next morning _poor M. Noirtier_, the helpless old man, at the tender mercies of the weakest creature in the household, that is, his grandchild, Val"
+  ],
+  "reasoning": "Contradiction (temporal): The evidence directly contradicts the claim by showing that Noirtier was not wary of power's corruption and continued to be involved in revolutionary activities until his death.",
+  "analysis": {
+    "claim_id": "103",
+    "claim_text": "As Napoleon climbed toward dictatorship Noirtier distanced himself from former comrades and grew wary of power’s corruption.",
+    "character": "Noirtier",
+    "book_name": "The Count of Monte Cristo",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Napoleon climbed toward dictatorship.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Noirtier distanced himself from former comrades.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.3,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The evidence directly contradicts the claim by showing that Noirtier was not wary of power's corruption and continued to be involved in revolutionary activities until his death."
+  }
 }

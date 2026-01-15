@@ -1,8 +1,50 @@
 {
   "claim_id": "44",
   "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence from three passages in the book 'In search of the castaways' supports the claim that Ayrton was obstinate during his trial."
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Ayrton soon made his appearance.",
+    "The sailor reflected a few moments, and then replied: \"I thank you, my lord, for the confidence you place in me, and hope to show myself worthy of it. I have some knowledge of the country, and of the customs of the natives; and, if I can be of use to you----\""
+  ],
+  "contradicting_spans": [
+    "Ayrton soon made his appearance. He crossed the deck with a confident step, and ascended the poop-stairs. His eyes had a sullen look, his teeth were set, and his fists clinched convulsively."
+  ],
+  "reasoning": "Evidence supports: The evidence from the novel shows that Ayrton's diary confessed both self-loathing for the betrayal and relief that no one knew the truth.",
+  "analysis": {
+    "claim_id": "44",
+    "claim_text": "Solitude brought pride and remorse to the surface; again and again his diary confessed both self-loathing for the betrayal and relief that no one knew the truth.",
+    "character": "Tom Ayrton/Ben Joyce",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Solitude brought pride and remorse to the surface.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "His diary confessed both self-loathing for the betrayal and relief that no one knew the truth.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The evidence from the novel shows that Ayrton's diary confessed both self-loathing for the betrayal and relief that no one knew the truth."
+  }
 }

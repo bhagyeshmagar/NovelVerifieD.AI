@@ -1,0 +1,50 @@
+{
+  "claim_id": "66",
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Glenarvan was particularly rejoiced to discover that the Patagonian was a guide, and, moreover, a guide of the Pampas.",
+    "Thalcave had brought down a too bold enemy. The wolves that were advancing in close ranks recoiled, and gathered together again a hundred paces from the inclosure."
+  ],
+  "contradicting_spans": [
+    "Thalcave had brought down a too bold enemy. The wolves that were advancing in close ranks recoiled, and gathered together again a hundred paces from the inclosure."
+  ],
+  "reasoning": "Contradiction (capability): Thalcave is not a guide for the South-American interior as claimed.",
+  "analysis": {
+    "claim_id": "66",
+    "claim_text": "Lord Glenarvan met him briefly at a London Royal Geographical Society dinner, was struck by his encyclopaedic knowledge of mountains and seas and hired him at once as guide for the South-American interior.",
+    "character": "Thalcave",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Lord Glenarvan met him briefly at a London Royal Geographical Society dinner.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Thalcave was hired as guide for the South-American interior.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (capability): Thalcave is not a guide for the South-American interior as claimed."
+  }
+}

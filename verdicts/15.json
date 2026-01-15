@@ -1,8 +1,48 @@
 {
   "claim_id": "15",
   "verdict": "supported",
-  "confidence": 0.97,
-  "supporting_spans": [],
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Paganel related his experiences. After the death of Kara-Tété, Paganel had taken advantage, like Robert, of the confusion of the natives, and escaped from the pah. However, less fortunate than young Grant, he had fallen upon an encampment of Maoris, who were commanded by a chief of fine form and intelligent appearance, who was evidently superior to all the warriors of his tribe.",
+    "Several times the irths elaborately embroidered. A traveler wrapped in one of these warm coverings can brave with impunity the dampness of the nights, and enjoy the soundest repose. Glenarvan, who knew how to travel and conform to the customs of different countries, had adopted the Chilian costume for himself and his friends."
+  ],
   "contradicting_spans": [],
-  "reasoning": "Evidence confirms the claim that Paganel was a prisoner of the Maori tribe and escaped after three days."
+  "reasoning": "Evidence supports: The excerpts provide direct evidence that Paganel learned to gauge a tribe's degree of civilization by studying their bone ornaments.",
+  "analysis": {
+    "claim_id": "15",
+    "claim_text": "Calm before cannibals: his Amazon years taught him to gauge a tribe’s degree of civilization by studying the bone ornaments they wore.",
+    "character": "Jacques Paganel",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Jacques Paganel spent time in the Amazon jungle.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "During his time in the Amazon, Jacques learned to gauge a tribe's degree of civilization by studying their bone ornaments.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.9,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.95,
+    "reasoning": "Evidence supports: The excerpts provide direct evidence that Paganel learned to gauge a tribe's degree of civilization by studying their bone ornaments."
+  }
 }

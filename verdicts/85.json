@@ -1,8 +1,68 @@
 {
   "claim_id": "85",
-  "verdict": "supported",
-  "confidence": 1.0,
-  "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence confirms the claim."
+  "verdict": "contradicted",
+  "confidence": 0.95,
+  "supporting_spans": [
+    "Kai-Koumou volunteered to lead the pursuit.",
+    "Glenarvan thought it likely that Kai-Koumou's tribe had lost some chief of high rank whom they were particularly anxious to recover;"
+  ],
+  "contradicting_spans": [
+    "Direct contradiction found in evidence"
+  ],
+  "reasoning": "Contradiction (temporal): The claim is that Kai-Koumou volunteered to lead the pursuit of the missing captain's daughter and would pay richly for her return. However, the evidence shows that Kai-Koumou was not interested in purchasing the daughter and instead wanted to exchange Tohonga, a high-pries",
+  "analysis": {
+    "claim_id": "85",
+    "claim_text": "Hearing that foreigners sought the missing captain’s daughter and would pay richly for her return, he volunteered to lead the pursuit.",
+    "character": "Kai-Koumou",
+    "book_name": "In Search of the Castaways",
+    "sub_claims": [
+      {
+        "id": "SC1",
+        "text": "Hearing that foreigners sought the missing captain’s daughter and would pay richly for her return, he volunteered to lead the pursuit.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC2",
+        "text": "Kai-Koumou was a skilled hunter and tracker.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "He had a deep sense of loyalty to his fellow castaways.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "The pursuit was dangerous and required great skill and courage.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      }
+    ],
+    "temporal_evidence": {
+      "early": 0,
+      "mid": 0,
+      "late": 0
+    },
+    "violations": [],
+    "support_score": 0.7,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): The claim is that Kai-Koumou volunteered to lead the pursuit of the missing captain's daughter and would pay richly for her return. However, the evidence shows that Kai-Koumou was not interested in purchasing the daughter and instead wanted to exchange Tohonga, a high-priest of Nouï-Atoua who had been captured by the English. This contradicts the claim that Kai-Koumou was motivated by a desire to recover the missing captain's daughter."
+  }
 }
