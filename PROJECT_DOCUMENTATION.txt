@@ -1,6 +1,6 @@
 ================================================================================
                     NOVELVERIFIED.AI - PROJECT DOCUMENTATION
-                    Team StrawHats - KDSH 2026 Track A
+                    NovelVerified.AI Team - NovelVerified.AI Pathway-based
 ================================================================================
 
 LAST UPDATED: January 12, 2026
@@ -62,7 +62,7 @@ TRACK A REQUIREMENTS:
 SECTION 3: PROJECT STRUCTURE
 ================================================================================
 
-StrawHats_KDSH_2026/
+NovelVerified_AI/
 ├── Data/                        # Source data
 │   ├── In search of the castaways.txt
 │   ├── The Count of Monte Cristo.txt
@@ -100,7 +100,7 @@ StrawHats_KDSH_2026/
 ├── requirements.txt             # Python dependencies
 ├── README.md                    # Quick start guide
 ├── REPORT.md                    # Technical report
-├── TRACK_A_JUSTIFICATION.md     # Track A compliance
+├── TRACK_A_JUSTIFICATION.md     # Pathway-based compliance
 ├── .env.example                 # Environment template
 └── .gitignore                   # Git exclusions
 
@@ -113,7 +113,7 @@ GENERATED DIRECTORIES (after running pipeline):
 ├── dossiers/                    # Structured Markdown reports
 ├── pathway_store/               # Pathway document store
 └── output/
-    └── results.csv              # KDSH submission format
+    └── results.csv              # NovelVerified.AI submission format
 
 ================================================================================
 SECTION 4: SYSTEM ARCHITECTURE
@@ -164,7 +164,7 @@ SECTION 4: SYSTEM ARCHITECTURE
                       ▼                               ▼
 ┌─────────────────────────────┐    ┌─────────────────────────────┐
 │    AGENT 6: DOSSIER         │    │    AGENT 7: AGGREGATOR      │
-│    - Constraint-linked docs │    │    - KDSH format CSV        │
+│    - Constraint-linked docs │    │    - NovelVerified.AI format CSV        │
 │    - Temporal evidence      │    │    - Story ID, Prediction,  │
 └─────────────────────────────┘    │      Rationale              │
                                    └─────────────────────────────┘
@@ -212,7 +212,7 @@ CALIBRATED THRESHOLDS:
 This prevents both over-eager support AND over-eager contradiction.
 
 ================================================================================
-SECTION 7: OUTPUT FORMAT (KDSH Submission)
+SECTION 7: OUTPUT FORMAT (NovelVerified.AI Submission)
 ================================================================================
 
 The results.csv file follows this format:
@@ -231,7 +231,7 @@ SECTION 8: TECHNOLOGIES USED
 ================================================================================
 
 PYTHON PACKAGES (requirements.txt):
-- pathway>=0.4.0           # Document processing (Track A)
+- pathway>=0.4.0           # Document processing (Pathway-based)
 - faiss-cpu>=1.7.4         # Vector similarity search
 - sentence-transformers    # Text embeddings
 - requests                 # HTTP client for Ollama

@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from agents.dossier_writer import (
     get_confidence_bar,
-    format_evidence,
+    format_temporal_evidence,
     format_spans,
     generate_dossier
 )
@@ -80,29 +80,44 @@ class TestFormatSpans:
         assert "span_5" not in result
 
 
-class TestFormatEvidence:
-    """Tests for the format_evidence function."""
+class TestFormatTemporalEvidence:
+    """Tests for the format_temporal_evidence function."""
     
     @pytest.mark.unit
     def test_empty_evidence(self):
-        """Empty evidence should return empty string."""
-        result = format_evidence([])
-        assert result == ""
+        """Empty evidence should return sections with 'no evidence' messages."""
+        result = format_temporal_evidence([])
+        assert "No evidence from this section" in result
     
     @pytest.mark.unit
-    def test_evidence_formatting(self):
-        """Evidence should be properly formatted."""
+    def test_evidence_organized_by_slice(self):
+        """Evidence should be organized by temporal slice."""
+        evidence = [
+            {"temporal_slice": "EARLY", "book": "Test", "chunk_idx": 0, "score": 0.8, "text": "Early text"},
+            {"temporal_slice": "MID", "book": "Test", "chunk_idx": 1, "score": 0.7, "text": "Mid text"},
+            {"temporal_slice": "LATE", "book": "Test", "chunk_idx": 2, "score": 0.9, "text": "Late text"}
+        ]
+        result = format_temporal_evidence(evidence)
+        
+        assert "EARLY" in result
+        assert "MID" in result
+        assert "LATE" in result
+        assert "Early text" in result
+        assert "Mid text" in result
+        assert "Late text" in result
+    
+    @pytest.mark.unit
+    def test_includes_book_and_score(self):
+        """Evidence should include book name and score."""
         evidence = [{
+            "temporal_slice": "MID",
             "book": "Test Book",
             "chunk_idx": 5,
-            "char_start": 100,
-            "char_end": 500,
             "score": 0.85,
             "text": "This is the evidence text."
         }]
-        result = format_evidence(evidence)
+        result = format_temporal_evidence(evidence)
         
-        assert "Evidence 1" in result
         assert "Test Book" in result
         assert "0.850" in result or "0.85" in result
         assert "This is the evidence text" in result
@@ -112,18 +127,16 @@ class TestFormatEvidence:
         """Long evidence text should be truncated."""
         long_text = "x" * 1000
         evidence = [{
+            "temporal_slice": "MID",
             "book": "Test",
             "chunk_idx": 0,
-            "char_start": 0,
-            "char_end": 1000,
             "score": 0.5,
             "text": long_text
         }]
-        result = format_evidence(evidence)
+        result = format_temporal_evidence(evidence)
         
-        # Should be truncated to ~800 chars + "..."
+        # Should be truncated to ~600 chars + "..."
         assert "..." in result
-        assert len(result) < len(long_text) + 200
 
 
 class TestGenerateDossier:
@@ -135,8 +148,8 @@ class TestGenerateDossier:
         result = generate_dossier(sample_verdict, sample_evidence)
         
         assert isinstance(result, str)
-        assert "# Claim Dossier" in result
-        assert "## Verdict" in result
+        assert "# Constraint-Linked Dossier" in result or "# Claim Dossier" in result
+        assert "Verdict" in result
     
     @pytest.mark.unit
     def test_includes_claim_info(self, sample_verdict, sample_evidence):

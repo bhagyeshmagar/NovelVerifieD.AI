@@ -1,7 +1,7 @@
 """
 Reasoning Agent - Multi-stage constraint-aware verification.
 
-KDSH 2026 Track A:
+NovelVerified.AI Pathway-based:
 This agent implements a 4-stage reasoning pipeline:
 1. DECOMPOSE: Break claim into atomic sub-claims
 2. RETRIEVE: Get temporal-aware evidence
@@ -24,12 +24,19 @@ from typing import List, Dict, Optional, Tuple
 from dotenv import load_dotenv
 from anthropic import Anthropic, APIError, RateLimitError, APIConnectionError
 
-# Import constraint types
-from constraint_types import (
-    ConstraintType, Verdict, SubClaim, ConstraintViolation, ClaimAnalysis,
-    DECOMPOSITION_PROMPT, SUPPORT_SEEKING_PROMPT, 
-    CONTRADICTION_SEEKING_PROMPT, SYNTHESIS_PROMPT
-)
+# Import constraint types (handle both direct execution and test imports)
+try:
+    from agents.constraint_types import (
+        ConstraintType, Verdict, SubClaim, ConstraintViolation, ClaimAnalysis,
+        DECOMPOSITION_PROMPT, SUPPORT_SEEKING_PROMPT, 
+        CONTRADICTION_SEEKING_PROMPT, SYNTHESIS_PROMPT
+    )
+except ImportError:
+    from constraint_types import (
+        ConstraintType, Verdict, SubClaim, ConstraintViolation, ClaimAnalysis,
+        DECOMPOSITION_PROMPT, SUPPORT_SEEKING_PROMPT, 
+        CONTRADICTION_SEEKING_PROMPT, SYNTHESIS_PROMPT
+    )
 
 # Load environment variables
 load_dotenv()
@@ -375,7 +382,7 @@ def main():
     """Main entry point for multi-stage reasoning agent."""
     print("=" * 60)
     print("REASONING AGENT - Multi-Stage Constraint-Aware Verification")
-    print("KDSH 2026 Track A: Dual-perspective anti-bias reasoning")
+    print("NovelVerified.AI Pathway-based: Dual-perspective anti-bias reasoning")
     print("=" * 60)
     
     logger.info("Starting reasoning agent with anti-bias pipeline")

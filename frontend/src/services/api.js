@@ -23,16 +23,25 @@ export const api = {
 
     getVerdict: async (id) => {
         const res = await fetch(`${API_BASE}/verdict/${id}`);
+        if (!res.ok) {
+            return { error: `Verdict not found for claim ${id}` };
+        }
         return res.json();
     },
 
     getDossier: async (id) => {
         const res = await fetch(`${API_BASE}/dossier/${id}`);
+        if (!res.ok) {
+            return { error: `Dossier not found for claim ${id}`, content: '' };
+        }
         return res.json();
     },
 
     getEvidence: async (id) => {
         const res = await fetch(`${API_BASE}/evidence/${id}`);
+        if (!res.ok) {
+            return { error: `Evidence not found for claim ${id}`, evidence: [] };
+        }
         return res.json();
     },
 

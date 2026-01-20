@@ -1,7 +1,7 @@
 """
 Ingestion Agent - Chunks novels into overlapping segments for embedding.
 
-KDSH 2026 Track A: Uses Pathway framework for document storage.
+NovelVerified.AI Pathway-based: Uses Pathway framework for document storage.
 Includes fallback for environments where Pathway is not available.
 """
 
@@ -158,12 +158,12 @@ def main():
     """Main entry point for ingestion agent."""
     print("=" * 60)
     print("INGESTION AGENT - Novel Chunking")
-    print("KDSH 2026 Track A: Pathway-enabled document processing")
+    print("NovelVerified.AI Pathway-based: Pathway-enabled document processing")
     print("=" * 60)
     
     # Report Pathway status
     if PATHWAY_AVAILABLE:
-        print(f"✓ Pathway {pw.__version__} detected - Track A compliant")
+        print(f"✓ Pathway {pw.__version__} detected - Pathway-based compliant")
     else:
         print("! Pathway not available - using standard file I/O")
         print("  (To install: pip install pathway)")

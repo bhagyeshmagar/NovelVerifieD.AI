@@ -1,5 +1,5 @@
 """
-Integration Tests for KDSH 2026 Track A Pipeline.
+Integration Tests for NovelVerified.AI Pathway-based Pipeline.
 
 Tests:
 1. End-to-end pipeline execution
@@ -25,7 +25,7 @@ PATHWAY_STORE = PROJECT_ROOT / "pathway_store"
 
 
 class TestResultsFormat:
-    """Test that results.csv matches KDSH specification."""
+    """Test that results.csv matches NovelVerified.AI specification."""
     
     def test_results_file_exists(self):
         """Results file should exist after pipeline run."""

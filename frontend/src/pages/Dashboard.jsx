@@ -177,7 +177,7 @@ const Dashboard = () => {
                     </GlassCard>
 
                     <GlassCard className="p-6 bg-gradient-to-br from-blue-600/20 to-purple-600/20 border-blue-400/20">
-                        <h3 className="text-lg font-semibold mb-2">Track A: Pathway</h3>
+                        <h3 className="text-lg font-semibold mb-2">Pathway-based: Pathway</h3>
                         <p className="text-sm text-blue-100/80 mb-4">
                             Real-time document processing enabled using Pathway framework.
                         </p>

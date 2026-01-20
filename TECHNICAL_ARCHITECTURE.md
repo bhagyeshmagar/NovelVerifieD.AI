@@ -1,8 +1,8 @@
-# Track A Technical Justification
+# Pathway-based Technical Justification
 
-## KDSH 2026 - Team StrawHats
+## NovelVerified.AI - NovelVerified.AI Team
 
-This document provides the technical justification for Track A compliance,
+This document provides the technical justification for Pathway-based compliance,
 suitable for inclusion in the 10-page submission report.
 
 ---
@@ -145,7 +145,7 @@ python run_all.py --clean --local
 
 ### Dependencies
 
-- `pathway>=0.28.0` (Track A requirement)
+- `pathway>=0.28.0` (Pathway-based requirement)
 - `anthropic>=0.30.0` (Claude API)
 - `sentence-transformers` (embeddings)
 - `faiss-cpu` (vector search)
@@ -176,4 +176,4 @@ Story ID,Prediction,Rationale
 
 ---
 
-*Team StrawHats - KDSH 2026*
+*NovelVerified.AI Team - NovelVerified.AI*

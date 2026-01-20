@@ -1,7 +1,7 @@
 """
 Pathway Document Store - Central chunk storage using Pathway framework.
 
-KDSH 2026 Track A REQUIREMENT:
+NovelVerified.AI Pathway-based REQUIREMENT:
 This module makes Pathway structurally necessary. The system cannot function
 without Pathway as it manages the canonical chunk store for all retrieval.
 
@@ -52,7 +52,7 @@ class PathwayDocumentStore:
     This is the CANONICAL source of truth for all document data.
     FAISS index is derived from this store, not the other way around.
     
-    Track A Justification:
+    Pathway-based Justification:
     - Document ingestion flows through Pathway tables
     - Retrieval queries are mediated by Pathway
     - Temporal slicing is computed and stored as Pathway columns
@@ -111,7 +111,7 @@ class PathwayDocumentStore:
             enriched_chunks.append(enriched_chunk)
         
         # =====================================================================
-        # PATHWAY TABLE CREATION - Track A Critical Section
+        # PATHWAY TABLE CREATION - Pathway-based Critical Section
         # =====================================================================
         # Create Pathway Table from chunks for real-time processing capability
         # This demonstrates Pathway's streaming data processing model

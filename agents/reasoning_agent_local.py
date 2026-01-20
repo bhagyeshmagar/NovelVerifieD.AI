@@ -1,7 +1,7 @@
 """
 Local Reasoning Agent - Multi-stage constraint-aware verification with Ollama.
 
-KDSH 2026 Track A:
+NovelVerified.AI Pathway-based:
 Same 4-stage pipeline as the Claude version but using local Ollama LLM:
 1. DECOMPOSE: Break claim into atomic sub-claims
 2. RETRIEVE: (done by retriever_agent)
@@ -446,7 +446,7 @@ def main():
     """Main entry point for local multi-stage reasoning agent."""
     print("=" * 60)
     print("LOCAL REASONING AGENT - Multi-Stage Pipeline")
-    print("KDSH 2026 Track A: Ollama with anti-bias reasoning")
+    print("NovelVerified.AI Pathway-based: Ollama with anti-bias reasoning")
     print("=" * 60)
     
     logger.info("Starting local reasoning agent")

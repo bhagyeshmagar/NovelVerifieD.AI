@@ -1,7 +1,7 @@
 """
 Retriever Agent - Temporal-aware evidence retrieval.
 
-KDSH 2026 Track A:
+NovelVerified.AI Pathway-based:
 Enhanced retrieval with:
 1. Temporal slicing: retrieve from EARLY, MID, LATE sections
 2. Counterfactual queries: actively search for contradicting evidence
@@ -89,7 +89,7 @@ def retrieve_temporal_evidence(
     3. Retrieve from each temporal slice (EARLY, MID, LATE)
     4. Combine and deduplicate
     
-    Track A Justification:
+    Pathway-based Justification:
     - Uses temporal slicing computed by Pathway store
     - Enables constraint reasoning across narrative arc
     """
@@ -211,7 +211,7 @@ def main():
     """Main entry point for temporal-aware retriever agent."""
     print("=" * 60)
     print("RETRIEVER AGENT - Temporal-Aware Evidence Retrieval")
-    print("KDSH 2026 Track A: Pathway-integrated with contradiction seeking")
+    print("NovelVerified.AI Pathway-based: Pathway-integrated with contradiction seeking")
     print("=" * 60)
     
     # Check prerequisites

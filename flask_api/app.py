@@ -27,7 +27,7 @@ DEBUG = os.getenv("FLASK_DEBUG", "true").lower() == "true"
 
 # Paths (relative to project root)
 PROJECT_ROOT = Path(__file__).parent.parent
-RESULTS_FILE = PROJECT_ROOT / "output" / "results.csv"  # KDSH submission format
+RESULTS_FILE = PROJECT_ROOT / "output" / "results.csv"  # NovelVerified.AI submission format
 RESULTS_EXTENDED = PROJECT_ROOT / "output" / "results_extended.csv"  # Dashboard format
 DOSSIERS_DIR = PROJECT_ROOT / "dossiers"
 VERDICTS_DIR = PROJECT_ROOT / "verdicts"
@@ -37,20 +37,21 @@ EVIDENCE_DIR = PROJECT_ROOT / "evidence"
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend
 
-# Register upload blueprint
-from upload import upload_bp
+# Register blueprints (handle both direct execution and test imports)
+try:
+    from flask_api.upload import upload_bp
+    from flask_api.history import history_bp
+    from flask_api.claims import claims_bp
+    from flask_api.pipeline_api import pipeline_bp
+except ImportError:
+    from upload import upload_bp
+    from history import history_bp
+    from claims import claims_bp
+    from pipeline_api import pipeline_bp
+
 app.register_blueprint(upload_bp)
-
-# Register history blueprint
-from history import history_bp
 app.register_blueprint(history_bp)
-
-# Register claims blueprint
-from claims import claims_bp
 app.register_blueprint(claims_bp)
-
-# Register pipeline blueprint
-from pipeline_api import pipeline_bp
 app.register_blueprint(pipeline_bp)
 
 

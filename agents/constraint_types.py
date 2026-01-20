@@ -1,7 +1,7 @@
 """
 Constraint Types - Data structures for constraint-aware reasoning.
 
-KDSH 2026 Track A:
+NovelVerified.AI Pathway-based:
 This module defines the constraint types and data structures used for
 multi-stage reasoning. Claims are decomposed into sub-claims, each
 evaluated against specific constraint categories.

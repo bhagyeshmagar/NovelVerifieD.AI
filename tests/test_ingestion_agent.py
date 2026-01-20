@@ -109,8 +109,9 @@ class TestProcessNovel:
         from agents.ingestion_agent import process_novel
         encoding = tiktoken.get_encoding("cl100k_base")
         
-        chunks = process_novel(temp_novel_file, encoding)
+        chunks, total_chars = process_novel(temp_novel_file, encoding)
         
         assert len(chunks) > 0
         assert all("book" in c for c in chunks)
         assert all(c["book"] == "test_novel" for c in chunks)
+        assert total_chars > 0

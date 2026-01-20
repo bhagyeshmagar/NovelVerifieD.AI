@@ -9,7 +9,7 @@
 
 *Verify character backstory claims against actual novel text using RAG + LLM*
 
-**Team StrawHats - KDSH 2026 Track A**
+**NovelVerified.AI - Pathway-based Document Processing**
 
 </div>
 
@@ -103,7 +103,7 @@ NovelVerified.AI verifies whether **character backstory claims** are **supported
 ## 📁 Project Structure
 
 ```
-StrawHats_KDSH_2026/
+NovelVerified_AI/
 ├── Data/                    # Source data (novels + claims CSVs)
 │   ├── *.txt                # Novel texts
 │   ├── train.csv            # Training claims with labels
@@ -139,7 +139,7 @@ StrawHats_KDSH_2026/
 4. **Retrieval** - Find relevant passages per claim
 5. **Reasoning** - 4-stage anti-bias LLM verification
 6. **Dossiers** - Generate Markdown reports
-7. **Results** - Create KDSH-format CSV
+7. **Results** - Create NovelVerified.AI-format CSV
 
 ---
 
@@ -170,14 +170,14 @@ Story ID,Prediction,Rationale
 ## 📄 Documentation
 
 - **PROJECT_DOCUMENTATION.txt** - Full technical documentation
-- **REPORT.md** - Technical report for KDSH submission
-- **TRACK_A_JUSTIFICATION.md** - Track A compliance details
+- **REPORT.md** - Technical report for NovelVerified.AI submission
+- **TECHNICAL_ARCHITECTURE.md** - Architecture and Pathway integration details
 
 ---
 
 <div align="center">
 
-**Team StrawHats - KDSH 2026**
+**NovelVerified.AI**
 
 Built with ❤️ for literary AI research
 

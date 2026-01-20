@@ -1,7 +1,7 @@
 #!/bin/bash
 # ================================================================================
 # NovelVerified.AI - Setup Script
-# Team StrawHats - KDSH 2026 Track A
+# NovelVerified.AI Team - NovelVerified.AI Pathway-based
 # ================================================================================
 #
 # This script sets up the project and runs the verification pipeline.

@@ -33,7 +33,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           </div>
           <div>
             <h1 className="font-bold text-lg tracking-tight">NovelVerified<span className="text-blue-400">.AI</span></h1>
-            <p className="text-[10px] text-gray-400 tracking-widest uppercase">Team StrawHats</p>
+            <p className="text-[10px] text-gray-400 tracking-widest uppercase">NovelVerified.AI Team</p>
           </div>
         </div>
         <button onClick={onClose} className="lg:hidden text-gray-400 hover:text-white">
@@ -74,8 +74,8 @@ const Sidebar = ({ isOpen, onClose }) => {
             KD
           </div>
           <div>
-            <p className="text-sm font-medium text-white">KDSH 2026</p>
-            <p className="text-xs text-gray-500">Track A</p>
+            <p className="text-sm font-medium text-white">NovelVerified.AI</p>
+            <p className="text-xs text-gray-500">Pathway-based</p>
           </div>
         </div>
       </div>

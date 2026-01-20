@@ -14,6 +14,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 @pytest.fixture
 def app(tmp_path):
     """Create test Flask app with temp data directories."""
+    # Add flask_api to path so blueprint imports work
+    flask_api_path = str(Path(__file__).parent.parent / "flask_api")
+    if flask_api_path not in sys.path:
+        sys.path.insert(0, flask_api_path)
+    
     # Create temp files
     results_file = tmp_path / "output" / "results.csv"
     results_file.parent.mkdir(parents=True)

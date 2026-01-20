@@ -1,9 +1,9 @@
 # NovelVerified.AI - System Overview
 
-## KDSH 2026 Track A Submission
+## NovelVerified.AI Pathway-based Submission
 
-**Team:** StrawHats  
-**Repository:** https://github.com/bhagyeshmagar/StrawHats_KDSH_2026
+**Team:** NovelVerified.AI  
+**Repository:** https://github.com/bhagyeshmagar/NovelVerified_AI
 
 ---
 
@@ -31,7 +31,7 @@
 │                         (agents/ingestion_agent.py)                          │
 │                                                                              │
 │   ┌─────────────────────────────────────────────────────────────────────┐   │
-│   │ PATHWAY DOCUMENT STORE (Track A Requirement)                         │   │
+│   │ PATHWAY DOCUMENT STORE (Pathway-based Requirement)                         │   │
 │   │                                                                      │   │
 │   │ • Chunks novel into 1400-token segments                             │   │
 │   │ • 300-token overlap between chunks                                  │   │
@@ -139,7 +139,7 @@
 │                                                                              │
 │   • Collects all verdicts                                                   │
 │   • Maps: supported→1, contradicted→0, undetermined→0                      │
-│   • Generates KDSH-compliant CSV                                            │
+│   • Generates NovelVerified.AI-compliant CSV                                            │
 │                                                                              │
 │   Output: output/results.csv                                                 │
 └────────────────────────────────────────┬────────────────────────────────────┘
@@ -161,11 +161,11 @@
 
 ---
 
-## 🔑 Key Features for Track A Compliance
+## 🔑 Key Features for Pathway-based Compliance
 
 | Feature | Description | Why It Matters |
 |---------|-------------|----------------|
-| **Pathway Store** | Chunks stored via Pathway framework | Track A requirement - not just file I/O |
+| **Pathway Store** | Chunks stored via Pathway framework | Pathway-based requirement - not just file I/O |
 | **Temporal Slicing** | Evidence from EARLY/MID/LATE sections | Detects timeline inconsistencies |
 | **Dual-Perspective** | Seeks BOTH support AND contradiction | Prevents "all supported" bias |
 | **Anti-Bias Thresholds** | Calibrated confidence levels | Honest uncertainty handling |
@@ -177,7 +177,7 @@
 ## 📂 File Structure
 
 ```
-StrawHats_KDSH_2026/
+NovelVerified_AI/
 ├── agents/
 │   ├── ingestion_agent.py      # Pathway-based chunking
 │   ├── pathway_store.py        # Pathway document store
@@ -250,4 +250,4 @@ The system actively prevents "supported" bias:
 
 ---
 
-## 📝 Team StrawHats - KDSH 2026
+## 📝 NovelVerified.AI Team - NovelVerified.AI

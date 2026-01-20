@@ -1,6 +1,6 @@
 # NovelVerified.AI: Constraint-Aware Character Backstory Verification
 
-**Team StrawHats - KDSH 2026 Track A Submission**
+**NovelVerified.AI Team - NovelVerified.AI Pathway-based Submission**
 
 ---
 
@@ -34,7 +34,7 @@ Results ← [Aggregator] ← [Dossier Writer] ← [Reasoning Agent] ←───
 | Dossier Writer | Generate structured explanations | Markdown templates |
 | Aggregator | Compile final results | CSV formatting |
 
-### 1.2 Pathway Integration (Track A Compliance)
+### 1.2 Pathway Integration (Pathway-based Compliance)
 
 Pathway serves as our **canonical document store**, not just a cosmetic import:
 
@@ -50,7 +50,7 @@ Pathway serves as our **canonical document store**, not just a cosmetic import:
 
 Novels can exceed 500,000 words. We handle this through:
 
-1. **Semantic Chunking**: 1000-token chunks with 100-token overlap
+1. **Semantic Chunking**: 1400-token chunks with 300-token overlap
 2. **Temporal Markers**: Each chunk tagged with narrative position
 3. **Character-Aware Indexing**: Chunks indexed by mentioned characters
 
@@ -329,7 +329,7 @@ Our key insight is that **actively seeking contradictions** is essential for rel
 ## Appendix A: File Structure
 
 ```
-StrawHats_KDSH_2026/
+NovelVerified_AI/
 ├── agents/                 # Core pipeline agents
 │   ├── ingestion_agent.py
 │   ├── embedding_agent.py
