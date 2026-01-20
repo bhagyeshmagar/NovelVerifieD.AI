@@ -1,12 +1,10 @@
 {
   "claim_id": "76",
   "verdict": "supported",
-  "confidence": 0.95,
-  "supporting_spans": [
-    "\"He carried a European pocket-watch taken from the French mate, its inner lid holding a lock of Julia’s hair,\""
-  ],
+  "confidence": 0.5,
+  "supporting_spans": [],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: Direct statement from the novel that confirms Kai-Koumou carried a pocket watch with a lock of Julia's hair.",
+  "reasoning": "Evidence supports: Unable to parse LLM response - using conservative default",
   "analysis": {
     "claim_id": "76",
     "claim_text": "He carried a European pocket-watch taken from the French mate, its inner lid holding a lock of Julia’s hair, which explained both his grasp of mechanical time and his disgust for Christian objects.",
@@ -47,10 +45,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.3,
     "contradiction_score": 0.1,
     "verdict": "supported",
-    "confidence": 0.95,
-    "reasoning": "Evidence supports: Direct statement from the novel that confirms Kai-Koumou carried a pocket watch with a lock of Julia's hair."
+    "confidence": 0.5,
+    "reasoning": "Evidence supports: Unable to parse LLM response - using conservative default"
   }
 }

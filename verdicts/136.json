@@ -4,9 +4,9 @@
   "confidence": 0.95,
   "supporting_spans": [],
   "contradicting_spans": [
-    "Faria, since their first acquaintance, had been on all points so rational and logical, so wonderfully sagacious, in fact, that he could not understand how so much wisdom on all points could be allied with madness. Was Faria deceived as to his treasure, or was all the world deceived as to Faria?"
+    "Faria's death"
   ],
-  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Faria lived quietly on a small island and drafted a vast work on human intelligence while sending chapters out by secret courier.",
+  "reasoning": "Contradiction (factual): The claim states that Faria lived quietly on a small island and drafted a vast work on human intelligence while sending chapters out by secret courier. However, the evidence shows that Faria died before he could complete his work.",
   "analysis": {
     "claim_id": "136",
     "claim_text": "From 1800 onward he lived quietly on a small island, drafting a vast work on human intelligence while sending chapters out by secret courier.",
@@ -39,9 +39,9 @@
     },
     "violations": [],
     "support_score": 0.3,
-    "contradiction_score": 0.7,
+    "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Faria lived quietly on a small island and drafted a vast work on human intelligence while sending chapters out by secret courier."
+    "reasoning": "Contradiction (factual): The claim states that Faria lived quietly on a small island and drafted a vast work on human intelligence while sending chapters out by secret courier. However, the evidence shows that Faria died before he could complete his work."
   }
 }

@@ -2,7 +2,10 @@
   "claim_id": "117",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
+  "supporting_spans": [
+    "Each word that fell from his companion’s lips seemed fraught with the mysteries of science, as worthy of digging out as the gold and diamonds in the mines of Guzerat and Golconda, which he could just recollect having visited during a voyage made in his earliest youth.",
+    "“Come,” said he to the abbé, “I am anxious to see your treasures.” The abbé smiled, and, proceeding to the disused fireplace, raised, by the help of his chisel, a long stone, which had doubtless been the hearth, beneath which was a cavity of considerable depth, serving as a safe depository of the articles mentioned to Dantès. 0213m “What do you wish to see first?” asked the abbé. “Oh, your great work on the monarchy of Italy!” Faria then drew forth from his hiding-place three or four rolls of linen, laid one over the other, like folds of papyrus. These rolls consisted of slips of cloth about four inches wide and eighteen long; they were all carefully numbered and closely covered with writing, so legible that Dantès could easily read it, as well as make out the sense—it being in Italian, a language he, as a Provençal, perfectly understood. “There,” said he, “there is that quarter.”"
+  ],
   "contradicting_spans": [
     "Direct contradiction found in evidence"
   ],
@@ -38,7 +41,7 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.3,
+    "support_score": 0.9,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,

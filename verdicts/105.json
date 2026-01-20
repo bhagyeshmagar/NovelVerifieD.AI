@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Noirtier was vice-president of the club in Rue Saint-Jacques."
   ],
-  "reasoning": "Evidence supports: The excerpts show that Noirtier was aware of the details of Dantès' trial and had access to Villefort's marginal notes, indicating his involvement in organizing underground actions against Napoleon.",
+  "reasoning": "Evidence supports: The excerpts show that Noirtier was aware of Dantès' trial and had access to the relevant documents. He also saw through Villefort's attempt to keep the petition to Napoleon hidden, which suggests that he was involved in anti-Bonaparte activities.",
   "analysis": {
     "claim_id": "105",
     "claim_text": "He became head of a clandestine anti-Bonaparte society, organising underground actions to sap the Emperor’s support.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The excerpts show that Noirtier was aware of the details of Dantès' trial and had access to Villefort's marginal notes, indicating his involvement in organizing underground actions against Napoleon."
+    "reasoning": "Evidence supports: The excerpts show that Noirtier was aware of Dantès' trial and had access to the relevant documents. He also saw through Villefort's attempt to keep the petition to Napoleon hidden, which suggests that he was involved in anti-Bonaparte activities."
   }
 }

@@ -4,12 +4,12 @@
   "confidence": 0.95,
   "supporting_spans": [
     "M. de Villefort had scarcely said this, when the door opened, and Barrois appeared.",
-    "Villefort started, Madame de Villefort let her son slip from her knees, Valentine rose, pale and dumb as a statue."
+    "“Ah, how strange it seems that such a young and beautiful woman should be so avaricious.”"
   ],
   "contradicting_spans": [
     "M. de Villefort had scarcely said this, when the door opened, and Barrois appeared."
   ],
-  "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Noirtier married a gentle apolitical woman by showing that Villefort was already engaged to be married to Valentine de Saint-Méran at the time of the conversation.",
+  "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Noirtier married a gentle apolitical woman by showing that Villefort was already engaged to marry Valentine before he met d'Épinay.",
   "analysis": {
     "claim_id": "108",
     "claim_text": "He married a gentle apolitical woman, hoping domestic peace would replace political strife, and pinned on his son Villefort the hope that the boy would carry his ideals forward.",
@@ -27,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "Noirtier pinned on his son Villefort the hope that the boy would carry his ideals forward.",
+        "text": "He pinned on his son Villefort the hope that the boy would carry his ideals forward.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Noirtier married a gentle apolitical woman by showing that Villefort was already engaged to be married to Valentine de Saint-Méran at the time of the conversation."
+    "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Noirtier married a gentle apolitical woman by showing that Villefort was already engaged to marry Valentine before he met d'Épinay."
   }
 }

@@ -24,7 +24,16 @@
       },
       {
         "id": "SC2",
-        "text": "Jacques Paganel was a character in the book 'In Search of the Castaways' by Jules Verne.",
+        "text": "Jacques Paganel was a member of the castaways' expedition.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Lady Glenarvan was a character in the novel 'In Search of the Castaways'.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,

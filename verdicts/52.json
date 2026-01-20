@@ -1,6 +1,6 @@
 {
   "claim_id": "52",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
     "At eight o'clock the next morning Thalcave gave the signal for departure.",
@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Thalcave gave the signal for departure. The slope was gradual, and the travelers had only to descend a gentle declivity to the sea."
   ],
-  "reasoning": "Evidence supports: The evidence shows that Thalcave is a skilled horseman who has tamed a wild horse using ancient Tehuelche methods.",
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Thalcave trapped a wary black stallion named Thaouka and spent three months taming it with ancient Tehuelche methods.",
   "analysis": {
     "claim_id": "52",
     "claim_text": "On the Patagonian frontier he trapped a wary black stallion named Thaouka and spent three months taming it with ancient Tehuelche methods.",
@@ -42,9 +42,9 @@
     },
     "violations": [],
     "support_score": 0.7,
-    "contradiction_score": 0.1,
-    "verdict": "supported",
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence shows that Thalcave is a skilled horseman who has tamed a wild horse using ancient Tehuelche methods."
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Thalcave trapped a wary black stallion named Thaouka and spent three months taming it with ancient Tehuelche methods."
   }
 }

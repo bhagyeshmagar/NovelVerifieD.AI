@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
   ],
-  "reasoning": "Contradiction (factual): The claim states that Ayrton lost hearing in his left ear after being beaten for secretly poring over a captain's charts. However, the evidence shows that Ayrton was shot and killed by Glenarvan.",
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Ayrton lost hearing in his left ear after a beating for secretly poring over a captain's charts.",
   "analysis": {
     "claim_id": "27",
     "claim_text": "At twelve he ran away to the docks, worked as a porter and lost hearing in his left ear after a beating for secretly poring over a captain’s charts.",
@@ -54,6 +54,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim states that Ayrton lost hearing in his left ear after being beaten for secretly poring over a captain's charts. However, the evidence shows that Ayrton was shot and killed by Glenarvan."
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Ayrton lost hearing in his left ear after a beating for secretly poring over a captain's charts."
   }
 }

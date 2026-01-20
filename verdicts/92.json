@@ -3,9 +3,7 @@
   "verdict": "supported",
   "confidence": 0.5,
   "supporting_spans": [],
-  "contradicting_spans": [
-    "M. Noirtier was sitting in an armchair, which moved upon casters, in which he was wheeled into the room in the morning, and in the same way drawn out again at night."
-  ],
+  "contradicting_spans": [],
   "reasoning": "Evidence supports: Unable to parse LLM response - using conservative default",
   "analysis": {
     "claim_id": "92",

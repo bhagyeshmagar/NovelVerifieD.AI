@@ -3,13 +3,13 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "After the death of Kara-Tété, Paganel had taken advantage, like Robert, of the confusion of the natives, and escaped from the pah. However, less fortunate than young Grant, he had fallen upon an encampment of Maoris, who were commanded by a chief of fine form and intelligent appearance, who was evidently superior to all the warriors of his tribe.",
-    "This chief, whose name was 'Hihy' (sunbeam), was not a bad man. The spectacles and telescope gave him a high opinion of Paganel, whom he attached carefully to his person, not only by his benefits, but by strong flaxen ropes, especially at night."
+    "After the death of Kara-Tété, Paganel had taken advantage, like Robert, of the confusion of the natives, and escaped from the pah. However, seeing that he could not take a step without being graciously accompanied by the chief, he soon knew how matters stood on this point.",
+    "The spectacles and telescope gave him a high opinion of Paganel, whom he attached carefully to his person, not only by his benefits, but by strong flaxen ropes, especially at night."
   ],
   "contradicting_spans": [
-    "Direct contradiction with the claim"
+    "Paganel had taken advantage, like Robert, of the confusion of the natives, and escaped from the pah. But less fortunate than young Grant, he had fallen upon an encampment of Maoris, who were commanded by a chief of fine form and intelligent appearance, who was evidently superior to all the warriors of his tribe."
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by stating that Paganel was not entrusted with the care of his toddler half-brother after his mother died.",
+  "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Paganel's mother entrusted him with the care of her half-brother and that the child was later taken to Europe by the French stepfather. Instead, Paganel escaped from the pah and fell upon an encampment of Maoris.",
   "analysis": {
     "claim_id": "23",
     "claim_text": "After his mother died she entrusted him with the care of his toddler half-brother; the child was later taken to Europe by the French stepfather and never heard from again, leaving Paganel with a lifelong dread of “separation by life and death.”",
@@ -42,9 +42,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.9,
+    "contradiction_score": 0.7,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by stating that Paganel was not entrusted with the care of his toddler half-brother after his mother died."
+    "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Paganel's mother entrusted him with the care of her half-brother and that the child was later taken to Europe by the French stepfather. Instead, Paganel escaped from the pah and fell upon an encampment of Maoris."
   }
 }

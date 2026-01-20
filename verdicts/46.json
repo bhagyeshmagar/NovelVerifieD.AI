@@ -1,15 +1,12 @@
 {
   "claim_id": "46",
-  "verdict": "contradicted",
-  "confidence": 0.95,
-  "supporting_spans": [
-    "Thalcave gave the signal for departure.",
-    "The passage of this mountain was accomplished with the greatest ease."
-  ],
+  "verdict": "supported",
+  "confidence": 0.5,
+  "supporting_spans": [],
   "contradicting_spans": [
-    "At eight o'clock the next morning Thalcave gave the signal for departure."
+    "At eight o'clock the next morning Thalcave gave the signal for departure. The slope was gradual, and the travelers had only to descend a gentle declivity to the sea."
   ],
-  "reasoning": "Contradiction (factual): The claim states that Thalcave's father was the last of the tribal guides and that he knew the pampas geography and animal ways. However, the evidence shows that Thalcave himself is a guide and knows the pampas.",
+  "reasoning": "Evidence supports: Unable to parse LLM response - using conservative default",
   "analysis": {
     "claim_id": "46",
     "claim_text": "Thalcave’s people faded as colonists advanced; his father, last of the tribal guides, knew the pampas geography and animal ways, while his mother died giving birth. Boyhood was spent roaming the plains with his father, learning to track, tame horses and steer by the stars.",
@@ -18,7 +15,7 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "Thalcave’s people faded as colonists advanced; his father, last of the tribal guides, knew the pampas geography and animal ways, while his mother died giving birth.",
+        "text": "Thalcave’s people faded as colonists advanced.",
         "type": "temporal",
         "verdict": null,
         "confidence": 0.0,
@@ -27,6 +24,24 @@
       },
       {
         "id": "SC2",
+        "text": "His father, last of the tribal guides, knew the pampas geography and animal ways.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "His mother died giving birth.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
         "text": "Boyhood was spent roaming the plains with his father, learning to track, tame horses and steer by the stars.",
         "type": "factual",
         "verdict": null,
@@ -41,10 +56,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
-    "contradiction_score": 0.9,
-    "verdict": "contradicted",
-    "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim states that Thalcave's father was the last of the tribal guides and that he knew the pampas geography and animal ways. However, the evidence shows that Thalcave himself is a guide and knows the pampas."
+    "support_score": 0.3,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
+    "confidence": 0.5,
+    "reasoning": "Evidence supports: Unable to parse LLM response - using conservative default"
   }
 }

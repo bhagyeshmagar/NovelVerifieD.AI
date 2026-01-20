@@ -4,10 +4,12 @@
   "confidence": 0.95,
   "supporting_spans": [
     "He proposed a South-American trade route to the naval board, was transferred to London and recommended for a berth on Captain Grant’s new ship Brittany.",
-    "The geographer had asked Captain Mangles whether the raft could not follow the coast as far as Auckland, instead of landing the passengers at once. The captain replied that it would be impossible with such a rude craft."
+    "Paganel had all the passengers on his side except the major, who was very indifferent to geographical questions, especially at dinner-time."
   ],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports: The evidence directly states that Jacques Paganel proposed a South-American trade route and was recommended for a berth on Captain Grant’s new ship Brittany. Additionally, the evidence suggests that Paganel had a plan to follow the coast as far as Auckland, which was not possible ",
+  "contradicting_spans": [
+    "He proposed a South-American trade route to the naval board, was transferred to London and recommended for a berth on Captain Grant’s new ship Brittany."
+  ],
+  "reasoning": "Evidence supports: The evidence suggests that Jacques Paganel was interested in finding Captain Grant and had a positive relationship with him, which could explain why he was recommended for a berth on the Brittany.",
   "analysis": {
     "claim_id": "24",
     "claim_text": "He proposed a South-American trade route to the naval board, was transferred to London and recommended for a berth on Captain Grant’s new ship Brittany.",
@@ -48,10 +50,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
-    "contradiction_score": 0.0,
+    "support_score": 0.7,
+    "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence directly states that Jacques Paganel proposed a South-American trade route and was recommended for a berth on Captain Grant’s new ship Brittany. Additionally, the evidence suggests that Paganel had a plan to follow the coast as far as Auckland, which was not possible with the raft."
+    "reasoning": "Evidence supports: The evidence suggests that Jacques Paganel was interested in finding Captain Grant and had a positive relationship with him, which could explain why he was recommended for a berth on the Brittany."
   }
 }

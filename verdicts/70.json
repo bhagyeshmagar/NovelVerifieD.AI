@@ -1,15 +1,15 @@
 {
   "claim_id": "70",
   "verdict": "supported",
-  "confidence": 0.9,
+  "confidence": 0.85,
   "supporting_spans": [
     "This courageous woman, in order that her husband's coolness might not forsake him, heroically controlled her emotions.",
-    "If I succeed in convincing Kai-Koumou that we have become the victims of our sacrilege, that the wrath of Heaven has fallen upon us, in short, that we have met a terrible death, do you think that he will abandon the mountain and return to his village?"
+    "The Maori chief gazed steadily at his prisoner without replying."
   ],
   "contradicting_spans": [
     "Kai-Koumou gazed steadily at his prisoner without replying."
   ],
-  "reasoning": "Evidence supports: The evidence from the novel supports the claim by describing Kai-Koumou's actions and emotions in a way that suggests he is capable of controlling his emotions and making decisions based on fear and anger.",
+  "reasoning": "Evidence supports: These excerpts show that Kai-Koumou was able to control his emotions and remain calm in the face of adversity, which supports the claim that he earned the chieftainship by surviving seven days and nights alone on the crater's rim.",
   "analysis": {
     "claim_id": "70",
     "claim_text": "At twenty-two he earned the chieftainship by surviving seven days and nights alone on the crater’s rim, bringing back a sulphur-crusted sacred stone; the same year he married white princess Julia of the west-coast tribe, executed her with an obsidian knife when he found her passing information to British missionaries and thereafter banned any white marriage.",
@@ -19,7 +19,7 @@
       {
         "id": "SC1",
         "text": "At twenty-two he earned the chieftainship by surviving seven days and nights alone on the crater’s rim, bringing back a sulphur-crusted sacred stone;",
-        "type": "temporal",
+        "type": "factual",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -41,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.3,
     "verdict": "supported",
-    "confidence": 0.9,
-    "reasoning": "Evidence supports: The evidence from the novel supports the claim by describing Kai-Koumou's actions and emotions in a way that suggests he is capable of controlling his emotions and making decisions based on fear and anger."
+    "confidence": 0.85,
+    "reasoning": "Evidence supports: These excerpts show that Kai-Koumou was able to control his emotions and remain calm in the face of adversity, which supports the claim that he earned the chieftainship by surviving seven days and nights alone on the crater's rim."
   }
 }

@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
   ],
-  "reasoning": "Contradiction (factual): The claim is that the Bible-quoting habit was a mask for emotions, but the evidence shows that Ayrton pulled out a revolver and shot Glenarvan.",
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Ayrton's Bible-quoting habit was a mask for his emotions.",
   "analysis": {
     "claim_id": "36",
     "claim_text": "Ritual disguise: the Bible-quoting habit he had picked up as a mission pupil became a mask for his emotions.",
@@ -18,8 +18,8 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "Ritual disguise: the Bible-quoting habit he had picked up as a mission pupil became a mask for his emotions.",
-        "type": "psychological",
+        "text": "Tom Ayrton/Ben Joyce picked up the Bible-quoting habit as a mission pupil.",
+        "type": "factual",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -27,8 +27,8 @@
       },
       {
         "id": "SC2",
-        "text": "Tom Ayrton/Ben Joyce was a character in the book 'In Search of the Castaways' by John R. Masefield.",
-        "type": "factual",
+        "text": "The Bible-quoting habit became a mask for his emotions.",
+        "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim is that the Bible-quoting habit was a mask for emotions, but the evidence shows that Ayrton pulled out a revolver and shot Glenarvan."
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Ayrton's Bible-quoting habit was a mask for his emotions."
   }
 }

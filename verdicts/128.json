@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Direct contradiction found in evidence"
   ],
-  "reasoning": "Contradiction (factual): The claim is that Faria's invisible-ink formula came from temple-mural restoration in India, first used to rescue local epics the colonists had defaced. However, the evidence shows that Faria's great work on the monarchy of Italy was his treasure, and he drew forth from his ",
+  "reasoning": "Contradiction (factual): The claim is that Faria's invisible-ink formula came from temple-mural restoration in India, first used to rescue local epics the colonists had defaced. However, the evidence shows that Faria's treasure was in Italian, not Indian. Therefore, there is a direct contradiction b",
   "analysis": {
     "claim_id": "128",
     "claim_text": "His invisible-ink formula came from temple-mural restoration in India, first used to rescue local epics the colonists had defaced.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim is that Faria's invisible-ink formula came from temple-mural restoration in India, first used to rescue local epics the colonists had defaced. However, the evidence shows that Faria's great work on the monarchy of Italy was his treasure, and he drew forth from his hiding-place three or four rolls of linen, laid one over the other, like folds of papyrus."
+    "reasoning": "Contradiction (factual): The claim is that Faria's invisible-ink formula came from temple-mural restoration in India, first used to rescue local epics the colonists had defaced. However, the evidence shows that Faria's treasure was in Italian, not Indian. Therefore, there is a direct contradiction between the claim and the evidence."
   }
 }

@@ -3,13 +3,13 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "Direct statement: Kai-Koumou trembled with rage and his countenance was flushed with a fierce exultation.",
-    "Event: Kai-Koumou led thirty warriors against the French merchantman Amethyst, seized flint-lock muskets and picked up basic French."
+    "Direct statement: Kai-Koumou, who had hitherto controlled himself, trembled with rage, and his countenance was flushed with a fierce exultation.",
+    "Event: Glenarvan hesitated, and watched the Maori chief very attentively. Paganel was astounded at this reply, and gazed at Glenarvan in profound wonder."
   ],
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (factual): The character Kai-Koumou is not involved in a succession struggle or poisoning incident at seventeen years old.",
+  "reasoning": "Contradiction (factual): The character Kai-Koumou is not involved in a succession struggle and does not have any manuka-bark to save him.",
   "analysis": {
     "claim_id": "69",
     "claim_text": "At seventeen he was poisoned by an uncle during a succession struggle; manuka-bark saved him and left his nature darker. To obtain powder against the colonists he led thirty warriors against the French merchantman Amethyst, seized flint-lock muskets and picked up basic French, then discovered the captain selling Maori slaves and sacrificed every prisoner to the volcano-god.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character Kai-Koumou is not involved in a succession struggle or poisoning incident at seventeen years old."
+    "reasoning": "Contradiction (factual): The character Kai-Koumou is not involved in a succession struggle and does not have any manuka-bark to save him."
   }
 }

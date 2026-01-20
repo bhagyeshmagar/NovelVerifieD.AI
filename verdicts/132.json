@@ -4,9 +4,9 @@
   "confidence": 0.95,
   "supporting_spans": [],
   "contradicting_spans": [
-    "You must teach me a small part of what you know, if only to prevent your growing weary of me. I can well believe that so learned a person as yourself would prefer absolute solitude to being tormented with the company of one as ignorant and uninformed as myself."
+    "You must teach me a small part of what you know, if only to prevent your growing weary of me. I can well believe that so learned a person as yourself would prefer absolute solitude to being tormented with the company of one as ignorant and uninformed as myself. If you will only agree to my request, I promise you never to mention another word about escaping."
   ],
-  "reasoning": "Contradiction (capability): The claim is that Faria was fluent in several languages and already publishing notes on history and natural philosophy by eighteen. However, the evidence shows that Dantès asked Faria to teach him mathematics, physics, history, and the three or four modern languages with ",
+  "reasoning": "Contradiction (capability): The claim states that Faria was fluent in several languages and already publishing notes on history and natural philosophy by eighteen. However, the excerpt shows that Dantès is requesting to learn a small part of what Faria knows, indicating that Faria may not have been ",
   "analysis": {
     "claim_id": "132",
     "claim_text": "By eighteen he was a star student at Rome University, fluent in several languages and already publishing notes on history and natural philosophy.",
@@ -16,7 +16,7 @@
       {
         "id": "SC1",
         "text": "By eighteen he was a star student at Rome University.",
-        "type": "factual",
+        "type": "temporal",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -51,6 +51,6 @@
     "contradiction_score": 0.7,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (capability): The claim is that Faria was fluent in several languages and already publishing notes on history and natural philosophy by eighteen. However, the evidence shows that Dantès asked Faria to teach him mathematics, physics, history, and the three or four modern languages with which he was acquainted, indicating that Faria may not have been fluent in all the languages mentioned."
+    "reasoning": "Contradiction (capability): The claim states that Faria was fluent in several languages and already publishing notes on history and natural philosophy by eighteen. However, the excerpt shows that Dantès is requesting to learn a small part of what Faria knows, indicating that Faria may not have been fluent in all languages or published extensive notes at that age."
   }
 }

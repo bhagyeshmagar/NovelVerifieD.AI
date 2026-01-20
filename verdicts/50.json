@@ -3,8 +3,8 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "Thalcave smiled with his accustomed calmness.",
-    "Glenarvan sank upon the ground, overcome, in despair."
+    "Thalcave smiled with his accustomed calmness and said, 'Thaouka--good horse--brave child--he will be saved!'",
+    "Glenarvan thought that he preferred to go on foot, according to the custom of certain guides; but he was mistaken."
   ],
   "contradicting_spans": [
     "Thalcave and Glenarvan rushed out of the ramada. Already the plain had resumed its tranquillity, and they could scarcely distinguish a moving line which undulated afar in the shadows of the night."
@@ -18,7 +18,7 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "He saved an old shepherd bitten by a viper.",
+        "text": "He saved an old shepherd bitten by a viper; in gratitude the man gave him a secret map of pampas water-holes and taught him that a guide’s duty is to keep life moving.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -27,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "In gratitude, the man gave him a secret map of pampas water-holes.",
+        "text": "He saved an old shepherd bitten by a viper.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -36,7 +36,16 @@
       },
       {
         "id": "SC3",
-        "text": "The old shepherd taught Thalcave that a guide’s duty is to keep life moving.",
+        "text": "In gratitude the man gave him a secret map of pampas water-holes.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "He taught him that a guide’s duty is to keep life moving.",
         "type": "psychological",
         "verdict": null,
         "confidence": 0.0,

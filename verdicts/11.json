@@ -1,6 +1,6 @@
 {
   "claim_id": "11",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
     "Paganel had taken advantage, like Robert, of the confusion of the natives, and escaped from the pah.",
@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Paganel was not happy. He accordingly consulted an old dervish, who told him that happiness was a very difficult thing to find in this world."
   ],
-  "reasoning": "Evidence supports: The evidence directly states that Paganel escaped from the pah and had a letter signed by Glenarvan.",
+  "reasoning": "Contradiction (factual): The claim is contradicted by the fact that Paganel was not happy and sought advice from a dervish on how to find happiness.",
   "analysis": {
     "claim_id": "11",
     "claim_text": "One night he saw first mate Ayrton secretly meet slave-traders; while shadowing them he was slashed across the left forearm with a dagger.",
@@ -27,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "Jacques Paganel was a castaway on an island.",
+        "text": "Jacques Paganel was a castaway on an island with his friend Phileas Fogg.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -36,8 +36,8 @@
       },
       {
         "id": "SC3",
-        "text": "Jacques Paganel was a French explorer who traveled the world in search of new discoveries.",
-        "type": "factual",
+        "text": "Jacques Paganel was a skilled navigator and cartographer.",
+        "type": "capability",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -51,9 +51,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.1,
-    "verdict": "supported",
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence directly states that Paganel escaped from the pah and had a letter signed by Glenarvan."
+    "reasoning": "Contradiction (factual): The claim is contradicted by the fact that Paganel was not happy and sought advice from a dervish on how to find happiness."
   }
 }

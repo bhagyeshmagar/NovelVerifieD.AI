@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Kai-Koumou's tribe had lost a chief of high rank whom they were particularly anxious to recover.",
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Kai-Koumou did not become a Junior Champion at twelve years old and was not proclaimed as such.",
   "analysis": {
     "claim_id": "80",
     "claim_text": "At ten he began learning tactics, spear-craft and jungle tracking from his father; at twelve he pinned a sounder of wild boar with one spear and was proclaimed “Junior Champion.” That same year pirate raiders killed his father, and the paramount chief made the boy a “Junior Warrior” charged with patrolling the island.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Kai-Koumou's tribe had lost a chief of high rank whom they were particularly anxious to recover."
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Kai-Koumou did not become a Junior Champion at twelve years old and was not proclaimed as such."
   }
 }

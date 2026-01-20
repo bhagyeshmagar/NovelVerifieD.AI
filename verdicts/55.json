@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Thalcave did not appear to hear him."
   ],
-  "reasoning": "Evidence supports: The evidence from the novel suggests that Thalcave altered the route to protect sacred Indian sites. The passage mentions that Thalcave stopped Paganel's geographical demonstrations and showed an ironical smile when asked about a prisoner. This implies that Thalcave was aware of t",
+  "reasoning": "Evidence supports: The evidence from the novel suggests that Thalcave altered the route to protect sacred Indian sites. The passage mentions that Thalcave stopped Paganel's geographical demonstrations and indicated that they should follow the line from west to east, which is consistent with the clai",
   "analysis": {
     "claim_id": "55",
     "claim_text": "His first double role: hired by a British Geographical Society expedition, he quietly altered the route to shield sacred Indian sites.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.3,
     "verdict": "supported",
     "confidence": 0.9,
-    "reasoning": "Evidence supports: The evidence from the novel suggests that Thalcave altered the route to protect sacred Indian sites. The passage mentions that Thalcave stopped Paganel's geographical demonstrations and showed an ironical smile when asked about a prisoner. This implies that Thalcave was aware of the captain's situation and may have been trying to protect him. Additionally, the mention of a vast herd perishing in a bog suggests that Thalcave was knowledgeable about the dangers of the area and may have been trying to avoid them."
+    "reasoning": "Evidence supports: The evidence from the novel suggests that Thalcave altered the route to protect sacred Indian sites. The passage mentions that Thalcave stopped Paganel's geographical demonstrations and indicated that they should follow the line from west to east, which is consistent with the claim that he was protecting sacred sites. Additionally, the mention of a vast herd of cattle perishing in a bog suggests that Thalcave may have been trying to protect his people from harm."
   }
 }

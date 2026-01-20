@@ -7,9 +7,9 @@
     "Kai-Koumou trembled with rage, and his countenance was flushed with a fierce exultation."
   ],
   "contradicting_spans": [
-    "Direct contradictions with the claim"
+    "Kai-Koumou trembled with rage, and his countenance was flushed with a fierce exultation."
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Kai-Koumou lifted fragments of his mother’s burnt bones to his lips to ‘breathe in her spirit’. The evidence shows that Kai-Koumou was mourned by his people and they performed various rituals, but there is no mention of him li",
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Kai-Koumou lifted fragments of his mother’s burnt bones to his lips to ‘breathe in her spirit’. Instead, the evidence shows that Kai-Koumou was filled with rage and exultation after hearing about the death of Tohonga.",
   "analysis": {
     "claim_id": "79",
     "claim_text": "After the killing, elders held a “Blood-and-Bone” rite; he lifted fragments of his mother’s burnt bones to his lips to “breathe in her spirit,” a ritual he repeated whenever catastrophe loomed, turning him gloomy yet unyielding.",
@@ -27,26 +27,8 @@
       },
       {
         "id": "SC2",
-        "text": "Kai-Koumou lifted fragments of his mother’s burnt bones to his lips.",
+        "text": "Kai-Koumou lifted fragments of his mother’s burnt bones to his lips to ‘breathe in her spirit.’",
         "type": "factual",
-        "verdict": null,
-        "confidence": 0.0,
-        "supporting_excerpts": [],
-        "contradicting_excerpts": []
-      },
-      {
-        "id": "SC3",
-        "text": "He breathed in her spirit.",
-        "type": "psychological",
-        "verdict": null,
-        "confidence": 0.0,
-        "supporting_excerpts": [],
-        "contradicting_excerpts": []
-      },
-      {
-        "id": "SC4",
-        "text": "Whenever catastrophe loomed, he repeated this ritual.",
-        "type": "temporal",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -63,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Kai-Koumou lifted fragments of his mother’s burnt bones to his lips to ‘breathe in her spirit’. The evidence shows that Kai-Koumou was mourned by his people and they performed various rituals, but there is no mention of him lifting his mother’s bones."
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Kai-Koumou lifted fragments of his mother’s burnt bones to his lips to ‘breathe in her spirit’. Instead, the evidence shows that Kai-Koumou was filled with rage and exultation after hearing about the death of Tohonga."
   }
 }

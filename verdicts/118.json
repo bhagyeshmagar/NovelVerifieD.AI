@@ -2,11 +2,14 @@
   "claim_id": "118",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
+  "supporting_spans": [
+    "Faria, since their first acquaintance, had been on all points so rational and logical, so wonderfully sagacious, in fact, that he could not understand how so much wisdom on all points could be allied with madness.",
+    "“Here I am, pursuing you remorselessly,” he said with a benignant smile. “You thought to escape my munificence, but it is in vain. Listen to me.”"
+  ],
   "contradicting_spans": [
     "Faria, since their first acquaintance, had been on all points so rational and logical, so wonderfully sagacious, in fact, that he could not understand how so much wisdom on all points could be allied with madness."
   ],
-  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Faria was mad by showing that he was rational and logical.",
+  "reasoning": "Contradiction (character): The character of Faria is described as rational and logical, which contradicts the claim that he was mad.",
   "analysis": {
     "claim_id": "118",
     "claim_text": "French gendarmes seized him at Toulon, accusing him of planning to bomb Bourbon restoration festivities; the real motive was that his code-breaking threatened a cardinal’s secret correspondence.",
@@ -38,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.3,
+    "support_score": 0.9,
     "contradiction_score": 0.7,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Faria was mad by showing that he was rational and logical."
+    "reasoning": "Contradiction (character): The character of Faria is described as rational and logical, which contradicts the claim that he was mad."
   }
 }

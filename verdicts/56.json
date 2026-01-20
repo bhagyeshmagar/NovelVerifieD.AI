@@ -3,13 +3,13 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "At eight o'clock the next morning Thalcave gave the signal for departure.",
-    "Thalcave whistled in a peculiar manner. Immediately a magnificent Argentine horse, of superb form, issued from a small wood near by, and approached at the call of his master."
+    "Thalcave declined payment, asking only that the credit go to “the spirit of the plains.”",
+    "Glenarvan was particularly rejoiced to discover that the Patagonian was a guide, and, moreover, a guide of the Pampas."
   ],
   "contradicting_spans": [
     "At eight o'clock the next morning Thalcave gave the signal for departure."
   ],
-  "reasoning": "Contradiction (temporal): The claim is that Thalcave declined payment and asked only that the credit go to 'the spirit of the plains'. However, in this excerpt, it is stated that Thalcave gave a signal for departure at eight o'clock. This contradicts the claim that Thalcave did not receive payment.",
+  "reasoning": "Contradiction (temporal): The claim is that Thalcave declined payment and asked only that the credit go to 'the spirit of the plains'. However, in this excerpt, it is stated that Thalcave gave a signal for departure at eight o'clock. This contradicts the claim that he declined payment.",
   "analysis": {
     "claim_id": "56",
     "claim_text": "After predicting an earthquake and saving the entire party he declined payment, asking only that the credit go to “the spirit of the plains.”",
@@ -41,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.7,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The claim is that Thalcave declined payment and asked only that the credit go to 'the spirit of the plains'. However, in this excerpt, it is stated that Thalcave gave a signal for departure at eight o'clock. This contradicts the claim that Thalcave did not receive payment."
+    "reasoning": "Contradiction (temporal): The claim is that Thalcave declined payment and asked only that the credit go to 'the spirit of the plains'. However, in this excerpt, it is stated that Thalcave gave a signal for departure at eight o'clock. This contradicts the claim that he declined payment."
   }
 }

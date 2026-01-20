@@ -7,9 +7,9 @@
     "Glenarvan thought it likely that Kai-Koumou's tribe had lost some chief of high rank whom they were particularly anxious to recover;"
   ],
   "contradicting_spans": [
-    "Direct contradiction found in evidence"
+    "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (temporal): The claim is that Kai-Koumou volunteered to lead the pursuit of the missing captain's daughter and would pay richly for her return. However, the evidence shows that Kai-Koumou was not interested in purchasing the daughter and instead wanted to exchange Tohonga, a high-pries",
+  "reasoning": "Contradiction (factual): The character Kai-Koumou does not volunteer to lead the pursuit of the missing captain's daughter and would not pay richly for her return.",
   "analysis": {
     "claim_id": "85",
     "claim_text": "Hearing that foreigners sought the missing captain’s daughter and would pay richly for her return, he volunteered to lead the pursuit.",
@@ -27,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "Kai-Koumou was a skilled hunter and tracker.",
+        "text": "Kai-Koumou was a skilled tracker and navigator.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -36,7 +36,7 @@
       },
       {
         "id": "SC3",
-        "text": "He had a deep sense of loyalty to his fellow castaways.",
+        "text": "The foreigners were dangerous and untrustworthy.",
         "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
@@ -45,7 +45,7 @@
       },
       {
         "id": "SC4",
-        "text": "The pursuit was dangerous and required great skill and courage.",
+        "text": "Kai-Koumou had a personal stake in finding the missing captain’s daughter.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -63,6 +63,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The claim is that Kai-Koumou volunteered to lead the pursuit of the missing captain's daughter and would pay richly for her return. However, the evidence shows that Kai-Koumou was not interested in purchasing the daughter and instead wanted to exchange Tohonga, a high-priest of Nouï-Atoua who had been captured by the English. This contradicts the claim that Kai-Koumou was motivated by a desire to recover the missing captain's daughter."
+    "reasoning": "Contradiction (factual): The character Kai-Koumou does not volunteer to lead the pursuit of the missing captain's daughter and would not pay richly for her return."
   }
 }

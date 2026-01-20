@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (factual): The character of Noirtier is not mentioned in the trial of Louis XVI.",
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Noirtier was not driven from the inner circle due to his insistence on legal formalism.",
   "analysis": {
     "claim_id": "89",
     "claim_text": "**Turning Point**: Arguing for procedural justice at Louis XVI’s trial (1793) he was driven from the inner circle, an experience that later anchored his insistence on legal formalism.",
@@ -18,8 +18,8 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "Arguing for procedural justice at Louis XVI’s trial (1793)",
-        "type": "factual",
+        "text": "Arguing for procedural justice at Louis XVI’s trial (1793) he was driven from the inner circle.",
+        "type": "temporal",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -27,8 +27,8 @@
       },
       {
         "id": "SC2",
-        "text": "he was driven from the inner circle",
-        "type": "factual",
+        "text": "He later anchored his insistence on legal formalism.",
+        "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character of Noirtier is not mentioned in the trial of Louis XVI."
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Noirtier was not driven from the inner circle due to his insistence on legal formalism."
   }
 }

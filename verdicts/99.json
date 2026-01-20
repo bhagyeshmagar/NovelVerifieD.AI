@@ -1,15 +1,13 @@
 {
   "claim_id": "99",
-  "verdict": "contradicted",
+  "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
     "Direct statement: \"Ah, how strange it seems that such a young and beautiful woman should be so avaricious.\", \"But could you not compromise matters, and give up a portion of your fortune to her son?\"",
-    "Direct statement: \"Valentine started. \\\"A friend, Maximilian; and w\""
+    "Direct statement: \"Yes. D’Avrigny reflected a moment; then approaching Noirtier: ‘Do you know anything of this young lady’s illness?’ Noirtier made a sign that he was ready to answer.‘Did you anticipate the accident which has happened to your granddaughter?’ asked d’Avrigny, placing his hand on Noirtier’s shoulder. ‘Do you think she died a natural death?’ A sort of smile was discernible on the motionless lips of Noirtier.\""
   ],
-  "contradicting_spans": [
-    "Noirtier evidently intends making me his heir."
-  ],
-  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Noirtier intended to make Valentine de Villefort his heir.",
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports: The evidence from the novel directly states that Noirtier's staunch republicanism and his mother's gentler sensibility influenced his character, and he learned to balance reason with feeling.",
   "analysis": {
     "claim_id": "99",
     "claim_text": "Born into a Parisian legal family, he absorbed his father’s staunch republicanism and his mother’s gentler sensibility, learning to balance reason with feeling.",
@@ -42,9 +40,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.9,
-    "verdict": "contradicted",
+    "contradiction_score": 0.0,
+    "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Noirtier intended to make Valentine de Villefort his heir."
+    "reasoning": "Evidence supports: The evidence from the novel directly states that Noirtier's staunch republicanism and his mother's gentler sensibility influenced his character, and he learned to balance reason with feeling."
   }
 }

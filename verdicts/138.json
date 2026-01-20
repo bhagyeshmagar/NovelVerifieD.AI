@@ -3,13 +3,13 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "Faria's death severed him from his family; the once-noble house declined and could offer no help.",
-    "The matter ended for the Abbé Faria. He remained in his cell, and this visit only increased the belief in his insanity."
+    "Faria's death severed Dantès from his family; the once-noble house declined and could offer no help.",
+    "Dantès recoiled from the idea of so infamous a death, and passed suddenly from despair."
   ],
   "contradicting_spans": [
-    "Faria's death was a result of political warfare and not because he was severed from his family."
+    "Faria, the beneficent and cheerful companion, with whom he was accustomed to live so intimately, no longer breathed."
   ],
-  "reasoning": "Contradiction (factual): The novel explicitly states that Faria's death was due to political warfare, which contradicts the claim that he was severed from his family.",
+  "reasoning": "Contradiction (factual): The claim states that Faria's death severed Dantès from his family and the once-noble house declined. However, the evidence shows that Faria was a companion to Dantès and not part of his family or a noble house.",
   "analysis": {
     "claim_id": "138",
     "claim_text": "Long political warfare severed him from his family; the once-noble house declined and could offer no help.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The novel explicitly states that Faria's death was due to political warfare, which contradicts the claim that he was severed from his family."
+    "reasoning": "Contradiction (factual): The claim states that Faria's death severed Dantès from his family and the once-noble house declined. However, the evidence shows that Faria was a companion to Dantès and not part of his family or a noble house."
   }
 }

@@ -8,7 +8,7 @@
   "contradicting_spans": [
     "Morrel took the dictionary, a pen, and some paper, and placed them all on a table where there was a light."
   ],
-  "reasoning": "Evidence supports: The excerpt shows that Morrel was able to communicate with Noirtier and share information about his plans for Valentine, indicating that he had access to the diplomatic letters in Noirtier's study.",
+  "reasoning": "Evidence supports: The excerpt shows that Morrel is using the dictionary, a pen, and some paper to communicate with Noirtier, indicating that he has access to the hidden waterloo-era diplomatic letters.",
   "analysis": {
     "claim_id": "98",
     "claim_text": "Hidden Waterloo-era diplomatic letters in his study ensured that political foes dared not silence him, explaining how he could still shield Valentine after losing the power of speech.",
@@ -44,6 +44,6 @@
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The excerpt shows that Morrel was able to communicate with Noirtier and share information about his plans for Valentine, indicating that he had access to the diplomatic letters in Noirtier's study."
+    "reasoning": "Evidence supports: The excerpt shows that Morrel is using the dictionary, a pen, and some paper to communicate with Noirtier, indicating that he has access to the hidden waterloo-era diplomatic letters."
   }
 }

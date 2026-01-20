@@ -27,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "Noirtier is a character in 'The Count of Monte Cristo' by Alexandre Dumas.",
+        "text": "Noirtier is a character in the book 'The Count of Monte Cristo' by Alexandre Dumas.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -36,7 +36,7 @@
       },
       {
         "id": "SC3",
-        "text": "Fernand is a character in 'The Count of Monte Cristo' by Alexandre Dumas.",
+        "text": "Fernand is a character in the book 'The Count of Monte Cristo' by Alexandre Dumas.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,

@@ -1,10 +1,12 @@
 {
   "claim_id": "90",
-  "verdict": "supported",
-  "confidence": 0.5,
+  "verdict": "contradicted",
+  "confidence": 0.95,
   "supporting_spans": [],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports: Unable to analyze support",
+  "contradicting_spans": [
+    "M. de Villefort had scarcely said this, when the door opened, and Barrois appeared."
+  ],
+  "reasoning": "Contradiction (temporal): This excerpt contradicts the claim that Noirtier married Éloïse in order to obtain royalist intelligence from the Vendée.",
   "analysis": {
     "claim_id": "90",
     "claim_text": "To obtain royalist intelligence from the Vendée he married Éloïse, daughter of a ruined local noble (1800); when he learned she secretly backed the Chouans he arranged her “accidental” drowning (1802).",
@@ -37,9 +39,9 @@
     },
     "violations": [],
     "support_score": 0.3,
-    "contradiction_score": 0.0,
-    "verdict": "supported",
-    "confidence": 0.5,
-    "reasoning": "Evidence supports: Unable to analyze support"
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
+    "confidence": 0.95,
+    "reasoning": "Contradiction (temporal): This excerpt contradicts the claim that Noirtier married Éloïse in order to obtain royalist intelligence from the Vendée."
   }
 }

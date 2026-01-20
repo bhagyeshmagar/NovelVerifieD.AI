@@ -1,15 +1,13 @@
 {
   "claim_id": "68",
-  "verdict": "contradicted",
+  "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
     "At ten, migrating with his clan, a flame-shaped birth-mark on his forehead convinced elders he was the reincarnation of the “sun-devouring warrior.”",
     "They must be patient. It was the most prudent plan."
   ],
-  "contradicting_spans": [
-    "Kai-Koumou's tribe had lost some chief of high rank whom they were particularly anxious to recover; and he was not mistaken."
-  ],
-  "reasoning": "Contradiction (factual): The claim states that Kai-Koumou was the reincarnation of a sun-devouring warrior, but the evidence contradicts this by mentioning that his tribe had lost a chief of high rank and were anxious to recover him.",
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports: The evidence suggests that Kai-Koumou's birthmark and his actions in battle support the claim that he was a powerful warrior, but there is no direct statement or event confirming this.",
   "analysis": {
     "claim_id": "68",
     "claim_text": "At ten, migrating with his clan, a flame-shaped birth-mark on his forehead convinced elders he was the reincarnation of the “sun-devouring warrior.” At fourteen he single-handedly brought down a European bison that had trampled plantations, fashioned his first battle-axe from its horns and carved on the handle his father’s death-bed chant: “gnaw the bones of enemies.”",
@@ -42,9 +40,9 @@
     },
     "violations": [],
     "support_score": 0.7,
-    "contradiction_score": 0.7,
-    "verdict": "contradicted",
+    "contradiction_score": 0.1,
+    "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim states that Kai-Koumou was the reincarnation of a sun-devouring warrior, but the evidence contradicts this by mentioning that his tribe had lost a chief of high rank and were anxious to recover him."
+    "reasoning": "Evidence supports: The evidence suggests that Kai-Koumou's birthmark and his actions in battle support the claim that he was a powerful warrior, but there is no direct statement or event confirming this."
   }
 }

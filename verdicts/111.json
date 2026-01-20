@@ -2,11 +2,14 @@
   "claim_id": "111",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
+  "supporting_spans": [
+    "M. Noirtier had just sent for him, and he was in such haste to know the reason of his doing so that he had not stopped to take a cab, placing infinitely more dependence on his own two legs than on the four legs of a cab-horse.",
+    "On arriving at the house, Morrel was not even out of breath, for love lends wings to our desires; but Barrois, who had long forgotten what it was to love, was sorely fatigued by the expedition he had undertaken."
+  ],
   "contradicting_spans": [
     "M. Noirtier had just sent for him, and he was in such haste to know the reason of his doing so that he had not stopped to take a cab, placing infinitely more dependence on his own two legs than on the four legs of a cab-horse."
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Noirtier pulled strings through old friends and quietly encouraged anti-royalist moves.",
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Noirtier pulled strings through old friends and encouraged anti-royalist moves quietly by using his bodily strength to walk rapidly.",
   "analysis": {
     "claim_id": "111",
     "claim_text": "Though bodily strength ebbed he still pulled strings through old friends, quietly encouraging several anti-royalist moves.",
@@ -15,7 +18,7 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "Though bodily strength ebbed",
+        "text": "Though bodily strength ebbed, Noirtier still pulled strings through old friends.",
         "type": "temporal",
         "verdict": null,
         "confidence": 0.0,
@@ -24,17 +27,8 @@
       },
       {
         "id": "SC2",
-        "text": "he still pulled strings through old friends",
+        "text": "Noirtier quietly encouraged several anti-royalist moves.",
         "type": "factual",
-        "verdict": null,
-        "confidence": 0.0,
-        "supporting_excerpts": [],
-        "contradicting_excerpts": []
-      },
-      {
-        "id": "SC3",
-        "text": "quietly encouraging several anti-royalist moves",
-        "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -47,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.3,
+    "support_score": 0.9,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Noirtier pulled strings through old friends and quietly encouraged anti-royalist moves."
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Noirtier pulled strings through old friends and encouraged anti-royalist moves quietly by using his bodily strength to walk rapidly."
   }
 }

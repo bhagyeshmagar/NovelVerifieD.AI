@@ -1,13 +1,15 @@
 {
   "claim_id": "17",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
     "Paganel called twice for every dish, 'through absent-mindedness,' as he said.",
     "He laughed heartily, and promised 'upon his honor' not to commit a single blunder during the entire voyage."
   ],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports: These statements suggest that Paganel has difficulty with English, which could be due to his upbringing in both languages.",
+  "contradicting_spans": [
+    "Paganel called twice for every dish, 'through absent-mindedness,' as he said. This unfortunate word led Lady Helena to inquire if the amiable Frenchman had occasionally shown his habitual failing."
+  ],
+  "reasoning": "Contradiction (capability): The claim is that Paganel was fluent in English and French, but this excerpt shows that he made a mistake in studying Spanish.",
   "analysis": {
     "claim_id": "17",
     "claim_text": "His father died early; his mother remarried a French officer, so the boy grew up fluent in English and French, later adding Spanish from an English tutor.",
@@ -49,9 +51,9 @@
     },
     "violations": [],
     "support_score": 0.7,
-    "contradiction_score": 0.1,
-    "verdict": "supported",
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: These statements suggest that Paganel has difficulty with English, which could be due to his upbringing in both languages."
+    "reasoning": "Contradiction (capability): The claim is that Paganel was fluent in English and French, but this excerpt shows that he made a mistake in studying Spanish."
   }
 }

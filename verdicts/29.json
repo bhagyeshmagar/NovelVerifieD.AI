@@ -7,9 +7,9 @@
     "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
   ],
   "contradicting_spans": [
-    "The night before the mate was hanged he pressed a dagger engraved with his family crest into the boy’s hand."
+    "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
   ],
-  "reasoning": "Contradiction (factual): This excerpt directly contradicts the claim that Ben Joyce was not present at the time of the hanging.",
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Ben Joyce was hanged the night before the mate pressed a dagger into the boy's hand.",
   "analysis": {
     "claim_id": "29",
     "claim_text": "The night before the mate was hanged he pressed a dagger engraved with his family crest into the boy’s hand.",
@@ -54,6 +54,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): This excerpt directly contradicts the claim that Ben Joyce was not present at the time of the hanging."
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Ben Joyce was hanged the night before the mate pressed a dagger into the boy's hand."
   }
 }

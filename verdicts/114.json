@@ -7,9 +7,9 @@
     "Faria smiled. “Yes,” said he. “You have, indeed, a noble nature, Edmond, and I see by your paleness and agitation what is passing in your heart at this moment. No, be assured, I am not mad. This treasure exists, Dantès, and if I have not been allowed to possess it, you will."
   ],
   "contradicting_spans": [
-    "Faria smiled, and, proceeding to the disused fireplace, raised, by the help of his chisel, a long stone, which had doubtless been the hearth, beneath which was a cavity of considerable depth, serving as a safe depository of the articles mentioned to Dantès. 0213m"
+    "Faria, since their first acquaintance, had been on all points so rational and logical, so wonderfully sagacious, in fact, that he could not understand how so much wisdom on all points could be allied with madness."
   ],
-  "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Faria entered Bologna University and studied theology and chemistry. The passage mentions that Faria was studying Italian texts in a cavity beneath a hearth, suggesting that he was not enrolled in a university program.",
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim by suggesting that Faria is rational and logical, which does not align with the claim that he is mad.",
   "analysis": {
     "claim_id": "114",
     "claim_text": "At twelve he entered Bologna University, read theology and chemistry, and caused a stir by decoding ciphers in a fifteenth-century alchemist’s notebook.",
@@ -37,7 +37,7 @@
       {
         "id": "SC3",
         "text": "caused a stir by decoding ciphers in a fifteenth-century alchemist’s notebook.",
-        "type": "psychological",
+        "type": "factual",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -54,6 +54,6 @@
     "contradiction_score": 0.7,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The evidence contradicts the claim that Faria entered Bologna University and studied theology and chemistry. The passage mentions that Faria was studying Italian texts in a cavity beneath a hearth, suggesting that he was not enrolled in a university program."
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim by suggesting that Faria is rational and logical, which does not align with the claim that he is mad."
   }
 }

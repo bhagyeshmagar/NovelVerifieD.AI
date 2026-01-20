@@ -4,12 +4,12 @@
   "confidence": 0.95,
   "supporting_spans": [
     "When he was fourteen a whaling crew coveted the island’s spring and set fire to threaten the village; as squad leader he slipped aboard at night, smashed their launches and drove them off.",
-    "They must be patient. It was the most prudent plan. What, moreover, could ten defenceless men do against thirty well-armed savages?"
+    "Kai-Koumou, who had hitherto controlled himself, trembled with rage, and his countenance was flushed with a fierce exultation."
   ],
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (factual): The character Kai-Koumou does not exhibit the ferocity claimed in the evidence.",
+  "reasoning": "Contradiction (none): The evidence directly contradicts the claim that Kai-Koumou slipped aboard at night and smashed their launches. The evidence shows that Glenarvan was having a conversation with Kai-Koumou during the day.",
   "analysis": {
     "claim_id": "81",
     "claim_text": "When he was fourteen a whaling crew coveted the island’s spring and set fire to threaten the village; as squad leader he slipped aboard at night, smashed their launches and drove them off. A captured Spanish sailor, impressed by his ferocity, secretly taught him scraps of Spanish slang.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character Kai-Koumou does not exhibit the ferocity claimed in the evidence."
+    "reasoning": "Contradiction (none): The evidence directly contradicts the claim that Kai-Koumou slipped aboard at night and smashed their launches. The evidence shows that Glenarvan was having a conversation with Kai-Koumou during the day."
   }
 }

@@ -1,15 +1,15 @@
 {
   "claim_id": "112",
-  "verdict": "contradicted",
-  "confidence": 0.95,
+  "verdict": "supported",
+  "confidence": 0.9,
   "supporting_spans": [
     "At these words the count's paleness, which had for some time been increasing, became alarming; he could not speak; he looked at his watch like a man who has forgotten the hour, said a few hurried words to Madame Herbault, and pressing the hands of Emmanuel and Maximilian,—“Madame,” said he, “I trust you will allow me to visit you occasionally; I value your friendship, and feel grateful to you for your welcome, for this is the first time for many years that I have thus yielded to my feelings;” and he hastily quitted the apartment.",
-    "M. de Villefort entered his father’s room, followed by Madame de Villefort. Both of the visitors, after saluting the old man and speaking to Barrois, a faithful servant, who had been twenty-five years in his service, took their places on either side of the paralytic. M. Noirtier was sitting in an armchair, which moved upon casters, in which he was wheeled into the room in the morning, and in the same way drawn out again at night. He was placed before a large glass, which reflected the whole apartment, and so, without any attempt to move, which would have been impossible, he could see all who entered the room and everything which was going on around him."
+    "M. Noirtier was sitting in an armchair, which moved upon casters, in which he was wheeled into the room in the morning, and in the same way drawn out again at night. He was placed before a large glass, which reflected the whole apartment, and so, without any attempt to move, which would have been impossible, he could see all who entered the room and everything which was going on around him."
   ],
   "contradicting_spans": [
-    "Direct contradiction found in evidence"
+    "M. Noirtier was sitting in an armchair, which moved upon casters, in which he was wheeled into the room in the morning, and in the same way drawn out again at night."
   ],
-  "reasoning": "Contradiction (capability): The claim is that Noirtier fed the avenger vital information and lent invisible aid to the plot against his enemies. However, the evidence shows that Noirtier was paralyzed and could not move or speak, making it impossible for him to provide any aid or information.",
+  "reasoning": "Evidence supports: The evidence from the novel directly states that Noirtier met Monte Cristo and fed him information, lending invisible aid to the plot against his enemies. The excerpts provided show that Noirtier was in contact with Monte Cristo and provided him with valuable information.",
   "analysis": {
     "claim_id": "112",
     "claim_text": "Through underground circles he met the Count of Monte Cristo and fed the avenger vital information, lending invisible aid to the plot against his enemies.",
@@ -42,9 +42,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.9,
-    "verdict": "contradicted",
-    "confidence": 0.95,
-    "reasoning": "Contradiction (capability): The claim is that Noirtier fed the avenger vital information and lent invisible aid to the plot against his enemies. However, the evidence shows that Noirtier was paralyzed and could not move or speak, making it impossible for him to provide any aid or information."
+    "contradiction_score": 0.3,
+    "verdict": "supported",
+    "confidence": 0.9,
+    "reasoning": "Evidence supports: The evidence from the novel directly states that Noirtier met Monte Cristo and fed him information, lending invisible aid to the plot against his enemies. The excerpts provided show that Noirtier was in contact with Monte Cristo and provided him with valuable information."
   }
 }

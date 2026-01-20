@@ -6,7 +6,7 @@
   "contradicting_spans": [
     "Faria tried to move and get over the distance which separated them."
   ],
-  "reasoning": "Contradiction (capability): This contradicts the claim that Faria scratched 'On Ancient Mediterranean Routes' into limestone with a nail.",
+  "reasoning": "Contradiction (capability): The evidence shows that Faria was physically incapable of moving on his own, yet the claim states that he scratched something into limestone with a nail.",
   "analysis": {
     "claim_id": "119",
     "claim_text": "First confined in Fenestrella Fortress, he scratched “On Ancient Mediterranean Routes” into limestone with a nail; the warden later plagiarised the essay.",
@@ -48,9 +48,9 @@
     },
     "violations": [],
     "support_score": 0.3,
-    "contradiction_score": 0.9,
+    "contradiction_score": 0.7,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (capability): This contradicts the claim that Faria scratched 'On Ancient Mediterranean Routes' into limestone with a nail."
+    "reasoning": "Contradiction (capability): The evidence shows that Faria was physically incapable of moving on his own, yet the claim states that he scratched something into limestone with a nail."
   }
 }

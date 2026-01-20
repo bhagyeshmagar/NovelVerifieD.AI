@@ -3,7 +3,7 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "The quartermaster made his preparations for departure, aided by the two sailors, one of whom attended to his horse, and the other to his provisions.",
+    "The quartermaster made his preparations for departure, aided by the two sailors, one of whom attended to his horse, and the other to his provisions. Meantime Glenarvan wrote the letter designed for Tom Austin.",
     "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
   ],
   "contradicting_spans": [
@@ -41,7 +41,7 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.7,
+    "support_score": 0.9,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,

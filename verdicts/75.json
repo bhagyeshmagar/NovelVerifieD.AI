@@ -1,15 +1,15 @@
 {
   "claim_id": "75",
-  "verdict": "contradicted",
+  "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
     "He viewd volcanic eruptions as divine punishment against colonizers.",
-    "Kai-Koumou, who had hitherto controlled himself, trembled with rage, and his countenance was flushed with a fierce exultation."
+    "Kai-Koumou trembled with rage, and his countenance was flushed with a fierce exultation."
   ],
   "contradicting_spans": [
-    "Direct contradictions with the claim"
+    "He viewd volcanic eruptions as divine punishment against colonizers."
   ],
-  "reasoning": "Contradiction (factual): The character Kai-Koumou does not view volcanic eruptions as divine punishment against colonizers.",
+  "reasoning": "Evidence supports: The evidence directly states that Kai-Koumou viewed volcanic eruptions as divine punishment against colonizers and became enraged when his people's high priest was taken by the Pakekas (Europeans).",
   "analysis": {
     "claim_id": "75",
     "claim_text": "He had an extraordinary memory for geographical knowledge, and could determine the location of shipwrecks by observing tidal changes. He viewd volcanic eruptions as divine punishment against colonizers.",
@@ -28,7 +28,7 @@
       {
         "id": "SC2",
         "text": "He could determine the location of shipwrecks by observing tidal changes.",
-        "type": "capability",
+        "type": "factual",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -42,9 +42,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.9,
-    "verdict": "contradicted",
+    "contradiction_score": 0.1,
+    "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character Kai-Koumou does not view volcanic eruptions as divine punishment against colonizers."
+    "reasoning": "Evidence supports: The evidence directly states that Kai-Koumou viewed volcanic eruptions as divine punishment against colonizers and became enraged when his people's high priest was taken by the Pakekas (Europeans)."
   }
 }

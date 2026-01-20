@@ -2,14 +2,11 @@
   "claim_id": "65",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [
-    "Thalcave handled canoe, coast and jungle with equal ease",
-    "Captain Mangles constructed a canoe in the Australian fashion"
-  ],
+  "supporting_spans": [],
   "contradicting_spans": [
-    "Direct contradiction found in evidence"
+    "Direct contradiction with the claim"
   ],
-  "reasoning": "Contradiction (factual): The claim is that Thalcave handled canoe, coast and jungle with equal ease. However, the evidence shows that Thalcave struggled to handle a canoe and was unable to do so successfully.",
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Thalcave handled canoe, coast and jungle with equal ease.",
   "analysis": {
     "claim_id": "65",
     "claim_text": "British officers marvelled that he handled canoe, coast and jungle with equal ease, shuttling supplies and so preparing his later berth on the Dartmouth.",
@@ -41,10 +38,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.7,
+    "support_score": 0.4,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim is that Thalcave handled canoe, coast and jungle with equal ease. However, the evidence shows that Thalcave struggled to handle a canoe and was unable to do so successfully."
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Thalcave handled canoe, coast and jungle with equal ease."
   }
 }

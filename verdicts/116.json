@@ -19,7 +19,7 @@
       {
         "id": "SC1",
         "text": "In Lisbon he backed constitutionalist Prince Pedro.",
-        "type": "temporal",
+        "type": "factual",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],

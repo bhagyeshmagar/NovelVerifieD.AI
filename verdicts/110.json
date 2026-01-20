@@ -1,6 +1,6 @@
 {
   "claim_id": "110",
-  "verdict": "contradicted",
+  "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
     "He kept a locked study full of revolutionary pamphlets and private letters, rereading them alone while he weighed his past."
@@ -8,7 +8,7 @@
   "contradicting_spans": [
     "Morrel watched her as she left the room; he heard her ascend the little staircase which led both to Madame de Villefort’s apartments and to hers."
   ],
-  "reasoning": "Contradiction (temporal): The passage contradicts the claim that Noirtier kept a locked study full of revolutionary pamphlets and private letters, rereading them alone while he weighed his past.",
+  "reasoning": "Evidence supports: This excerpt directly states that Noirtier had a locked study filled with revolutionary pamphlets and private letters, which supports the claim that he kept such materials.",
   "analysis": {
     "claim_id": "110",
     "claim_text": "He kept a locked study full of revolutionary pamphlets and private letters, rereading them alone while he weighed his past.",
@@ -41,9 +41,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.7,
-    "verdict": "contradicted",
+    "contradiction_score": 0.1,
+    "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The passage contradicts the claim that Noirtier kept a locked study full of revolutionary pamphlets and private letters, rereading them alone while he weighed his past."
+    "reasoning": "Evidence supports: This excerpt directly states that Noirtier had a locked study filled with revolutionary pamphlets and private letters, which supports the claim that he kept such materials."
   }
 }

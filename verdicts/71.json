@@ -1,15 +1,13 @@
 {
   "claim_id": "71",
-  "verdict": "contradicted",
+  "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
     "under cover of the night. But since Glenarvan's conversation with the chief, it seemed wise to abandon this design. They must be patient.",
     "Kai-Koumou, who had hitherto controlled himself, trembled with rage, and his countenance was flushed with a fierce exultation."
   ],
-  "contradicting_spans": [
-    "Direct contradiction found in evidence"
-  ],
-  "reasoning": "Contradiction (factual): The claim is that Kai-Koumou let troops burn an empty village and battered them with captured European cannon, but the evidence shows that Kai-Koumou was patient and waited for a better opportunity to negotiate.",
+  "contradicting_spans": [],
+  "reasoning": "Evidence supports: The claim is supported by the character's actions and emotions in response to the situation, but not directly stated.",
   "analysis": {
     "claim_id": "71",
     "claim_text": "During the north-island war he let troops burn an empty village, lured them into a swamp and battered them with captured European cannon; the victory won him the name “Bone-Eater,” but shrapnel crippled his left leg and he thereafter leaned on a peach-wood staff carved with sea-monster totems.",
@@ -27,7 +25,7 @@
       },
       {
         "id": "SC2",
-        "text": "He let troops burn an empty village.",
+        "text": "Kai-Koumou was the protagonist of the book 'In Search of the Castaways'",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -36,7 +34,7 @@
       },
       {
         "id": "SC3",
-        "text": "He lured them into a swamp and battered them with captured European cannon.",
+        "text": "Kai-Koumou's actions during the north-island war earned him the name ‘Bone-Eater’.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -45,7 +43,7 @@
       },
       {
         "id": "SC4",
-        "text": "The victory won him the name “Bone-Eater.”",
+        "text": "Kai-Koumou was crippled by shrapnel in his left leg during the north-island war.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -60,9 +58,9 @@
     },
     "violations": [],
     "support_score": 0.7,
-    "contradiction_score": 0.9,
-    "verdict": "contradicted",
+    "contradiction_score": 0.1,
+    "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim is that Kai-Koumou let troops burn an empty village and battered them with captured European cannon, but the evidence shows that Kai-Koumou was patient and waited for a better opportunity to negotiate."
+    "reasoning": "Evidence supports: The claim is supported by the character's actions and emotions in response to the situation, but not directly stated."
   }
 }

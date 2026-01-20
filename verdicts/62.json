@@ -1,7 +1,7 @@
 {
   "claim_id": "62",
   "verdict": "supported",
-  "confidence": 0.9,
+  "confidence": 0.85,
   "supporting_spans": [
     "Thalcave smiled with his accustomed calmness.",
     "Glenarvan thought of that terrible request of Lady Helena, who, rather than yield to torture or slavery, preferred to die by his hand."
@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Thalcave smiled with his accustomed calmness."
   ],
-  "reasoning": "Evidence supports: The claim is supported by direct statements from the evidence indicating that Thalcave acted calmly and confidently in the face of danger, while Glenarvan was overcome with grief and despair.",
+  "reasoning": "Evidence supports: The character's actions and thoughts suggest a calm demeanor and a sense of duty, which align with the claim that he acted more than speaking and felt deep pity for sufferers.",
   "analysis": {
     "claim_id": "62",
     "claim_text": "Loss turned him taciturn, acting more than speaking; he felt deep pity for sufferers and stayed calmly watchful toward oppressors.",
@@ -41,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.3,
     "verdict": "supported",
-    "confidence": 0.9,
-    "reasoning": "Evidence supports: The claim is supported by direct statements from the evidence indicating that Thalcave acted calmly and confidently in the face of danger, while Glenarvan was overcome with grief and despair."
+    "confidence": 0.85,
+    "reasoning": "Evidence supports: The character's actions and thoughts suggest a calm demeanor and a sense of duty, which align with the claim that he acted more than speaking and felt deep pity for sufferers."
   }
 }

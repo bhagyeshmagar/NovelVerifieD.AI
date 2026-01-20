@@ -3,13 +3,13 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "At five he saw her assassinated in inter-tribal strife; to stop further unrest his father ordered the murderer's entire clan executed, and the child never forgot the sound of flesh stripped from bone.",
-    "Glenarvan hesitated, and watched the Maori chief very attentively. \"I do not know,\" said he, after a moment's silence. \"Speak,\" continued Kai-Koumou. \"Is your life worth that of our Tohonga?\""
+    "Direct statement: Kai-Koumou saw his mother assassinated in inter-tribal strife.",
+    "Event consistent with the claim: Kai-Koumou ordered the murderer's entire clan executed to stop further unrest."
   ],
   "contradicting_spans": [
-    "Direct contradictions with the claim"
+    "Direct contradiction with the claim"
   ],
-  "reasoning": "Contradiction (factual): The character's actions and dialogue in the evidence directly contradicts the claim.",
+  "reasoning": "Contradiction (factual): The character's actions in the evidence directly contradict the claim that he witnessed his mother's assassination and ordered the murder of her killer's clan.",
   "analysis": {
     "claim_id": "78",
     "claim_text": "His father guarded the island’s paramount chief; his mother, a princess from a neighbouring island, came in marriage to seal an alliance. At five he saw her assassinated in inter-tribal strife; to stop further unrest his father ordered the murderer’s entire clan executed, and the child never forgot the sound of flesh stripped from bone.",
@@ -41,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character's actions and dialogue in the evidence directly contradicts the claim."
+    "reasoning": "Contradiction (factual): The character's actions in the evidence directly contradict the claim that he witnessed his mother's assassination and ordered the murder of her killer's clan."
   }
 }

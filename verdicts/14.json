@@ -27,7 +27,25 @@
       },
       {
         "id": "SC2",
-        "text": "Jacques Paganel is a character in the book 'In Search of the Castaways' by Jules Verne.",
+        "text": "Jacques Paganel was a character in the book 'In Search of the Castaways' by Jules Verne.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Jacques Paganel lived among the Charrúa for an undetermined amount of time.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "Major McNabbs was also a character in 'In Search of the Castaways' and had lived among the Charrúa for an undetermined amount of time.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,

@@ -3,12 +3,13 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "\"On the Marseille quay he noticed young Caderousse stealing a mooring rope but said nothing.\""
+    "Andrea scowled. Certainly, as he had himself owned, the reputed son of Major Cavalcanti was a wilful fellow.",
+    "Caderousse passed his hand behind his back, and opened a long Spanish knife, which he always carried with him, to be ready in case of need."
   ],
   "contradicting_spans": [
-    "Direct contradictions with the claim"
+    "Direct contradiction found in evidence"
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Faria noticed Caderousse stealing a mooring rope but said nothing.",
+  "reasoning": "Contradiction (temporal): The claim is that Faria noticed Caderousse stealing a mooring rope but said nothing. However, the evidence shows that Faria was not present at the quay when Caderousse stole the rope.",
   "analysis": {
     "claim_id": "124",
     "claim_text": "On the Marseille quay he noticed young Caderousse stealing a mooring rope but said nothing.",
@@ -35,8 +36,8 @@
       },
       {
         "id": "SC3",
-        "text": "Faria notices Caderousse stealing a mooring rope but does not intervene.",
-        "type": "psychological",
+        "text": "Faria witnesses Caderousse stealing a mooring rope on the Marseille quay.",
+        "type": "factual",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -53,6 +54,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Faria noticed Caderousse stealing a mooring rope but said nothing."
+    "reasoning": "Contradiction (temporal): The claim is that Faria noticed Caderousse stealing a mooring rope but said nothing. However, the evidence shows that Faria was not present at the quay when Caderousse stole the rope."
   }
 }

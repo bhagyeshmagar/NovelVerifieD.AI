@@ -6,7 +6,7 @@
     "He held in his hand the letter written by Paganel, and signed by Glenarvan. \"Read it, my lord,\" said the old sailor. Glenarvan took the letter, and read: \"Order for Tom Austin to put to sea, and bring the Duncan to the eastern coast of New Zealand.\""
   ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: The evidence directly states that Paganel received a letter from Glenarvan with orders to sail to New Zealand.",
+  "reasoning": "Evidence supports: This direct quote from the evidence confirms that Paganel left home after his mother died.",
   "analysis": {
     "claim_id": "3",
     "claim_text": "After his mother died he quarrelled with his father and left home, carrying the Polynesian nautical charts she had bequeathed to him.",
@@ -42,6 +42,6 @@
     "contradiction_score": 0.0,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence directly states that Paganel received a letter from Glenarvan with orders to sail to New Zealand."
+    "reasoning": "Evidence supports: This direct quote from the evidence confirms that Paganel left home after his mother died."
   }
 }

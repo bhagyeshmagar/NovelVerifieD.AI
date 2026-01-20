@@ -4,12 +4,12 @@
   "confidence": 0.95,
   "supporting_spans": [
     "under cover of the night. But since Glenarvan's conversation with the chief, it seemed wise to abandon this design.",
-    "They must be patient. It was the most prudent plan."
+    "They must be patient. It was the most prudent plan. The exchange offered chances that neither an open attack nor a flight across these unknown regions could afford."
   ],
   "contradicting_spans": [
-    "Direct contradictions with the claim"
+    "He trained twelve English-speaking youths as spies, sent them into Auckland; two became servants who secretly watched Glenarvan."
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Kai-Koumou trained twelve English-speaking youths as spies and sent them into Auckland. The evidence shows that Kai-Koumou's tribe had recently fought against the English troops, and they were not interested in spying on them.",
+  "reasoning": "Contradiction (capability): The claim states that Kai-Koumou trained twelve English-speaking youths as spies and sent them into Auckland to secretly watch Glenarvan. However, the evidence from the novel shows that Kai-Koumou only had ten natives on board the canoe who joined him, and they were not s",
   "analysis": {
     "claim_id": "72",
     "claim_text": "He trained twelve English-speaking youths as spies, sent them into Auckland; two became servants who secretly watched Glenarvan.",
@@ -54,6 +54,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Kai-Koumou trained twelve English-speaking youths as spies and sent them into Auckland. The evidence shows that Kai-Koumou's tribe had recently fought against the English troops, and they were not interested in spying on them."
+    "reasoning": "Contradiction (capability): The claim states that Kai-Koumou trained twelve English-speaking youths as spies and sent them into Auckland to secretly watch Glenarvan. However, the evidence from the novel shows that Kai-Koumou only had ten natives on board the canoe who joined him, and they were not spies but warriors who had recently fought against the English troops."
   }
 }

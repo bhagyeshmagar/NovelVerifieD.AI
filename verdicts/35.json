@@ -4,12 +4,12 @@
   "confidence": 0.95,
   "supporting_spans": [
     "Ayrton soon made his appearance.",
-    "The quartermaster made his preparations for departure."
+    "The sailor reflected a few moments, and then replied: \"I thank you, my lord, for the confidence you place in me, and hope to show myself worthy of it. I have some knowledge of the country, and of the customs of the natives; and, if I can be of use to you----\""
   ],
   "contradicting_spans": [
     "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Ayrton marooned Captain Grant in a botched silencing. The revolver shot and Glenarvan's fall indicate that Ayrton was involved in a violent act against Glenarvan, which cannot be reconciled with the claim of marooning.",
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Ayrton locked Captain Grant inside the keel-less lifeboat.",
   "analysis": {
     "claim_id": "35",
     "claim_text": "The mutiny began when Captain Grant uncovered his forged logbook and threatened to report him; “marooning” was a botched silencing in which Ayrton, thinking fast, locked the captain inside the keel-less lifeboat.",
@@ -41,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.7,
+    "support_score": 0.9,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Ayrton marooned Captain Grant in a botched silencing. The revolver shot and Glenarvan's fall indicate that Ayrton was involved in a violent act against Glenarvan, which cannot be reconciled with the claim of marooning."
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Ayrton locked Captain Grant inside the keel-less lifeboat."
   }
 }

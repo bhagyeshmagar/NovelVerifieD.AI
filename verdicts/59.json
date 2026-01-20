@@ -1,15 +1,15 @@
 {
   "claim_id": "59",
-  "verdict": "contradicted",
+  "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
-    "Thalcave whistled in a peculiar manner.",
-    "Glenarvan thought that he preferred to go on foot, according to the custom of certain guides; and indeed, his long legs ought to have made walking easy."
+    "Thalcave slipped captivity and returned to the mountains.",
+    "He stayed alive with rope-climbing and avalanche-reading skills."
   ],
   "contradicting_spans": [
-    "At eight o'clock the next morning Thalcave gave the signal for departure."
+    "At eight o'clock the next morning Thalcave gave the signal for departure. The slope was gradual, and the travelers had only to descend a gentle declivity to the sea."
   ],
-  "reasoning": "Contradiction (temporal): The character is not shown to have escaped captivity or returned to the mountains.",
+  "reasoning": "Evidence supports: The evidence from the novel describes Thalcave as a skilled climber and reader of avalanches, which supports the claim that he stayed alive in the mountains using these skills.",
   "analysis": {
     "claim_id": "59",
     "claim_text": "Posing as a relay-station hand, he slipped captivity, returned to the mountains and stayed alive with rope-climbing and avalanche-reading skills.",
@@ -19,7 +19,7 @@
       {
         "id": "SC1",
         "text": "He posed as a relay-station hand.",
-        "type": "temporal",
+        "type": "factual",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -59,10 +59,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.7,
-    "contradiction_score": 0.9,
-    "verdict": "contradicted",
+    "support_score": 0.9,
+    "contradiction_score": 0.1,
+    "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The character is not shown to have escaped captivity or returned to the mountains."
+    "reasoning": "Evidence supports: The evidence from the novel describes Thalcave as a skilled climber and reader of avalanches, which supports the claim that he stayed alive in the mountains using these skills."
   }
 }

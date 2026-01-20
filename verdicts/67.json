@@ -1,13 +1,15 @@
 {
   "claim_id": "67",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "Your people have invaded our island. They have stolen away our fields; they have burned our villages.",
-    "Listen, continued Kai-Koumou. \"Tohonga, the high-priest of Nouï-Atoua, has fallen into the hands of your brothers. He is prisoner of the Pakekas (Europeans). Our god commands us to ransom his life. I would have torn out your heart, I would have hung your companions' heads and yours forever to the stakes of this palisade. But Nouï-Atoua has spoken.\""
+    "Kai-Koumou, who had hitherto controlled himself, trembled with rage, and his countenance was flushed with a fierce exultation.",
+    "Glenarvan hesitated, and watched the Maori chief very attentively. \"I do not know,\" said he, after a moment's silence. \"Speak,\" continued Kai-Koumou. \"Is your life worth that of our Tohonga?\""
   ],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports: The evidence directly states that Kai-Koumou saw his father ambushed by British musket squad and his mother tattooed a vengeance curse on him.",
+  "contradicting_spans": [
+    "Direct contradictions with the claim"
+  ],
+  "reasoning": "Contradiction (factual): The character Kai-Koumou does not have a vengeance curse tattooed on his chest by his mother. Instead, he is involved in negotiations with Glenarvan's group to ransom their high priest Tohonga.",
   "analysis": {
     "claim_id": "67",
     "claim_text": "Born on New Zealand’s North-island east coast to a Maori war-chief father and a priestess mother skilled in herbs and star-reading, he saw his father ambushed by a British musket squad, the body mutilated, the left ear taken as trophy; his mother tattooed a vengeance curse on his chest with ochre.",
@@ -40,9 +42,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.1,
-    "verdict": "supported",
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence directly states that Kai-Koumou saw his father ambushed by British musket squad and his mother tattooed a vengeance curse on him."
+    "reasoning": "Contradiction (factual): The character Kai-Koumou does not have a vengeance curse tattooed on his chest by his mother. Instead, he is involved in negotiations with Glenarvan's group to ransom their high priest Tohonga."
   }
 }

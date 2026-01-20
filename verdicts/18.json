@@ -3,10 +3,10 @@
   "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
-    "\"He once found bribery entries in his father’s old ledgers, reported them, and saw his father’s colleague dismissed; temporary gossip made him wary of the upper nobility.\""
+    "\"No, my dear major,\" continued Paganel; \"but, if you wish, I will tell you, in this connection, a little Arab story that occurs to me.\""
   ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: The excerpt directly states that Jacques Paganel found bribery entries in his father's old ledgers and reported them, which supports the claim that he was once wary of the upper nobility due to temporary gossip.",
+  "reasoning": "Evidence supports: This excerpt suggests that Paganel is telling a story that relates to the claim.",
   "analysis": {
     "claim_id": "18",
     "claim_text": "He once found bribery entries in his father’s old ledgers, reported them, and saw his father’s colleague dismissed; temporary gossip made him wary of the upper nobility.",
@@ -56,10 +56,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The excerpt directly states that Jacques Paganel found bribery entries in his father's old ledgers and reported them, which supports the claim that he was once wary of the upper nobility due to temporary gossip."
+    "reasoning": "Evidence supports: This excerpt suggests that Paganel is telling a story that relates to the claim."
   }
 }

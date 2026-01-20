@@ -1,14 +1,16 @@
 {
   "claim_id": "130",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
     "Well, then, at the end of a month, when drinking water from the same carafe, you would kill the person who drank with you, without your perceiving, otherwise than from slight inconvenience, that there was any poisonous substance mingled with this water.",
     "If I could die, I should go where he goes, and should assuredly find him again. But how to die? It is very easy",
     "I hastened to the river, sat down on the bank, and with my knife forced open the lock of the box. In a fine linen cloth was wrapped a new-born child."
   ],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports: The evidence from the novel directly states that Faria's death was caused by drinking poisoned water and that Dantès intentionally killed him in order to avenge Mithridates' death.",
+  "contradicting_spans": [
+    "Faria, the beneficent and cheerful companion, with whom he was accustomed to live so intimately, no longer breathed."
+  ],
+  "reasoning": "Contradiction (factual): The claim is that Faria died from sudden death due to years of drinking prison water laced with lead. However, the evidence contradicts this by stating that Faria was alive and breathing at the time of his supposed death.",
   "analysis": {
     "claim_id": "130",
     "claim_text": "What seemed an epileptic fit was in fact sudden death from years of drinking prison water laced with lead.",
@@ -17,7 +19,7 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "What seemed an epileptic fit was in fact sudden death from years of drinking prison water laced with lead.",
+        "text": "Faria's sudden death was mistaken for an epileptic fit.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -26,7 +28,7 @@
       },
       {
         "id": "SC2",
-        "text": "Faria was a character in the book 'The Count of Monte Cristo' by Alexandre Dumas.",
+        "text": "The prison water was laced with lead, leading to Faria's death.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -41,9 +43,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.0,
-    "verdict": "supported",
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence from the novel directly states that Faria's death was caused by drinking poisoned water and that Dantès intentionally killed him in order to avenge Mithridates' death."
+    "reasoning": "Contradiction (factual): The claim is that Faria died from sudden death due to years of drinking prison water laced with lead. However, the evidence contradicts this by stating that Faria was alive and breathing at the time of his supposed death."
   }
 }

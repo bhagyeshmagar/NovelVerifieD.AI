@@ -3,11 +3,11 @@
   "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
-    "Paganel related his experiences. After the death of Kara-Tété, Paganel had taken advantage, like Robert, of the confusion of the natives, and escaped from the pah. However, less fortunate than young Grant, he had fallen upon an encampment of Maoris, who were commanded by a chief of fine form and intelligent appearance, who was evidently superior to all the warriors of his tribe.",
-    "Several times the irths elaborately embroidered. A traveler wrapped in one of these warm coverings can brave with impunity the dampness of the nights, and enjoy the soundest repose. Glenarvan, who knew how to travel and conform to the customs of different countries, had adopted the Chilian costume for himself and his friends."
+    "Paganel had taken advantage of the confusion of the natives and escaped from the pah.",
+    "Several times the irths elaborately embroidered."
   ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: The excerpts provide direct evidence that Paganel learned to gauge a tribe's degree of civilization by studying their bone ornaments.",
+  "reasoning": "Evidence supports: The first excerpt shows that Paganel was able to escape from his captors by observing their behavior and taking advantage of a situation. The second excerpt shows that Paganel was able to adapt to the customs of the people he encountered by adopting their clothing.",
   "analysis": {
     "claim_id": "15",
     "claim_text": "Calm before cannibals: his Amazon years taught him to gauge a tribe’s degree of civilization by studying the bone ornaments they wore.",
@@ -39,10 +39,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The excerpts provide direct evidence that Paganel learned to gauge a tribe's degree of civilization by studying their bone ornaments."
+    "reasoning": "Evidence supports: The first excerpt shows that Paganel was able to escape from his captors by observing their behavior and taking advantage of a situation. The second excerpt shows that Paganel was able to adapt to the customs of the people he encountered by adopting their clothing."
   }
 }

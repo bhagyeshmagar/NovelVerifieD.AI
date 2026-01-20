@@ -3,8 +3,8 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "So the matter ended for the Abbé Faria. He remained in his cell, and this visit only increased the belief in his insanity.",
-    "The very madness of the Abbé Faria, gone mad in prison, condemned him to perpetual solitude."
+    "The matter ended for the Abbé Faria. He remained in his cell, and this visit only increased the belief in his insanity.",
+    "Faria, not seeing the young man appear, tried to move and get over the distance which separated them."
   ],
   "contradicting_spans": [
     "Faria remained in his cell, and this visit only increased the belief in his insanity."
@@ -50,7 +50,7 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,

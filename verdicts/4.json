@@ -7,9 +7,9 @@
     "He spoke with such conviction that all eyes were turned towards Glenarvan."
   ],
   "contradicting_spans": [
-    "Paganel's declaration of Captain Grant not being in the place he was thought to be"
+    "Paganel's declaration of Captain Grant not being in the location they were searching for"
   ],
-  "reasoning": "Contradiction (factual): The claim is directly contradicted by Paganel's statement that Captain Grant is not in the place he was thought to be.",
+  "reasoning": "Contradiction (factual): The claim is directly contradicted by Paganel's statement that Captain Grant was not in the location they were searching for.",
   "analysis": {
     "claim_id": "4",
     "claim_text": "Sitting in on lectures uninvited, he was thrown out after shouting “The secret is on the 37th southern parallel!” while the professor explained Earth’s equatorial bulge.",
@@ -18,8 +18,8 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "Jacques Paganel sat in on lectures uninvited.",
-        "type": "factual",
+        "text": "Sitting in on lectures uninvited.",
+        "type": "temporal",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -27,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "He was thrown out after shouting ‘The secret is on the 37th southern parallel!’",
+        "text": "Thrown out after shouting ‘The secret is on the 37th southern parallel!’",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim is directly contradicted by Paganel's statement that Captain Grant is not in the place he was thought to be."
+    "reasoning": "Contradiction (factual): The claim is directly contradicted by Paganel's statement that Captain Grant was not in the location they were searching for."
   }
 }

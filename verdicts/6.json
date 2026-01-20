@@ -2,7 +2,10 @@
   "claim_id": "6",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
+  "supporting_spans": [
+    "On this voyage in search of Captain Grant, the probabilities increased every day.",
+    "Their captain was one of the most confident on board; but his confidence proceeded especially from the desire that he cherished so strongly at heart, of seeing Miss Mary happy and consoled."
+  ],
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
@@ -38,7 +41,7 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.4,
+    "support_score": 0.9,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,

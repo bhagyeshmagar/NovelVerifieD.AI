@@ -3,12 +3,13 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "After graduation a secret society enlisted him as strategist and propagandist in a campaign against corrupt rulers."
+    "So the matter ended for the Abbé Faria. He remained in his cell, and this visit only increased the belief in his insanity.",
+    "Faria, not seeing the young man appear, tried to move and get over the distance which separated them."
   ],
   "contradicting_spans": [
     "Faria, the beneficent and cheerful companion, with whom he was accustomed to live so intimately, no longer breathed."
   ],
-  "reasoning": "Contradiction (temporal): The claim states that Faria was enlisted as strategist and propagandist in a campaign against corrupt rulers after graduation. However, the evidence shows that Faria had already passed away before Dantès was imprisoned.",
+  "reasoning": "Contradiction (temporal): The claim states that Faria was enlisted as strategist and propagandist in a campaign against corrupt rulers after graduation. However, the evidence shows that Faria had already died before Dantès was imprisoned.",
   "analysis": {
     "claim_id": "134",
     "claim_text": "After graduation a secret society enlisted him as strategist and propagandist in a campaign against corrupt rulers.",
@@ -27,7 +28,7 @@
       {
         "id": "SC2",
         "text": "Faria's role as strategist involved developing plans to overthrow the corrupt rulers.",
-        "type": "factual",
+        "type": "capability",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -35,8 +36,8 @@
       },
       {
         "id": "SC3",
-        "text": "As propagandist, Faria spread information about the corrupt rulers to the public, rallying support for the campaign.",
-        "type": "factual",
+        "text": "Faria's role as propagandist involved spreading information about the corrupt rulers and their actions to the public.",
+        "type": "capability",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -49,10 +50,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The claim states that Faria was enlisted as strategist and propagandist in a campaign against corrupt rulers after graduation. However, the evidence shows that Faria had already passed away before Dantès was imprisoned."
+    "reasoning": "Contradiction (temporal): The claim states that Faria was enlisted as strategist and propagandist in a campaign against corrupt rulers after graduation. However, the evidence shows that Faria had already died before Dantès was imprisoned."
   }
 }

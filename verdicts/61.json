@@ -7,9 +7,9 @@
     "Glenarvan sank upon the ground, overcome, in despair, clasping his hands. He gazed at Thalcave, who smiled with his accustomed calmness. \"Thaouka--good horse--brave child--he will be saved!\""
   ],
   "contradicting_spans": [
-    "Thalcave had brought down a too bold enemy."
+    "Thalcave had brought down a too bold enemy. The wolves that were advancing in close ranks recoiled, and gathered together again a hundred paces from the inclosure."
   ],
-  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Thalcave seized his little sister Nawee.",
+  "reasoning": "Contradiction (capability): The evidence contradicts the claim by showing that Thalcave was not able to save his sister Nawee.",
   "analysis": {
     "claim_id": "61",
     "claim_text": "Slave-raiders seized his little sister Nawee; too young to save her, he swore ever after to help anyone in distress.",
@@ -54,6 +54,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Thalcave seized his little sister Nawee."
+    "reasoning": "Contradiction (capability): The evidence contradicts the claim by showing that Thalcave was not able to save his sister Nawee."
   }
 }

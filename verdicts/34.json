@@ -1,15 +1,12 @@
 {
   "claim_id": "34",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [
-    "Two months later the Duncan arrived.",
-    "I learned what I had not known, the Britannia's stoppage at Callao, the last news of her, dated June, 1862, two months after my abandonment, the finding of the document, the shipwreck of the vessel, and finally the important reasons you had for seeking Captain Grant in Australia."
-  ],
+  "supporting_spans": [],
   "contradicting_spans": [
-    "He found ship’s papers that mentioned an illicit Australian land deal by a British peer and planned to trade the information for a pardon."
+    "The shipwrecked seamen are evidently prisoners of the natives, as they feared."
   ],
-  "reasoning": "Evidence supports: The excerpts provide direct evidence that Tom Ayrton found a ship's paper mentioning an illicit Australian land deal by a British peer and planned to trade the information for a pardon.",
+  "reasoning": "Contradiction (factual): This contradicts the claim that Tom Ayrton found ship's papers mentioning an illicit Australian land deal by a British peer and planned to trade the information for a pardon.",
   "analysis": {
     "claim_id": "34",
     "claim_text": "He found ship’s papers that mentioned an illicit Australian land deal by a British peer and planned to trade the information for a pardon.",
@@ -41,10 +38,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
-    "contradiction_score": 0.1,
-    "verdict": "supported",
+    "support_score": 0.3,
+    "contradiction_score": 0.7,
+    "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The excerpts provide direct evidence that Tom Ayrton found a ship's paper mentioning an illicit Australian land deal by a British peer and planned to trade the information for a pardon."
+    "reasoning": "Contradiction (factual): This contradicts the claim that Tom Ayrton found ship's papers mentioning an illicit Australian land deal by a British peer and planned to trade the information for a pardon."
   }
 }

@@ -3,13 +3,13 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "But since Glenarvan's conversation with the chief, it seemed wise to abandon this design.",
+    "under cover of the night. But since Glenarvan's conversation with the chief, it seemed wise to abandon this design.",
     "Kai-Koumou, who had hitherto controlled himself, trembled with rage, and his countenance was flushed with a fierce exultation."
   ],
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Glenarvan was rescued by Wallace and left behind a bird-of-paradise picture book that convinced him of a link to the naturalist.",
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Glenarvan was rescued by Wallace and not by a bird-of-paradise picture book.",
   "analysis": {
     "claim_id": "77",
     "claim_text": "As a boy he was rescued by British biologist Wallace, who left behind a bird-of-paradise picture book that, twenty years later, convinced him Glenarvan was linked to the naturalist.",
@@ -27,8 +27,17 @@
       },
       {
         "id": "SC2",
-        "text": "Twenty years later, the bird-of-paradise picture book convinced him Glenarvan was linked to the naturalist.",
-        "type": "factual",
+        "text": "Twenty years later, he found the bird-of-paradise picture book.",
+        "type": "temporal",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "The book convinced him Glenarvan was linked to the naturalist.",
+        "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -45,6 +54,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Glenarvan was rescued by Wallace and left behind a bird-of-paradise picture book that convinced him of a link to the naturalist."
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Glenarvan was rescued by Wallace and not by a bird-of-paradise picture book."
   }
 }

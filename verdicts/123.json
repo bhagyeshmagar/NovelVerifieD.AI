@@ -2,14 +2,11 @@
   "claim_id": "123",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [
-    "Ah, said the inspector, ‘Providence has changed this gigantic plan you advocate so warmly.’",
-    "This petition to Napoleon, kept back by Villefort, had become, under the second restoration, a terrible weapon against him in the hands of the king’s attorney."
-  ],
+  "supporting_spans": [],
   "contradicting_spans": [
     "Direct contradiction found in evidence"
   ],
-  "reasoning": "Contradiction (temporal): The claim is that Faria and Noirtier de Villefort studied Napoleon’s secret letters together and then quarreled over whether to publish their contents. However, the evidence shows that Faria had already been arrested when he was reading Napoleon’s secret letters with the in",
+  "reasoning": "Contradiction (factual): The claim is directly contradicted by the fact that Faria and Noirtier de Villefort studied Napoleon's secret letters together and then quarreled over whether to publish their contents.",
   "analysis": {
     "claim_id": "123",
     "claim_text": "In Rome he and Noirtier de Villefort studied Napoleon’s secret letters together, then quarrelled over whether to publish their contents.",
@@ -27,7 +24,7 @@
       },
       {
         "id": "SC2",
-        "text": "then quarrelled over whether to publish their contents.",
+        "text": "Then quarrelled over whether to publish their contents.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -41,10 +38,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.3,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The claim is that Faria and Noirtier de Villefort studied Napoleon’s secret letters together and then quarreled over whether to publish their contents. However, the evidence shows that Faria had already been arrested when he was reading Napoleon’s secret letters with the inspector. Therefore, it is clear that Faria and Noirtier did not study Napoleon’s secret letters together."
+    "reasoning": "Contradiction (factual): The claim is directly contradicted by the fact that Faria and Noirtier de Villefort studied Napoleon's secret letters together and then quarreled over whether to publish their contents."
   }
 }

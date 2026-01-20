@@ -2,11 +2,14 @@
   "claim_id": "94",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
+  "supporting_spans": [
+    "Directly stated by the character Noirtier: 'Did you anticipate the accident which has happened to your granddaughter?'",
+    "Directly stated by the character Noirtier: 'Yes, I know of what he died!'"
+  ],
   "contradicting_spans": [
     "M. Noirtier was the next morning _poor M. Noirtier_, the helpless old man, at the tender mercies of the weakest creature in the household, that is, his grandchild, Val"
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by stating that Noirtier was helpless and at the mercy of his grandchild, which does not suggest that he had leverage over enemies even after paralysis set in.",
+  "reasoning": "Contradiction (temporal): The claim states that Noirtier allowed a new sedative to be tested on political prisoners and used it as leverage over enemies even after paralysis set in. However, the evidence shows that Noirtier was already paralyzed before any such testing occurred.",
   "analysis": {
     "claim_id": "94",
     "claim_text": "To treat worsening hand tremors he allowed his private doctor to test a new sedative on political prisoners; the secret gave him leverage over enemies even after paralysis set in.",
@@ -38,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.3,
+    "support_score": 0.9,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by stating that Noirtier was helpless and at the mercy of his grandchild, which does not suggest that he had leverage over enemies even after paralysis set in."
+    "reasoning": "Contradiction (temporal): The claim states that Noirtier allowed a new sedative to be tested on political prisoners and used it as leverage over enemies even after paralysis set in. However, the evidence shows that Noirtier was already paralyzed before any such testing occurred."
   }
 }

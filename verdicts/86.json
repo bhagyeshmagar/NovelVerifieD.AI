@@ -7,9 +7,9 @@
     "Glenarvan thought it likely that Kai-Koumou's tribe had lost some chief of high rank whom they were particularly anxious to recover;"
   ],
   "contradicting_spans": [
-    "Direct contradictions with the claim"
+    "Direct contradiction found in evidence"
   ],
-  "reasoning": "Contradiction (temporal): The evidence directly contradicts the claim that Kai-Koumou was haughty and cold, yet observed that the man valued life and kept his word; though words were few, a fragile trust grew between them during their stand-off. The evidence shows that Kai-Koumou was calm and passio",
+  "reasoning": "Contradiction (factual): The claim states that Kai-Koumou was calm and haughty, but the evidence shows that he was deeply anguished and ready to die for his companions.",
   "analysis": {
     "claim_id": "86",
     "claim_text": "At first Glenarvan found him haughty and cold, yet observed that the man valued life and kept his word; though words were few, a fragile trust grew between them during their stand-off.",
@@ -18,7 +18,7 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "Glenarvan found him haughty and cold.",
+        "text": "Glenarvan found Kai-Koumou haughty and cold.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -27,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "The man valued life and kept his word.",
+        "text": "Kai-Koumou valued life and kept his word.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -36,7 +36,7 @@
       },
       {
         "id": "SC3",
-        "text": "Words were few, a fragile trust grew between them during their stand-off.",
+        "text": "Words were few, but a fragile trust grew between them during their stand-off.",
         "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
@@ -54,6 +54,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The evidence directly contradicts the claim that Kai-Koumou was haughty and cold, yet observed that the man valued life and kept his word; though words were few, a fragile trust grew between them during their stand-off. The evidence shows that Kai-Koumou was calm and passionless, and did not betray the extent of his misfortunes. He felt that he ought to set an example of fortitude to his wife and his companions, as being the husband and chief. Moreover, he was ready to die first for the common safety, if circumstances should require it."
+    "reasoning": "Contradiction (factual): The claim states that Kai-Koumou was calm and haughty, but the evidence shows that he was deeply anguished and ready to die for his companions."
   }
 }

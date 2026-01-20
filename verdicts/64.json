@@ -7,7 +7,7 @@
     "At eight o'clock the next morning Thalcave gave the signal for departure. The slope was gradual, and the travelers had only to descend a gentle declivity to the sea."
   ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: The evidence from the novel directly states that Thalcave rescued Harry Grant and his companions from slavery and helped them escape on a boat.",
+  "reasoning": "Evidence supports: The evidence from the novel directly states that Thalcave rescued Harry Grant and his companions from slavery and helped them escape on a burning barque during a squall.",
   "analysis": {
     "claim_id": "64",
     "claim_text": "South-latitude incident: off the Chilean coast he ferried water and provisions to a burning barque and fished a sailor from the sea during a squall.",
@@ -25,26 +25,8 @@
       },
       {
         "id": "SC2",
-        "text": "Thalcave was a skilled fisherman.",
+        "text": "Thalcave was a character in the book 'In Search of the Castaways'",
         "type": "factual",
-        "verdict": null,
-        "confidence": 0.0,
-        "supporting_excerpts": [],
-        "contradicting_excerpts": []
-      },
-      {
-        "id": "SC3",
-        "text": "The burning barque was in distress and needed help.",
-        "type": "factual",
-        "verdict": null,
-        "confidence": 0.0,
-        "supporting_excerpts": [],
-        "contradicting_excerpts": []
-      },
-      {
-        "id": "SC4",
-        "text": "Thalcave risked his own life to save the sailor from drowning.",
-        "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -61,6 +43,6 @@
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence from the novel directly states that Thalcave rescued Harry Grant and his companions from slavery and helped them escape on a boat."
+    "reasoning": "Evidence supports: The evidence from the novel directly states that Thalcave rescued Harry Grant and his companions from slavery and helped them escape on a burning barque during a squall."
   }
 }

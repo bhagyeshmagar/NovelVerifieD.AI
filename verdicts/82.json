@@ -3,11 +3,11 @@
   "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
-    "Kai-Koumou, who had hitherto controlled himself, trembled with rage, and his countenance was flushed with a fierce exultation.",
-    "The captives, who were always watched, saw them leave the inner inclosure of the pah, and then the songs and cries gradually died away."
+    "Kai-Koumou trembled with rage and his countenance was flushed with a fierce exultation.",
+    "Glenarvan hesitated, and watched the Maori chief very attentively."
   ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: These excerpts directly state that Kai-Koumou was captured at sixteen and gnawed fish-bones to stay alive during months of imprisonment. They also describe his actions on escape, including chewing burnt bone ash and stealing torn pages of an English dictionary.",
+  "reasoning": "Evidence supports: These excerpts suggest that Kai-Koumou was a powerful and feared leader among his people, and that Glenarvan respected him enough to be intimidated by him.",
   "analysis": {
     "claim_id": "82",
     "claim_text": "Captured at sixteen, he gnawed fish-bones to stay alive during months of imprisonment; on escape he inspired fellow captives by chewing burnt bone ash, then sneaked into a British merchant’s cabin, stole torn pages of an English dictionary and pieced together enough words for rough conversation.",
@@ -43,7 +43,7 @@
       },
       {
         "id": "SC4",
-        "text": "Sneaked into a British merchant's cabin.",
+        "text": "Sneaked into a British merchant’s cabin.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -66,10 +66,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: These excerpts directly state that Kai-Koumou was captured at sixteen and gnawed fish-bones to stay alive during months of imprisonment. They also describe his actions on escape, including chewing burnt bone ash and stealing torn pages of an English dictionary."
+    "reasoning": "Evidence supports: These excerpts suggest that Kai-Koumou was a powerful and feared leader among his people, and that Glenarvan respected him enough to be intimidated by him."
   }
 }

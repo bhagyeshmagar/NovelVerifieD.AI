@@ -4,12 +4,12 @@
   "confidence": 0.95,
   "supporting_spans": [
     "Paganel dangled from branch to branch. His hands could grasp nothing.",
-    "Glenarvan confined himself to a negative gesture, indicating disbelief in the geographer."
+    "He spoke with such conviction that all eyes were turned towards Glenarvan."
   ],
   "contradicting_spans": [
     "Paganel's declaration that they were seeking Captain Grant where he was not."
   ],
-  "reasoning": "Contradiction (factual): The claim is directly contradicted by Paganel's statement that they were seeking Captain Grant in the wrong place.",
+  "reasoning": "Contradiction (factual): This directly contradicts the claim that Paganel shielded a box of specimens in a sand-storm and was struck on the head, which implies that he knew where Grant was.",
   "analysis": {
     "claim_id": "5",
     "claim_text": "During an Algerian geological survey he shielded a box of specimens in a sand-storm, was struck on the head and afterwards often mixed up dates and directions.",
@@ -27,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "Was struck on the head and afterwards often mixed up dates and directions.",
+        "text": "He was struck on the head and afterwards often mixed up dates and directions.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim is directly contradicted by Paganel's statement that they were seeking Captain Grant in the wrong place."
+    "reasoning": "Contradiction (factual): This directly contradicts the claim that Paganel shielded a box of specimens in a sand-storm and was struck on the head, which implies that he knew where Grant was."
   }
 }

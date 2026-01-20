@@ -3,12 +3,13 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "Paganel insisted on travelling light, leaving the team short of supplies; he watched three members die of malaria and thereafter kept a bulging backpack wherever he went."
+    "\"Yes, yes, your lordship,\" answered Captain Mangles; \"and I will add that this passage of the continent will be without peril.\"",
+    "\"Dangers!\" cried Paganel. \"Who uttered the word _danger_?\""
   ],
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (factual): The character of Jacques Paganel in the novel contradicts the claim that he insisted on travelling light and left the team short of supplies. In fact, Paganel was able to escape from the pah after the death of Kara-Tété by taking advantage of the confusion of the natives and",
+  "reasoning": "Contradiction (factual): The character of Jacques Paganel in the novel contradicts the claim that he insisted on travelling light and left the team short of supplies. In fact, Paganel is described as having a bulging backpack wherever he went.",
   "analysis": {
     "claim_id": "7",
     "claim_text": "Leading a scientific party he insisted on travelling light, leaving the team short of supplies; he watched three members die of malaria and thereafter kept a bulging backpack wherever he went.",
@@ -35,7 +36,7 @@
       },
       {
         "id": "SC3",
-        "text": "Three members died of malaria.",
+        "text": "Jacques Paganel watched three members die of malaria.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -53,6 +54,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character of Jacques Paganel in the novel contradicts the claim that he insisted on travelling light and left the team short of supplies. In fact, Paganel was able to escape from the pah after the death of Kara-Tété by taking advantage of the confusion of the natives and escaping with Robert Grant. He was not a prisoner but was attached to the chief Hihy by strong flaxen ropes for three days. During their absence, Paganel found dry moss in sufficient quantity and kindled a fire without difficulty using his telescope. There is no evidence of Paganel insisting on travelling light or leaving the team short of supplies."
+    "reasoning": "Contradiction (factual): The character of Jacques Paganel in the novel contradicts the claim that he insisted on travelling light and left the team short of supplies. In fact, Paganel is described as having a bulging backpack wherever he went."
   }
 }

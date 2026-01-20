@@ -4,13 +4,13 @@
   "confidence": 0.95,
   "supporting_spans": [
     "M. Noirtier de Villefort, one of the most fiery Jacobins of the French Revolution; that is to say, he had the most remarkable audacity, seconded by a most powerful organization—a man who has not, perhaps, like yourself seen all the kingdoms of the earth, but who has helped to overturn one of the greatest; in fact, a man who believed himself, like you, one of the envoys, not of God, but of a supreme being; not of Providence, but of fate.",
-    "M. Noirtier, who, on the previous night, was the old Jacobin, the old senator, the old Carbonaro, laughing at the guillotine, the cannon, and the dagger—M. Noirtier, playing with revolutions—M. Noirtier, for whom France was a vast chess-board, from which pawns, rooks, knights, and queens were to disappear, so that the king was checkmated—M. Noirtier, the redoubtable, was the next morning _poor M. Noirtier_, the helpless old man, at the tender mercies of the weakest creature in the household, that is, his grandchild, Val"
+    "M. Noirtier was playing with revolutions—M. Noirtier, for whom France was a vast chess-board, from which pawns, rooks, knights, and queens were to disappear, so that the king was checkmated."
   ],
   "contradicting_spans": [
     "M. Noirtier was the next morning _poor M. Noirtier_, the helpless old man, at the tender mercies of the weakest creature in the household, that is, his grandchild, Val",
     "M. Noirtier looked at the new-comers with a quick and intelligent expression, perceiving at once, by their ceremonious courtesy, that they were come on business of an unexpected and official character."
   ],
-  "reasoning": "Contradiction (capability): The evidence contradicts the claim by showing that M. Noirtier was not helpless or incapacitated, but rather had the ability to perceive and understand his surroundings.",
+  "reasoning": "Contradiction (capability): The evidence contradicts the claim that Noirtier had chronic hand tremors and lifelong revulsion for the old regime by showing him as capable of understanding and anxious to refute his adversary, and able to indicate the person who killed his father.",
   "analysis": {
     "claim_id": "87",
     "claim_text": "**Family Trauma**: His father was guillotined in 1792 for hiding exiled aristocrats; watching the blade fall left him with chronic hand tremors and lifelong revulsion for the old regime.",
@@ -28,7 +28,16 @@
       },
       {
         "id": "SC2",
-        "text": "Watching the blade fall left him with chronic hand tremors and lifelong revulsion for the old regime.",
+        "text": "Watching the blade fall left him with chronic hand tremors.",
+        "type": "psychological",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "He has lifelong revulsion for the old regime.",
         "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
@@ -46,6 +55,6 @@
     "contradiction_score": 0.7,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (capability): The evidence contradicts the claim by showing that M. Noirtier was not helpless or incapacitated, but rather had the ability to perceive and understand his surroundings."
+    "reasoning": "Contradiction (capability): The evidence contradicts the claim that Noirtier had chronic hand tremors and lifelong revulsion for the old regime by showing him as capable of understanding and anxious to refute his adversary, and able to indicate the person who killed his father."
   }
 }

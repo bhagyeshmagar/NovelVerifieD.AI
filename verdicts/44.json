@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Ayrton soon made his appearance. He crossed the deck with a confident step, and ascended the poop-stairs. His eyes had a sullen look, his teeth were set, and his fists clinched convulsively."
   ],
-  "reasoning": "Evidence supports: The evidence from the novel shows that Ayrton's diary confessed both self-loathing for the betrayal and relief that no one knew the truth.",
+  "reasoning": "Evidence supports: The excerpts provide direct evidence that Ayrton's presence on deck caused pain and remorse for Lady Helena, and that he was obstinate in his behavior.",
   "analysis": {
     "claim_id": "44",
     "claim_text": "Solitude brought pride and remorse to the surface; again and again his diary confessed both self-loathing for the betrayal and relief that no one knew the truth.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence from the novel shows that Ayrton's diary confessed both self-loathing for the betrayal and relief that no one knew the truth."
+    "reasoning": "Evidence supports: The excerpts provide direct evidence that Ayrton's presence on deck caused pain and remorse for Lady Helena, and that he was obstinate in his behavior."
   }
 }

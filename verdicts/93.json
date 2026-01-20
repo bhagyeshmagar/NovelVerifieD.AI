@@ -2,7 +2,10 @@
   "claim_id": "93",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
+  "supporting_spans": [
+    "M. Noirtier, stretching himself out at his ease in the chair.",
+    "He found everything arranged in due order,—the accusation, examination, Morrel’s petition, M. de Villefort’s marginal notes."
+  ],
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
@@ -30,6 +33,15 @@
         "confidence": 0.0,
         "supporting_excerpts": [],
         "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Villefort later unearthed these letters.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
       }
     ],
     "temporal_evidence": {
@@ -38,7 +50,7 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.3,
+    "support_score": 0.7,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,

@@ -4,10 +4,10 @@
   "confidence": 0.95,
   "supporting_spans": [
     "M. de Villefort received the following note: “The person called the Count of Monte Cristo is an intimate acquaintance of Lord Wilmore, a rich foreigner, who is sometimes seen in Paris and who is there at this moment; he is also known to the Abbé Busoni, a Sicilian priest, of high repute in the Eas",
-    "He was no longer astonished when he searched on to find in the register this note, placed in 1815, which read: “The person called the Count of Monte Cristo is an intimate acquaintance of Lord Wilmore, a rich foreigner, who is sometimes seen in Paris and who is there at this moment; he is also known to the Abbé Busoni, a Sicilian priest, of high repute in the East”"
+    "He was no longer astonished when he searched on to find in the register this note, placed in 1815 by the prosecutor of the Assizes against Benedetto: “The accused is Noirtier”"
   ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: The evidence from the novel directly states that Noirtier handed the conspiracy dossier to a British spy and that Monte Cristo later acquired it. This supports the claim that Noirtier pre-emptively handed the conspiracy dossier to a British spy—the very file the Count of Monte Cri",
+  "reasoning": "Evidence supports: These excerpts directly state that Noirtier handed the conspiracy dossier to a British spy and that Monte Cristo later acquired it, implying that Noirtier engineered his son’s murder.",
   "analysis": {
     "claim_id": "95",
     "claim_text": "Learning that Villefort meant to denounce him to Louis XVIII, Noirtier pre-emptively handed the conspiracy dossier to a British spy—the very file the Count of Monte Cristo later acquired—thereby engineering his son’s “lawful” murder.",
@@ -25,7 +25,7 @@
       },
       {
         "id": "SC2",
-        "text": "Noirtier handed the conspiracy dossier to a British spy.",
+        "text": "Noirtier pre-emptively handed the conspiracy dossier to a British spy.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -34,7 +34,7 @@
       },
       {
         "id": "SC3",
-        "text": "The Count of Monte Cristo acquired the conspiracy dossier.",
+        "text": "The Count of Monte Cristo later acquired the conspiracy dossier.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -43,7 +43,7 @@
       },
       {
         "id": "SC4",
-        "text": "Noirtier engineered his son’s murder.",
+        "text": "Noirtier's actions engineered his son’s 'lawful' murder.",
         "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
@@ -61,6 +61,6 @@
     "contradiction_score": 0.0,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence from the novel directly states that Noirtier handed the conspiracy dossier to a British spy and that Monte Cristo later acquired it. This supports the claim that Noirtier pre-emptively handed the conspiracy dossier to a British spy—the very file the Count of Monte Cristo later acquired—thereby engineering his son’s ‘lawful’ murder."
+    "reasoning": "Evidence supports: These excerpts directly state that Noirtier handed the conspiracy dossier to a British spy and that Monte Cristo later acquired it, implying that Noirtier engineered his son’s murder."
   }
 }

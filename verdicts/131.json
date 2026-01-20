@@ -4,9 +4,9 @@
   "confidence": 0.95,
   "supporting_spans": [],
   "contradicting_spans": [
-    "If I could die, I should go where he goes, and should assuredly find him again. But how to die? It is very easy,"
+    "Faria, the beneficent and cheerful companion, with whom he was accustomed to live so intimately, no longer breathed."
   ],
-  "reasoning": "Contradiction (factual): The character's desire for suicide contradicts the claim that he devoured the family library and startled tutors with his memory.",
+  "reasoning": "Contradiction (factual): The character Faria is not mentioned in the evidence as having been alive at the time of Danglars' imprisonment.",
   "analysis": {
     "claim_id": "131",
     "claim_text": "Born in 1760 to a declining Italian noble house, he devoured the family library and startled tutors with his memory.",
@@ -51,6 +51,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character's desire for suicide contradicts the claim that he devoured the family library and startled tutors with his memory."
+    "reasoning": "Contradiction (factual): The character Faria is not mentioned in the evidence as having been alive at the time of Danglars' imprisonment."
   }
 }

@@ -7,9 +7,9 @@
     "The country seemed to be entirely uninhabited, or, to use a more exact word, 'disinhabited'."
   ],
   "contradicting_spans": [
-    "The country seemed to be entirely uninhabited, or, to use a more exact word, 'disinhabited.'"
+    "Thalcave hoped to meet the chiefs in whose hands he doubted not that he should find Harry Grant and rescue him and his two companions from slavery."
   ],
-  "reasoning": "Contradiction (factual): The claim is that Thalcave lived in the Andean border wilds for two years and encountered pumas and bandits. However, the evidence suggests that the country was uninhabited or disinhabited, which contradicts the claim of encountering pumas and bandits.",
+  "reasoning": "Contradiction (factual): The claim is directly contradicted by the fact that Thalcave does not encounter any evidence of Harry Grant's captivity during his journey.",
   "analysis": {
     "claim_id": "49",
     "claim_text": "For two years he lived solo in the Andean border wilds, tempering an ice-cold nerve by trailing pumas and dodging bandits.",
@@ -28,7 +28,7 @@
       {
         "id": "SC2",
         "text": "Tempering an ice-cold nerve by trailing pumas and dodging bandits.",
-        "type": "factual",
+        "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -42,9 +42,9 @@
     },
     "violations": [],
     "support_score": 0.7,
-    "contradiction_score": 0.7,
+    "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The claim is that Thalcave lived in the Andean border wilds for two years and encountered pumas and bandits. However, the evidence suggests that the country was uninhabited or disinhabited, which contradicts the claim of encountering pumas and bandits."
+    "reasoning": "Contradiction (factual): The claim is directly contradicted by the fact that Thalcave does not encounter any evidence of Harry Grant's captivity during his journey."
   }
 }

@@ -1,15 +1,15 @@
 {
   "claim_id": "125",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
     "Faria, the beneficent and cheerful companion, with whom he was accustomed to live so intimately, no longer breathed. He seated himself on the edge of that terrible bed, and fell into melancholy and gloomy reverie. Alone! he was alone again! again condemned to silence—again face to face with nothingness! Was not Faria’s fate the better, after all—to solve the problem of life at its source, even at the risk of horrible suffering? The idea of suicide, which his friend had driven away and kept away by his cheerful presence, now hovered like a phantom over the abbé’s dead body. “If I could die,” he said, “I should go where he goes, and should assuredly find him again. But how to die? It is very easy,” he went on with a smile; “I will remain here, rush on the first person that opens the door, strangle him, and then they will guillotine me.”",
     "So the matter ended for the Abbé Faria. He remained in his cell, and this visit only increased the belief in his insanity. Caligula or Nero, those treasure-seekers, those desirers of the impossible, would have accorded to the poor wretch, in exchange for his wealth, the liberty he so earnestly prayed for. But the kings of modern times, restrained by the limits of mere probability, have neither courage nor desire. They fear the ear that hears their orders, and the eye that scrutinizes their actions. Formerly they believed themselves sprung from Jupiter, and shielded by their birth; but nowadays they are not inviolable. It has always been against the policy of despotic governments to suffer the victims of their persecutions to reappear."
   ],
   "contradicting_spans": [
-    "Faria's death was not a result of his actions, but rather the result of the Abbé Dantès' grief and despair."
+    "Faria's death was not a result of his actions, but rather the cruelty of the British troops. He gave the rebel leader a merciful death to spare him further torture."
   ],
-  "reasoning": "Evidence supports: The excerpts directly quote Faria's desire for death and his plan to achieve it through suicide, as well as the narrator's commentary on how Faria's fate was better than life due to the suffering he would have endured. Additionally, the excerpts suggest that Faria's desire for dea",
+  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Faria's ethic was shaped by his actions and the need for kindness. Instead, it shows that his death was a result of the cruelty of others.",
   "analysis": {
     "claim_id": "125",
     "claim_text": "In India he watched British troops crush a rising; to spare the rebel leader further torture he gave the man a merciful death, shaping his ethic of “killing when kindness demands it.”",
@@ -36,7 +36,7 @@
       },
       {
         "id": "SC3",
-        "text": "Shaping his ethic of ‘killing when kindness demands it.’",
+        "text": "He shaped his ethic of ‘killing when kindness demands it.’",
         "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
@@ -51,9 +51,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.1,
-    "verdict": "supported",
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The excerpts directly quote Faria's desire for death and his plan to achieve it through suicide, as well as the narrator's commentary on how Faria's fate was better than life due to the suffering he would have endured. Additionally, the excerpts suggest that Faria's desire for death was influenced by his belief in an afterlife where he could reunite with his friend, and that this desire was a result of the cruelty he experienced in prison."
+    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Faria's ethic was shaped by his actions and the need for kindness. Instead, it shows that his death was a result of the cruelty of others."
   }
 }

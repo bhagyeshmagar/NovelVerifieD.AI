@@ -4,12 +4,12 @@
   "confidence": 0.95,
   "supporting_spans": [
     "On this voyage in search of Captain Grant, the probabilities increased every day.",
-    "Captain Mangles replied that it would be impossible with such a rude craft."
+    "The learned geographer, he was probably the happiest man in the southern hemisphere."
   ],
   "contradicting_spans": [
-    "Direct contradictions with the claim"
+    "Direct contradiction found in evidence"
   ],
-  "reasoning": "Contradiction (factual): The character of Jacques Paganel does not match the claim that he was posted to a Mediterranean merchant fleet where he learned basic seamanship and celestial navigation.",
+  "reasoning": "Contradiction (factual): The claim is that Jacques Paganel was posted to a Mediterranean merchant fleet where he learned basic seamanship and celestial navigation. However, the evidence from the novel shows that Paganel was actually on board the ship 'Duncan' and not a Mediterranean merchant fleet.",
   "analysis": {
     "claim_id": "19",
     "claim_text": "Because he spoke both French and English he was posted to a Mediterranean merchant fleet where he learned basic seamanship and celestial navigation.",
@@ -41,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.7,
+    "support_score": 0.9,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character of Jacques Paganel does not match the claim that he was posted to a Mediterranean merchant fleet where he learned basic seamanship and celestial navigation."
+    "reasoning": "Contradiction (factual): The claim is that Jacques Paganel was posted to a Mediterranean merchant fleet where he learned basic seamanship and celestial navigation. However, the evidence from the novel shows that Paganel was actually on board the ship 'Duncan' and not a Mediterranean merchant fleet."
   }
 }

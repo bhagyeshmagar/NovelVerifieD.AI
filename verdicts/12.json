@@ -7,9 +7,9 @@
     "He was particularly interested in this young girl; and this feeling he concealed so well, that, except Miss Grant and himself, no one on board the Duncan had perceived it."
   ],
   "contradicting_spans": [
-    "I could have prevented it."
+    "He declined to take part in charting the maiden voyage of the Britannia; when news of her wreck arrived he filled three diary pages with the sentence “I could have prevented it.”"
   ],
-  "reasoning": "Contradiction (factual): The character's statement directly contradicts the claim that he declined to take part in charting the maiden voyage of the Britannia.",
+  "reasoning": "Contradiction (factual): The character did not take part in charting the maiden voyage and did not prevent the shipwreck.",
   "analysis": {
     "claim_id": "12",
     "claim_text": "He declined to take part in charting the maiden voyage of the Britannia; when news of her wreck arrived he filled three diary pages with the sentence “I could have prevented it.”",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character's statement directly contradicts the claim that he declined to take part in charting the maiden voyage of the Britannia."
+    "reasoning": "Contradiction (factual): The character did not take part in charting the maiden voyage and did not prevent the shipwreck."
   }
 }

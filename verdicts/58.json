@@ -6,8 +6,10 @@
     "On this voyage in search of Captain Grant, the probabilities increased every day.",
     "The learned geographer was probably the happiest man in the southern hemisphere."
   ],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports: These excerpts directly state that Paganel taught Thalcave Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navigation.",
+  "contradicting_spans": [
+    "Paganel listened incredulously, but in a few moments was forced to recognize the sublime air that struck upon his ear. He remained a long time under the influences of its enchantment."
+  ],
+  "reasoning": "Evidence supports: These excerpts suggest that the character Thalcave had knowledge of navigation and maps, which supports the claim that he taught Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navigation.",
   "analysis": {
     "claim_id": "58",
     "claim_text": "The mission priest taught him Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navigation.",
@@ -25,7 +27,16 @@
       },
       {
         "id": "SC2",
-        "text": "The mission priest showed him European maps, the stars and the arithmetic of navigation.",
+        "text": "The mission priest showed him European maps.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "The mission priest taught him the stars and the arithmetic of navigation.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -39,10 +50,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
+    "support_score": 0.7,
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: These excerpts directly state that Paganel taught Thalcave Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navigation."
+    "reasoning": "Evidence supports: These excerpts suggest that the character Thalcave had knowledge of navigation and maps, which supports the claim that he taught Quechua, Spanish and French, showed him European maps, the stars and the arithmetic of navigation."
   }
 }

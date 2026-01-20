@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Faria was not present at a Vienna-congress salon and did not witness Villefort tampering with evidence.",
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Faria was not present at the Vienna-congress salon where Villefort tampered with evidence.",
   "analysis": {
     "claim_id": "122",
     "claim_text": "At a Vienna-congress salon he briefly watched young prosecutor Villefort tamper with evidence against an Italian revolutionary.",
@@ -36,7 +36,16 @@
       },
       {
         "id": "SC3",
-        "text": "Faria witnessed Villefort tampering with evidence.",
+        "text": "Villefort was a prosecutor in the trial of an Italian revolutionary.",
+        "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC4",
+        "text": "Faria observed Villefort tampering with evidence.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -54,6 +63,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Faria was not present at a Vienna-congress salon and did not witness Villefort tampering with evidence."
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim by showing that Faria was not present at the Vienna-congress salon where Villefort tampered with evidence."
   }
 }

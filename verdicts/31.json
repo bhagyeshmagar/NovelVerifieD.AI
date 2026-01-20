@@ -6,9 +6,7 @@
     "The quartermaster made his preparations for departure, aided by the two sailors, one of whom attended to his horse, and the other to his provisions. Meantime Glenarvan wrote the letter designed for Tom Austin.",
     "In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
   ],
-  "contradicting_spans": [
-    "The quartermaster made his preparations for departure, aided by the two sailors, one of whom attended to his horse, and the other to his provisions. Meantime Glenarvan wrote the letter designed for Tom Austin."
-  ],
+  "contradicting_spans": [],
   "reasoning": "Evidence supports: These excerpts directly state that Ben Joyce (Tom Ayrton) rescued the indigenous elder Yurook from colonists and gained tribal protection, learning bush tracking while secretly mapping settler outposts.",
   "analysis": {
     "claim_id": "31",
@@ -27,7 +25,7 @@
       },
       {
         "id": "SC2",
-        "text": "He gained tribal protection by rescuing Yurook.",
+        "text": "He gained tribal protection after rescuing Yurook.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,

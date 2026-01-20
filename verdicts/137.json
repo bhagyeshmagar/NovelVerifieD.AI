@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Direct contradiction found in evidence"
   ],
-  "reasoning": "Contradiction (factual): The character of Faria is described as rational and logical, which contradicts the claim that he was mad.",
+  "reasoning": "Contradiction (temporal): The claim is that Faria was re-arrested and shipped to the Château d'If for life, but the evidence shows that he was disbanded from the army and returned home.",
   "analysis": {
     "claim_id": "137",
     "claim_text": "Suspected again in 1815, he was re-arrested and shipped to the Château d’If, this time for life.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The character of Faria is described as rational and logical, which contradicts the claim that he was mad."
+    "reasoning": "Contradiction (temporal): The claim is that Faria was re-arrested and shipped to the Château d'If for life, but the evidence shows that he was disbanded from the army and returned home."
   }
 }

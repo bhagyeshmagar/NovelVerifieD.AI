@@ -3,10 +3,10 @@
   "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
-    "Now, said Glenarvan, \"I appeal to you all for advice as to what is best to be done. Your advice, Ayrton, would be particularly valuable, and I should be much obliged if you would give it to us.\""
+    "I thank you, my lord, for the confidence you place in me, and hope to show myself worthy of it. I have some knowledge of the country, and of the customs of the natives; and, if I can be of use to you----"
   ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: Glenarvan addresses Ayrton specifically for advice, indicating that he values his knowledge of the country and customs of the natives.",
+  "reasoning": "Evidence supports: This excerpt shows that Ayrton has knowledge of the customs of the natives, which could have been useful in navigating the situation with the tribe and settlers.",
   "analysis": {
     "claim_id": "32",
     "claim_text": "During clashes between tribe and settlers he steered both sides toward mutual ruin, then welded the survivors into an underground intelligence web that straddled the two worlds.",
@@ -42,6 +42,6 @@
     "contradiction_score": 0.0,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: Glenarvan addresses Ayrton specifically for advice, indicating that he values his knowledge of the country and customs of the natives."
+    "reasoning": "Evidence supports: This excerpt shows that Ayrton has knowledge of the customs of the natives, which could have been useful in navigating the situation with the tribe and settlers."
   }
 }

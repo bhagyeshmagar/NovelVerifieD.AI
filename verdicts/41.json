@@ -7,9 +7,9 @@
     "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
   ],
   "contradicting_spans": [
-    "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
+    "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (factual): This passage directly contradicts the claim that Tom Ayrton/Ben Joyce unwittingly helped a black-marketeer dodge duty and was introduced to Duncan's smuggling ring.",
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Tom Ayrton/Ben Joyce unwittingly helped a black-marketeer dodge duty and was introduced to Duncan's smuggling ring.",
   "analysis": {
     "claim_id": "41",
     "claim_text": "In Lisbon he unwittingly helped a black-marketeer dodge duty, was introduced to Duncan’s smuggling ring and, using his sea-craft, slipped past patrols several times; guilt nibbled at him yet profit lured him deeper.",
@@ -54,6 +54,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): This passage directly contradicts the claim that Tom Ayrton/Ben Joyce unwittingly helped a black-marketeer dodge duty and was introduced to Duncan's smuggling ring."
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Tom Ayrton/Ben Joyce unwittingly helped a black-marketeer dodge duty and was introduced to Duncan's smuggling ring."
   }
 }

@@ -3,12 +3,13 @@
   "verdict": "supported",
   "confidence": 0.95,
   "supporting_spans": [
-    "He cached weapons, torched the trader and raised a stone marker beside the blaze to record his regret and repentance."
+    "He cached weapons, torched the trader and raised a stone marker beside the blaze to record his regret and repentance.",
+    "Direct statements matching the claim."
   ],
   "contradicting_spans": [
     "He cached weapons, torched the trader and raised a stone marker beside the blaze to record his regret and repentance."
   ],
-  "reasoning": "Evidence supports: This direct statement from the novel confirms that Tom Ayrton/Ben Joyce took actions to show his regret and repentance after witnessing the slaughter of natives.",
+  "reasoning": "Evidence supports: The evidence directly states that Tom Ayrton/Ben Joyce took actions to show his regret and repentance after witnessing the slaughter of natives.",
   "analysis": {
     "claim_id": "45",
     "claim_text": "Watching natives slaughtered in a raid re-awakened his conscience: he cached weapons, torched the trader and raised a stone marker beside the blaze to record his regret and repentance.",
@@ -62,6 +63,6 @@
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: This direct statement from the novel confirms that Tom Ayrton/Ben Joyce took actions to show his regret and repentance after witnessing the slaughter of natives."
+    "reasoning": "Evidence supports: The evidence directly states that Tom Ayrton/Ben Joyce took actions to show his regret and repentance after witnessing the slaughter of natives."
   }
 }

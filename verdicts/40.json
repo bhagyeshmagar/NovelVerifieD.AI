@@ -7,9 +7,9 @@
     "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
   ],
   "contradicting_spans": [
-    "Ayrton suddenly sprang to his feet. In his hand was a revolver. A report was heard; and Glenarvan fell, struck by a bullet."
+    "Ayrton suddenly sprang to his feet. In his hand was a revolver."
   ],
-  "reasoning": "Contradiction (factual): The evidence shows that Ayrton shot and killed Glenarvan, which contradicts the claim that he secretly stitched soldiers' wounds yet distrusted shipmates.",
+  "reasoning": "Contradiction (capability): The character is shown carrying a weapon and using it, which contradicts the claim of distrusting shipmates.",
   "analysis": {
     "claim_id": "40",
     "claim_text": "Skilled in shipboard medicine, he secretly stitched soldiers’ wounds yet distrusted shipmates, keeping a mental log and cultivating a “save-yourself-first” instinct.",
@@ -63,6 +63,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence shows that Ayrton shot and killed Glenarvan, which contradicts the claim that he secretly stitched soldiers' wounds yet distrusted shipmates."
+    "reasoning": "Contradiction (capability): The character is shown carrying a weapon and using it, which contradicts the claim of distrusting shipmates."
   }
 }

@@ -4,9 +4,9 @@
   "confidence": 0.95,
   "supporting_spans": [],
   "contradicting_spans": [
-    "M. Noirtier, who, on the previous night, was the old Jacobin, the old senator, the old Carbonaro, laughing at the guillotine, the cannon, and the dagger—M. Noirtier, playing with revolutions—M. Noirtier, for whom France was a vast chess-board, from which pawns, rooks, knights, and queens were to disappear, so that the king was checkmated—M. Noirtier, the redoubtable, was the next morning _poor M. Noirtier_, the helpless old man, at the tender mercies of the weakest creature in the household, that is, his grandchild, Val"
+    "Direct contradiction found in evidence"
   ],
-  "reasoning": "Contradiction (temporal): The evidence directly contradicts the claim by showing that Noirtier was not wary of power's corruption and continued to be involved in revolutionary activities until his death.",
+  "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Noirtier distanced himself from former comrades and grew wary of power's corruption. In fact, the evidence shows that Noirtier was actively involved in revolutionary activities and held high positions in the government.",
   "analysis": {
     "claim_id": "103",
     "claim_text": "As Napoleon climbed toward dictatorship Noirtier distanced himself from former comrades and grew wary of power’s corruption.",
@@ -15,7 +15,7 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "Napoleon climbed toward dictatorship.",
+        "text": "Napoleon climbed toward dictatorship",
         "type": "temporal",
         "verdict": null,
         "confidence": 0.0,
@@ -24,8 +24,17 @@
       },
       {
         "id": "SC2",
-        "text": "Noirtier distanced himself from former comrades.",
+        "text": "Noirtier distanced himself from former comrades",
         "type": "factual",
+        "verdict": null,
+        "confidence": 0.0,
+        "supporting_excerpts": [],
+        "contradicting_excerpts": []
+      },
+      {
+        "id": "SC3",
+        "text": "Grew wary of power’s corruption",
+        "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -42,6 +51,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The evidence directly contradicts the claim by showing that Noirtier was not wary of power's corruption and continued to be involved in revolutionary activities until his death."
+    "reasoning": "Contradiction (factual): The evidence directly contradicts the claim that Noirtier distanced himself from former comrades and grew wary of power's corruption. In fact, the evidence shows that Noirtier was actively involved in revolutionary activities and held high positions in the government."
   }
 }

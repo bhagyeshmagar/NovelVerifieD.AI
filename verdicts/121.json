@@ -2,7 +2,10 @@
   "claim_id": "121",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
+  "supporting_spans": [
+    "Faria, since their first acquaintance, had been on all points so rational and logical, so wonderfully sagacious, in fact, that he could not understand how so much wisdom on all points could be allied with madness. Was Faria deceived as to his treasure, or was all the world deceived as to Faria? Dantès remained in his cell all day, not daring to return to his friend, thinking thus to defer the moment when he should be convinced, once for all, that the abbé was mad—such a conviction would be so terrible! But, towards the evening after the hour for the customary visit had gone by, Faria, not seeing the young man appear, tried to move and get over the distance which separated them. Edmond shuddered when he heard the painful efforts which the old man made to drag himself along; his leg was inert, and he could no longer make use of one arm. Edmond was obliged to assist him, for otherwise he would not have been able to enter by the small aperture which led to Dantès’ chamber.",
+    "Faria smiled. “Yes,” said he. “You have, indeed, a noble nature, Edmond, and I see by your paleness and agitation what is passing in your heart at this moment. No, be assured, I am not mad. This treasure exists, Dantès, and if I have not been allowed to possess it, you will. Yes—you. No one would listen or believe me, because everyone thought me mad; but you, who must know that I am not, listen to me, and believe me so afterwards if you will.”"
+  ],
   "contradicting_spans": [
     "Faria, since their first acquaintance, had been on all points so rational and logical, so wonderfully sagacious, in fact, that he could not understand how so much wisdom on all points could be allied with madness. Was Faria deceived as to his treasure, or was all the world deceived as to Faria?"
   ],
@@ -38,7 +41,7 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.3,
+    "support_score": 0.9,
     "contradiction_score": 0.7,
     "verdict": "contradicted",
     "confidence": 0.95,

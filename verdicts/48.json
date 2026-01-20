@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Thalcave rode in advance, beat the bushes, and aided his master in clearing a passage for the horses that followed."
   ],
-  "reasoning": "Contradiction (factual): The evidence contradicts the claim that Thalcave guarded his tribe's herb lore and nature beliefs while working as a gaucho on a ranch.",
+  "reasoning": "Contradiction (capability): The evidence contradicts the claim that Thalcave guarded his tribe's herb lore and nature beliefs while working as a gaucho on a ranch.",
   "analysis": {
     "claim_id": "48",
     "claim_text": "Passing as a half-caste gaucho he worked on a ranch, picked up Spanish and the settlers’ rules, yet guarded his tribe’s herb lore and nature beliefs.",
@@ -45,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence contradicts the claim that Thalcave guarded his tribe's herb lore and nature beliefs while working as a gaucho on a ranch."
+    "reasoning": "Contradiction (capability): The evidence contradicts the claim that Thalcave guarded his tribe's herb lore and nature beliefs while working as a gaucho on a ranch."
   }
 }

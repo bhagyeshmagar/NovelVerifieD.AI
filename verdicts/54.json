@@ -9,7 +9,7 @@
   "contradicting_spans": [
     "Thalcave whistled in a peculiar manner. Immediately a magnificent Argentine horse, of superb form, issued from a small wood near by, and approached at the call of his master."
   ],
-  "reasoning": "Evidence supports: The evidence from the novel supports the claim that Thalcave briefly loved Chilean doctor Mariana by showing his desire to meet her and rescue Harry Grant, as well as his willingness to risk his life for his companions.",
+  "reasoning": "Evidence supports: The evidence from the novel suggests that Thalcave is on a journey to rescue Harry Grant and his companions from slavery. The fact that he gives a signal for departure at eight o'clock in the morning indicates that he is in a hurry to reach his destination.",
   "analysis": {
     "claim_id": "54",
     "claim_text": "He briefly loved Chilean doctor Mariana, who wanted him to settle down but was refused; she died nursing cholera-stricken Indians. When he burned her belongings he kept the brass compass she had given him.",
@@ -18,7 +18,7 @@
     "sub_claims": [
       {
         "id": "SC1",
-        "text": "He briefly loved Chilean doctor Mariana, who wanted him to settle down but was refused.",
+        "text": "He briefly loved Chilean doctor Mariana, who wanted him to settle down but was refused; she died nursing cholera-stricken Indians.",
         "type": "temporal",
         "verdict": null,
         "confidence": 0.0,
@@ -27,16 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "She died nursing cholera-stricken Indians.",
-        "type": "factual",
-        "verdict": null,
-        "confidence": 0.0,
-        "supporting_excerpts": [],
-        "contradicting_excerpts": []
-      },
-      {
-        "id": "SC3",
-        "text": "When he burned her belongings he kept the brass compass she had given him.",
+        "text": "He burned her belongings he kept the brass compass she had given him.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -54,6 +45,6 @@
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence from the novel supports the claim that Thalcave briefly loved Chilean doctor Mariana by showing his desire to meet her and rescue Harry Grant, as well as his willingness to risk his life for his companions."
+    "reasoning": "Evidence supports: The evidence from the novel suggests that Thalcave is on a journey to rescue Harry Grant and his companions from slavery. The fact that he gives a signal for departure at eight o'clock in the morning indicates that he is in a hurry to reach his destination."
   }
 }

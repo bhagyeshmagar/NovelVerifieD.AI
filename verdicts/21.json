@@ -4,12 +4,12 @@
   "confidence": 0.95,
   "supporting_spans": [
     "Harry Grant, bound for Australia and New Zealand under Lieutenant Grant, quietly promoted the sympathetic young sailor to ship’s assistant.",
-    "Two months later the Duncan arrived. During your visit at the farm you related, my lord, the whole story of Captain Grant."
+    "Two months later the Duncan arrived."
   ],
   "contradicting_spans": [
     "Direct contradictions with the claim"
   ],
-  "reasoning": "Contradiction (factual): The evidence from the novel directly contradicts the claim that the Royal Navy frigate HMS Austin promoted Jacques Paganel to ship's assistant.",
+  "reasoning": "Contradiction (factual): The evidence from the novel directly contradicts the claim that HMS Austin promoted Jacques Paganel to ship's assistant.",
   "analysis": {
     "claim_id": "21",
     "claim_text": "The Royal Navy frigate HMS Austin, bound for Australia and New Zealand under Lieutenant Grant, quietly promoted the sympathetic young sailor to ship’s assistant.",
@@ -27,26 +27,8 @@
       },
       {
         "id": "SC2",
-        "text": "Lieutenant Grant was responsible for making the decision to promote Jacques Paganel to ship's assistant.",
+        "text": "Jacques Paganel was a sailor on the HMS Austin.",
         "type": "factual",
-        "verdict": null,
-        "confidence": 0.0,
-        "supporting_excerpts": [],
-        "contradicting_excerpts": []
-      },
-      {
-        "id": "SC3",
-        "text": "Jacques Paganel was a young sailor who had shown great potential on board the HMS Austin.",
-        "type": "factual",
-        "verdict": null,
-        "confidence": 0.0,
-        "supporting_excerpts": [],
-        "contradicting_excerpts": []
-      },
-      {
-        "id": "SC4",
-        "text": "The promotion of Jacques Paganel to ship's assistant was done quietly, without any fanfare or announcement.",
-        "type": "temporal",
         "verdict": null,
         "confidence": 0.0,
         "supporting_excerpts": [],
@@ -63,6 +45,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence from the novel directly contradicts the claim that the Royal Navy frigate HMS Austin promoted Jacques Paganel to ship's assistant."
+    "reasoning": "Contradiction (factual): The evidence from the novel directly contradicts the claim that HMS Austin promoted Jacques Paganel to ship's assistant."
   }
 }

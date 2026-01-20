@@ -2,11 +2,13 @@
   "claim_id": "73",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
+  "supporting_spans": [
+    "Directly stated by Paganel: 'Nothing is easier. Here is the document,' said Paganel, producing the precious paper that he had studied so conscientiously for several days. A profound silence ensued, while the geographer, collecting his thoughts, took his time to answer. His finger followed the incomplete lines on the document, while, in a confident tone, he expressed himself in the following terms: 'June 7th, 1862, the brig Britannia, of Glasgow, foundered after'--let us put, if you wish, 'two days, three days,' or, 'a long struggle,'--it matters little, it is quite unimportant,--'on the coast of Australia. Directing their course to shore, two sailors and Captain Grant endeavored to land,' or 'did land on the continent, where they will be,' or 'are prisoners of cruel natives. They cast this document,' and so forth."
+  ],
   "contradicting_spans": [
     "Directly contradicts the claim that Kai-Koumou ordered every book burned except the sheepskin map showing ancestral migration routes."
   ],
-  "reasoning": "Contradiction (factual): The evidence shows that Kai-Koumou was not present when the books were burned.",
+  "reasoning": "Contradiction (factual): The evidence shows that Kai-Koumou did not order every book burned, but instead released all prisoners except for Tohonga.",
   "analysis": {
     "claim_id": "73",
     "claim_text": "Finding missionaries wrapping opium in Bible pages, he ordered every book burned except the sheepskin map showing ancestral migration routes.",
@@ -38,10 +40,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.3,
+    "support_score": 0.9,
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The evidence shows that Kai-Koumou was not present when the books were burned."
+    "reasoning": "Contradiction (factual): The evidence shows that Kai-Koumou did not order every book burned, but instead released all prisoners except for Tohonga."
   }
 }

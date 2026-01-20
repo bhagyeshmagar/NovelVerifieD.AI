@@ -7,9 +7,9 @@
     "He laughed heartily, and promised \"upon his honor\" not to commit a single blunder during the entire voyage."
   ],
   "contradicting_spans": [
-    "Paganel called twice for every dish, 'through absent-mindedness,' as he said. This unfortunate word led Lady Helena to inquire if the amiable Frenchman had occasionally shown his habitual failing."
+    "He accidentally slipped a farewell letter to his French sweetheart into an academic report; the romance ended, yet the Academy of Sciences praised the document."
   ],
-  "reasoning": "Contradiction (capability): The claim states that Paganel accidentally slipped a farewell letter into an academic report, which ended the romance. However, the evidence shows that Paganel was known for his absent-mindedness and made mistakes in his studies. This contradicts the claim that the mistak",
+  "reasoning": "Contradiction (factual): The claim states that the Academy of Sciences praised the document after the romance ended. However, there is no evidence in the novel to suggest that the Academy of Sciences ever saw or praised the document.",
   "analysis": {
     "claim_id": "9",
     "claim_text": "He accidentally slipped a farewell letter to his French sweetheart into an academic report; the romance ended, yet the Academy of Sciences praised the document.",
@@ -51,9 +51,9 @@
     },
     "violations": [],
     "support_score": 0.7,
-    "contradiction_score": 0.7,
+    "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (capability): The claim states that Paganel accidentally slipped a farewell letter into an academic report, which ended the romance. However, the evidence shows that Paganel was known for his absent-mindedness and made mistakes in his studies. This contradicts the claim that the mistake was accidental."
+    "reasoning": "Contradiction (factual): The claim states that the Academy of Sciences praised the document after the romance ended. However, there is no evidence in the novel to suggest that the Academy of Sciences ever saw or praised the document."
   }
 }

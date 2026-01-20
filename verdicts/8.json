@@ -7,7 +7,7 @@
     "The spectacles and telescope gave him a high opinion of Paganel, whom he attached carefully to his person, not only by his benefits, but by strong flaxen ropes, especially at night."
   ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: These excerpts show that Paganel was able to win the trust of the native tribe by sketching star-maps and in return learned tracking techniques and herbal lore.",
+  "reasoning": "Evidence supports: These excerpts suggest that Paganel was able to win the trust of the native tribe by using his knowledge of star-maps and tracking techniques, which he learned during his journey. In return, he was taught herbal lore.",
   "analysis": {
     "claim_id": "8",
     "claim_text": "While being helped by a native tribe he won their trust by sketching star-maps and in return learned tracking techniques and herbal lore.",
@@ -61,6 +61,6 @@
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: These excerpts show that Paganel was able to win the trust of the native tribe by sketching star-maps and in return learned tracking techniques and herbal lore."
+    "reasoning": "Evidence supports: These excerpts suggest that Paganel was able to win the trust of the native tribe by using his knowledge of star-maps and tracking techniques, which he learned during his journey. In return, he was taught herbal lore."
   }
 }

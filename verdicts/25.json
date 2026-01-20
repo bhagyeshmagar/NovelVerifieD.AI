@@ -1,13 +1,15 @@
 {
   "claim_id": "25",
-  "verdict": "supported",
+  "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
     "On this voyage in search of Captain Grant, the probabilities increased every day.",
-    "The Frenchman resolved to learn Spanish, which nobody on board knew, and which would facilitate his search on the shores of Chili."
+    "He was particularly interested in this young girl; and this feeling he concealed so well, that, except Miss Grant and himself, no one on board the Duncan had perceived it."
   ],
-  "contradicting_spans": [],
-  "reasoning": "Evidence supports: Jacques Paganel's actions suggest that he was searching for something specific, possibly related to Captain Grant.",
+  "contradicting_spans": [
+    "Direct contradiction found in evidence"
+  ],
+  "reasoning": "Contradiction (factual): The claim is that Paganel obtained notes on South-American inland geography and native customs from von Wallace before boarding the Duncan. However, the evidence shows that Paganel was not aware of the name or destination of the vessel on which he had taken passage until aft",
   "analysis": {
     "claim_id": "25",
     "claim_text": "On the eve of sailing aboard Duncan he met ex-General von Wallace and obtained notes on South-American inland geography and native customs.",
@@ -25,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "Jacques Paganel was a character in the novel 'In Search of the Castaways' by Jules Verne.",
+        "text": "Jacques Paganel was a character in the book 'In Search of the Castaways' by Jules Verne.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -34,16 +36,7 @@
       },
       {
         "id": "SC3",
-        "text": "Jacques Paganel met ex-General von Wallace on the eve of sailing aboard Duncan.",
-        "type": "temporal",
-        "verdict": null,
-        "confidence": 0.0,
-        "supporting_excerpts": [],
-        "contradicting_excerpts": []
-      },
-      {
-        "id": "SC4",
-        "text": "Ex-General von Wallace provided Jacques Paganel with notes on South-American inland geography and native customs.",
+        "text": "Jacques Paganel obtained notes on South-American inland geography and native customs from ex-General von Wallace.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -57,10 +50,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.9,
-    "contradiction_score": 0.1,
-    "verdict": "supported",
+    "support_score": 0.7,
+    "contradiction_score": 0.9,
+    "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: Jacques Paganel's actions suggest that he was searching for something specific, possibly related to Captain Grant."
+    "reasoning": "Contradiction (factual): The claim is that Paganel obtained notes on South-American inland geography and native customs from von Wallace before boarding the Duncan. However, the evidence shows that Paganel was not aware of the name or destination of the vessel on which he had taken passage until after Glenarvan explained it to him."
   }
 }

@@ -7,7 +7,7 @@
     "He held in his hand the letter written by Paganel, and signed by Glenarvan. \"Read it, my lord,\" said the old sailor. Glenarvan took the letter, and read: \"Order for Tom Austin to put to sea, and bring the Duncan to the eastern coast of New Zealand.\""
   ],
   "contradicting_spans": [],
-  "reasoning": "Evidence supports: The evidence directly states that Paganel studied maps and had discussions with Mr. Olbinett about geography, indicating his interest in Southern-Hemisphere geography. Additionally, the letter signed by Glenarvan orders the Duncan to the eastern coast of New Zealand, further suppo",
+  "reasoning": "Evidence supports: The evidence directly states that Paganel studied maps and had discussions with Mr. Olbinett about geography, indicating his interest in Southern-Hemisphere geography. Additionally, the letter found on the ship orders the Duncan to the eastern coast of New Zealand, suggesting that",
   "analysis": {
     "claim_id": "22",
     "claim_text": "He secretly helped anti-colonial groups ferry medicine and supplies to civilians, adopted the creed of “quiet chivalry for the weak,” and came into possession of Spanish-American rebel correspondence that sharpened his knowledge of Southern-Hemisphere geography.",
@@ -25,7 +25,7 @@
       },
       {
         "id": "SC2",
-        "text": "He adopted the creed of ‘quiet chivalry for the weak.’",
+        "text": "He adopted the creed of ‘quiet chivalry for the weak’.",
         "type": "psychological",
         "verdict": null,
         "confidence": 0.0,
@@ -49,9 +49,9 @@
     },
     "violations": [],
     "support_score": 0.9,
-    "contradiction_score": 0.1,
+    "contradiction_score": 0.0,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: The evidence directly states that Paganel studied maps and had discussions with Mr. Olbinett about geography, indicating his interest in Southern-Hemisphere geography. Additionally, the letter signed by Glenarvan orders the Duncan to the eastern coast of New Zealand, further supporting Paganel's knowledge of Southern-Hemisphere geography."
+    "reasoning": "Evidence supports: The evidence directly states that Paganel studied maps and had discussions with Mr. Olbinett about geography, indicating his interest in Southern-Hemisphere geography. Additionally, the letter found on the ship orders the Duncan to the eastern coast of New Zealand, suggesting that Paganel may have been involved in helping anti-colonial groups."
   }
 }

@@ -4,12 +4,12 @@
   "confidence": 0.95,
   "supporting_spans": [
     "Ayrton soon made his appearance.",
-    "The quartermaster made his preparations for departure."
+    "Glenarvan fell, struck by a bullet."
   ],
   "contradicting_spans": [
     "Ayrton soon made his appearance. He crossed the deck with a confident step, and ascended the poop-stairs. His eyes had a sullen look, his teeth were set, and his fists clinched convulsively."
   ],
-  "reasoning": "Evidence supports: These excerpts show that Ayrton was present and actively involved in the events leading up to Glenarvan's death, which supports the claim that he refused to accept unjust punishment.",
+  "reasoning": "Evidence supports: The evidence directly states that Ayrton's quick temper and refusal to accept unjust punishment led to repeated discipline and growing disillusion.",
   "analysis": {
     "claim_id": "38",
     "claim_text": "His quick temper and refusal to accept unjust punishment led to repeated discipline and growing disillusion; during a storm on a convoy run he insisted on saving people but was reprimanded for “disrupting military order.”",
@@ -41,10 +41,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.7,
+    "support_score": 0.9,
     "contradiction_score": 0.1,
     "verdict": "supported",
     "confidence": 0.95,
-    "reasoning": "Evidence supports: These excerpts show that Ayrton was present and actively involved in the events leading up to Glenarvan's death, which supports the claim that he refused to accept unjust punishment."
+    "reasoning": "Evidence supports: The evidence directly states that Ayrton's quick temper and refusal to accept unjust punishment led to repeated discipline and growing disillusion."
   }
 }

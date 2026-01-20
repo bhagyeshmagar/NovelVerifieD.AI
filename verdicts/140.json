@@ -4,9 +4,9 @@
   "confidence": 0.95,
   "supporting_spans": [],
   "contradicting_spans": [
-    "Faria's death was a result of his suicide attempt, not the secret cells and exile he experienced."
+    "Faria's death is a direct contradiction to the claim that he sustained Dantès through long years of imprisonment and seclusion."
   ],
-  "reasoning": "Contradiction (factual): The novel explicitly states that Faria died as a result of Dantès' suicide attempt, which contradicts the claim that secret cells and exile sustained him through his imprisonment.",
+  "reasoning": "Contradiction (temporal): The character Faria dies in the novel, which directly contradicts the claim that he sustained Dantès through long years of imprisonment and seclusion.",
   "analysis": {
     "claim_id": "140",
     "claim_text": "Friendships forged in secret cells and exile sustained him through the long years of imprisonment and seclusion.",
@@ -24,7 +24,7 @@
       },
       {
         "id": "SC2",
-        "text": "Faria was a prisoner in a secret cell during his long years of imprisonment and seclusion.",
+        "text": "Faria was a prisoner in secret cells during his long years of imprisonment and seclusion.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -33,7 +33,7 @@
       },
       {
         "id": "SC3",
-        "text": "Faria's friendships were formed in secret cells during his long years of imprisonment and seclusion.",
+        "text": "Faria's friendships were formed in secret during his time in prison.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
@@ -51,6 +51,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The novel explicitly states that Faria died as a result of Dantès' suicide attempt, which contradicts the claim that secret cells and exile sustained him through his imprisonment."
+    "reasoning": "Contradiction (temporal): The character Faria dies in the novel, which directly contradicts the claim that he sustained Dantès through long years of imprisonment and seclusion."
   }
 }

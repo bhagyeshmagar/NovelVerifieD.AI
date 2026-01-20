@@ -6,7 +6,7 @@
   "contradicting_spans": [
     "M. Noirtier, who, on the previous night, was the old Jacobin, the old senator, the old Carbonaro, laughing at the guillotine, the cannon, and the dagger—M. Noirtier, playing with revolutions—M. Noirtier, for whom France was a vast chess-board, from which pawns, rooks, knights, and queens were to disappear, so that the king was checkmated—M. Noirtier, the redoubtable, was the next morning _poor M. Noirtier_, the helpless old man, at the tender mercies of the weakest creature in the household, that is, his grandchild, Val"
   ],
-  "reasoning": "Contradiction (temporal): The character's actions contradict the claim that he acted as a militant republican and helped organize trials of royalists.",
+  "reasoning": "Contradiction (temporal): The character's actions and beliefs contradict the claim that he acted as a militant republican during the Revolution.",
   "analysis": {
     "claim_id": "102",
     "claim_text": "During the Revolution he acted as a militant republican, attended major assemblies and helped organise trials of royalists.",
@@ -51,6 +51,6 @@
     "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (temporal): The character's actions contradict the claim that he acted as a militant republican and helped organize trials of royalists."
+    "reasoning": "Contradiction (temporal): The character's actions and beliefs contradict the claim that he acted as a militant republican during the Revolution."
   }
 }

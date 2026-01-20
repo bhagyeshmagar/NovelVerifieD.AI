@@ -2,11 +2,14 @@
   "claim_id": "115",
   "verdict": "contradicted",
   "confidence": 0.95,
-  "supporting_spans": [],
-  "contradicting_spans": [
-    "Faria, since their first acquaintance, had been on all points so rational and logical, so wonderfully sagacious, in fact, that he could not understand how so much wisdom on all points could be allied with madness."
+  "supporting_spans": [
+    "Faria, since their first acquaintance, had been on all points so rational and logical, so wonderfully sagacious, in fact, that he could not understand how so much wisdom on all points could be allied with madness.",
+    "Dantès saw there was no escape, and placing the old man on his bed, held him fast until he died."
   ],
-  "reasoning": "Contradiction (factual): The excerpt contradicts the claim by suggesting that Faria was rational and logical, which is incompatible with the idea of him being mad.",
+  "contradicting_spans": [
+    "Faria was sent to Goa as a Jesuit novice."
+  ],
+  "reasoning": "Contradiction (factual): The character of Faria is not mentioned in the novel as being a Jesuit novice.",
   "analysis": {
     "claim_id": "115",
     "claim_text": "As a Jesuit novice he was sent to Goa, secretly read the old Indian medical text Charaka Samhita and laid the groundwork for his later toxicology expertise.",
@@ -47,10 +50,10 @@
       "late": 0
     },
     "violations": [],
-    "support_score": 0.3,
-    "contradiction_score": 0.7,
+    "support_score": 0.9,
+    "contradiction_score": 0.9,
     "verdict": "contradicted",
     "confidence": 0.95,
-    "reasoning": "Contradiction (factual): The excerpt contradicts the claim by suggesting that Faria was rational and logical, which is incompatible with the idea of him being mad."
+    "reasoning": "Contradiction (factual): The character of Faria is not mentioned in the novel as being a Jesuit novice."
   }
 }

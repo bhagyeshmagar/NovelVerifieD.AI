@@ -3,8 +3,8 @@
   "verdict": "contradicted",
   "confidence": 0.95,
   "supporting_spans": [
-    "During twenty years in one cell he kept his wits by calculating Mediterranean tides, an exercise that later let him predict guards’ rounds in the original story.",
-    "Faria, who for so long a time had kept silence as to the treasure, now perpetually talked of it."
+    "“If I could die,” he said, “I should go where he goes, and should assuredly find him again. But how to die? It is very easy,” he went on with a smile; “I will remain here, rush on the first person that opens the door, strangle him, and then they will guillotine me.”",
+    "“Here I am, pursuing you remorselessly,” he said with a benignant smile. “You thought to escape my munificence, but it is in vain. Listen to me.”"
   ],
   "contradicting_spans": [
     "Dantès recoiled from the idea of so infamous a death, and passed suddenly from despair over the sea, which we take for terra firma, and which evaporate and vanish as we draw near to them."
@@ -27,7 +27,7 @@
       },
       {
         "id": "SC2",
-        "text": "He later used this skill to predict guards’ rounds in the original story.",
+        "text": "an exercise that later let him predict guards’ rounds in the original story.",
         "type": "factual",
         "verdict": null,
         "confidence": 0.0,
